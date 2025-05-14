@@ -19,19 +19,27 @@ const projects = [
   },
   {
     number: 2,
-    title: "CRM Service Design & Implementation",
-    description: "Transformed research insights into a functional CRM implementation with specialized modules for different departments across 17 countries.",
-    client: "Grupo Bimbo",
-    slug: "crm-service-design",
-    imageSrc: "https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
-  },
-  {
-    number: 3,
     title: "Cardholder Loyalty Program Redesign",
     description: "Redesigned loyalty program for credit card holders to drive card usage and retention with optimized points accrual system.",
     client: "BBVA",
     slug: "loyalty-program-redesign",
     imageSrc: "https://images.unsplash.com/photo-1589758438368-0ad531db3366?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+  },
+  {
+    number: 3,
+    title: "Digital Transformation Strategy",
+    description: "Led strategic planning for digital service transformation across multiple government departments.",
+    client: "Secretaría de Gobierno",
+    slug: "government-digital-transformation",
+    imageSrc: "https://images.unsplash.com/photo-1569407411836-49d8177f1bf4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+  },
+  {
+    number: 4,
+    title: "Insurance Customer Journey Redesign",
+    description: "Redesigned end-to-end customer journey for insurance claims processing to improve satisfaction and operational efficiency.",
+    client: "La Positiva",
+    slug: "insurance-journey-redesign",
+    imageSrc: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
   }
 ];
 
@@ -97,7 +105,7 @@ const Index = () => {
               <h2 className="text-5xl font-westmount">FEATURED PROJECTS</h2>
             </div>
             
-            <div className="grid md:grid-cols-3 gap-12">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
               {projects.map((project) => (
                 <ProjectCard key={project.slug} {...project} />
               ))}
@@ -117,36 +125,20 @@ const Index = () => {
         {/* Methodology Section */}
         <section className="py-16" ref={sectionRefs.methodology}>
           <div className="container-narrow">
-            <div className="text-center mb-16">
+            <div className="text-center mb-12">
               <h2 className="text-5xl font-westmount">MY METHODOLOGY</h2>
               <p className="text-sm max-w-2xl mx-auto mt-8">
-                Experience cannot be designed, only enabled. This principle guides my systematic 
-                approach to service design, recognizing the intersection between human and functional systems.
+                Success emerges from navigating complexity through continuous evolution and adaptation,
+                balancing control with emergence, and maintaining a deep understanding of system dynamics and integration.
               </p>
             </div>
             
-            <div className="grid md:grid-cols-2 gap-12 mt-12">
-              <div className="space-y-4">
-                <h3 className="text-lg">Human Systems</h3>
-                <ul className="text-sm space-y-2">
-                  <li>• Behaviors</li>
-                  <li>• Culture</li>
-                  <li>• Relationships</li>
-                  <li>• Perceptions</li>
-                  <li>• Expectations</li>
-                </ul>
-              </div>
-              
-              <div className="space-y-4">
-                <h3 className="text-lg">Functional Systems</h3>
-                <ul className="text-sm space-y-2">
-                  <li>• Processes</li>
-                  <li>• Technology</li>
-                  <li>• Metrics</li>
-                  <li>• Architecture</li>
-                  <li>• Operations</li>
-                </ul>
-              </div>
+            <div className="flex justify-center mt-12">
+              <img 
+                src="/lovable-uploads/472e4aed-29ea-4e3d-a5b2-e83280e3be88.png" 
+                alt="Service Design Methodology" 
+                className="max-w-full md:max-w-3xl" 
+              />
             </div>
             
             <div className="text-center mt-12">

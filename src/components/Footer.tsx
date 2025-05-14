@@ -1,9 +1,10 @@
 
 import { Link } from 'react-router-dom';
+import { Mail } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="border-t border-gray-200 py-12">
+    <footer className="py-12">
       <div className="container-narrow">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="flex justify-center md:justify-start">
@@ -11,13 +12,16 @@ const Footer = () => {
           </div>
           
           <div className="text-center space-y-4">
-            <p className="text-sm uppercase tracking-wide">Navigation</p>
-            <nav className="flex flex-col space-y-2">
-              <Link to="/" className="text-sm hover:opacity-70 transition-opacity">Home</Link>
-              <Link to="/portfolio" className="text-sm hover:opacity-70 transition-opacity">Portfolio</Link>
-              <Link to="/methodology" className="text-sm hover:opacity-70 transition-opacity">Methodology</Link>
-              <Link to="/contact" className="text-sm hover:opacity-70 transition-opacity">Contact</Link>
-            </nav>
+            <p className="text-sm uppercase tracking-wide">Contact</p>
+            <div className="flex flex-col space-y-2 items-center">
+              <a 
+                href="mailto:christian.bussalleu@gmail.com" 
+                className="text-sm hover:opacity-70 transition-opacity inline-flex items-center"
+              >
+                <Mail size={16} className="mr-2" />
+                christian.bussalleu@gmail.com
+              </a>
+            </div>
           </div>
           
           <div className="text-center md:text-right">

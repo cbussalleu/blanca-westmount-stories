@@ -12,9 +12,19 @@ const Methodology = () => {
             <div className="text-center mb-16">
               <h1 className="text-5xl font-westmount">METHODOLOGY</h1>
               <p className="text-sm max-w-2xl mx-auto mt-8">
-                Experience cannot be designed, only enabled. This principle guides my systematic 
-                approach to service design, recognizing the intersection between human and functional systems.
+                Success emerges from navigating complexity through continuous evolution and adaptation,
+                balancing control with emergence, and maintaining a deep understanding of system dynamics and integration.
               </p>
+            </div>
+            
+            <div className="max-w-3xl mx-auto mb-16">
+              <div className="flex justify-center">
+                <img 
+                  src="/lovable-uploads/472e4aed-29ea-4e3d-a5b2-e83280e3be88.png" 
+                  alt="Service Design Methodology" 
+                  className="max-w-full"
+                />
+              </div>
             </div>
             
             <div className="max-w-2xl mx-auto">
@@ -27,33 +37,6 @@ const Methodology = () => {
                     of the service design process, recognizing the complex interplay between 
                     human needs and functional systems.
                   </p>
-                </div>
-                
-                <div>
-                  <h2 className="text-2xl mb-6">My Approach</h2>
-                  <div className="grid md:grid-cols-2 gap-12">
-                    <div className="space-y-4">
-                      <h3 className="text-lg">Human Systems</h3>
-                      <ul className="text-sm space-y-2">
-                        <li>• Behaviors</li>
-                        <li>• Culture</li>
-                        <li>• Relationships</li>
-                        <li>• Perceptions</li>
-                        <li>• Expectations</li>
-                      </ul>
-                    </div>
-                    
-                    <div className="space-y-4">
-                      <h3 className="text-lg">Functional Systems</h3>
-                      <ul className="text-sm space-y-2">
-                        <li>• Processes</li>
-                        <li>• Technology</li>
-                        <li>• Metrics</li>
-                        <li>• Architecture</li>
-                        <li>• Operations</li>
-                      </ul>
-                    </div>
-                  </div>
                 </div>
                 
                 <div>

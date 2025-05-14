@@ -29,7 +29,7 @@ const bimboCases = [
 const BimboCaseStudies = () => {
   return (
     <div className="grid md:grid-cols-2 gap-10">
-      <div className="image-with-overlay rounded-lg overflow-hidden">
+      <div className="image-with-overlay rounded-lg overflow-hidden relative group">
         <AspectRatio ratio={3/4} className="w-full">
           <img 
             src="/lovable-uploads/62c5b772-9c99-41b3-b48e-83926e910229.png" 
@@ -37,19 +37,14 @@ const BimboCaseStudies = () => {
             className="object-cover"
           />
         </AspectRatio>
+        <div className="absolute inset-0 flex items-center justify-center">
+          <h3 className="text-xl md:text-2xl font-westmount text-center px-6 uppercase transition-transform duration-300 group-hover:scale-110 group-hover:font-bold">
+            7 years designing for an ever-evolving industry
+          </h3>
+        </div>
       </div>
       
       <div>
-        <div className="mb-8">
-          <p className="text-sm mb-6">
-            For the past 7 years, I have led the design and implementation processes for Grupo Bimbo's largest customer experience transformation initiative.
-          </p>
-          <p className="text-sm mb-6">
-            As the world's largest bread manufacturer with presence in over 33 countries, this strategic initiative, 
-            known as the Connection Center, establishes a new operational model for customer and consumer engagement across global markets.
-          </p>
-        </div>
-        
         <div className="space-y-8">
           {bimboCases.map((caseStudy, index) => (
             <div key={index} className="group">
