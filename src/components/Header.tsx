@@ -29,13 +29,14 @@ const Header = () => {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <img src="/lovable-uploads/91dafe4d-b474-4207-9638-48548245869b.png" alt="Christian Bussalleu Logo" className="h-12 w-auto" />
+            <img src="/lovable-uploads/e898d468-a0f6-4fab-9b9d-deb5d934e1d9.png" alt="Logo" className="h-12 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
             <Link to="/" className="text-black font-helvetica font-medium hover:text-gray-600 transition-colors">Home</Link>
             <Link to="/portfolio" className="text-black font-helvetica font-medium hover:text-gray-600 transition-colors">Portfolio</Link>
+            <Link to="/bimbo-relationship" className="text-black font-helvetica font-medium hover:text-gray-600 transition-colors">Grupo Bimbo</Link>
             <Link to="/methodology" className="text-black font-helvetica font-medium hover:text-gray-600 transition-colors">Methodology</Link>
             <Link to="/contact" className="text-black font-helvetica font-medium hover:text-gray-600 transition-colors">Contact</Link>
           </nav>
@@ -53,6 +54,7 @@ const Header = () => {
           <nav className="container mx-auto px-4 py-4 flex flex-col space-y-4">
             <Link to="/" className="text-black font-helvetica font-medium hover:text-gray-600 transition-colors" onClick={toggleMenu}>Home</Link>
             <Link to="/portfolio" className="text-black font-helvetica font-medium hover:text-gray-600 transition-colors" onClick={toggleMenu}>Portfolio</Link>
+            <Link to="/bimbo-relationship" className="text-black font-helvetica font-medium hover:text-gray-600 transition-colors" onClick={toggleMenu}>Grupo Bimbo</Link>
             <Link to="/methodology" className="text-black font-helvetica font-medium hover:text-gray-600 transition-colors" onClick={toggleMenu}>Methodology</Link>
             <Link to="/contact" className="text-black font-helvetica font-medium hover:text-gray-600 transition-colors" onClick={toggleMenu}>Contact</Link>
           </nav>

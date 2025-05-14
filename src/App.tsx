@@ -9,6 +9,7 @@ import Portfolio from "./pages/Portfolio";
 import Methodology from "./pages/Methodology";
 import Contact from "./pages/Contact";
 import ProjectDetail from "./pages/ProjectDetail";
+import BimboRelationship from "./pages/BimboRelationship";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -24,6 +25,7 @@ const App = () => (
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/portfolio/:slug" element={<ProjectDetail />} />
           <Route path="/methodology" element={<Methodology />} />
+          <Route path="/bimbo-relationship" element={<BimboRelationship />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

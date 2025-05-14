@@ -4,6 +4,7 @@ import ProjectCard from '../components/ProjectCard';
 import MethodologySection from '../components/MethodologySection';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import GroupoBimboSection from '../components/GroupoBimboSection';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 
@@ -40,12 +41,14 @@ const Index = () => {
       <Header />
       <main className="pt-20">
         <Hero 
-          title="Service Design Portfolio"
-          description="For the past 7 years, I have led design and implementation processes for customer experience transformation efforts across global markets, focusing on unifying experience management and accelerating innovation."
+          title="About Me"
+          description="As a Service Design Lead, I create innovative solutions that combine human empathy and technology, and that solve complex business challenges and deliver value to customers. I have over 10 years of experience in customer experience and strategic design. I work with a multidisciplinary team to apply a human-centered design approach and a system-thinking mindset to understand the needs, behaviors, and motivations of the users and the stakeholders, and to design feasible and desirable solutions. I have led and contributed to projects across various industries, such as food and beverage, finance, and government. I am passionate about exploring the opportunities and challenges in the food system, and I am interested in gathering insights from food system entrepreneurs or food-tech projects."
           ctaText="View Portfolio"
           ctaLink="/portfolio"
           fullHeight
         />
+        
+        <GroupoBimboSection />
         
         <section className="py-16 md:py-24 bg-white">
           <div className="container mx-auto px-4 md:px-6">
