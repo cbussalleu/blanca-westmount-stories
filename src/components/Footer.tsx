@@ -1,6 +1,5 @@
 
 import { Link } from 'react-router-dom';
-import { Mail } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -11,14 +10,12 @@ const Footer = () => {
             <img src="/lovable-uploads/69552967-182b-43cb-9a77-04a4d046299a.png" alt="Logo" className="h-8 w-auto" />
           </div>
           
-          <div className="text-center space-y-4">
-            <p className="text-sm uppercase tracking-wide">Contact</p>
+          <div className="text-center">
             <div className="flex flex-col space-y-2 items-center">
               <a 
                 href="mailto:christian.bussalleu@gmail.com" 
-                className="text-sm hover:opacity-70 transition-opacity inline-flex items-center"
+                className="text-base hover:opacity-70 transition-opacity"
               >
-                <Mail size={16} className="mr-2" />
                 christian.bussalleu@gmail.com
               </a>
             </div>

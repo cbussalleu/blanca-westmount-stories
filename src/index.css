@@ -45,6 +45,7 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
     
     --image-overlay: 48 100% 85%;
+    --bimbo-overlay: 48 100% 92%;
     
     /* Pastel Yellow Background - slightly more intense for better visibility */
     --pastel-yellow: 48 100% 95%;
@@ -142,6 +143,38 @@
 }
 
 .image-with-overlay:hover img {
+  transform: scale(1.03);
+}
+
+/* Bimbo section specific overlay with higher opacity */
+.image-with-overlay-bimbo {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-with-overlay-bimbo::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: hsla(var(--bimbo-overlay) / 0.9);
+  z-index: 1;
+  mix-blend-mode: multiply;
+}
+
+.bimbo-image-container {
+  position: relative;
+  z-index: 0;
+}
+
+.bimbo-image-container img {
+  filter: grayscale(1) contrast(1.1) brightness(0.9);
+  transition: transform 0.5s ease;
+}
+
+.image-with-overlay-bimbo:hover .bimbo-image-container img {
   transform: scale(1.03);
 }
 

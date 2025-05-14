@@ -29,16 +29,23 @@ const bimboCases = [
 const BimboCaseStudies = () => {
   return (
     <div className="grid md:grid-cols-2 gap-10">
-      <div className="image-with-overlay rounded-lg overflow-hidden relative group">
+      <div className="image-with-overlay-bimbo rounded-lg overflow-hidden relative group">
         <AspectRatio ratio={3/4} className="w-full">
-          <img 
-            src="/lovable-uploads/62c5b772-9c99-41b3-b48e-83926e910229.png" 
-            alt="Grupo Bimbo Connection Center" 
-            className="object-cover"
-          />
+          <div className="bimbo-image-container w-full h-full">
+            <img 
+              src="/lovable-uploads/c7e336e9-2400-4f13-b0c4-ee3d2aa2f776.png" 
+              alt="Grupo Bimbo Staff 1" 
+              className="object-cover absolute inset-0 w-1/2 h-full"
+            />
+            <img 
+              src="/lovable-uploads/a06cda8c-08f2-47bd-bb46-4445137ae25d.png" 
+              alt="Grupo Bimbo Presentation" 
+              className="object-cover absolute inset-y-0 right-0 w-1/2 h-full"
+            />
+          </div>
         </AspectRatio>
         <div className="absolute inset-0 flex items-center justify-center">
-          <h3 className="text-xl md:text-2xl font-westmount text-center px-6 uppercase transition-transform duration-300 group-hover:scale-110 group-hover:font-bold">
+          <h3 className="text-xl md:text-3xl font-westmount text-center px-6 uppercase transition-transform duration-300 group-hover:scale-110 group-hover:font-bold">
             7 years designing for an ever-evolving industry
           </h3>
         </div>

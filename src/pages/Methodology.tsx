@@ -12,15 +12,16 @@ const Methodology = () => {
             <div className="text-center mb-16">
               <h1 className="text-5xl font-westmount">METHODOLOGY</h1>
               <p className="text-sm max-w-2xl mx-auto mt-8">
-                Success emerges from navigating complexity through continuous evolution and adaptation,
-                balancing control with emergence, and maintaining a deep understanding of system dynamics and integration.
+                I <span className="text-[#8ab1a2]">tackle</span> a broad variety of 
+                disciplines in the <u>agile process</u>, 
+                of creating meaningful products
               </p>
             </div>
             
             <div className="max-w-3xl mx-auto mb-16">
               <div className="flex justify-center">
                 <img 
-                  src="/lovable-uploads/472e4aed-29ea-4e3d-a5b2-e83280e3be88.png" 
+                  src="/lovable-uploads/a44d8134-2342-431d-aaf8-18fe1829dc0a.png" 
                   alt="Service Design Methodology" 
                   className="max-w-full"
                 />

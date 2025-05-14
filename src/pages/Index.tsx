@@ -11,14 +11,6 @@ import BimboCaseStudies from '../components/BimboCaseStudies';
 const projects = [
   {
     number: 1,
-    title: "Connection Center Research & Design",
-    description: "Designed a global omnichannel customer experience model capable of standardizing consumer and customer engagement while adapting to diverse market needs.",
-    client: "Grupo Bimbo",
-    slug: "connection-center",
-    imageSrc: "https://images.unsplash.com/photo-1565767292670-bbc01d6ce4a7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
-  },
-  {
-    number: 2,
     title: "Cardholder Loyalty Program Redesign",
     description: "Redesigned loyalty program for credit card holders to drive card usage and retention with optimized points accrual system.",
     client: "BBVA",
@@ -26,7 +18,7 @@ const projects = [
     imageSrc: "https://images.unsplash.com/photo-1589758438368-0ad531db3366?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
   },
   {
-    number: 3,
+    number: 2,
     title: "Digital Transformation Strategy",
     description: "Led strategic planning for digital service transformation across multiple government departments.",
     client: "Secretaría de Gobierno",
@@ -34,7 +26,7 @@ const projects = [
     imageSrc: "https://images.unsplash.com/photo-1569407411836-49d8177f1bf4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
   },
   {
-    number: 4,
+    number: 3,
     title: "Insurance Customer Journey Redesign",
     description: "Redesigned end-to-end customer journey for insurance claims processing to improve satisfaction and operational efficiency.",
     client: "La Positiva",
@@ -55,7 +47,7 @@ const Index = () => {
     <div className="min-h-screen bg-[hsl(var(--pastel-yellow))]">
       <Header />
       <main className="pt-24">
-        {/* About Me Section (New Style) */}
+        {/* About Me Section */}
         <section className="py-16" ref={sectionRefs.about}>
           <div className="container-narrow">
             <div className="mb-12">
@@ -105,7 +97,7 @@ const Index = () => {
               <h2 className="text-5xl font-westmount">FEATURED PROJECTS</h2>
             </div>
             
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+            <div className="grid md:grid-cols-3 gap-12">
               {projects.map((project) => (
                 <ProjectCard key={project.slug} {...project} />
               ))}
@@ -128,14 +120,15 @@ const Index = () => {
             <div className="text-center mb-12">
               <h2 className="text-5xl font-westmount">MY METHODOLOGY</h2>
               <p className="text-sm max-w-2xl mx-auto mt-8">
-                Success emerges from navigating complexity through continuous evolution and adaptation,
-                balancing control with emergence, and maintaining a deep understanding of system dynamics and integration.
+                I <span className="text-[#8ab1a2]">tackle</span> a broad variety of 
+                disciplines in the <u>agile process</u>, 
+                of creating meaningful products
               </p>
             </div>
             
             <div className="flex justify-center mt-12">
               <img 
-                src="/lovable-uploads/472e4aed-29ea-4e3d-a5b2-e83280e3be88.png" 
+                src="/lovable-uploads/a44d8134-2342-431d-aaf8-18fe1829dc0a.png" 
                 alt="Service Design Methodology" 
                 className="max-w-full md:max-w-3xl" 
               />
