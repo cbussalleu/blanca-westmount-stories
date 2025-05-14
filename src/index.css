@@ -117,6 +117,7 @@
   @apply w-full h-px bg-gray-200 my-12;
 }
 
+/* Base image overlay style - the current one */
 .image-with-overlay {
   position: relative;
   overflow: hidden;
@@ -145,6 +146,102 @@
 }
 
 .image-with-overlay:hover img {
+  transform: scale(1.03);
+}
+
+/* Option 1: Full grayscale with current contrast */
+.image-blend-grayscale {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-blend-grayscale::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: hsla(var(--image-overlay) / 0.7);
+  z-index: 1;
+  mix-blend-mode: multiply;
+}
+
+.image-blend-grayscale img {
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1) contrast(1.4) brightness(0.85);
+  transition: transform 0.5s ease;
+}
+
+.image-blend-grayscale:hover img {
+  transform: scale(1.03);
+}
+
+/* Option 2: Full grayscale with lower contrast */
+.image-blend-soft {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-blend-soft::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: hsla(var(--image-overlay) / 0.7);
+  z-index: 1;
+  mix-blend-mode: multiply;
+}
+
+.image-blend-soft img {
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1) contrast(1.1) brightness(0.9);
+  transition: transform 0.5s ease;
+}
+
+.image-blend-soft:hover img {
+  transform: scale(1.03);
+}
+
+/* Option 3: Higher contrast with moderate grayscale */
+.image-blend-vivid {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-blend-vivid::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: hsla(var(--image-overlay) / 0.65);
+  z-index: 1;
+  mix-blend-mode: multiply;
+}
+
+.image-blend-vivid img {
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(0.6) contrast(1.6) brightness(0.8);
+  transition: transform 0.5s ease;
+}
+
+.image-blend-vivid:hover img {
   transform: scale(1.03);
 }
 
