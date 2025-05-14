@@ -1,21 +1,22 @@
 
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import Hero from '../components/Hero';
 
 const Methodology = () => {
   return (
     <div className="min-h-screen">
       <Header />
       <main className="pt-24">
-        <Hero 
-          title="My Methodology"
-          subtitle="SERVICE DESIGN APPROACH"
-          description="Experience cannot be designed, only enabled. This principle guides my systematic approach to service design, recognizing the intersection between human and functional systems."
-        />
-        
         <section className="py-16">
           <div className="container-narrow">
+            <div className="text-center mb-16">
+              <h1 className="text-5xl font-westmount">METHODOLOGY</h1>
+              <p className="text-sm max-w-2xl mx-auto mt-8">
+                Experience cannot be designed, only enabled. This principle guides my systematic 
+                approach to service design, recognizing the intersection between human and functional systems.
+              </p>
+            </div>
+            
             <div className="max-w-2xl mx-auto">
               <div className="space-y-12">
                 <div>

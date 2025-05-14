@@ -3,7 +3,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, CheckCircle } from 'lucide-react';
-import ImageHero from '../components/ImageHero';
+import BimboCaseStudies from '../components/BimboCaseStudies';
 
 const BimboRelationship = () => {
   return (
@@ -18,12 +18,12 @@ const BimboRelationship = () => {
               </Link>
             </div>
             
-            <ImageHero
-              imageSrc="/lovable-uploads/62c5b772-9c99-41b3-b48e-83926e910229.png"
-              title="Grupo Bimbo and I"
-              description="For the past 7 years, I have led the design and implementation processes for Grupo Bimbo's largest customer experience transformation initiative."
-              aspectRatio={16/9}
-            />
+            <div className="text-center mb-16">
+              <h1 className="text-5xl font-westmount">GRUPO BIMBO AND I</h1>
+              <p className="text-sm max-w-2xl mx-auto mt-8">
+                For the past 7 years, I have led the design and implementation processes for Grupo Bimbo's largest customer experience transformation initiative.
+              </p>
+            </div>
             
             <div className="max-w-2xl mx-auto mt-12">
               <div className="space-y-6 text-sm">

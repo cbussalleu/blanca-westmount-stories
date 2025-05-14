@@ -6,26 +6,31 @@ import { Link } from 'react-router-dom';
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [visible, setVisible] = useState(true);
   
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   
   useEffect(() => {
     const handleScroll = () => {
-      const isScrolled = window.scrollY > 20;
-      if (isScrolled !== scrolled) {
-        setScrolled(isScrolled);
-      }
+      const currentScrollPos = window.scrollY;
+      const isScrolled = currentScrollPos > 20;
+      
+      // Show/hide header based on scroll direction
+      setVisible(prevScrollPos > currentScrollPos || currentScrollPos < 10);
+      setScrolled(isScrolled);
+      setPrevScrollPos(currentScrollPos);
     };
     
     document.addEventListener('scroll', handleScroll);
     return () => {
       document.removeEventListener('scroll', handleScroll);
     };
-  }, [scrolled]);
+  }, [prevScrollPos]);
 
   return (
-    <header className={`fixed w-full top-0 z-30 transition-all duration-300 ${scrolled ? 'bg-[hsl(var(--pastel-yellow))]' : 'bg-[hsl(var(--pastel-yellow))]'}`}>
-      <div className="container-narrow py-6 border-b border-gray-200">
+    <header className={`w-full z-30 transition-all duration-300 ${scrolled ? 'bg-[hsl(var(--pastel-yellow))]' : 'bg-[hsl(var(--pastel-yellow))]'} ${visible ? 'top-0' : '-top-24'}`}>
+      <div className="container-narrow py-6">
         <div className="flex justify-between items-center">
           {/* Logo - sin fondo */}
           <Link to="/" className="flex items-center space-x-2">

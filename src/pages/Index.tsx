@@ -1,12 +1,12 @@
 
+import { useEffect, useRef } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import ProjectCard from '../components/ProjectCard';
-import MethodologySection from '../components/MethodologySection';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import ImageHero from '../components/ImageHero';
-import BimboFeature from '../components/BimboFeature';
+import BimboCaseStudies from '../components/BimboCaseStudies';
 
 const projects = [
   {
@@ -36,29 +36,65 @@ const projects = [
 ];
 
 const Index = () => {
+  const sectionRefs = {
+    about: useRef(null),
+    bimbo: useRef(null),
+    projects: useRef(null),
+    methodology: useRef(null)
+  };
+
   return (
     <div className="min-h-screen bg-[hsl(var(--pastel-yellow))]">
       <Header />
       <main className="pt-24">
-        <div className="container-narrow">
-          <ImageHero 
-            imageSrc="/lovable-uploads/311b143b-9bfb-4b23-b7b2-cf5fb6a91457.png"
-            title="About Me"
-            description="As a Service Design Lead, I create innovative solutions that combine human empathy and technology to solve complex business challenges and deliver value across food and beverage, finance, and government sectors."
-            aspectRatio={16/9}
-          />
-        </div>
-        
-        <div className="section-divider" />
-        
-        <BimboFeature />
-        
-        <div className="section-divider" />
-        
-        <section className="py-16">
+        {/* About Me Section (New Style) */}
+        <section className="py-16" ref={sectionRefs.about}>
           <div className="container-narrow">
-            <div className="text-center mb-12">
-              <h2 className="text-2xl">Featured Projects</h2>
+            <div className="mb-12">
+              <h1 className="text-5xl font-westmount mb-16 text-center">
+                Hello, I'm Roland,<br />
+                Creative Technologist & User<br />
+                Experience Engineer based in<br />
+                Berlin – I create digital products<br />
+                with knowledge and passion.
+              </h1>
+            </div>
+            <div className="grid md:grid-cols-2 gap-16">
+              <div className="space-y-6">
+                <p className="text-sm leading-relaxed">
+                  With more than a decade of experience I tackle a broad variety of disciplines in the process of creating meaningful products that make a real difference. With carefully selected tools and skills I express my visions ranging from product design to the creation of user experience up to development and delivery.
+                </p>
+                <p className="text-sm leading-relaxed">
+                  My distinctive strategic thinking helps me to pinpoint the holistic scope of a product and evolve it by adding new business ideas, innovations and values that meet user needs as well as business objectives. Besides building user flows, information architecture and wireframes, tailor-made interactive prototypes are constantly
+                </p>
+              </div>
+              <div className="space-y-6">
+                <p className="text-sm leading-relaxed">
+                  putting concepts and ideas to the test and emphasize the user-centered approach in my work. I work with the latest techniques in web development and my agile workflow is the result of the precisely combined tools and strategies that include object oriented patterns, build scripts, pre-processors and minification, source code management, testing as well as deployment.
+                </p>
+                <p className="text-sm leading-relaxed">
+                  With my knowledge in both design and technology I foster productive teams in an collaborative environment that meets the requirements of creatives and developers at the same time.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        {/* Grupo Bimbo Section */}
+        <section className="py-16" ref={sectionRefs.bimbo}>
+          <div className="container-narrow">
+            <h2 className="text-5xl font-westmount mb-16 text-center">
+              GRUPO BIMBO AND I
+            </h2>
+            <BimboCaseStudies />
+          </div>
+        </section>
+        
+        {/* Featured Projects Section */}
+        <section className="py-16" ref={sectionRefs.projects}>
+          <div className="container-narrow">
+            <div className="text-center mb-16">
+              <h2 className="text-5xl font-westmount">FEATURED PROJECTS</h2>
             </div>
             
             <div className="grid md:grid-cols-3 gap-12">
@@ -78,13 +114,12 @@ const Index = () => {
           </div>
         </section>
         
-        <div className="section-divider" />
-        
-        <section className="py-16">
+        {/* Methodology Section */}
+        <section className="py-16" ref={sectionRefs.methodology}>
           <div className="container-narrow">
-            <div className="text-center mb-12">
-              <h2 className="text-2xl">My Methodology</h2>
-              <p className="text-sm max-w-2xl mx-auto mt-4">
+            <div className="text-center mb-16">
+              <h2 className="text-5xl font-westmount">MY METHODOLOGY</h2>
+              <p className="text-sm max-w-2xl mx-auto mt-8">
                 Experience cannot be designed, only enabled. This principle guides my systematic 
                 approach to service design, recognizing the intersection between human and functional systems.
               </p>
