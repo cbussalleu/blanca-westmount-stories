@@ -1,12 +1,75 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import Hero from '../components/Hero';
+import ProjectCard from '../components/ProjectCard';
+import MethodologySection from '../components/MethodologySection';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
+
+const projects = [
+  {
+    number: 1,
+    title: "Connection Center Research & Design",
+    description: "Designed a global omnichannel customer experience model capable of standardizing consumer and customer engagement while adapting to diverse market needs.",
+    client: "Grupo Bimbo",
+    slug: "connection-center",
+    imageUrl: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&q=80"
+  },
+  {
+    number: 2,
+    title: "CRM Service Design & Implementation",
+    description: "Transformed research insights into a functional CRM implementation with specialized modules for different departments across 17 countries.",
+    client: "Grupo Bimbo",
+    slug: "crm-service-design",
+    imageUrl: "https://images.unsplash.com/photo-1500673922987-e212871fec22?auto=format&fit=crop&q=80"
+  },
+  {
+    number: 3,
+    title: "T-Conecta: B2B Omnichannel Service Ecosystem",
+    description: "Designed an integrated digital and physical service ecosystem for small businesses, connecting ordering systems, financial services, and additional revenue streams.",
+    client: "Grupo Bimbo",
+    slug: "t-conecta",
+    imageUrl: "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?auto=format&fit=crop&q=80"
+  }
+];
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-white">
+      <Header />
+      <main className="pt-20">
+        <Hero 
+          title="Service Design Portfolio"
+          description="For the past 7 years, I have led design and implementation processes for customer experience transformation efforts across global markets, focusing on unifying experience management and accelerating innovation."
+          ctaText="View Portfolio"
+          ctaLink="/portfolio"
+          fullHeight
+        />
+        
+        <section className="py-16 md:py-24 bg-white">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="flex justify-between items-end mb-10">
+              <h2 className="font-westmount text-3xl">Featured Projects</h2>
+              <Link 
+                to="/portfolio" 
+                className="flex items-center font-helvetica text-sm hover:text-gray-600 transition-colors"
+              >
+                View All Projects <ArrowRight size={16} className="ml-1" />
+              </Link>
+            </div>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {projects.map((project) => (
+                <ProjectCard key={project.slug} {...project} />
+              ))}
+            </div>
+          </div>
+        </section>
+        
+        <MethodologySection />
+      </main>
+      <Footer />
     </div>
   );
 };
