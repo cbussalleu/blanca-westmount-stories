@@ -130,7 +130,7 @@ const Index = () => {
               <img 
                 src="/lovable-uploads/a44d8134-2342-431d-aaf8-18fe1829dc0a.png" 
                 alt="Service Design Methodology" 
-                className="max-w-full md:max-w-2xl" 
+                className="max-w-full md:max-w-xl" 
               />
             </div>
             

@@ -33,14 +33,14 @@ const BimboCaseStudies = () => {
         <AspectRatio ratio={3/4} className="w-full">
           <div className="bimbo-image-container w-full h-full">
             <img 
-              src="/lovable-uploads/84432e99-0eab-4a14-8d5d-b3e4db5f7ba7.png" 
+              src="/lovable-uploads/1265268c-8fb8-444d-9596-fd63b39230cb.png" 
               alt="Grupo Bimbo Connection Center" 
               className="object-cover w-full h-full"
             />
           </div>
         </AspectRatio>
         <div className="absolute inset-0 flex items-center justify-center">
-          <h3 className="text-xl md:text-3xl font-westmount text-center px-6 uppercase transition-transform duration-300 group-hover:scale-110 group-hover:font-bold" style={{ color: "hsl(var(--pastel-yellow))" }}>
+          <h3 className="text-lg md:text-2xl font-westmount text-center px-6 uppercase transition-transform duration-300 group-hover:scale-110 group-hover:font-bold text-black">
             7 years designing for an ever-evolving industry
           </h3>
         </div>
