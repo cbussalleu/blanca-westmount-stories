@@ -25,7 +25,7 @@ const BimboFeature = () => {
             </div>
           </div>
           
-          <div className="image-with-overlay order-1 md:order-2">
+          <div className="image-with-overlay rounded-lg overflow-hidden shadow-md order-1 md:order-2">
             <AspectRatio ratio={4/3} className="w-full">
               <img 
                 src="/lovable-uploads/62c5b772-9c99-41b3-b48e-83926e910229.png" 

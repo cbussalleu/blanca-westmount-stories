@@ -11,7 +11,7 @@ interface ImageHeroProps {
 const ImageHero = ({ imageSrc, title, description, aspectRatio = 16/9 }: ImageHeroProps) => {
   return (
     <section className="grid md:grid-cols-2 gap-8 py-16">
-      <div className="image-with-overlay">
+      <div className="image-with-overlay rounded-lg overflow-hidden shadow-md">
         <AspectRatio ratio={aspectRatio} className="w-full">
           <img 
             src={imageSrc} 
