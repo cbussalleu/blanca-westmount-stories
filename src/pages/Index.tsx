@@ -15,7 +15,7 @@ const projects = [
     description: "Designed a global omnichannel customer experience model capable of standardizing consumer and customer engagement while adapting to diverse market needs.",
     client: "Grupo Bimbo",
     slug: "connection-center",
-    imageUrl: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&q=80"
+    icon: "🌐"
   },
   {
     number: 2,
@@ -23,7 +23,7 @@ const projects = [
     description: "Transformed research insights into a functional CRM implementation with specialized modules for different departments across 17 countries.",
     client: "Grupo Bimbo",
     slug: "crm-service-design",
-    imageUrl: "https://images.unsplash.com/photo-1500673922987-e212871fec22?auto=format&fit=crop&q=80"
+    icon: "💼"
   },
   {
     number: 3,
@@ -31,7 +31,7 @@ const projects = [
     description: "Designed an integrated digital and physical service ecosystem for small businesses, connecting ordering systems, financial services, and additional revenue streams.",
     client: "Grupo Bimbo",
     slug: "t-conecta",
-    imageUrl: "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?auto=format&fit=crop&q=80"
+    icon: "🏪"
   }
 ];
 
@@ -42,7 +42,7 @@ const Index = () => {
       <main className="pt-20">
         <Hero 
           title="About Me"
-          description="As a Service Design Lead, I create innovative solutions that combine human empathy and technology, and that solve complex business challenges and deliver value to customers. I have over 10 years of experience in customer experience and strategic design. I work with a multidisciplinary team to apply a human-centered design approach and a system-thinking mindset to understand the needs, behaviors, and motivations of the users and the stakeholders, and to design feasible and desirable solutions. I have led and contributed to projects across various industries, such as food and beverage, finance, and government. I am passionate about exploring the opportunities and challenges in the food system, and I am interested in gathering insights from food system entrepreneurs or food-tech projects."
+          description="As a Service Design Lead with over 10 years of experience, I create innovative solutions that combine human empathy and technology to solve complex business challenges. I apply a human-centered design approach with a systems-thinking mindset to deliver value across food and beverage, finance, and government sectors."
           ctaText="View Portfolio"
           ctaLink="/portfolio"
           fullHeight

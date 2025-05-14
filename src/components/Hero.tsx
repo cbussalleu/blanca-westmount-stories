@@ -13,7 +13,7 @@ interface HeroProps {
 
 const Hero = ({ title, subtitle, description, ctaText, ctaLink, fullHeight = false }: HeroProps) => {
   return (
-    <section className={`flex items-center bg-white ${fullHeight ? 'min-h-screen' : 'py-20 md:py-32'}`}>
+    <section className={`flex items-center bg-white ${fullHeight ? 'min-h-[80vh]' : 'py-20 md:py-32'}`}>
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-3xl mx-auto text-center animate-fade-in">
           {subtitle && (

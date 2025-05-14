@@ -1,4 +1,3 @@
-
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, CheckCircle } from 'lucide-react';
 import Header from '../components/Header';
@@ -50,7 +49,7 @@ const ProjectDetail = () => {
           "Created continuous measurement system with feedback loops"
         ],
         tools: ["Miro", "Optimal Workshop", "Figma", "JIRA", "Salesforce"],
-        imageUrl: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&q=80"
+        icon: "🌐"
       },
       "crm-service-design": {
         title: "CRM Service Design & Implementation",
@@ -81,9 +80,9 @@ const ProjectDetail = () => {
           "Improved cross-team coordination"
         ],
         tools: ["Salesforce", "Figma", "InVision", "JIRA", "Confluence"],
-        imageUrl: "https://images.unsplash.com/photo-1500673922987-e212871fec22?auto=format&fit=crop&q=80"
+        icon: "💼"
       },
-      // Add more projects as needed
+      // Add more projects as needed with icons instead of imageUrls
     };
     
     return projects[slug || ""] || {
@@ -97,7 +96,7 @@ const ProjectDetail = () => {
       process: [],
       impact: [],
       tools: [],
-      imageUrl: ""
+      icon: "❓"
     };
   };
   
@@ -107,20 +106,18 @@ const ProjectDetail = () => {
     <div className="min-h-screen bg-white">
       <Header />
       <main className="pt-20">
-        {/* Hero Image */}
-        <div className="relative h-96 md:h-[500px]">
-          <div className="absolute inset-0 bg-black/50"></div>
-          <img 
-            src={project.imageUrl || "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&q=80"} 
-            alt={project.title} 
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 flex items-center">
-            <div className="container mx-auto px-4 md:px-6 text-white">
-              <div className="max-w-4xl">
-                <div className="mb-4 text-sm opacity-80 font-helvetica">{project.client}</div>
-                <h1 className="font-westmount text-4xl md:text-5xl mb-4">{project.title}</h1>
-              </div>
+        {/* Hero Section */}
+        <div className="bg-gray-50 py-16">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="flex items-center justify-center mb-8">
+              <div className="text-8xl">{project.icon}</div>
+            </div>
+            <div className="text-center max-w-4xl mx-auto">
+              <div className="mb-4 text-sm opacity-80 font-helvetica">{project.client}</div>
+              <h1 className="font-westmount text-4xl md:text-5xl mb-4">{project.title}</h1>
+              <p className="font-helvetica text-gray-700 max-w-2xl mx-auto">
+                {project.description}
+              </p>
             </div>
           </div>
         </div>

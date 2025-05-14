@@ -38,8 +38,8 @@ const GroupoBimboSection = () => {
         
         <div className="grid md:grid-cols-3 gap-8">
           {bimboProjects.map((project, index) => (
-            <div key={index} className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-              <div className="text-4xl mb-4">{project.icon}</div>
+            <div key={index} className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-all">
+              <div className="text-6xl mb-6 flex justify-center">{project.icon}</div>
               <h3 className="font-westmount text-xl mb-3">{project.title}</h3>
               <p className="font-helvetica text-gray-600 mb-4">{project.description}</p>
               <Link 
