@@ -119,7 +119,7 @@ const Index = () => {
           <div className="container-narrow">
             <div className="text-center mb-12">
               <h2 className="text-5xl font-westmount">MY METHODOLOGY</h2>
-              <p className="text-sm max-w-2xl mx-auto mt-8">
+              <p className="text-sm max-w-2xl mx-auto mt-8 text-base">
                 I <span className="text-[#8ab1a2]">tackle</span> a broad variety of 
                 disciplines in the <u>agile process</u>, 
                 of creating meaningful products
@@ -130,7 +130,7 @@ const Index = () => {
               <img 
                 src="/lovable-uploads/a44d8134-2342-431d-aaf8-18fe1829dc0a.png" 
                 alt="Service Design Methodology" 
-                className="max-w-full md:max-w-3xl" 
+                className="max-w-full md:max-w-2xl" 
               />
             </div>
             

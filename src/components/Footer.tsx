@@ -14,7 +14,7 @@ const Footer = () => {
             <div className="flex flex-col space-y-2 items-center">
               <a 
                 href="mailto:christian.bussalleu@gmail.com" 
-                className="text-base hover:opacity-70 transition-opacity"
+                className="text-base font-bold hover:opacity-70 transition-opacity"
               >
                 christian.bussalleu@gmail.com
               </a>
@@ -23,7 +23,6 @@ const Footer = () => {
           
           <div className="text-center md:text-right">
             <p className="text-sm">&copy; {new Date().getFullYear()} Christian Bussalleu</p>
-            <p className="text-xs mt-1">Service Design Portfolio</p>
           </div>
         </div>
       </div>
