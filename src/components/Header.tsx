@@ -24,39 +24,49 @@ const Header = () => {
   }, [scrolled]);
 
   return (
-    <header className={`fixed w-full top-0 z-30 transition-all duration-300 ${scrolled ? 'bg-white shadow-sm py-2' : 'bg-white/90 py-4'}`}>
-      <div className="container mx-auto px-4 md:px-6">
+    <header className={`fixed w-full top-0 z-30 transition-all duration-300 ${scrolled ? 'bg-background shadow-sm' : 'bg-background'}`}>
+      <div className="container-narrow py-6 border-b border-gray-200">
         <div className="flex justify-between items-center">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <img src="/lovable-uploads/e898d468-a0f6-4fab-9b9d-deb5d934e1d9.png" alt="Logo" className="h-12 w-auto" />
+            <img src="/lovable-uploads/e898d468-a0f6-4fab-9b9d-deb5d934e1d9.png" alt="Logo" className="h-8 w-auto" />
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
-            <Link to="/" className="text-black font-helvetica font-medium hover:text-gray-600 transition-colors">Home</Link>
-            <Link to="/portfolio" className="text-black font-helvetica font-medium hover:text-gray-600 transition-colors">Portfolio</Link>
-            <Link to="/bimbo-relationship" className="text-black font-helvetica font-medium hover:text-gray-600 transition-colors">Grupo Bimbo</Link>
-            <Link to="/methodology" className="text-black font-helvetica font-medium hover:text-gray-600 transition-colors">Methodology</Link>
-            <Link to="/contact" className="text-black font-helvetica font-medium hover:text-gray-600 transition-colors">Contact</Link>
-          </nav>
+          <div className="text-center flex-1">
+            <Link to="/" className="text-xl uppercase tracking-widest font-westmount">
+              Christian Bussalleu
+            </Link>
+          </div>
 
           {/* Mobile Menu Button */}
           <button onClick={toggleMenu} className="md:hidden text-black">
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
+          
+          {/* Desktop Navigation (hidden on mobile) */}
+          <nav className="hidden md:flex">
+            <button onClick={toggleMenu} className="text-black">
+              <Menu size={20} />
+            </button>
+          </nav>
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Menu Overlay */}
       {isMenuOpen && (
-        <div className="md:hidden bg-white absolute w-full animate-fade-in">
-          <nav className="container mx-auto px-4 py-4 flex flex-col space-y-4">
-            <Link to="/" className="text-black font-helvetica font-medium hover:text-gray-600 transition-colors" onClick={toggleMenu}>Home</Link>
-            <Link to="/portfolio" className="text-black font-helvetica font-medium hover:text-gray-600 transition-colors" onClick={toggleMenu}>Portfolio</Link>
-            <Link to="/bimbo-relationship" className="text-black font-helvetica font-medium hover:text-gray-600 transition-colors" onClick={toggleMenu}>Grupo Bimbo</Link>
-            <Link to="/methodology" className="text-black font-helvetica font-medium hover:text-gray-600 transition-colors" onClick={toggleMenu}>Methodology</Link>
-            <Link to="/contact" className="text-black font-helvetica font-medium hover:text-gray-600 transition-colors" onClick={toggleMenu}>Contact</Link>
+        <div className="fixed inset-0 bg-background z-40 animate-fade-in py-24">
+          <nav className="container-narrow flex flex-col space-y-8 text-center items-center">
+            <Link to="/" className="text-2xl font-westmount hover:opacity-70 transition-opacity" onClick={toggleMenu}>Home</Link>
+            <Link to="/portfolio" className="text-2xl font-westmount hover:opacity-70 transition-opacity" onClick={toggleMenu}>Portfolio</Link>
+            <Link to="/bimbo-relationship" className="text-2xl font-westmount hover:opacity-70 transition-opacity" onClick={toggleMenu}>Grupo Bimbo</Link>
+            <Link to="/methodology" className="text-2xl font-westmount hover:opacity-70 transition-opacity" onClick={toggleMenu}>Methodology</Link>
+            <Link to="/contact" className="text-2xl font-westmount hover:opacity-70 transition-opacity" onClick={toggleMenu}>Contact</Link>
+            <button 
+              className="absolute top-6 right-6 text-black" 
+              onClick={toggleMenu}
+            >
+              <X size={24} />
+            </button>
           </nav>
         </div>
       )}

@@ -37,9 +37,9 @@ const projects = [
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen">
       <Header />
-      <main className="pt-20">
+      <main className="pt-24">
         <Hero 
           title="About Me"
           description="As a Service Design Lead with over 10 years of experience, I create innovative solutions that combine human empathy and technology to solve complex business challenges. I apply a human-centered design approach with a systems-thinking mindset to deliver value across food and beverage, finance, and government sectors."
@@ -48,29 +48,102 @@ const Index = () => {
           fullHeight
         />
         
-        <GroupoBimboSection />
+        <div className="section-divider" />
         
-        <section className="py-16 md:py-24 bg-white">
-          <div className="container mx-auto px-4 md:px-6">
-            <div className="flex justify-between items-end mb-10">
-              <h2 className="font-westmount text-3xl">Featured Projects</h2>
-              <Link 
-                to="/portfolio" 
-                className="flex items-center font-helvetica text-sm hover:text-gray-600 transition-colors"
-              >
-                View All Projects <ArrowRight size={16} className="ml-1" />
-              </Link>
-            </div>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {projects.map((project) => (
-                <ProjectCard key={project.slug} {...project} />
-              ))}
+        <section className="py-16">
+          <div className="container-narrow">
+            <div className="space-y-12">
+              <div className="text-center">
+                <h2 className="text-2xl mb-8">Grupo Bimbo and I</h2>
+                <p className="text-sm max-w-2xl mx-auto">
+                  For the past 7 years, I have led Grupo Bimbo's largest customer experience 
+                  transformation initiative, establishing a new operational model for 
+                  customer engagement across global markets.
+                </p>
+                <div className="mt-6">
+                  <Link 
+                    to="/bimbo-relationship" 
+                    className="inline-flex items-center text-sm border-b border-black pb-1 hover:opacity-70 transition-opacity"
+                  >
+                    Learn More <ArrowRight size={14} className="ml-1" />
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         </section>
         
-        <MethodologySection />
+        <div className="section-divider" />
+        
+        <section className="py-16">
+          <div className="container-narrow">
+            <div className="text-center mb-12">
+              <h2 className="text-2xl">Featured Projects</h2>
+            </div>
+            
+            <div className="grid md:grid-cols-3 gap-12">
+              {projects.map((project) => (
+                <ProjectCard key={project.slug} {...project} />
+              ))}
+            </div>
+            
+            <div className="text-center mt-12">
+              <Link 
+                to="/portfolio" 
+                className="inline-flex items-center text-sm border-b border-black pb-1 hover:opacity-70 transition-opacity"
+              >
+                View All Projects <ArrowRight size={14} className="ml-1" />
+              </Link>
+            </div>
+          </div>
+        </section>
+        
+        <div className="section-divider" />
+        
+        <section className="py-16">
+          <div className="container-narrow">
+            <div className="text-center mb-12">
+              <h2 className="text-2xl">My Methodology</h2>
+              <p className="text-sm max-w-2xl mx-auto mt-4">
+                Experience cannot be designed, only enabled. This principle guides my systematic 
+                approach to service design, recognizing the intersection between human and functional systems.
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-2 gap-12 mt-12">
+              <div className="space-y-4">
+                <h3 className="text-lg">Human Systems</h3>
+                <ul className="text-sm space-y-2">
+                  <li>• Behaviors</li>
+                  <li>• Culture</li>
+                  <li>• Relationships</li>
+                  <li>• Perceptions</li>
+                  <li>• Expectations</li>
+                </ul>
+              </div>
+              
+              <div className="space-y-4">
+                <h3 className="text-lg">Functional Systems</h3>
+                <ul className="text-sm space-y-2">
+                  <li>• Processes</li>
+                  <li>• Technology</li>
+                  <li>• Metrics</li>
+                  <li>• Architecture</li>
+                  <li>• Operations</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div className="text-center mt-12">
+              <Link 
+                to="/methodology" 
+                className="inline-flex items-center text-sm border-b border-black pb-1 hover:opacity-70 transition-opacity"
+              >
+                Learn More <ArrowRight size={14} className="ml-1" />
+              </Link>
+            </div>
+          </div>
+        </section>
       </main>
       <Footer />
     </div>

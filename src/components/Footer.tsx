@@ -3,28 +3,27 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
-    <footer className="bg-white border-t border-gray-100 py-12">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
-          <div className="mb-4 md:mb-0">
-            <Link to="/" className="inline-block">
-              <img src="/lovable-uploads/e898d468-a0f6-4fab-9b9d-deb5d934e1d9.png" alt="Logo" className="h-12 w-auto" />
-            </Link>
+    <footer className="border-t border-gray-200 py-12">
+      <div className="container-narrow">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="flex justify-center md:justify-start">
+            <img src="/lovable-uploads/e898d468-a0f6-4fab-9b9d-deb5d934e1d9.png" alt="Logo" className="h-8 w-auto" />
           </div>
           
-          <nav className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-8">
-            <Link to="/" className="text-black font-helvetica hover:text-gray-600 transition-colors">Home</Link>
-            <Link to="/portfolio" className="text-black font-helvetica hover:text-gray-600 transition-colors">Portfolio</Link>
-            <Link to="/bimbo-relationship" className="text-black font-helvetica hover:text-gray-600 transition-colors">Grupo Bimbo</Link>
-            <Link to="/methodology" className="text-black font-helvetica hover:text-gray-600 transition-colors">Methodology</Link>
-            <Link to="/contact" className="text-black font-helvetica hover:text-gray-600 transition-colors">Contact</Link>
-          </nav>
-        </div>
-        
-        <div className="mt-8 border-t border-gray-100 pt-8">
-          <p className="text-sm text-gray-600 font-helvetica text-center">
-            © {new Date().getFullYear()} Christian Bussalleu. All rights reserved.
-          </p>
+          <div className="text-center space-y-4">
+            <p className="text-sm uppercase tracking-wide">Navigation</p>
+            <nav className="flex flex-col space-y-2">
+              <Link to="/" className="text-sm hover:opacity-70 transition-opacity">Home</Link>
+              <Link to="/portfolio" className="text-sm hover:opacity-70 transition-opacity">Portfolio</Link>
+              <Link to="/methodology" className="text-sm hover:opacity-70 transition-opacity">Methodology</Link>
+              <Link to="/contact" className="text-sm hover:opacity-70 transition-opacity">Contact</Link>
+            </nav>
+          </div>
+          
+          <div className="text-center md:text-right">
+            <p className="text-sm">&copy; {new Date().getFullYear()} Christian Bussalleu</p>
+            <p className="text-xs mt-1">Service Design Portfolio</p>
+          </div>
         </div>
       </div>
     </footer>

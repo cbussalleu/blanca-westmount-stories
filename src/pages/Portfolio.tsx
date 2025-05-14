@@ -81,18 +81,18 @@ const projects = [
 
 const Portfolio = () => {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen">
       <Header />
-      <main className="pt-20">
+      <main className="pt-24">
         <Hero 
           title="Portfolio"
           subtitle="SERVICE DESIGN PROJECTS"
           description="A collection of my most significant service design projects across various industries and global markets."
         />
         
-        <section className="py-16 md:py-24 bg-white">
-          <div className="container mx-auto px-4 md:px-6">
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <section className="py-16">
+          <div className="container-narrow">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
               {projects.map((project) => (
                 <ProjectCard key={project.slug} {...project} />
               ))}

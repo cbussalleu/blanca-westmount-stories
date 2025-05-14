@@ -13,30 +13,32 @@ interface HeroProps {
 
 const Hero = ({ title, subtitle, description, ctaText, ctaLink, fullHeight = false }: HeroProps) => {
   return (
-    <section className={`flex items-center bg-white ${fullHeight ? 'min-h-[80vh]' : 'py-20 md:py-32'}`}>
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="max-w-3xl mx-auto text-center animate-fade-in">
+    <section className={`flex items-center ${fullHeight ? 'min-h-[70vh]' : 'py-20'}`}>
+      <div className="container-narrow">
+        <div className="max-w-2xl mx-auto text-center space-y-6">
           {subtitle && (
-            <span className="block mb-3 text-gray-500 font-helvetica">{subtitle}</span>
+            <span className="uppercase text-xs tracking-widest">{subtitle}</span>
           )}
           
-          <h1 className="font-westmount text-4xl md:text-5xl lg:text-6xl mb-6">
+          <h1 className="text-3xl md:text-4xl">
             {title}
           </h1>
           
           {description && (
-            <p className="text-gray-600 font-helvetica text-lg mb-8 leading-relaxed">
+            <p className="text-sm md:text-base leading-relaxed">
               {description}
             </p>
           )}
           
           {ctaText && ctaLink && (
-            <Link 
-              to={ctaLink} 
-              className="inline-flex items-center px-6 py-3 border border-black rounded-md font-helvetica hover:bg-black hover:text-white transition-colors"
-            >
-              {ctaText} <ArrowRight size={16} className="ml-2" />
-            </Link>
+            <div className="pt-4">
+              <Link 
+                to={ctaLink} 
+                className="inline-flex items-center text-sm border-b border-black pb-1 hover:opacity-70 transition-opacity"
+              >
+                {ctaText} <ArrowRight size={14} className="ml-1" />
+              </Link>
+            </div>
           )}
         </div>
       </div>
