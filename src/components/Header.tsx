@@ -24,24 +24,26 @@ const Header = () => {
   }, [scrolled]);
 
   return (
-    <header className={`fixed w-full top-0 z-30 transition-all duration-300 ${scrolled ? 'bg-[hsl(var(--pastel-yellow))] shadow-sm' : 'bg-[hsl(var(--pastel-yellow))]'}`}>
+    <header className={`fixed w-full top-0 z-30 transition-all duration-300 ${scrolled ? 'bg-[hsl(var(--pastel-yellow))]' : 'bg-[hsl(var(--pastel-yellow))]'}`}>
       <div className="container-narrow py-6 border-b border-gray-200">
         <div className="flex justify-between items-center">
-          {/* Logo - sin sombra */}
+          {/* Logo - sin fondo */}
           <Link to="/" className="flex items-center space-x-2">
-            <img 
-              src="/lovable-uploads/e898d468-a0f6-4fab-9b9d-deb5d934e1d9.png" 
-              alt="Logo" 
-              className="h-8 w-auto logo-transparent" 
-            />
+            <div className="h-8 w-auto">
+              <svg viewBox="0 0 200 200" className="h-8 w-auto">
+                <path d="M100 0C44.8 0 0 44.8 0 100s44.8 100 100 100 100-44.8 100-100S155.2 0 100 0zm0 180c-44.2 0-80-35.8-80-80s35.8-80 80-80 80 35.8 80 80-35.8 80-80 80z" fill="currentColor"/>
+                <path d="M110 40H90v120h20V40z" fill="currentColor"/>
+                <path d="M160 90H40v20h120V90z" fill="currentColor"/>
+              </svg>
+            </div>
           </Link>
 
           <div className="text-center flex-1">
             <Link to="/" className="text-xl uppercase tracking-widest font-westmount inline-block">
               <img 
-                src="/lovable-uploads/9f9fc7a2-b36d-4e65-b061-0337b3d21ad6.png" 
+                src="/lovable-uploads/f49b31cc-d3a2-424d-9abd-a2c4fd8d5992.png" 
                 alt="Christian Bussalleu" 
-                className="h-8 w-auto mx-auto logo-transparent" 
+                className="h-8 w-auto mx-auto"
               />
             </Link>
           </div>
@@ -62,7 +64,7 @@ const Header = () => {
 
       {/* Menu Overlay */}
       {isMenuOpen && (
-        <div className="fixed inset-0 bg-white z-40 animate-fade-in py-24">
+        <div className="fixed inset-0 bg-[hsl(var(--pastel-yellow))] z-40 animate-fade-in py-24">
           <nav className="container-narrow flex flex-col space-y-8 text-center items-center">
             <Link to="/" className="text-2xl font-westmount hover:opacity-70 transition-opacity" onClick={toggleMenu}>Home</Link>
             <Link to="/portfolio" className="text-2xl font-westmount hover:opacity-70 transition-opacity" onClick={toggleMenu}>Portfolio</Link>
