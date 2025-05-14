@@ -11,7 +11,7 @@ const projects = [
     description: "Designed a global omnichannel customer experience model capable of standardizing consumer and customer engagement while adapting to diverse market needs.",
     client: "Grupo Bimbo",
     slug: "connection-center",
-    icon: "🌐"
+    imageSrc: "https://images.unsplash.com/photo-1565767292670-bbc01d6ce4a7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
   },
   {
     number: 2,
@@ -19,7 +19,7 @@ const projects = [
     description: "Transformed research insights into a functional CRM implementation with specialized modules for different departments across 17 countries.",
     client: "Grupo Bimbo",
     slug: "crm-service-design",
-    icon: "💼"
+    imageSrc: "https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
   },
   {
     number: 3,
@@ -27,7 +27,7 @@ const projects = [
     description: "Designed an integrated digital and physical service ecosystem for small businesses, connecting ordering systems, financial services, and additional revenue streams.",
     client: "Grupo Bimbo",
     slug: "t-conecta",
-    icon: "🏪"
+    imageSrc: "https://images.unsplash.com/photo-1554224155-1696413565d3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
   },
   {
     number: 4,
@@ -35,7 +35,7 @@ const projects = [
     description: "Designed and implemented a sustainable model for continuous improvement and innovation across the global Connection Center ecosystem.",
     client: "Grupo Bimbo",
     slug: "continuous-improvement",
-    icon: "🔄"
+    imageSrc: "https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
   },
   {
     number: 5,
@@ -43,7 +43,7 @@ const projects = [
     description: "Transformed traditional insurance sales into digital channel, being the first key project in La Positiva's transformative roadmap.",
     client: "La Positiva Insurance",
     slug: "digital-sales-transformation",
-    icon: "📱"
+    imageSrc: "https://images.unsplash.com/photo-1556742111-a301076d9d18?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
   },
   {
     number: 6,
@@ -51,7 +51,7 @@ const projects = [
     description: "Designed an operational model for producing content at global scale for Nestlé's premium coffee brands, balancing global consistency with local relevance.",
     client: "Nestlé",
     slug: "bartista",
-    icon: "☕"
+    imageSrc: "https://images.unsplash.com/photo-1511920170033-f8396924c348?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
   },
   {
     number: 7,
@@ -59,7 +59,7 @@ const projects = [
     description: "Development of self-assessment tool and roadmap planning service for public institutions to enhance understanding of innovation capabilities.",
     client: "Peruvian Government",
     slug: "innovation-maturity-index",
-    icon: "📊"
+    imageSrc: "https://images.unsplash.com/photo-1584941705321-d883d8b6a3c9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
   },
   {
     number: 8,
@@ -67,7 +67,7 @@ const projects = [
     description: "Redesign of telephone sales process and training program for Meta advertisers, resulting in improved conversion rates and agent performance.",
     client: "Facebook",
     slug: "meta-sales-optimization",
-    icon: "📞"
+    imageSrc: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
   },
   {
     number: 9,
@@ -75,13 +75,13 @@ const projects = [
     description: "Redesigned loyalty program for credit card holders to drive card usage and retention with optimized points accrual system.",
     client: "BBVA",
     slug: "loyalty-program-redesign",
-    icon: "💳"
+    imageSrc: "https://images.unsplash.com/photo-1589758438368-0ad531db3366?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
   }
 ];
 
 const Portfolio = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
       <Header />
       <main className="pt-24">
         <Hero 

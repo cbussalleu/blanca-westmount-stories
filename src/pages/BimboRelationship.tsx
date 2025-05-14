@@ -3,10 +3,11 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, CheckCircle } from 'lucide-react';
+import ImageHero from '../components/ImageHero';
 
 const BimboRelationship = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
       <Header />
       <main className="pt-24">
         <section className="py-12">
@@ -17,15 +18,18 @@ const BimboRelationship = () => {
               </Link>
             </div>
             
-            <div className="max-w-2xl mx-auto">
-              <h1 className="text-3xl mb-8">Grupo Bimbo and I</h1>
-              
+            <ImageHero
+              imageSrc="/lovable-uploads/62c5b772-9c99-41b3-b48e-83926e910229.png"
+              title="Grupo Bimbo and I"
+              description="For the past 7 years, I have led the design and implementation processes for Grupo Bimbo's largest customer experience transformation initiative."
+              aspectRatio={16/9}
+            />
+            
+            <div className="max-w-2xl mx-auto mt-12">
               <div className="space-y-6 text-sm">
                 <p>
-                  For the past 7 years, I have led the design and implementation processes for Grupo Bimbo's largest 
-                  customer experience transformation effort of the last decade. As the world's largest bread manufacturer 
-                  with presence in over 33 countries, this strategic initiative, known as the Connection Center, establishes 
-                  a new operational model for customer and consumer engagement across global markets.
+                  As the world's largest bread manufacturer with presence in over 33 countries, this strategic initiative, 
+                  known as the Connection Center, establishes a new operational model for customer and consumer engagement across global markets.
                 </p>
                 
                 <p>

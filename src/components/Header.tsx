@@ -24,17 +24,17 @@ const Header = () => {
   }, [scrolled]);
 
   return (
-    <header className={`fixed w-full top-0 z-30 transition-all duration-300 ${scrolled ? 'bg-background shadow-sm' : 'bg-background'}`}>
+    <header className={`fixed w-full top-0 z-30 transition-all duration-300 ${scrolled ? 'bg-white shadow-sm' : 'bg-white'}`}>
       <div className="container-narrow py-6 border-b border-gray-200">
         <div className="flex justify-between items-center">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <img src="/lovable-uploads/e898d468-a0f6-4fab-9b9d-deb5d934e1d9.png" alt="Logo" className="h-8 w-auto" />
+            <span className="sr-only">Christian Bussalleu</span>
           </Link>
 
           <div className="text-center flex-1">
-            <Link to="/" className="text-xl uppercase tracking-widest font-westmount">
-              Christian Bussalleu
+            <Link to="/" className="text-xl uppercase tracking-widest font-westmount inline-block">
+              <img src="/lovable-uploads/9f9fc7a2-b36d-4e65-b061-0337b3d21ad6.png" alt="Christian Bussalleu" className="h-8 w-auto mx-auto" />
             </Link>
           </div>
 
@@ -54,7 +54,7 @@ const Header = () => {
 
       {/* Menu Overlay */}
       {isMenuOpen && (
-        <div className="fixed inset-0 bg-background z-40 animate-fade-in py-24">
+        <div className="fixed inset-0 bg-white z-40 animate-fade-in py-24">
           <nav className="container-narrow flex flex-col space-y-8 text-center items-center">
             <Link to="/" className="text-2xl font-westmount hover:opacity-70 transition-opacity" onClick={toggleMenu}>Home</Link>
             <Link to="/portfolio" className="text-2xl font-westmount hover:opacity-70 transition-opacity" onClick={toggleMenu}>Portfolio</Link>

@@ -1,10 +1,11 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 350 100% 97%;
+    --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
 
     --card: 0 0% 100%;
@@ -42,6 +43,8 @@
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    --image-overlay: 48 100% 85%;
   }
 
   .dark {
@@ -89,7 +92,7 @@
   }
 
   body {
-    @apply bg-background text-foreground font-helvetica;
+    @apply bg-white text-foreground font-helvetica;
     letter-spacing: 0.01em;
   }
   
@@ -106,3 +109,35 @@
 .section-divider {
   @apply w-full h-px bg-gray-200 my-12;
 }
+
+.image-with-overlay {
+  position: relative;
+}
+
+.image-with-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: hsla(var(--image-overlay) / 0.65);
+  z-index: 1;
+}
+
+.image-with-overlay img {
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.aspect-portrait {
+  aspect-ratio: 3/4;
+}
+
+.aspect-landscape {
+  aspect-ratio: 4/3;
+}
+
