@@ -29,7 +29,7 @@ const Header = () => {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <span className="sr-only">Christian Bussalleu</span>
+            <img src="/lovable-uploads/e898d468-a0f6-4fab-9b9d-deb5d934e1d9.png" alt="Logo" className="h-8 w-auto" />
           </Link>
 
           <div className="text-center flex-1">

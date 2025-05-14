@@ -45,6 +45,9 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
     
     --image-overlay: 48 100% 85%;
+    
+    /* Pastel Yellow Background */
+    --pastel-yellow: 48 100% 97%;
   }
 
   .dark {
@@ -92,7 +95,7 @@
   }
 
   body {
-    @apply bg-white text-foreground font-helvetica;
+    @apply bg-[hsl(var(--pastel-yellow))] text-foreground font-helvetica;
     letter-spacing: 0.01em;
   }
   
