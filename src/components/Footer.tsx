@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="container-narrow">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="flex justify-center md:justify-start">
-            <img src="/lovable-uploads/e898d468-a0f6-4fab-9b9d-deb5d934e1d9.png" alt="Logo" className="h-8 w-auto" />
+            <img src="/lovable-uploads/69552967-182b-43cb-9a77-04a4d046299a.png" alt="Logo" className="h-8 w-auto" />
           </div>
           
           <div className="text-center space-y-4">

@@ -29,13 +29,11 @@ const Header = () => {
         <div className="flex justify-between items-center">
           {/* Logo - sin fondo */}
           <Link to="/" className="flex items-center space-x-2">
-            <div className="h-8 w-auto">
-              <svg viewBox="0 0 200 200" className="h-8 w-auto">
-                <path d="M100 0C44.8 0 0 44.8 0 100s44.8 100 100 100 100-44.8 100-100S155.2 0 100 0zm0 180c-44.2 0-80-35.8-80-80s35.8-80 80-80 80 35.8 80 80-35.8 80-80 80z" fill="currentColor"/>
-                <path d="M110 40H90v120h20V40z" fill="currentColor"/>
-                <path d="M160 90H40v20h120V90z" fill="currentColor"/>
-              </svg>
-            </div>
+            <img 
+              src="/lovable-uploads/69552967-182b-43cb-9a77-04a4d046299a.png" 
+              alt="Logo" 
+              className="h-8 w-auto"
+            />
           </Link>
 
           <div className="text-center flex-1">
