@@ -39,8 +39,8 @@ const Header = () => {
           <div className="text-center flex-1">
             <Link to="/" className="text-xl uppercase tracking-widest font-westmount inline-block">
               <img 
-                src="/lovable-uploads/f49b31cc-d3a2-424d-9abd-a2c4fd8d5992.png" 
-                alt="Christian Bussalleu" 
+                src="/lovable-uploads/6881b366-a537-4790-bdd8-0d3a6355cb7b.png" 
+                alt="No Silver Bullets" 
                 className="h-8 w-auto mx-auto"
               />
             </Link>
