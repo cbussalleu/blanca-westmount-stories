@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -46,8 +45,8 @@
     
     --image-overlay: 48 100% 85%;
     
-    /* Pastel Yellow Background */
-    --pastel-yellow: 48 100% 97%;
+    /* Pastel Yellow Background - slightly more intense for better visibility */
+    --pastel-yellow: 48 100% 95%;
   }
 
   .dark {
@@ -99,6 +98,10 @@
     letter-spacing: 0.01em;
   }
   
+  html {
+    @apply bg-[hsl(var(--pastel-yellow))];
+  }
+  
   h1, h2, h3, h4, h5, h6 {
     @apply font-westmount font-normal;
     letter-spacing: -0.02em;
@@ -143,4 +146,3 @@
 .aspect-landscape {
   aspect-ratio: 4/3;
 }
-

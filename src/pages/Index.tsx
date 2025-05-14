@@ -37,7 +37,7 @@ const projects = [
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[hsl(var(--pastel-yellow))]">
       <Header />
       <main className="pt-24">
         <div className="container-narrow">
