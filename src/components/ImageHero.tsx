@@ -20,7 +20,7 @@ const ImageHero = ({ imageSrc, title, description, aspectRatio = 16/9 }: ImageHe
               className="object-cover"
             />
           </AspectRatio>
-          <p className="text-xs text-center mt-2 text-gray-600">Estilo actual: Escala de grises parcial (40%)</p>
+          <p className="text-xs text-center mt-2 text-gray-600">Estilo actual: Escala de grises completa con menos contraste</p>
         </div>
         
         <div className="flex flex-col justify-center space-y-4">

@@ -27,14 +27,24 @@ const Header = () => {
     <header className={`fixed w-full top-0 z-30 transition-all duration-300 ${scrolled ? 'bg-white shadow-sm' : 'bg-white'}`}>
       <div className="container-narrow py-6 border-b border-gray-200">
         <div className="flex justify-between items-center">
-          {/* Logo */}
+          {/* Logo - Ahora con imagen sin fondo */}
           <Link to="/" className="flex items-center space-x-2">
-            <img src="/lovable-uploads/e898d468-a0f6-4fab-9b9d-deb5d934e1d9.png" alt="Logo" className="h-8 w-auto" />
+            <img 
+              src="/lovable-uploads/e898d468-a0f6-4fab-9b9d-deb5d934e1d9.png" 
+              alt="Logo" 
+              className="h-8 w-auto logo-transparent" 
+              style={{filter: "drop-shadow(0px 1px 2px rgba(0,0,0,0.1))"}}
+            />
           </Link>
 
           <div className="text-center flex-1">
             <Link to="/" className="text-xl uppercase tracking-widest font-westmount inline-block">
-              <img src="/lovable-uploads/9f9fc7a2-b36d-4e65-b061-0337b3d21ad6.png" alt="Christian Bussalleu" className="h-8 w-auto mx-auto" />
+              <img 
+                src="/lovable-uploads/9f9fc7a2-b36d-4e65-b061-0337b3d21ad6.png" 
+                alt="Christian Bussalleu" 
+                className="h-8 w-auto mx-auto logo-transparent" 
+                style={{filter: "drop-shadow(0px 1px 2px rgba(0,0,0,0.1))"}}
+              />
             </Link>
           </div>
 

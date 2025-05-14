@@ -117,7 +117,7 @@
   @apply w-full h-px bg-gray-200 my-12;
 }
 
-/* Base image overlay style - the current one */
+/* IMPORTANTE: Reemplazamos el image-with-overlay con la configuración de la opción 2 (image-blend-soft) */
 .image-with-overlay {
   position: relative;
   overflow: hidden;
@@ -141,7 +141,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: grayscale(0.4) contrast(1.4) brightness(0.85);
+  filter: grayscale(1) contrast(1.1) brightness(0.9);
   transition: transform 0.5s ease;
 }
 
@@ -149,6 +149,7 @@
   transform: scale(1.03);
 }
 
+/* Mantenemos las opciones alternativas para la página de demostración */
 /* Option 1: Full grayscale with current contrast */
 .image-blend-grayscale {
   position: relative;
@@ -251,4 +252,10 @@
 
 .aspect-landscape {
   aspect-ratio: 4/3;
+}
+
+/* Estilo para imágenes sin fondo en el navbar */
+.logo-transparent {
+  max-height: 100%;
+  width: auto;
 }
