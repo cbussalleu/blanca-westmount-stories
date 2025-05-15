@@ -37,13 +37,13 @@ const Header = () => {
             <img 
               src="/lovable-uploads/69552967-182b-43cb-9a77-04a4d046299a.png" 
               alt="Logo" 
-              className="h-8 w-auto"
+              className="h-6 sm:h-7 md:h-8 w-auto transition-all"
             />
           </Link>
 
           <div className="text-center flex-1">
             <Link to="/" className="text-xl uppercase tracking-widest inline-block">
-              <span className="text-2.8xl font-['westmount-outline']">
+              <span className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-['westmount-outline'] transition-all">
                 NO SILVER BULLETS
               </span>
             </Link>
