@@ -10,7 +10,7 @@ const Methodology = () => {
         <section className="py-16">
           <div className="container-narrow">
             <div className="text-center mb-16">
-              <h1 className="text-5xl font-westmount">METHODOLOGY</h1>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-westmount">METHODOLOGY</h1>
               <p className="text-sm max-w-2xl mx-auto mt-8">
                 I <span className="text-[#8ab1a2]">tackle</span> a broad variety of 
                 disciplines in the <u>agile process</u>, 
@@ -23,7 +23,7 @@ const Methodology = () => {
                 <img 
                   src="/lovable-uploads/a44d8134-2342-431d-aaf8-18fe1829dc0a.png" 
                   alt="Service Design Methodology" 
-                  className="max-w-full"
+                  className="w-[85%] sm:w-[82%] md:w-[80%] lg:w-[75%] transition-all"
                 />
               </div>
             </div>
