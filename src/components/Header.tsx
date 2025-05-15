@@ -43,7 +43,7 @@ const Header = () => {
 
           <div className="text-center flex-1">
             <Link to="/" className="text-xl uppercase tracking-widest inline-block">
-              <span className="text-2xl font-['westmount-outline']">
+              <span className="text-2.8xl font-['westmount-outline']">
                 NO SILVER BULLETS
               </span>
             </Link>
