@@ -1,10 +1,16 @@
 
+import { useEffect } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 const Methodology = () => {
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-[hsl(var(--pastel-yellow))]">
       <Header />
       <main className="pt-24">
         <section className="py-16">
@@ -23,7 +29,7 @@ const Methodology = () => {
                 <img 
                   src="/lovable-uploads/a44d8134-2342-431d-aaf8-18fe1829dc0a.png" 
                   alt="Service Design Methodology" 
-                  className="w-[85%] sm:w-[82%] md:w-[80%] lg:w-[75%] transition-all"
+                  className="w-[80%] sm:w-[77%] md:w-[75%] lg:w-[70%] transition-all"
                 />
               </div>
             </div>

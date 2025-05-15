@@ -1,4 +1,3 @@
-
 import { useEffect, useRef } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -19,11 +18,11 @@ const projects = [
   },
   {
     number: 2,
-    title: "Digital Transformation Strategy",
-    description: "Led strategic planning for digital service transformation across multiple government departments.",
-    client: "Secretaría de Gobierno",
-    slug: "government-digital-transformation",
-    imageSrc: "https://images.unsplash.com/photo-1569407411836-49d8177f1bf4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+    title: "BARTISTA - Global Coffee Content Production Model",
+    description: "Designed an operational model for producing content at global scale for Nestlé's premium coffee brands, balancing global consistency with local relevance.",
+    client: "Nestlé",
+    slug: "bartista",
+    imageSrc: "https://images.unsplash.com/photo-1511920170033-f8396924c348?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
   },
   {
     number: 3,
@@ -42,6 +41,11 @@ const Index = () => {
     projects: useRef(null),
     methodology: useRef(null)
   };
+
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="min-h-screen bg-[hsl(var(--pastel-yellow))]">

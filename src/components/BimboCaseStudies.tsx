@@ -18,11 +18,6 @@ const bimboCases = [
     title: "Continuous Improvement & Innovation Framework",
     description: "Designed and implemented a sustainable model for continuous improvement and innovation across the global Connection Center ecosystem.",
     slug: "continuous-improvement",
-  },
-  {
-    title: "Global Adoption Strategy",
-    description: "Created a phased implementation approach that ensured successful adoption across diverse markets and cultures.",
-    slug: "global-adoption",
   }
 ];
 

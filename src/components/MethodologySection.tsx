@@ -18,7 +18,7 @@ const MethodologySection = () => {
             <img 
               src="/lovable-uploads/472e4aed-29ea-4e3d-a5b2-e83280e3be88.png" 
               alt="Service Design Methodology" 
-              className="w-[60%] sm:w-[58%] md:w-[55%] lg:w-[52%] transition-all" /* Reduced size by 15% with subtle responsive adjustments */
+              className="w-[57%] sm:w-[55%] md:w-[52%] lg:w-[49%] transition-all" /* Reduced size by 5% */
             />
           </div>
           
