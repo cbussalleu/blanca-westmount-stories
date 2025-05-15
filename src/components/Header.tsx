@@ -43,7 +43,7 @@ const Header = () => {
 
           <div className="text-center flex-1">
             <Link to="/" className="text-xl uppercase tracking-widest inline-block">
-              <span style={{ fontFamily: 'westmount-outline' }} className="text-2xl">
+              <span className="text-2xl font-['westmount-outline']">
                 NO SILVER BULLETS
               </span>
             </Link>
