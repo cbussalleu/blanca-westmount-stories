@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { Menu, X, Mail, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -7,7 +8,6 @@ const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
-  const [contactHovered, setContactHovered] = useState(false);
   
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   
@@ -84,84 +84,14 @@ const Header = () => {
             <Link to="/bimbo-relationship" className="text-2xl font-westmount hover:opacity-70 transition-opacity" onClick={toggleMenu}>Grupo Bimbo</Link>
             <Link to="/methodology" className="text-2xl font-westmount hover:opacity-70 transition-opacity" onClick={toggleMenu}>Methodology</Link>
             
-            {/* Contact Link with Enhanced Hover Effect */}
-            <div className="relative group w-full">
-              {/* Mobile - Contact Link */}
-              <Link 
-                to="/contact" 
-                className="text-2xl font-westmount hover:opacity-70 transition-opacity block sm:hidden" 
-                onClick={toggleMenu}
-              >
-                Contact
-              </Link>
-              
-              {/* Desktop version with hover effect */}
-              <div 
-                className="text-2xl font-westmount transition-opacity hidden md:block cursor-pointer relative z-20 text-center"
-                onMouseEnter={() => setContactHovered(true)}
-                onMouseLeave={() => setContactHovered(false)}
-              >
-                Contact
-              </div>
-              
-              {/* Mobile - Contact options (visible directly instead of Contact) */}
-              <div className="hidden sm:flex md:hidden justify-center w-full gap-8">
-                <a 
-                  href="mailto:christian.bussalleu@gmail.com" 
-                  className="text-2xl font-westmount hover:opacity-70 transition-opacity"
-                  onClick={toggleMenu}
-                >
-                  Email Me
-                </a>
-                <a 
-                  href="tel:+34626557807" 
-                  className="text-2xl font-westmount hover:opacity-70 transition-opacity"
-                  onClick={toggleMenu}
-                >
-                  Call Me
-                </a>
-              </div>
-              
-              {/* Full-width animated black overlay for desktop */}
-              <div 
-                className={`fixed left-0 w-full bg-black transition-all origin-top duration-300 ${
-                  contactHovered ? 'opacity-100 scale-y-100' : 'opacity-0 scale-y-0'
-                } z-10 h-16 flex items-center justify-center gap-24`}
-                style={{
-                  position: 'absolute',
-                  top: '0',
-                  transformOrigin: 'top',
-                  pointerEvents: contactHovered ? 'auto' : 'none'
-                }}
-              >
-                <a 
-                  href="mailto:christian.bussalleu@gmail.com" 
-                  className="text-[hsl(var(--pastel-yellow))] font-westmount text-sm tracking-widest"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    toggleMenu();
-                  }}
-                >
-                  <span className="flex items-center gap-2">
-                    <Mail size={16} />
-                    EMAIL ME
-                  </span>
-                </a>
-                <a 
-                  href="tel:+34626557807" 
-                  className="text-[hsl(var(--pastel-yellow))] font-westmount text-sm tracking-widest"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    toggleMenu();
-                  }}
-                >
-                  <span className="flex items-center gap-2">
-                    <Phone size={16} />
-                    CALL ME
-                  </span>
-                </a>
-              </div>
-            </div>
+            {/* Email Me link replacing Contact */}
+            <a 
+              href="mailto:christian.bussalleu@gmail.com" 
+              className="text-2xl font-westmount hover:opacity-70 transition-opacity"
+              onClick={openEmail}
+            >
+              Email Me
+            </a>
             
             <button 
               className="absolute top-6 right-6 text-black" 
