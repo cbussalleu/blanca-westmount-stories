@@ -4,6 +4,8 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Hero from '../components/Hero';
 import ProjectCard from '../components/ProjectCard';
+import { Link } from 'react-router-dom';
+import { ArrowLeft } from 'lucide-react';
 
 const projects = [
   {
@@ -90,6 +92,14 @@ const Portfolio = () => {
     <div className="min-h-screen bg-[hsl(var(--pastel-yellow))]">
       <Header />
       <main className="pt-24">
+        <div className="container-narrow">
+          <div className="mb-8">
+            <Link to="/" className="inline-flex items-center text-xs hover:opacity-70 transition-opacity">
+              <ArrowLeft size={14} className="mr-1" /> Back to Home
+            </Link>
+          </div>
+        </div>
+        
         <Hero 
           title="Portfolio"
           subtitle="SERVICE DESIGN PROJECTS"

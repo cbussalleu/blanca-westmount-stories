@@ -2,6 +2,8 @@
 import { useEffect } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { Link } from 'react-router-dom';
+import { ArrowLeft } from 'lucide-react';
 
 const Methodology = () => {
   // Scroll to top when component mounts
@@ -15,6 +17,12 @@ const Methodology = () => {
       <main className="pt-24">
         <section className="py-16">
           <div className="container-narrow">
+            <div className="mb-8">
+              <Link to="/" className="inline-flex items-center text-xs hover:opacity-70 transition-opacity">
+                <ArrowLeft size={14} className="mr-1" /> Back to Home
+              </Link>
+            </div>
+            
             <div className="text-center mb-16">
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-westmount">METHODOLOGY</h1>
               <p className="text-sm max-w-2xl mx-auto mt-8">
