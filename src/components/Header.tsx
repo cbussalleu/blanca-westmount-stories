@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Menu, X, Mail, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -8,6 +7,7 @@ const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
+  const [contactHovered, setContactHovered] = useState(false);
   
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   
@@ -84,8 +84,8 @@ const Header = () => {
             <Link to="/bimbo-relationship" className="text-2xl font-westmount hover:opacity-70 transition-opacity" onClick={toggleMenu}>Grupo Bimbo</Link>
             <Link to="/methodology" className="text-2xl font-westmount hover:opacity-70 transition-opacity" onClick={toggleMenu}>Methodology</Link>
             
-            {/* Contact Link with Hover Effect for Desktop */}
-            <div className="relative group">
+            {/* Contact Link with Enhanced Hover Effect */}
+            <div className="relative group w-full">
               <Link 
                 to="/contact" 
                 className="text-2xl font-westmount hover:opacity-70 transition-opacity block md:hidden" 
@@ -103,12 +103,26 @@ const Header = () => {
               </button>
               
               {/* Desktop with hover effect */}
-              <span className="text-2xl font-westmount transition-opacity hidden md:block cursor-default">
+              <div 
+                className="text-2xl font-westmount transition-opacity hidden md:block cursor-pointer relative z-20"
+                onMouseEnter={() => setContactHovered(true)}
+                onMouseLeave={() => setContactHovered(false)}
+              >
                 Contact
-              </span>
+              </div>
               
-              {/* Hover overlay for desktop - Full width with animation */}
-              <div className="absolute left-0 right-0 w-full bg-black hidden md:group-hover:flex justify-between items-center py-3 px-5 transition-all origin-top scale-y-0 group-hover:scale-y-100 opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto">
+              {/* Full-width animated black overlay */}
+              <div 
+                className={`fixed left-0 right-0 w-full bg-black flex justify-between items-center py-3 px-5 transition-all origin-top duration-300 ${
+                  contactHovered ? 'opacity-100 scale-y-100' : 'opacity-0 scale-y-0'
+                } z-10`}
+                style={{
+                  position: 'absolute',
+                  top: '0',
+                  transformOrigin: 'top',
+                  pointerEvents: contactHovered ? 'auto' : 'none'
+                }}
+              >
                 <a 
                   href="mailto:christian.bussalleu@gmail.com" 
                   className="text-[hsl(var(--pastel-yellow))] font-westmount text-sm tracking-widest"
