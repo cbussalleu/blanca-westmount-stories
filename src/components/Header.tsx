@@ -42,12 +42,10 @@ const Header = () => {
           </Link>
 
           <div className="text-center flex-1">
-            <Link to="/" className="text-xl uppercase tracking-widest font-westmount inline-block">
-              <img 
-                src="/lovable-uploads/6881b366-a537-4790-bdd8-0d3a6355cb7b.png" 
-                alt="No Silver Bullets" 
-                className="h-8 w-auto mx-auto"
-              />
+            <Link to="/" className="text-xl uppercase tracking-widest inline-block">
+              <span style={{ fontFamily: 'westmount-outline' }} className="text-2xl">
+                NO SILVER BULLETS
+              </span>
             </Link>
           </div>
 
