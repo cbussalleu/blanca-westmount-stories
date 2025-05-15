@@ -31,12 +31,8 @@ const BimboCaseStudies = () => {
     <div className="grid md:grid-cols-2 gap-10">
       <div className="image-with-overlay-bimbo rounded-lg overflow-hidden relative group">
         <AspectRatio ratio={3/4} className="w-full">
-          <div className="bimbo-image-container w-full h-full">
-            <img 
-              src="/lovable-uploads/1265268c-8fb8-444d-9596-fd63b39230cb.png" 
-              alt="Grupo Bimbo Connection Center" 
-              className="object-cover w-full h-full"
-            />
+          <div className="bimbo-image-container w-full h-full bg-[hsla(var(--bimbo-overlay))]">
+            {/* Image removed but yellow box maintained */}
           </div>
         </AspectRatio>
         <div className="absolute inset-0 flex items-center justify-center">
@@ -50,11 +46,11 @@ const BimboCaseStudies = () => {
         <div className="space-y-8">
           {bimboCases.map((caseStudy, index) => (
             <div key={index} className="group">
-              <h3 className="text-lg font-medium mb-2">{caseStudy.title}</h3>
-              <p className="text-sm text-gray-700 mb-2">{caseStudy.description}</p>
+              <h3 className="text-lg font-merriweather mb-2">{caseStudy.title}</h3>
+              <p className="text-sm text-gray-700 mb-2 font-merriweather">{caseStudy.description}</p>
               <Link 
                 to={`/portfolio/${caseStudy.slug}`}
-                className="inline-flex items-center text-xs border-b border-black pb-0.5 hover:opacity-70 transition-opacity"
+                className="inline-flex items-center text-xs border-b border-black pb-0.5 hover:opacity-70 transition-opacity font-merriweather"
               >
                 View Project <ArrowRight size={12} className="ml-1" />
               </Link>
@@ -65,7 +61,7 @@ const BimboCaseStudies = () => {
         <div className="mt-12">
           <Link 
             to="/bimbo-relationship"
-            className="inline-flex items-center text-sm border-b border-black pb-1 hover:opacity-70 transition-opacity"
+            className="inline-flex items-center text-sm border-b border-black pb-1 hover:opacity-70 transition-opacity font-merriweather"
           >
             Learn More About My Work with Grupo Bimbo <ArrowRight size={14} className="ml-1" />
           </Link>

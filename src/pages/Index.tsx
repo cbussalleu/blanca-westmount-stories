@@ -51,7 +51,7 @@ const Index = () => {
         <section className="py-16" ref={sectionRefs.about}>
           <div className="container-narrow">
             <div className="mb-12">
-              <h1 className="text-5xl font-westmount mb-16 text-center">
+              <h1 className="text-5xl font-merriweather mb-16 text-center">
                 Hello, I'm Roland,<br />
                 Creative Technologist & User<br />
                 Experience Engineer based in<br />
@@ -61,18 +61,18 @@ const Index = () => {
             </div>
             <div className="grid md:grid-cols-2 gap-16">
               <div className="space-y-6">
-                <p className="text-sm leading-relaxed">
+                <p className="text-sm leading-relaxed font-merriweather">
                   With more than a decade of experience I tackle a broad variety of disciplines in the process of creating meaningful products that make a real difference. With carefully selected tools and skills I express my visions ranging from product design to the creation of user experience up to development and delivery.
                 </p>
-                <p className="text-sm leading-relaxed">
+                <p className="text-sm leading-relaxed font-merriweather">
                   My distinctive strategic thinking helps me to pinpoint the holistic scope of a product and evolve it by adding new business ideas, innovations and values that meet user needs as well as business objectives. Besides building user flows, information architecture and wireframes, tailor-made interactive prototypes are constantly
                 </p>
               </div>
               <div className="space-y-6">
-                <p className="text-sm leading-relaxed">
+                <p className="text-sm leading-relaxed font-merriweather">
                   putting concepts and ideas to the test and emphasize the user-centered approach in my work. I work with the latest techniques in web development and my agile workflow is the result of the precisely combined tools and strategies that include object oriented patterns, build scripts, pre-processors and minification, source code management, testing as well as deployment.
                 </p>
-                <p className="text-sm leading-relaxed">
+                <p className="text-sm leading-relaxed font-merriweather">
                   With my knowledge in both design and technology I foster productive teams in an collaborative environment that meets the requirements of creatives and developers at the same time.
                 </p>
               </div>
@@ -106,7 +106,7 @@ const Index = () => {
             <div className="text-center mt-12">
               <Link 
                 to="/portfolio" 
-                className="inline-flex items-center text-sm border-b border-black pb-1 hover:opacity-70 transition-opacity"
+                className="inline-flex items-center text-sm border-b border-black pb-1 hover:opacity-70 transition-opacity font-merriweather"
               >
                 View All Projects <ArrowRight size={14} className="ml-1" />
               </Link>
@@ -118,8 +118,8 @@ const Index = () => {
         <section className="py-16" ref={sectionRefs.methodology}>
           <div className="container-narrow">
             <div className="text-center mb-12">
-              <h2 className="text-5xl font-westmount">MY METHODOLOGY</h2>
-              <p className="text-sm max-w-2xl mx-auto mt-8 text-base">
+              <h2 className="text-5xl font-westmount">MY APPROACH</h2>
+              <p className="text-sm max-w-2xl mx-auto mt-8 text-base font-merriweather">
                 I <span className="text-[#8ab1a2]">tackle</span> a broad variety of 
                 disciplines in the <u>agile process</u>, 
                 of creating meaningful products
@@ -130,14 +130,14 @@ const Index = () => {
               <img 
                 src="/lovable-uploads/a44d8134-2342-431d-aaf8-18fe1829dc0a.png" 
                 alt="Service Design Methodology" 
-                className="max-w-full md:max-w-xl" 
+                className="max-w-full md:max-w-[70%]" /* Reduced size by 30% */
               />
             </div>
             
             <div className="text-center mt-12">
               <Link 
                 to="/methodology" 
-                className="inline-flex items-center text-sm border-b border-black pb-1 hover:opacity-70 transition-opacity"
+                className="inline-flex items-center text-sm border-b border-black pb-1 hover:opacity-70 transition-opacity font-merriweather"
               >
                 Learn More <ArrowRight size={14} className="ml-1" />
               </Link>
