@@ -86,36 +86,47 @@ const Header = () => {
             
             {/* Contact Link with Enhanced Hover Effect */}
             <div className="relative group w-full">
+              {/* Mobile - Contact Link */}
               <Link 
                 to="/contact" 
-                className="text-2xl font-westmount hover:opacity-70 transition-opacity block md:hidden" 
+                className="text-2xl font-westmount hover:opacity-70 transition-opacity block sm:hidden" 
                 onClick={toggleMenu}
               >
                 Contact
               </Link>
               
-              {/* Mobile - Email Only */}
-              <button 
-                className="text-2xl font-westmount hover:opacity-70 transition-opacity hidden sm:block md:hidden" 
-                onClick={openEmail}
-              >
-                Email Me
-              </button>
-              
-              {/* Desktop with hover effect */}
+              {/* Desktop version with hover effect */}
               <div 
-                className="text-2xl font-westmount transition-opacity hidden md:block cursor-pointer relative z-20"
+                className="text-2xl font-westmount transition-opacity hidden md:block cursor-pointer relative z-20 text-center"
                 onMouseEnter={() => setContactHovered(true)}
                 onMouseLeave={() => setContactHovered(false)}
               >
                 Contact
               </div>
               
-              {/* Full-width animated black overlay */}
+              {/* Mobile - Contact options (visible directly instead of Contact) */}
+              <div className="hidden sm:flex md:hidden justify-center w-full gap-8">
+                <a 
+                  href="mailto:christian.bussalleu@gmail.com" 
+                  className="text-2xl font-westmount hover:opacity-70 transition-opacity"
+                  onClick={toggleMenu}
+                >
+                  Email Me
+                </a>
+                <a 
+                  href="tel:+34626557807" 
+                  className="text-2xl font-westmount hover:opacity-70 transition-opacity"
+                  onClick={toggleMenu}
+                >
+                  Call Me
+                </a>
+              </div>
+              
+              {/* Full-width animated black overlay for desktop */}
               <div 
-                className={`fixed left-0 right-0 w-full bg-black flex justify-between items-center py-3 px-5 transition-all origin-top duration-300 ${
+                className={`fixed left-0 w-full bg-black transition-all origin-top duration-300 ${
                   contactHovered ? 'opacity-100 scale-y-100' : 'opacity-0 scale-y-0'
-                } z-10`}
+                } z-10 h-16 flex items-center justify-center gap-24`}
                 style={{
                   position: 'absolute',
                   top: '0',
