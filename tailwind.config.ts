@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -19,7 +20,8 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				westmount: ["westmount", "serif"],
+				westmount: ["Westmount", "serif"],
+				"westmount-outline": ["westmount-outline", "serif"],
 				helvetica: ["Helvetica Neue", "Helvetica", "Arial", "sans-serif"],
 				merriweather: ["Merriweather", "serif"]
 			},
