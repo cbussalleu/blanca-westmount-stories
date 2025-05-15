@@ -107,8 +107,8 @@ const Header = () => {
                 Contact
               </span>
               
-              {/* Hover overlay for desktop */}
-              <div className="absolute left-1/2 -translate-x-1/2 w-64 bg-black hidden md:group-hover:flex justify-between items-center py-3 px-5 transition-all opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto">
+              {/* Hover overlay for desktop - Full width with animation */}
+              <div className="absolute left-0 right-0 w-full bg-black hidden md:group-hover:flex justify-between items-center py-3 px-5 transition-all origin-top scale-y-0 group-hover:scale-y-100 opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto">
                 <a 
                   href="mailto:christian.bussalleu@gmail.com" 
                   className="text-[hsl(var(--pastel-yellow))] font-westmount text-sm tracking-widest"

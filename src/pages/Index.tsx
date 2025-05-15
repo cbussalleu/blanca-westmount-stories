@@ -51,13 +51,12 @@ const Index = () => {
         <section className="py-16" ref={sectionRefs.about}>
           <div className="container-narrow">
             <div className="mb-12">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-merriweather mb-16 text-center">
-                Hello, I'm Christian, a Service<br className="hidden sm:block" />
-                Designer based in Barcelona.<br className="hidden sm:block" />
-                I don't deliver perfect solutions —<br className="hidden sm:block" />
-                I design adaptive systems, ask<br className="hidden sm:block" />
-                better questions, and help teams<br className="hidden sm:block" />
-                learn through experience
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-merriweather mb-16 sm:text-center text-left">
+                Hello, I'm Christian.<br className="hidden sm:block" />
+                Service Designer in Barcelona.<br className="hidden sm:block" />
+                I don't bring perfect answers —<br className="hidden sm:block" />
+                I help teams ask better questions<br className="hidden sm:block" />
+                and build adaptive solutions
               </h1>
             </div>
             <div className="grid md:grid-cols-2 gap-16">
@@ -84,7 +83,7 @@ const Index = () => {
         {/* Grupo Bimbo Section */}
         <section className="py-16" ref={sectionRefs.bimbo}>
           <div className="container-narrow">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-westmount mb-16 text-center">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-westmount mb-16 text-center">
               GRUPO BIMBO AND I
             </h2>
             <BimboCaseStudies />
@@ -95,7 +94,7 @@ const Index = () => {
         <section className="py-16" ref={sectionRefs.projects}>
           <div className="container-narrow">
             <div className="text-center mb-16">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-westmount">FEATURED PROJECTS</h2>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-westmount">FEATURED PROJECTS</h2>
             </div>
             
             <div className="grid md:grid-cols-3 gap-12">
@@ -119,7 +118,7 @@ const Index = () => {
         <section className="py-16" ref={sectionRefs.methodology}>
           <div className="container-narrow">
             <div className="text-center mb-12">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-westmount">MY APPROACH</h2>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-westmount">MY APPROACH</h2>
               <p className="text-sm max-w-2xl mx-auto mt-8 text-base font-merriweather">
                 I <span className="text-[#8ab1a2]">tackle</span> a broad variety of 
                 disciplines in the <u>agile process</u>, 
@@ -131,7 +130,7 @@ const Index = () => {
               <img 
                 src="/lovable-uploads/a44d8134-2342-431d-aaf8-18fe1829dc0a.png" 
                 alt="Service Design Methodology" 
-                className="w-[70%] sm:w-[65%] md:w-[60%] lg:w-[55%] transition-all" /* Reduced size by 15% and made responsive */
+                className="w-[65%] xs:w-[63%] sm:w-[60%] md:w-[58%] lg:w-[55%] transition-all" 
               />
             </div>
             
