@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -21,7 +20,8 @@ export default {
 		extend: {
 			fontFamily: {
 				westmount: ["westmount", "serif"],
-				helvetica: ["Helvetica Neue", "Helvetica", "Arial", "sans-serif"]
+				helvetica: ["Helvetica Neue", "Helvetica", "Arial", "sans-serif"],
+				merriweather: ["Merriweather", "serif"]
 			},
 			colors: {
 				border: 'hsl(var(--border))',
