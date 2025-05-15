@@ -1,5 +1,6 @@
 
-import { useParams, Link, useEffect } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
+import { useEffect } from 'react';
 import { ArrowLeft, CheckCircle } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
