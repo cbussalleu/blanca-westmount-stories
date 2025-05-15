@@ -7,7 +7,7 @@ import BimboCaseStudies from '../components/BimboCaseStudies';
 
 const BimboRelationship = () => {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[hsl(var(--pastel-yellow))]">
       <Header />
       <main className="pt-24">
         <section className="py-12">
