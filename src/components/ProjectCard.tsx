@@ -15,7 +15,7 @@ interface ProjectCardProps {
 const ProjectCard = ({ title, description, client, slug, imageSrc }: ProjectCardProps) => {
   return (
     <div className="group space-y-4">
-      <div className="image-with-overlay rounded-lg overflow-hidden shadow-md">
+      <div className="image-with-overlay rounded-lg overflow-hidden shadow-md hidden sm:block">
         <AspectRatio ratio={1} className="w-full">
           {imageSrc ? (
             <img src={imageSrc} alt={title} className="w-full h-full object-cover" />

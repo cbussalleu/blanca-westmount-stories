@@ -102,7 +102,7 @@ const Portfolio = () => {
         
         <Hero 
           title="Portfolio"
-          subtitle="SERVICE DESIGN PROJECTS"
+          subtitle=""
           description="A collection of my most significant service design projects across various industries and global markets."
         />
         
