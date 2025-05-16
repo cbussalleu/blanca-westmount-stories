@@ -140,191 +140,114 @@ const ProcessDiagramSVG = ({ animate }: { animate: boolean }) => (
     <polygon points="185,50 180,47 180,53" fill="#333" />
     <polygon points="345,50 340,47 340,53" fill="#333" />
     
-    {/* First Box - Research */}
+    {/* First Box with Text - Research */}
     <g>
-      <rect x="30" y="30" width="120" height="40" rx="4" fill="hsla(48, 100%, 92%, 0.7)" stroke="#333" strokeWidth="1">
-        {animate && (
-          <>
-            <animate 
-              id="research-design-1"
-              attributeName="x"
-              from="30"
-              to="190"
-              begin="4s; research-design-2.end+3s"
-              dur="0.5s"
-              fill="freeze"
-            />
-            <animate 
-              id="research-design-2"
-              attributeName="x"
-              from="190"
-              to="30"
-              begin="research-design-1.end+3s"
-              dur="0.5s"
-              fill="freeze"
-            />
-          </>
-        )}
-      </rect>
-      <text x="90" y="55" fontSize="14" fontWeight="500" fill="#333" textAnchor="middle" dominantBaseline="middle">
-        {animate && (
-          <>
-            <animate 
-              attributeName="x"
-              from="90"
-              to="250"
-              begin="research-design-1.begin"
-              dur="0.5s"
-              fill="freeze"
-            />
-            <animate 
-              attributeName="x"
-              from="250"
-              to="90"
-              begin="research-design-2.begin"
-              dur="0.5s"
-              fill="freeze"
-            />
-          </>
-        )}
-        Research
-      </text>
+      {animate && (
+        <>
+          <animateTransform
+            id="research-to-design"
+            attributeName="transform"
+            type="translate"
+            from="0 0"
+            to="160 0"
+            begin="4s; research-to-design-back.end+3s"
+            dur="0.5s"
+            fill="freeze"
+          />
+          <animateTransform
+            id="research-to-design-back"
+            attributeName="transform"
+            type="translate"
+            from="160 0"
+            to="0 0"
+            begin="research-to-design.end+3s"
+            dur="0.5s"
+            fill="freeze"
+          />
+        </>
+      )}
+      <rect x="30" y="30" width="120" height="40" rx="4" fill="hsla(48, 100%, 92%, 0.7)" stroke="#333" strokeWidth="1" />
+      <text x="90" y="55" fontSize="14" fontWeight="500" fill="#333" textAnchor="middle" dominantBaseline="middle">Research</text>
     </g>
     
-    {/* Second Box - Design */}
+    {/* Second Box with Text - Design */}
     <g>
-      <rect x="190" y="30" width="120" height="40" rx="4" fill="hsla(48, 100%, 92%, 0.7)" stroke="#333" strokeWidth="1">
-        {animate && (
-          <>
-            <animate 
-              id="design-research-1"
-              attributeName="x"
-              from="190"
-              to="30"
-              begin="4s; design-research-2.end+3s"
-              dur="0.5s"
-              fill="freeze"
-            />
-            <animate 
-              id="design-research-2"
-              attributeName="x"
-              from="30"
-              to="190"
-              begin="design-research-1.end+3s"
-              dur="0.5s"
-              fill="freeze"
-            />
-            <animate 
-              id="design-implement-1"
-              attributeName="x"
-              from="190"
-              to="350"
-              begin="design-research-2.end+3s"
-              dur="0.5s"
-              fill="freeze"
-            />
-            <animate 
-              id="design-implement-2"
-              attributeName="x"
-              from="350"
-              to="190"
-              begin="design-implement-1.end+3s"
-              dur="0.5s"
-              fill="freeze"
-            />
-          </>
-        )}
-      </rect>
-      <text x="250" y="55" fontSize="14" fontWeight="500" fill="#333" textAnchor="middle" dominantBaseline="middle">
-        {animate && (
-          <>
-            <animate 
-              attributeName="x"
-              from="250"
-              to="90"
-              begin="design-research-1.begin"
-              dur="0.5s"
-              fill="freeze"
-            />
-            <animate 
-              attributeName="x"
-              from="90"
-              to="250"
-              begin="design-research-2.begin"
-              dur="0.5s"
-              fill="freeze"
-            />
-            <animate 
-              attributeName="x"
-              from="250"
-              to="410"
-              begin="design-implement-1.begin"
-              dur="0.5s"
-              fill="freeze"
-            />
-            <animate 
-              attributeName="x"
-              from="410"
-              to="250"
-              begin="design-implement-2.begin"
-              dur="0.5s"
-              fill="freeze"
-            />
-          </>
-        )}
-        Design
-      </text>
+      {animate && (
+        <>
+          <animateTransform
+            id="design-to-research"
+            attributeName="transform"
+            type="translate"
+            from="0 0"
+            to="-160 0"
+            begin="4s; design-to-research-back.end+3s"
+            dur="0.5s"
+            fill="freeze"
+          />
+          <animateTransform
+            id="design-to-research-back"
+            attributeName="transform"
+            type="translate"
+            from="-160 0"
+            to="0 0"
+            begin="design-to-research.end+3s"
+            dur="0.5s"
+            fill="freeze"
+          />
+          <animateTransform
+            id="design-to-implement"
+            attributeName="transform"
+            type="translate"
+            from="0 0"
+            to="160 0"
+            begin="design-to-research-back.end+3s"
+            dur="0.5s"
+            fill="freeze"
+          />
+          <animateTransform
+            id="design-to-implement-back"
+            attributeName="transform"
+            type="translate"
+            from="160 0"
+            to="0 0"
+            begin="design-to-implement.end+3s"
+            dur="0.5s"
+            fill="freeze"
+          />
+        </>
+      )}
+      <rect x="190" y="30" width="120" height="40" rx="4" fill="hsla(48, 100%, 92%, 0.7)" stroke="#333" strokeWidth="1" />
+      <text x="250" y="55" fontSize="14" fontWeight="500" fill="#333" textAnchor="middle" dominantBaseline="middle">Design</text>
     </g>
     
-    {/* Third Box - Implementation */}
+    {/* Third Box with Text - Implementation */}
     <g>
-      <rect x="350" y="30" width="120" height="40" rx="4" fill="hsla(48, 100%, 92%, 0.7)" stroke="#333" strokeWidth="1">
-        {animate && (
-          <>
-            <animate 
-              id="implement-design-1"
-              attributeName="x"
-              from="350"
-              to="190"
-              begin="design-implement-1.begin"
-              dur="0.5s"
-              fill="freeze"
-            />
-            <animate 
-              id="implement-design-2"
-              attributeName="x"
-              from="190"
-              to="350"
-              begin="design-implement-2.begin"
-              dur="0.5s"
-              fill="freeze"
-            />
-          </>
-        )}
-      </rect>
-      <text x="410" y="55" fontSize="14" fontWeight="500" fill="#333" textAnchor="middle" dominantBaseline="middle">
-        {animate && (
-          <>
-            <animate 
-              attributeName="x"
-              from="410"
-              to="250"
-              begin="implement-design-1.begin"
-              dur="0.5s"
-              fill="freeze"
-            />
-            <animate 
-              attributeName="x"
-              from="250"
-              to="410"
-              begin="implement-design-2.begin"
-              dur="0.5s"
-              fill="freeze"
-            />
-          </>
-        )}
-        Implementation
-      </text>
+      {animate && (
+        <>
+          <animateTransform
+            id="implement-to-design"
+            attributeName="transform"
+            type="translate"
+            from="0 0"
+            to="-160 0"
+            begin="design-to-implement.begin"
+            dur="0.5s"
+            fill="freeze"
+          />
+          <animateTransform
+            id="implement-to-design-back"
+            attributeName="transform"
+            type="translate"
+            from="-160 0"
+            to="0 0"
+            begin="design-to-implement-back.begin"
+            dur="0.5s"
+            fill="freeze"
+          />
+        </>
+      )}
+      <rect x="350" y="30" width="120" height="40" rx="4" fill="hsla(48, 100%, 92%, 0.7)" stroke="#333" strokeWidth="1" />
+      <text x="410" y="55" fontSize="14" fontWeight="500" fill="#333" textAnchor="middle" dominantBaseline="middle">Implementation</text>
     </g>
   </svg>
 );
