@@ -45,15 +45,17 @@ const Header = () => {
       <div className="container-narrow py-6">
         <div className="flex justify-between items-center">
           {/* Logo - sin fondo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <img 
-              src="/lovable-uploads/69552967-182b-43cb-9a77-04a4d046299a.png" 
-              alt="Logo" 
-              className="h-6 sm:h-7 md:h-8 w-auto transition-all"
-            />
-          </Link>
+          <div className="flex items-center h-8 md:h-10">
+            <Link to="/" className="flex items-center">
+              <img 
+                src="/lovable-uploads/69552967-182b-43cb-9a77-04a4d046299a.png" 
+                alt="Logo" 
+                className="h-6 sm:h-7 md:h-8 w-auto transition-all"
+              />
+            </Link>
+          </div>
 
-          <div className="text-center flex-1">
+          <div className="text-center flex-1 flex justify-center items-center h-8 md:h-10">
             <Link to="/" className="text-xl uppercase tracking-widest inline-block">
               <span className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-['westmount-outline'] transition-all">
                 NO SILVER BULLETS
@@ -62,16 +64,18 @@ const Header = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <button onClick={toggleMenu} className="md:hidden text-black">
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-          
-          {/* Desktop Navigation (hidden on mobile) */}
-          <nav className="hidden md:flex">
-            <button onClick={toggleMenu} className="text-black">
-              <Menu size={20} />
+          <div className="flex items-center justify-end h-8 md:h-10">
+            <button onClick={toggleMenu} className="md:hidden text-black flex items-center justify-center">
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
-          </nav>
+            
+            {/* Desktop Navigation (hidden on mobile) */}
+            <nav className="hidden md:flex items-center">
+              <button onClick={toggleMenu} className="text-black flex items-center justify-center">
+                <Menu size={20} />
+              </button>
+            </nav>
+          </div>
         </div>
       </div>
 
