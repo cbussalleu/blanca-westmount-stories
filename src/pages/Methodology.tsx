@@ -4,39 +4,39 @@ import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 
-// Simplified SVG Components with clearer visual language
+// Improved SVG Components with more visible text
 const SystemsFrameworkSVG = () => (
   <svg width="300" height="180" viewBox="0 0 300 180" fill="none" xmlns="http://www.w3.org/2000/svg" className="mx-auto my-6">
-    <rect x="20" y="40" width="120" height="100" rx="4" fill="hsla(48, 100%, 92%, 0.7)" stroke="#222" strokeWidth="1" />
-    <rect x="160" y="40" width="120" height="100" rx="4" fill="hsla(142, 35%, 82%, 0.5)" stroke="#222" strokeWidth="1" />
-    <text x="80" y="32" fontSize="12" fontFamily="Helvetica, sans-serif" textAnchor="middle">Human Systems</text>
-    <text x="220" y="32" fontSize="12" fontFamily="Helvetica, sans-serif" textAnchor="middle">Functional Systems</text>
-    <text x="40" y="60" fontSize="10" fontFamily="Helvetica, sans-serif">• Behaviors</text>
-    <text x="40" y="80" fontSize="10" fontFamily="Helvetica, sans-serif">• Culture</text>
-    <text x="40" y="100" fontSize="10" fontFamily="Helvetica, sans-serif">• Relationships</text>
-    <text x="40" y="120" fontSize="10" fontFamily="Helvetica, sans-serif">• Perceptions</text>
-    <text x="180" y="60" fontSize="10" fontFamily="Helvetica, sans-serif">• Processes</text>
-    <text x="180" y="80" fontSize="10" fontFamily="Helvetica, sans-serif">• Technology</text>
-    <text x="180" y="100" fontSize="10" fontFamily="Helvetica, sans-serif">• Metrics</text>
-    <text x="180" y="120" fontSize="10" fontFamily="Helvetica, sans-serif">• Operations</text>
-    <line x1="140" y1="90" x2="160" y2="90" stroke="#222" strokeWidth="1" />
-    <text x="150" y="85" fontSize="12" fontFamily="Helvetica, sans-serif" textAnchor="middle" dominantBaseline="middle">+</text>
-    <text x="150" y="160" fontSize="10" fontFamily="Helvetica, sans-serif" textAnchor="middle">Service Design Framework</text>
+    <rect x="20" y="40" width="120" height="100" rx="4" fill="hsla(48, 100%, 92%, 0.7)" stroke="#333" strokeWidth="1" />
+    <rect x="160" y="40" width="120" height="100" rx="4" fill="hsla(142, 35%, 82%, 0.5)" stroke="#333" strokeWidth="1" />
+    <text x="80" y="32" fontSize="12" fontWeight="500" fill="#333" textAnchor="middle" dominantBaseline="middle">Human Systems</text>
+    <text x="220" y="32" fontSize="12" fontWeight="500" fill="#333" textAnchor="middle" dominantBaseline="middle">Functional Systems</text>
+    <text x="40" y="60" fontSize="11" fill="#333">• Behaviors</text>
+    <text x="40" y="80" fontSize="11" fill="#333">• Culture</text>
+    <text x="40" y="100" fontSize="11" fill="#333">• Relationships</text>
+    <text x="40" y="120" fontSize="11" fill="#333">• Perceptions</text>
+    <text x="180" y="60" fontSize="11" fill="#333">• Processes</text>
+    <text x="180" y="80" fontSize="11" fill="#333">• Technology</text>
+    <text x="180" y="100" fontSize="11" fill="#333">• Metrics</text>
+    <text x="180" y="120" fontSize="11" fill="#333">• Operations</text>
+    <line x1="140" y1="90" x2="160" y2="90" stroke="#333" strokeWidth="1" />
+    <text x="150" y="85" fontSize="14" fill="#333" textAnchor="middle" dominantBaseline="middle">+</text>
+    <text x="150" y="160" fontSize="11" fontWeight="500" fill="#333" textAnchor="middle">Service Design Framework</text>
   </svg>
 );
 
 const ProcessDiagramSVG = () => (
   <svg width="500" height="100" viewBox="0 0 500 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="mx-auto my-6 max-w-full">
-    <rect x="30" y="30" width="120" height="40" rx="4" fill="hsla(48, 100%, 92%, 0.7)" stroke="#222" strokeWidth="1" />
-    <rect x="190" y="30" width="120" height="40" rx="4" fill="hsla(48, 100%, 92%, 0.7)" stroke="#222" strokeWidth="1" />
-    <rect x="350" y="30" width="120" height="40" rx="4" fill="hsla(48, 100%, 92%, 0.7)" stroke="#222" strokeWidth="1" />
-    <text x="90" y="55" fontSize="14" fontFamily="Westmount, serif" textAnchor="middle">Research</text>
-    <text x="250" y="55" fontSize="14" fontFamily="Westmount, serif" textAnchor="middle">Design</text>
-    <text x="410" y="55" fontSize="14" fontFamily="Westmount, serif" textAnchor="middle">Implementation</text>
-    <line x1="150" y1="50" x2="190" y2="50" stroke="#222" strokeWidth="1" strokeDasharray="4,2" />
-    <line x1="310" y1="50" x2="350" y2="50" stroke="#222" strokeWidth="1" strokeDasharray="4,2" />
-    <polygon points="185,50 180,47 180,53" fill="#222" />
-    <polygon points="345,50 340,47 340,53" fill="#222" />
+    <rect x="30" y="30" width="120" height="40" rx="4" fill="hsla(48, 100%, 92%, 0.7)" stroke="#333" strokeWidth="1" />
+    <rect x="190" y="30" width="120" height="40" rx="4" fill="hsla(48, 100%, 92%, 0.7)" stroke="#333" strokeWidth="1" />
+    <rect x="350" y="30" width="120" height="40" rx="4" fill="hsla(48, 100%, 92%, 0.7)" stroke="#333" strokeWidth="1" />
+    <text x="90" y="55" fontSize="14" fontWeight="500" fill="#333" textAnchor="middle" dominantBaseline="middle">Research</text>
+    <text x="250" y="55" fontSize="14" fontWeight="500" fill="#333" textAnchor="middle" dominantBaseline="middle">Design</text>
+    <text x="410" y="55" fontSize="14" fontWeight="500" fill="#333" textAnchor="middle" dominantBaseline="middle">Implementation</text>
+    <line x1="150" y1="50" x2="190" y2="50" stroke="#333" strokeWidth="1" strokeDasharray="4,2" />
+    <line x1="310" y1="50" x2="350" y2="50" stroke="#333" strokeWidth="1" strokeDasharray="4,2" />
+    <polygon points="185,50 180,47 180,53" fill="#333" />
+    <polygon points="345,50 340,47 340,53" fill="#333" />
   </svg>
 );
 
@@ -68,7 +68,7 @@ const Methodology = () => {
             <div className="max-w-3xl mx-auto">
               {/* Framework */}
               <div className="mb-16">
-                <h2 className="text-2xl mb-6 font-westmount">Framework</h2>
+                <h2 className="text-2xl mb-6 font-merriweather font-normal">Framework</h2>
                 <p className="text-sm mb-4 font-merriweather">
                   Service design operates at the intersection of human and functional systems. This framework recognizes that while functional elements can be structured and designed, human experiences can only be enabled.
                 </p>
@@ -82,7 +82,7 @@ const Methodology = () => {
               
               {/* Process */}
               <div className="mb-16">
-                <h2 className="text-2xl mb-6 font-westmount">Process</h2>
+                <h2 className="text-2xl mb-6 font-merriweather font-normal">Process</h2>
                 <p className="text-sm mb-4 font-merriweather">
                   My process follows an iterative pattern across three primary phases, with each informing the others through continuous learning.
                 </p>
@@ -91,7 +91,7 @@ const Methodology = () => {
                 
                 <div className="grid md:grid-cols-3 gap-8 mt-8">
                   <div>
-                    <h3 className="text-lg mb-4 font-westmount">Research</h3>
+                    <h3 className="text-lg mb-4 font-merriweather">Research</h3>
                     <ul className="text-sm space-y-2 font-merriweather">
                       <li>• Research planning</li>
                       <li>• Contextual inquiry</li>
@@ -103,7 +103,7 @@ const Methodology = () => {
                   </div>
                   
                   <div>
-                    <h3 className="text-lg mb-4 font-westmount">Design</h3>
+                    <h3 className="text-lg mb-4 font-merriweather">Design</h3>
                     <ul className="text-sm space-y-2 font-merriweather">
                       <li>• Blueprint development</li>
                       <li>• Prototype creation</li>
@@ -115,7 +115,7 @@ const Methodology = () => {
                   </div>
                   
                   <div>
-                    <h3 className="text-lg mb-4 font-westmount">Implementation</h3>
+                    <h3 className="text-lg mb-4 font-merriweather">Implementation</h3>
                     <ul className="text-sm space-y-2 font-merriweather">
                       <li>• Process documentation</li>
                       <li>• Change management</li>
@@ -130,32 +130,32 @@ const Methodology = () => {
               
               {/* Principles */}
               <div className="mb-16">
-                <h2 className="text-2xl mb-6 font-westmount">Principles</h2>
+                <h2 className="text-2xl mb-6 font-merriweather font-normal">Principles</h2>
                 
                 <div className="grid md:grid-cols-2 gap-6">
-                  <div className="p-6 bg-white border border-gray-100 rounded-lg">
-                    <h3 className="text-base mb-3 font-westmount">Systemic Perspective</h3>
+                  <div className="p-6 border border-gray-400 rounded-lg">
+                    <h3 className="text-base mb-3 font-merriweather">Systemic Perspective</h3>
                     <p className="text-sm font-merriweather">
                       Services exist within broader systems. Understanding these contexts is essential for creating solutions that integrate rather than disrupt.
                     </p>
                   </div>
                   
-                  <div className="p-6 bg-white border border-gray-100 rounded-lg">
-                    <h3 className="text-base mb-3 font-westmount">Adaptability</h3>
+                  <div className="p-6 border border-gray-400 rounded-lg">
+                    <h3 className="text-base mb-3 font-merriweather">Adaptability</h3>
                     <p className="text-sm font-merriweather">
                       Creating frameworks that can evolve rather than rigid structures that break under changing conditions.
                     </p>
                   </div>
                   
-                  <div className="p-6 bg-white border border-gray-100 rounded-lg">
-                    <h3 className="text-base mb-3 font-westmount">Human-Centered</h3>
+                  <div className="p-6 border border-gray-400 rounded-lg">
+                    <h3 className="text-base mb-3 font-merriweather">Human-Centered</h3>
                     <p className="text-sm font-merriweather">
                       Balancing business requirements with genuine human needs, recognizing that experiences cannot be controlled, only supported.
                     </p>
                   </div>
                   
-                  <div className="p-6 bg-white border border-gray-100 rounded-lg">
-                    <h3 className="text-base mb-3 font-westmount">Iterative Learning</h3>
+                  <div className="p-6 border border-gray-400 rounded-lg">
+                    <h3 className="text-base mb-3 font-merriweather">Iterative Learning</h3>
                     <p className="text-sm font-merriweather">
                       Using continuous feedback loops to refine and improve, treating implementation as an ongoing conversation rather than a final statement.
                     </p>
@@ -165,42 +165,42 @@ const Methodology = () => {
               
               {/* Tools */}
               <div className="mb-16">
-                <h2 className="text-2xl mb-6 font-westmount">Tools Proficiency</h2>
+                <h2 className="text-2xl mb-6 font-merriweather font-normal">Tools Proficiency</h2>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                  <div className="bg-white p-4 rounded-lg border border-gray-100 text-center">
+                  <div className="py-3 border-b border-gray-400 text-center">
                     <p className="text-sm font-merriweather">Figma</p>
                   </div>
-                  <div className="bg-white p-4 rounded-lg border border-gray-100 text-center">
+                  <div className="py-3 border-b border-gray-400 text-center">
                     <p className="text-sm font-merriweather">Miro</p>
                   </div>
-                  <div className="bg-white p-4 rounded-lg border border-gray-100 text-center">
+                  <div className="py-3 border-b border-gray-400 text-center">
                     <p className="text-sm font-merriweather">Salesforce</p>
                   </div>
-                  <div className="bg-white p-4 rounded-lg border border-gray-100 text-center">
+                  <div className="py-3 border-b border-gray-400 text-center">
                     <p className="text-sm font-merriweather">Adobe CS</p>
                   </div>
-                  <div className="bg-white p-4 rounded-lg border border-gray-100 text-center">
+                  <div className="py-3 border-b border-gray-400 text-center">
                     <p className="text-sm font-merriweather">Tableau</p>
                   </div>
-                  <div className="bg-white p-4 rounded-lg border border-gray-100 text-center">
+                  <div className="py-3 border-b border-gray-400 text-center">
                     <p className="text-sm font-merriweather">Power BI</p>
                   </div>
-                  <div className="bg-white p-4 rounded-lg border border-gray-100 text-center">
+                  <div className="py-3 border-b border-gray-400 text-center">
                     <p className="text-sm font-merriweather">Optimal Workshop</p>
                   </div>
-                  <div className="bg-white p-4 rounded-lg border border-gray-100 text-center">
+                  <div className="py-3 border-b border-gray-400 text-center">
                     <p className="text-sm font-merriweather">JIRA</p>
                   </div>
-                  <div className="bg-white p-4 rounded-lg border border-gray-100 text-center">
+                  <div className="py-3 border-b border-gray-400 text-center">
                     <p className="text-sm font-merriweather">InVision</p>
                   </div>
-                  <div className="bg-white p-4 rounded-lg border border-gray-100 text-center">
+                  <div className="py-3 border-b border-gray-400 text-center">
                     <p className="text-sm font-merriweather">Confluence</p>
                   </div>
-                  <div className="bg-white p-4 rounded-lg border border-gray-100 text-center">
+                  <div className="py-3 border-b border-gray-400 text-center">
                     <p className="text-sm font-merriweather">Marvel</p>
                   </div>
-                  <div className="bg-white p-4 rounded-lg border border-gray-100 text-center">
+                  <div className="py-3 border-b border-gray-400 text-center">
                     <p className="text-sm font-merriweather">UX Pin</p>
                   </div>
                 </div>
@@ -208,28 +208,28 @@ const Methodology = () => {
               
               {/* Outcomes */}
               <div>
-                <h2 className="text-2xl mb-6 font-westmount">Outcomes</h2>
+                <h2 className="text-2xl mb-6 font-merriweather font-normal">Outcomes</h2>
                 <div className="grid md:grid-cols-2 gap-6">
-                  <div className="p-6 bg-white border border-gray-100 rounded-lg">
-                    <h3 className="text-base mb-3 font-westmount">System Integration</h3>
+                  <div className="p-6 border border-gray-400 rounded-lg">
+                    <h3 className="text-base mb-3 font-merriweather">System Integration</h3>
                     <p className="text-sm font-merriweather">
                       Services that work harmoniously with existing processes rather than creating friction points.
                     </p>
                   </div>
-                  <div className="p-6 bg-white border border-gray-100 rounded-lg">
-                    <h3 className="text-base mb-3 font-westmount">Stakeholder Alignment</h3>
+                  <div className="p-6 border border-gray-400 rounded-lg">
+                    <h3 className="text-base mb-3 font-merriweather">Stakeholder Alignment</h3>
                     <p className="text-sm font-merriweather">
                       Improved coordination across departments and clearer shared understanding of priorities.
                     </p>
                   </div>
-                  <div className="p-6 bg-white border border-gray-100 rounded-lg">
-                    <h3 className="text-base mb-3 font-westmount">Sustainable Evolution</h3>
+                  <div className="p-6 border border-gray-400 rounded-lg">
+                    <h3 className="text-base mb-3 font-merriweather">Sustainable Evolution</h3>
                     <p className="text-sm font-merriweather">
                       Solutions designed to adapt and grow beyond initial implementation, maintaining relevance.
                     </p>
                   </div>
-                  <div className="p-6 bg-white border border-gray-100 rounded-lg">
-                    <h3 className="text-base mb-3 font-westmount">Improved Experience</h3>
+                  <div className="p-6 border border-gray-400 rounded-lg">
+                    <h3 className="text-base mb-3 font-merriweather">Improved Experience</h3>
                     <p className="text-sm font-merriweather">
                       Services that feel more intuitive and responsive to both customers and service providers.
                     </p>
