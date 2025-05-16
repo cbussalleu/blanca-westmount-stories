@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
@@ -132,102 +132,236 @@ const SystemsFrameworkSVG = () => (
   </svg>
 );
 
-const ProcessDiagramSVG = () => (
+const ProcessDiagramSVG = ({ animate }: { animate: boolean }) => (
   <svg width="500" height="100" viewBox="0 0 500 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="mx-auto my-6 max-w-full">
-    <rect width="120" height="40" rx="4" fill="hsla(48, 100%, 92%, 0.7)" stroke="#333" strokeWidth="1">
-      <animate 
-        attributeName="x" 
-        values="30; 190; 350; 30" 
-        dur="8s" 
-        repeatCount="indefinite" 
-      />
-      <animate 
-        attributeName="y" 
-        values="30; 30; 30; 30" 
-        dur="8s" 
-        repeatCount="indefinite" 
-      />
-    </rect>
-    <rect width="120" height="40" rx="4" fill="hsla(48, 100%, 92%, 0.7)" stroke="#333" strokeWidth="1">
-      <animate 
-        attributeName="x" 
-        values="190; 350; 30; 190" 
-        dur="8s" 
-        repeatCount="indefinite" 
-      />
-      <animate 
-        attributeName="y" 
-        values="30; 30; 30; 30" 
-        dur="8s" 
-        repeatCount="indefinite" 
-      />
-    </rect>
-    <rect width="120" height="40" rx="4" fill="hsla(48, 100%, 92%, 0.7)" stroke="#333" strokeWidth="1">
-      <animate 
-        attributeName="x" 
-        values="350; 30; 190; 350" 
-        dur="8s" 
-        repeatCount="indefinite" 
-      />
-      <animate 
-        attributeName="y" 
-        values="30; 30; 30; 30" 
-        dur="8s" 
-        repeatCount="indefinite" 
-      />
-    </rect>
-    <text fontSize="14" fontWeight="500" fill="#333" textAnchor="middle" dominantBaseline="middle">
-      <animate 
-        attributeName="x" 
-        values="90; 250; 410; 90" 
-        dur="8s" 
-        repeatCount="indefinite" 
-      />
-      <animate 
-        attributeName="y" 
-        values="50; 50; 50; 50" 
-        dur="8s" 
-        repeatCount="indefinite" 
-      />
-      Research
-    </text>
-    <text fontSize="14" fontWeight="500" fill="#333" textAnchor="middle" dominantBaseline="middle">
-      <animate 
-        attributeName="x" 
-        values="250; 410; 90; 250" 
-        dur="8s" 
-        repeatCount="indefinite" 
-      />
-      <animate 
-        attributeName="y" 
-        values="50; 50; 50; 50" 
-        dur="8s" 
-        repeatCount="indefinite" 
-      />
-      Design
-    </text>
-    <text fontSize="14" fontWeight="500" fill="#333" textAnchor="middle" dominantBaseline="middle">
-      <animate 
-        attributeName="x" 
-        values="410; 90; 250; 410" 
-        dur="8s" 
-        repeatCount="indefinite" 
-      />
-      <animate 
-        attributeName="y" 
-        values="50; 50; 50; 50" 
-        dur="8s" 
-        repeatCount="indefinite" 
-      />
-      Implementation
-    </text>
+    {/* Static Lines */}
+    <line x1="150" y1="50" x2="190" y2="50" stroke="#333" strokeWidth="1" strokeDasharray="4,2" />
+    <line x1="310" y1="50" x2="350" y2="50" stroke="#333" strokeWidth="1" strokeDasharray="4,2" />
+    <polygon points="185,50 180,47 180,53" fill="#333" />
+    <polygon points="345,50 340,47 340,53" fill="#333" />
+    
+    {/* First Box - Research */}
+    <g>
+      <rect x="30" y="30" width="120" height="40" rx="4" fill="hsla(48, 100%, 92%, 0.7)" stroke="#333" strokeWidth="1">
+        {animate && (
+          <>
+            <animate 
+              id="research-design-1"
+              attributeName="x"
+              from="30"
+              to="190"
+              begin="4s; research-design-2.end+3s"
+              dur="0.5s"
+              fill="freeze"
+            />
+            <animate 
+              id="research-design-2"
+              attributeName="x"
+              from="190"
+              to="30"
+              begin="research-design-1.end+3s"
+              dur="0.5s"
+              fill="freeze"
+            />
+          </>
+        )}
+      </rect>
+      <text x="90" y="55" fontSize="14" fontWeight="500" fill="#333" textAnchor="middle" dominantBaseline="middle">
+        {animate && (
+          <>
+            <animate 
+              attributeName="x"
+              from="90"
+              to="250"
+              begin="research-design-1.begin"
+              dur="0.5s"
+              fill="freeze"
+            />
+            <animate 
+              attributeName="x"
+              from="250"
+              to="90"
+              begin="research-design-2.begin"
+              dur="0.5s"
+              fill="freeze"
+            />
+          </>
+        )}
+        Research
+      </text>
+    </g>
+    
+    {/* Second Box - Design */}
+    <g>
+      <rect x="190" y="30" width="120" height="40" rx="4" fill="hsla(48, 100%, 92%, 0.7)" stroke="#333" strokeWidth="1">
+        {animate && (
+          <>
+            <animate 
+              id="design-research-1"
+              attributeName="x"
+              from="190"
+              to="30"
+              begin="4s; design-research-2.end+3s"
+              dur="0.5s"
+              fill="freeze"
+            />
+            <animate 
+              id="design-research-2"
+              attributeName="x"
+              from="30"
+              to="190"
+              begin="design-research-1.end+3s"
+              dur="0.5s"
+              fill="freeze"
+            />
+            <animate 
+              id="design-implement-1"
+              attributeName="x"
+              from="190"
+              to="350"
+              begin="design-research-2.end+3s"
+              dur="0.5s"
+              fill="freeze"
+            />
+            <animate 
+              id="design-implement-2"
+              attributeName="x"
+              from="350"
+              to="190"
+              begin="design-implement-1.end+3s"
+              dur="0.5s"
+              fill="freeze"
+            />
+          </>
+        )}
+      </rect>
+      <text x="250" y="55" fontSize="14" fontWeight="500" fill="#333" textAnchor="middle" dominantBaseline="middle">
+        {animate && (
+          <>
+            <animate 
+              attributeName="x"
+              from="250"
+              to="90"
+              begin="design-research-1.begin"
+              dur="0.5s"
+              fill="freeze"
+            />
+            <animate 
+              attributeName="x"
+              from="90"
+              to="250"
+              begin="design-research-2.begin"
+              dur="0.5s"
+              fill="freeze"
+            />
+            <animate 
+              attributeName="x"
+              from="250"
+              to="410"
+              begin="design-implement-1.begin"
+              dur="0.5s"
+              fill="freeze"
+            />
+            <animate 
+              attributeName="x"
+              from="410"
+              to="250"
+              begin="design-implement-2.begin"
+              dur="0.5s"
+              fill="freeze"
+            />
+          </>
+        )}
+        Design
+      </text>
+    </g>
+    
+    {/* Third Box - Implementation */}
+    <g>
+      <rect x="350" y="30" width="120" height="40" rx="4" fill="hsla(48, 100%, 92%, 0.7)" stroke="#333" strokeWidth="1">
+        {animate && (
+          <>
+            <animate 
+              id="implement-design-1"
+              attributeName="x"
+              from="350"
+              to="190"
+              begin="design-implement-1.begin"
+              dur="0.5s"
+              fill="freeze"
+            />
+            <animate 
+              id="implement-design-2"
+              attributeName="x"
+              from="190"
+              to="350"
+              begin="design-implement-2.begin"
+              dur="0.5s"
+              fill="freeze"
+            />
+          </>
+        )}
+      </rect>
+      <text x="410" y="55" fontSize="14" fontWeight="500" fill="#333" textAnchor="middle" dominantBaseline="middle">
+        {animate && (
+          <>
+            <animate 
+              attributeName="x"
+              from="410"
+              to="250"
+              begin="implement-design-1.begin"
+              dur="0.5s"
+              fill="freeze"
+            />
+            <animate 
+              attributeName="x"
+              from="250"
+              to="410"
+              begin="implement-design-2.begin"
+              dur="0.5s"
+              fill="freeze"
+            />
+          </>
+        )}
+        Implementation
+      </text>
+    </g>
   </svg>
 );
 
 const Methodology = () => {
+  const [animateProcess, setAnimateProcess] = useState(false);
+  const processRef = useRef<HTMLDivElement>(null);
+  
   // Scroll to top when component mounts
   useEffect(() => {
     window.scrollTo(0, 0);
+    
+    // Setup intersection observer for process section
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            // Delay animation start by 4 seconds after section is visible
+            setTimeout(() => {
+              setAnimateProcess(true);
+            }, 4000);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+    
+    if (processRef.current) {
+      observer.observe(processRef.current);
+    }
+    
+    return () => {
+      if (processRef.current) {
+        observer.unobserve(processRef.current);
+      }
+    };
   }, []);
   
   return (
@@ -265,13 +399,13 @@ const Methodology = () => {
               </div>
               
               {/* Process */}
-              <div className="mb-16">
+              <div className="mb-16" ref={processRef}>
                 <h2 className="text-2xl mb-6 font-merriweather font-normal">Process</h2>
                 <p className="text-sm mb-4 font-merriweather">
-                  My process follows an iterative pattern across three primary phases, with each informing the others through continuous learning.
+                  My approach follows an iterative pattern across three primary phases. While I plan for a logical, iterative process, I also develop capabilities to manage disruptions that arise from stakeholder needs or the dynamic nature of projects themselves. This flexibility ensures we can adapt while maintaining progress toward defined outcomes.
                 </p>
                 
-                <ProcessDiagramSVG />
+                <ProcessDiagramSVG animate={animateProcess} />
                 
                 <div className="grid md:grid-cols-3 gap-8 mt-8">
                   <div>
