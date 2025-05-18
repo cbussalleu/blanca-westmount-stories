@@ -1,3 +1,4 @@
+
 import { useEffect, useRef, useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -150,7 +151,7 @@ const ProcessDiagramSVG = ({ animate }: { animate: boolean }) => (
             type="translate"
             from="0 0"
             to="160 0"
-            begin="4s; research-to-design-back.end+3s"
+            begin="5s"
             dur="0.5s"
             fill="freeze"
           />
@@ -160,7 +161,7 @@ const ProcessDiagramSVG = ({ animate }: { animate: boolean }) => (
             type="translate"
             from="160 0"
             to="0 0"
-            begin="research-to-design.end+3s"
+            begin="research-to-design.end+4s"
             dur="0.5s"
             fill="freeze"
           />
@@ -180,7 +181,7 @@ const ProcessDiagramSVG = ({ animate }: { animate: boolean }) => (
             type="translate"
             from="0 0"
             to="-160 0"
-            begin="4s; design-to-research-back.end+3s"
+            begin="5s"
             dur="0.5s"
             fill="freeze"
           />
@@ -190,7 +191,7 @@ const ProcessDiagramSVG = ({ animate }: { animate: boolean }) => (
             type="translate"
             from="-160 0"
             to="0 0"
-            begin="design-to-research.end+3s"
+            begin="design-to-research.end+4s"
             dur="0.5s"
             fill="freeze"
           />
@@ -200,7 +201,7 @@ const ProcessDiagramSVG = ({ animate }: { animate: boolean }) => (
             type="translate"
             from="0 0"
             to="160 0"
-            begin="design-to-research-back.end+3s"
+            begin="design-to-research-back.end+4s"
             dur="0.5s"
             fill="freeze"
           />
@@ -210,7 +211,7 @@ const ProcessDiagramSVG = ({ animate }: { animate: boolean }) => (
             type="translate"
             from="160 0"
             to="0 0"
-            begin="design-to-implement.end+3s"
+            begin="design-to-implement.end+4s"
             dur="0.5s"
             fill="freeze"
           />
@@ -240,7 +241,7 @@ const ProcessDiagramSVG = ({ animate }: { animate: boolean }) => (
             type="translate"
             from="-160 0"
             to="0 0"
-            begin="design-to-implement-back.begin"
+            begin="implement-to-design.end+4s"
             dur="0.5s"
             fill="freeze"
           />
@@ -265,10 +266,10 @@ const Methodology = () => {
       (entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            // Delay animation start by 4 seconds after section is visible
+            // Start animation 5 seconds after section becomes visible
             setTimeout(() => {
               setAnimateProcess(true);
-            }, 4000);
+            }, 5000);
             observer.unobserve(entry.target);
           }
         });
