@@ -1,3 +1,4 @@
+
 import { useEffect, useRef, useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -23,7 +24,7 @@ const SystemsFrameworkSVG = () => (
         repeatCount="indefinite" 
       />
     </rect>
-    <text x="80" y="32" fontSize="12" fontWeight="500" fill="#333" textAnchor="middle" dominantBaseline="middle">
+    <text x="80" y="32" fontSize="12" fontWeight="500" fill="#333" textAnchor="middle" dominantBaseline="middle" fontFamily="Merriweather">
       <animate 
         attributeName="x" 
         values="80; 75; 80" 
@@ -32,7 +33,7 @@ const SystemsFrameworkSVG = () => (
       />
       Human Systems
     </text>
-    <text x="220" y="32" fontSize="12" fontWeight="500" fill="#333" textAnchor="middle" dominantBaseline="middle">
+    <text x="220" y="32" fontSize="12" fontWeight="500" fill="#333" textAnchor="middle" dominantBaseline="middle" fontFamily="Merriweather">
       <animate 
         attributeName="x" 
         values="220; 225; 220" 
@@ -41,7 +42,7 @@ const SystemsFrameworkSVG = () => (
       />
       Functional Systems
     </text>
-    <text x="40" y="60" fontSize="11" fill="#333">
+    <text x="40" y="60" fontSize="11" fill="#333" fontFamily="Merriweather">
       <animate 
         attributeName="x" 
         values="40; 35; 40" 
@@ -50,7 +51,7 @@ const SystemsFrameworkSVG = () => (
       />
       • Behaviors
     </text>
-    <text x="40" y="80" fontSize="11" fill="#333">
+    <text x="40" y="80" fontSize="11" fill="#333" fontFamily="Merriweather">
       <animate 
         attributeName="x" 
         values="40; 35; 40" 
@@ -59,7 +60,7 @@ const SystemsFrameworkSVG = () => (
       />
       • Culture
     </text>
-    <text x="40" y="100" fontSize="11" fill="#333">
+    <text x="40" y="100" fontSize="11" fill="#333" fontFamily="Merriweather">
       <animate 
         attributeName="x" 
         values="40; 35; 40" 
@@ -68,7 +69,7 @@ const SystemsFrameworkSVG = () => (
       />
       • Relationships
     </text>
-    <text x="40" y="120" fontSize="11" fill="#333">
+    <text x="40" y="120" fontSize="11" fill="#333" fontFamily="Merriweather">
       <animate 
         attributeName="x" 
         values="40; 35; 40" 
@@ -77,7 +78,7 @@ const SystemsFrameworkSVG = () => (
       />
       • Perceptions
     </text>
-    <text x="180" y="60" fontSize="11" fill="#333">
+    <text x="180" y="60" fontSize="11" fill="#333" fontFamily="Merriweather">
       <animate 
         attributeName="x" 
         values="180; 185; 180" 
@@ -86,7 +87,7 @@ const SystemsFrameworkSVG = () => (
       />
       • Processes
     </text>
-    <text x="180" y="80" fontSize="11" fill="#333">
+    <text x="180" y="80" fontSize="11" fill="#333" fontFamily="Merriweather">
       <animate 
         attributeName="x" 
         values="180; 185; 180" 
@@ -95,7 +96,7 @@ const SystemsFrameworkSVG = () => (
       />
       • Technology
     </text>
-    <text x="180" y="100" fontSize="11" fill="#333">
+    <text x="180" y="100" fontSize="11" fill="#333" fontFamily="Merriweather">
       <animate 
         attributeName="x" 
         values="180; 185; 180" 
@@ -104,7 +105,7 @@ const SystemsFrameworkSVG = () => (
       />
       • Metrics
     </text>
-    <text x="180" y="120" fontSize="11" fill="#333">
+    <text x="180" y="120" fontSize="11" fill="#333" fontFamily="Merriweather">
       <animate 
         attributeName="x" 
         values="180; 185; 180" 
@@ -128,7 +129,7 @@ const SystemsFrameworkSVG = () => (
       />
     </line>
     <text x="150" y="85" fontSize="14" fill="#333" textAnchor="middle" dominantBaseline="middle">+</text>
-    <text x="150" y="160" fontSize="11" fontWeight="500" fill="#333" textAnchor="middle">Service Design Framework</text>
+    <text x="150" y="160" fontSize="11" fontWeight="500" fill="#333" textAnchor="middle" fontFamily="Merriweather">Service Design Framework</text>
   </svg>
 );
 
@@ -167,7 +168,7 @@ const ProcessDiagramSVG = ({ animate }: { animate: boolean }) => (
         </>
       )}
       <rect x="30" y="30" width="120" height="40" rx="4" fill="hsla(48, 100%, 92%, 0.7)" stroke="#333" strokeWidth="1" />
-      <text x="90" y="55" fontSize="14" fontWeight="500" fill="#333" textAnchor="middle" dominantBaseline="middle">Research</text>
+      <text x="90" y="55" fontSize="14" fontWeight="500" fill="#333" textAnchor="middle" dominantBaseline="middle" fontFamily="Merriweather">Research</text>
     </g>
     
     {/* Second Box with Text - Design */}
@@ -217,7 +218,7 @@ const ProcessDiagramSVG = ({ animate }: { animate: boolean }) => (
         </>
       )}
       <rect x="190" y="30" width="120" height="40" rx="4" fill="hsla(48, 100%, 92%, 0.7)" stroke="#333" strokeWidth="1" />
-      <text x="250" y="55" fontSize="14" fontWeight="500" fill="#333" textAnchor="middle" dominantBaseline="middle">Design</text>
+      <text x="250" y="55" fontSize="14" fontWeight="500" fill="#333" textAnchor="middle" dominantBaseline="middle" fontFamily="Merriweather">Design</text>
     </g>
     
     {/* Third Box with Text - Implementation */}
@@ -247,7 +248,7 @@ const ProcessDiagramSVG = ({ animate }: { animate: boolean }) => (
         </>
       )}
       <rect x="350" y="30" width="120" height="40" rx="4" fill="hsla(48, 100%, 92%, 0.7)" stroke="#333" strokeWidth="1" />
-      <text x="410" y="55" fontSize="14" fontWeight="500" fill="#333" textAnchor="middle" dominantBaseline="middle">Implementation</text>
+      <text x="410" y="55" fontSize="14" fontWeight="500" fill="#333" textAnchor="middle" dominantBaseline="middle" fontFamily="Merriweather">Implementation</text>
     </g>
   </svg>
 );
