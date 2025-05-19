@@ -68,12 +68,12 @@ const Index = () => {
             <div className="grid md:grid-cols-2 gap-16">
   <div className="space-y-6">
     <p className="text-sm leading-relaxed font-merriweather">
-      With over a decade in service design across global organizations, I've learned the importance of guiding teams to navigate complexity. My approach emphasizes understanding underlying patterns and creating solutions that evolve with changing conditions. This perspective has proven effective in environments where stakeholder needs shift and service ecosystems grow increasingly interconnected.
+      With over a decade in service design, I've learned the importance of guiding teams through complexity. My approach emphasizes understanding underlying patterns and creating adaptable solutions. This perspective has proven effective in environments where stakeholder needs shift and service ecosystems grow increasingly interconnected.
     </p>
   </div>
   <div className="space-y-6">
     <p className="text-sm leading-relaxed font-merriweather">
-      My background in communication strategy helps translate research into narratives that drive stakeholder alignment. While I enjoy the engineering aspects of blueprinting, I've learned that effective service design is equally about politics and decision-making. What I value most is maintaining curiosity about improvement, even when that means embracing uncomfortable realities.
+      My background in communication strategy helps translate research into narratives that drive stakeholder alignment. This becomes valuable when working across departments with competing priorities. While I enjoy the engineering aspects of blueprinting, I've learned that effective service design is equally about politics and maintaining curiosity about improvement.
     </p>
   </div>
 </div>
