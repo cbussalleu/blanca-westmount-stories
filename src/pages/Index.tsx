@@ -68,12 +68,12 @@ const Index = () => {
             <div className="grid md:grid-cols-2 gap-16">
   <div className="space-y-6">
     <p className="text-sm leading-relaxed font-merriweather">
-      With more than a decade in service design, I operate where human systems meet functional processes. My approach recognizes that complex challenges require adaptable frameworks, not rigid solutions. I help teams navigate complexity by identifying integration points between business needs and user experiences, building solutions that evolve with changing conditions rather than breaking under pressure.
+      With over a decade in service design across global organizations, I've developed methodologies that help teams navigate complexity. While I acknowledge the value of immediate insights, my approach emphasizes understanding underlying patterns and creating solutions that evolve with changing conditions. This perspective has proven effective in environments where stakeholder needs shift and service ecosystems grow increasingly interconnected.
     </p>
   </div>
   <div className="space-y-6">
     <p className="text-sm leading-relaxed font-merriweather">
-      My background in communication strategy and data analysis enables me to translate research into actionable insights. I bridge quantitative metrics with qualitative understanding to create service models that balance business viability with user needs. What I bring is experience designing for ecosystems where brand experiences maintain consistency while adapting to diverse contexts and stakeholder requirements.
+      My complementary background in communication strategy strengthens my ability to translate complex research into narratives that drive stakeholder alignment. This becomes particularly valuable when working across departments with competing priorities. What I bring is experience designing for service ecosystems where brand experiences must maintain consistency while adapting to diverse contexts - creating frameworks that enable meaningful interactions rather than prescribing rigid solutions.
     </p>
   </div>
 </div>
