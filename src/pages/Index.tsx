@@ -1,3 +1,4 @@
+
 import { useEffect, useRef } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -6,6 +7,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import ImageHero from '../components/ImageHero';
 import BimboCaseStudies from '../components/BimboCaseStudies';
+import AnimatedVennDiagram from '../components/methodology/AnimatedVennDiagram';
 
 const projects = [
   {
@@ -137,6 +139,9 @@ const Index = () => {
                 className="w-[65%] xs:w-[63%] sm:w-[60%] md:w-[58%] lg:w-[55%] transition-all" 
               />
             </div>
+            
+            {/* Add animated Venn diagram here */}
+            <AnimatedVennDiagram />
             
             <div className="text-center mt-12">
               <Link 

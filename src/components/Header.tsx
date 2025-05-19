@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Mail, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import AnimatedLogoIcon from './AnimatedLogoIcon';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -52,6 +53,7 @@ const Header = () => {
                 alt="Logo" 
                 className="h-6 sm:h-7 md:h-8 w-auto transition-all"
               />
+              <AnimatedLogoIcon className="h-6 sm:h-7 md:h-8 ml-2" />
             </Link>
           </div>
 
