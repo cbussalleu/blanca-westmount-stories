@@ -1,4 +1,3 @@
-
 import { useEffect, useRef } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -54,36 +53,36 @@ const Index = () => {
       <Header />
       <main className="pt-24">
         {/* About Me Section */}
-        <section className="py-16" ref={sectionRefs.about}>
+        <section className="py-8 sm:py-16" ref={sectionRefs.about}>
           <div className="container-narrow">
-            <div className="mb-12">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-merriweather mb-16 sm:text-center text-left">
+            <div className="mb-8 sm:mb-12">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-merriweather mb-8 sm:mb-16 text-left sm:text-center">
                 Hello, I'm Christian.<br className="hidden sm:block" />
-                Service Designer in Barcelona.<br className="hidden sm:block" />
-                I don't bring perfect answers —<br className="hidden sm:block" />
-                I help teams ask better questions<br className="hidden sm:block" />
-                and build adaptive solutions
+                <span className="inline sm:hidden"> </span>Service Designer in Barcelona.<br className="hidden sm:block" />
+                <span className="inline sm:hidden"> </span>I don't bring perfect answers —<br className="hidden sm:block" />
+                <span className="inline sm:hidden"> </span>I help teams ask better questions<br className="hidden sm:block" />
+                <span className="inline sm:hidden"> </span>and build adaptive solutions
               </h1>
             </div>
-            <div className="grid md:grid-cols-2 md:gap-16 gap-8">
-  <div className="space-y-4 md:space-y-6">
-    <p className="text-sm leading-relaxed font-merriweather">
-      With over a decade in service design across global organizations, I've learned the importance of guiding teams through complexity. My approach emphasizes understanding patterns and creating adaptable solutions. This perspective works in environments where stakeholder needs shift and service ecosystems grow increasingly interconnected.
-    </p>
-  </div>
-  <div className="space-y-4 md:space-y-6">
-    <p className="text-sm leading-relaxed font-merriweather">
-      My background in communication strategy helps translate research into narratives that drive stakeholder alignment. This becomes valuable when working across departments with competing priorities. While I enjoy the engineering aspects of blueprinting, I've learned that effective service design is equally about politics and maintaining curiosity about improvement.
-    </p>
-  </div>
-</div>
+            <div className="grid md:grid-cols-2 gap-6 md:gap-16">
+              <div className="space-y-4 md:space-y-6">
+                <p className="text-sm leading-relaxed font-merriweather">
+                  With over a decade in service design across global organizations, I've learned the importance of guiding teams through complexity. My approach emphasizes understanding patterns and creating adaptable solutions. This perspective works in environments where stakeholder needs shift and service ecosystems grow increasingly interconnected.
+                </p>
+              </div>
+              <div className="space-y-4 md:space-y-6">
+                <p className="text-sm leading-relaxed font-merriweather">
+                  My background in communication strategy helps translate research into narratives that drive stakeholder alignment. This becomes valuable when working across departments with competing priorities. While I enjoy the engineering aspects of blueprinting, I've learned that effective service design is equally about politics and maintaining curiosity about improvement.
+                </p>
+              </div>
+            </div>
           </div>
         </section>
         
         {/* Grupo Bimbo Section */}
-        <section className="py-16" ref={sectionRefs.bimbo}>
+        <section className="py-8 sm:py-16" ref={sectionRefs.bimbo}>
           <div className="container-narrow">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-westmount mb-16 text-center">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-westmount mb-8 sm:mb-16 text-center">
               GRUPO BIMBO AND I
             </h2>
             <BimboCaseStudies />
@@ -91,19 +90,19 @@ const Index = () => {
         </section>
         
         {/* Featured Projects Section */}
-        <section className="py-16" ref={sectionRefs.projects}>
+        <section className="py-8 sm:py-16" ref={sectionRefs.projects}>
           <div className="container-narrow">
-            <div className="text-center mb-16">
+            <div className="text-center mb-8 sm:mb-16">
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-westmount">FEATURED PROJECTS</h2>
             </div>
             
-            <div className="grid md:grid-cols-3 gap-12">
+            <div className="grid md:grid-cols-3 gap-8 sm:gap-12">
               {projects.map((project) => (
                 <ProjectCard key={project.slug} {...project} />
               ))}
             </div>
             
-            <div className="text-center mt-12">
+            <div className="text-center mt-8 sm:mt-12">
               <Link 
                 to="/portfolio" 
                 className="inline-flex items-center text-sm border-b border-black pb-1 hover:opacity-70 transition-opacity font-merriweather"
@@ -115,18 +114,18 @@ const Index = () => {
         </section>
         
         {/* Methodology Section */}
-        <section className="py-16" ref={sectionRefs.methodology}>
+        <section className="py-8 sm:py-16" ref={sectionRefs.methodology}>
           <div className="container-narrow">
-            <div className="text-center mb-12">
+            <div className="text-center mb-8 sm:mb-12">
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-westmount">MY APPROACH</h2>
-              <p className="text-sm max-w-2xl mx-auto mt-8 text-base font-merriweather">
+              <p className="text-sm max-w-2xl mx-auto mt-4 sm:mt-8 text-base font-merriweather">
                 I <span className="text-[#8ab1a2]">tackle</span> a broad variety of 
                 disciplines in the <u>agile process</u>, 
                 of creating meaningful products
               </p>
             </div>
             
-            <div className="flex justify-center mt-12">
+            <div className="flex justify-center mt-8 sm:mt-12">
               <img 
                 src="/lovable-uploads/a44d8134-2342-431d-aaf8-18fe1829dc0a.png" 
                 alt="Service Design Methodology" 
@@ -137,7 +136,7 @@ const Index = () => {
             {/* Add animated Venn diagram here */}
             <AnimatedVennDiagram />
             
-            <div className="text-center mt-12">
+            <div className="text-center mt-8 sm:mt-12">
               <Link 
                 to="/methodology" 
                 className="inline-flex items-center text-sm border-b border-black pb-1 hover:opacity-70 transition-opacity font-merriweather"
