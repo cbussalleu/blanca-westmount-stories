@@ -73,7 +73,7 @@ const Index = () => {
   </div>
   <div className="space-y-6">
     <p className="text-sm leading-relaxed font-merriweather">
-      My background in communication strategy helps translate complex research into narratives that drive stakeholder alignment. This becomes valuable when working across departments with competing priorities. What I bring is experience designing for service ecosystems where brand experiences maintain consistency while adapting to diverse contexts - creating frameworks that enable meaningful interactions.
+      My background in communication strategy helps translate complex research into narratives that drive stakeholder alignment. This becomes valuable when working across departments with competing priorities. While I enjoy the engineering aspects of blueprinting, I've learned that effective service design is equally about politics, decision-making, and maintaining consistent curiosity about improvement, even when that means embracing uncomfortable realities.
     </p>
   </div>
 </div>
