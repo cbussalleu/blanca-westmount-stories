@@ -66,23 +66,17 @@ const Index = () => {
               </h1>
             </div>
             <div className="grid md:grid-cols-2 gap-16">
-              <div className="space-y-6">
-                <p className="text-sm leading-relaxed font-merriweather">
-                  With more than a decade of experience I tackle a broad variety of disciplines in the process of creating meaningful products that make a real difference. With carefully selected tools and skills I express my visions ranging from product design to the creation of user experience up to development and delivery.
-                </p>
-                <p className="text-sm leading-relaxed font-merriweather">
-                  My distinctive strategic thinking helps me to pinpoint the holistic scope of a product and evolve it by adding new business ideas, innovations and values that meet user needs as well as business objectives. Besides building user flows, information architecture and wireframes, tailor-made interactive prototypes are constantly
-                </p>
-              </div>
-              <div className="space-y-6">
-                <p className="text-sm leading-relaxed font-merriweather">
-                  putting concepts and ideas to the test and emphasize the user-centered approach in my work. I work with the latest techniques in web development and my agile workflow is the result of the precisely combined tools and strategies that include object oriented patterns, build scripts, pre-processors and minification, source code management, testing as well as deployment.
-                </p>
-                <p className="text-sm leading-relaxed font-merriweather">
-                  With my knowledge in both design and technology I foster productive teams in an collaborative environment that meets the requirements of creatives and developers at the same time.
-                </p>
-              </div>
-            </div>
+  <div className="space-y-6">
+    <p className="text-sm leading-relaxed font-merriweather">
+      With more than a decade of experience in service design, I operate at the intersection of human dynamics and functional systems. My approach recognizes that complex challenges require frameworks that balance structure with adaptability. I've developed methodologies that help teams navigate complexity by identifying key integration points where business needs meet user experiences - looking beyond immediate symptoms to understand patterns and build solutions that evolve rather than break under changing conditions.
+    </p>
+  </div>
+  <div className="space-y-6">
+    <p className="text-sm leading-relaxed font-merriweather">
+      My background in communication strategy and data analysis helps me translate complex research into compelling narratives that drive stakeholder alignment. I bridge quantitative metrics with qualitative understanding to create evidence-based service models that balance business viability with user needs. What I bring is experience designing for complex service ecosystems where brand experiences maintain consistency while adapting to diverse contexts - creating frameworks that enable meaningful interactions rather than prescribing rigid solutions.
+    </p>
+  </div>
+</div>
           </div>
         </section>
         
