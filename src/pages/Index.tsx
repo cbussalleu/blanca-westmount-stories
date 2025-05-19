@@ -68,12 +68,12 @@ const Index = () => {
             <div className="grid md:grid-cols-2 gap-16">
   <div className="space-y-6">
     <p className="text-sm leading-relaxed font-merriweather">
-      With over a decade in service design across global organizations, I've developed methodologies that help teams navigate complexity. While I acknowledge the value of immediate insights, my approach emphasizes understanding underlying patterns and creating solutions that evolve with changing conditions. This perspective has proven effective in environments where stakeholder needs shift and service ecosystems grow increasingly interconnected.
+      With over a decade in service design across global organizations, I've learned the importance of guiding teams to navigate complexity. My approach emphasizes understanding underlying patterns and creating solutions that evolve with changing conditions. This perspective has proven effective in environments where stakeholder needs shift and service ecosystems grow increasingly interconnected.
     </p>
   </div>
   <div className="space-y-6">
     <p className="text-sm leading-relaxed font-merriweather">
-      My complementary background in communication strategy strengthens my ability to translate complex research into narratives that drive stakeholder alignment. This becomes particularly valuable when working across departments with competing priorities. What I bring is experience designing for service ecosystems where brand experiences must maintain consistency while adapting to diverse contexts - creating frameworks that enable meaningful interactions rather than prescribing rigid solutions.
+      My background in communication strategy helps translate complex research into narratives that drive stakeholder alignment. This becomes valuable when working across departments with competing priorities. What I bring is experience designing for service ecosystems where brand experiences maintain consistency while adapting to diverse contexts - creating frameworks that enable meaningful interactions.
     </p>
   </div>
 </div>
