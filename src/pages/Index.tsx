@@ -68,12 +68,12 @@ const Index = () => {
             <div className="grid md:grid-cols-2 gap-16">
   <div className="space-y-6">
     <p className="text-sm leading-relaxed font-merriweather">
-      With more than a decade of experience in service design, I operate at the intersection of human dynamics and functional systems. My approach recognizes that complex challenges require frameworks that balance structure with adaptability. I've developed methodologies that help teams navigate complexity by identifying key integration points where business needs meet user experiences - looking beyond immediate symptoms to understand patterns and build solutions that evolve rather than break under changing conditions.
+      With more than a decade in service design, I operate where human systems meet functional processes. My approach recognizes that complex challenges require adaptable frameworks, not rigid solutions. I help teams navigate complexity by identifying integration points between business needs and user experiences, building solutions that evolve with changing conditions rather than breaking under pressure.
     </p>
   </div>
   <div className="space-y-6">
     <p className="text-sm leading-relaxed font-merriweather">
-      My background in communication strategy and data analysis helps me translate complex research into compelling narratives that drive stakeholder alignment. I bridge quantitative metrics with qualitative understanding to create evidence-based service models that balance business viability with user needs. What I bring is experience designing for complex service ecosystems where brand experiences maintain consistency while adapting to diverse contexts - creating frameworks that enable meaningful interactions rather than prescribing rigid solutions.
+      My background in communication strategy and data analysis enables me to translate research into actionable insights. I bridge quantitative metrics with qualitative understanding to create service models that balance business viability with user needs. What I bring is experience designing for ecosystems where brand experiences maintain consistency while adapting to diverse contexts and stakeholder requirements.
     </p>
   </div>
 </div>
