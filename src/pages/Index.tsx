@@ -7,6 +7,7 @@ import { ArrowRight } from 'lucide-react';
 import ImageHero from '../components/ImageHero';
 import BimboCaseStudies from '../components/BimboCaseStudies';
 import AnimatedVennDiagram from '../components/methodology/AnimatedVennDiagram';
+import RadarSkillsSection from '../components/RadarSkillsSection';
 
 const projects = [
   {
@@ -38,6 +39,7 @@ const projects = [
 const Index = () => {
   const sectionRefs = {
     about: useRef(null),
+    skills: useRef(null),
     bimbo: useRef(null),
     projects: useRef(null),
     methodology: useRef(null)
@@ -77,6 +79,11 @@ const Index = () => {
               </div>
             </div>
           </div>
+        </section>
+        
+        {/* Skills Radar Section */}
+        <section ref={sectionRefs.skills}>
+          <RadarSkillsSection />
         </section>
         
         {/* Grupo Bimbo Section */}
