@@ -1,5 +1,7 @@
 
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
 
 const RadarSkillsSection = () => {
   const [selectedSkill, setSelectedSkill] = useState<string | null>(null);
@@ -82,6 +84,20 @@ const RadarSkillsSection = () => {
     return path;
   };
 
+  const createSectionPath = (index: number) => {
+    const centerX = 150;
+    const centerY = 150;
+    const maxRadius = 100;
+    
+    const currentAngle = index * 60;
+    const nextAngle = ((index + 1) % radarData.length) * 60;
+    
+    const currentCoords = polarToCartesian(centerX, centerY, maxRadius, currentAngle);
+    const nextCoords = polarToCartesian(centerX, centerY, maxRadius, nextAngle);
+    
+    return `M ${centerX} ${centerY} L ${currentCoords.x} ${currentCoords.y} A ${maxRadius} ${maxRadius} 0 0 1 ${nextCoords.x} ${nextCoords.y} Z`;
+  };
+
   const skillContent = getSkillContent(selectedSkill);
 
   return (
@@ -89,7 +105,7 @@ const RadarSkillsSection = () => {
       <div className="container-narrow">
         <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-start">
           {/* Radar Chart */}
-          <div className="flex justify-center">
+          <div className="flex flex-col items-center">
             <div className="relative w-80 h-80">
               <svg viewBox="0 0 300 300" className="w-full h-full">
                 {/* Grid circles */}
@@ -121,28 +137,41 @@ const RadarSkillsSection = () => {
                   );
                 })}
                 
+                {/* Clickable sections */}
+                {radarData.map((point, index) => (
+                  <path
+                    key={`section-${index}`}
+                    d={createSectionPath(index)}
+                    fill={selectedSkill === point.label ? "rgba(138, 177, 162, 0.2)" : "transparent"}
+                    className="cursor-pointer transition-all duration-300 hover:fill-[rgba(138,177,162,0.1)]"
+                    onClick={() => setSelectedSkill(selectedSkill === point.label ? null : point.label)}
+                  />
+                ))}
+                
                 {/* Data area */}
                 <path
                   d={createRadarPath()}
                   fill="rgba(138, 177, 162, 0.3)"
                   stroke="rgba(138, 177, 162, 0.8)"
                   strokeWidth="2"
+                  className="transition-all duration-500"
                 />
                 
                 {/* Data points */}
                 {radarData.map((point, index) => {
                   const radius = (point.value / 100) * 100;
                   const coords = polarToCartesian(150, 150, radius, point.angle);
+                  const isSelected = selectedSkill === point.label;
                   return (
                     <circle
                       key={index}
                       cx={coords.x}
                       cy={coords.y}
-                      r="6"
+                      r={isSelected ? "8" : "6"}
                       fill="#8ab1a2"
                       stroke="#fff"
                       strokeWidth="2"
-                      className="cursor-pointer hover:r-8 transition-all"
+                      className="cursor-pointer transition-all duration-300 hover:r-8"
                       onClick={() => setSelectedSkill(selectedSkill === point.label ? null : point.label)}
                     />
                   );
@@ -152,6 +181,7 @@ const RadarSkillsSection = () => {
                 {radarData.map((point, index) => {
                   const labelRadius = 120;
                   const coords = polarToCartesian(150, 150, labelRadius, point.angle);
+                  const isSelected = selectedSkill === point.label;
                   return (
                     <text
                       key={index}
@@ -159,7 +189,9 @@ const RadarSkillsSection = () => {
                       y={coords.y}
                       textAnchor="middle"
                       dy="0.3em"
-                      className="text-sm font-merriweather fill-current"
+                      className={`text-sm font-merriweather fill-current transition-all duration-300 ${
+                        isSelected ? 'font-bold' : ''
+                      }`}
                       style={{ fontSize: '12px' }}
                     >
                       {point.label}
@@ -187,30 +219,45 @@ const RadarSkillsSection = () => {
                 })}
               </svg>
             </div>
+            
+            {/* Call to Action */}
+            <div className="mt-8 text-center">
+              <Link 
+                to="/self-assessment-method" 
+                className="inline-flex items-center text-sm border-b border-black pb-1 hover:opacity-70 transition-opacity font-merriweather"
+              >
+                Learn more about my self-assessment method <ArrowRight size={14} className="ml-1" />
+              </Link>
+            </div>
           </div>
 
           {/* Skills Content */}
           <div className="space-y-6">
             <h2 className="text-2xl sm:text-3xl font-westmount">What I bring</h2>
             
-            {/* Core Skills Group */}
-            <div className="space-y-2">
+            {/* Methodologies Group */}
+            <div className="space-y-3">
+              <h3 className="text-lg font-merriweather font-semibold">Methodologies</h3>
               <div className="flex flex-wrap gap-2">
                 {["Human Centered Design", "System Thinking", "CAP", "EFQM", "PMO"].map((skill) => (
                   <span
                     key={skill}
-                    className="px-3 py-1 bg-gray-100 rounded-full text-sm font-merriweather"
+                    className="px-3 py-1 bg-gray-100 rounded-full text-sm font-merriweather transition-all duration-300"
                   >
                     {skill}
                   </span>
                 ))}
               </div>
-              
+            </div>
+
+            {/* Core Capabilities Group */}
+            <div className="space-y-3">
+              <h3 className="text-lg font-merriweather font-semibold">Core capabilities</h3>
               <div className="flex flex-wrap gap-2">
                 {["Data Analysis", "Stakeholders Communication Strategy", "Cross-Regional Project Management", "Survey Design", "Workshop Facilitation", "Service Blueprinting and Processes Design", "Training Management", "Service Prototyping", "Continuous Improvement Management"].map((skill) => (
                   <span
                     key={skill}
-                    className="px-3 py-1 bg-gray-100 rounded-full text-sm font-merriweather"
+                    className="px-3 py-1 bg-gray-100 rounded-full text-sm font-merriweather transition-all duration-300"
                   >
                     {skill}
                   </span>
@@ -218,32 +265,34 @@ const RadarSkillsSection = () => {
               </div>
             </div>
 
-            {/* What I excel section */}
+            {/* Excelling at section */}
             <div className="space-y-3">
-              <h3 className="text-lg font-westmount">What I excel</h3>
+              <h3 className="text-lg font-merriweather font-semibold">Excelling at</h3>
               
-              {skillContent.tags.length > 0 && (
-                <div className="flex flex-wrap gap-2">
-                  {skillContent.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-3 py-1 bg-[#8ab1a2] text-white rounded-full text-sm font-merriweather"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              )}
-              
-              {skillContent.text && (
-                <p className="text-sm font-merriweather italic text-gray-600">
-                  {skillContent.text}
-                </p>
-              )}
+              <div className="transition-all duration-500 ease-in-out">
+                {skillContent.tags.length > 0 && (
+                  <div className="flex flex-wrap gap-2 animate-fade-in">
+                    {skillContent.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-3 py-1 bg-[#8ab1a2] text-white rounded-full text-sm font-merriweather transition-all duration-300 animate-scale-in"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                )}
+                
+                {skillContent.text && (
+                  <p className="text-sm font-merriweather italic text-gray-600 animate-fade-in">
+                    {skillContent.text}
+                  </p>
+                )}
+              </div>
             </div>
 
             {selectedSkill && (
-              <div className="text-xs font-merriweather text-gray-500">
+              <div className="text-xs font-merriweather text-gray-500 animate-fade-in">
                 Click again to deselect • Selected: {selectedSkill}
               </div>
             )}
