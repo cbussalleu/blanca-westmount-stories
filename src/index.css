@@ -309,3 +309,19 @@
   height: 2px;
   background-color: currentColor;
 }
+
+/* Skill tags animations */
+@keyframes skillTagAppear {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-skill-tag {
+  animation: skillTagAppear 0.4s ease-out forwards;
+}

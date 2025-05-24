@@ -237,16 +237,21 @@ const RadarSkillsSection = () => {
             <div className="space-y-3">
               <h3 className="text-lg font-merriweather font-semibold">Core capabilities</h3>
               
-              <div className="transition-all duration-500 ease-in-out">
-                <div className="flex flex-wrap gap-2 animate-fade-in">
-                  {skillContent.map((skill) => (
+              <div className="transition-all duration-700 ease-in-out min-h-[120px]">
+                <div className="flex flex-wrap gap-2">
+                  {skillContent.map((skill, index) => (
                     <span
                       key={skill.name}
-                      className={`px-3 py-1 rounded-full text-sm font-merriweather transition-all duration-300 animate-scale-in ${
+                      className={`px-3 py-1 rounded-full text-sm font-merriweather transition-all duration-500 ease-in-out ${
                         skill.category === 'excelling'
                           ? 'bg-[#8ab1a2] text-white'
                           : 'bg-slate-400 text-white'
                       }`}
+                      style={{ 
+                        animationDelay: `${index * 100}ms`,
+                        opacity: 1,
+                        transform: 'translateY(0)'
+                      }}
                     >
                       {skill.name}
                     </span>
@@ -256,7 +261,7 @@ const RadarSkillsSection = () => {
             </div>
 
             {/* Legend - Minimal and linear design */}
-            <div className="flex items-center justify-start gap-6 text-xs font-merriweather py-2">
+            <div className="flex items-center justify-start gap-6 text-xs font-merriweather py-2 transition-all duration-300">
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-[#8ab1a2] rounded-full"></div>
                 <span className="text-gray-600">Excelling at</span>
@@ -269,7 +274,7 @@ const RadarSkillsSection = () => {
             </div>
 
             {/* Call to Action - Centered on larger screens, left-aligned on smaller */}
-            <div className="pt-4 text-center lg:text-left">
+            <div className="pt-4 text-center lg:text-left transition-all duration-300">
               <Link 
                 to="/self-assessment-method" 
                 className="inline-flex items-center text-sm border-b border-black pb-1 hover:opacity-70 transition-opacity font-merriweather"
