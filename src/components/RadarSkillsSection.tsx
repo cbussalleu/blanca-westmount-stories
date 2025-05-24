@@ -230,29 +230,22 @@ const RadarSkillsSection = () => {
                 })}
               </svg>
             </div>
-            
-            {/* Call to Action */}
-            <div className="mt-8 text-center">
-              <Link 
-                to="/self-assessment-method" 
-                className="inline-flex items-center text-sm border-b border-black pb-1 hover:opacity-70 transition-opacity font-merriweather"
-              >
-                Learn more about my self-assessment method <ArrowRight size={14} className="ml-1" />
-              </Link>
-            </div>
           </div>
 
           {/* Skills Content */}
           <div className="space-y-6">
-            {/* Legend */}
-            <div className="flex flex-wrap gap-4 text-xs font-merriweather">
-              <div className="flex items-center gap-2">
-                <div className="w-3 h-3 bg-[#8ab1a2] rounded-full"></div>
-                <span>Excelling at</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-3 h-3 bg-slate-400 rounded-full"></div>
-                <span>Building up</span>
+            {/* Legend - Centered with minimal design */}
+            <div className="flex justify-center">
+              <div className="flex items-center gap-6 text-xs font-merriweather bg-white/50 rounded-full px-6 py-3 border border-gray-200">
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3 bg-[#8ab1a2] rounded-full"></div>
+                  <span>Excelling at</span>
+                </div>
+                <div className="w-px h-4 bg-gray-300"></div>
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3 bg-slate-400 rounded-full"></div>
+                  <span>Building up</span>
+                </div>
               </div>
             </div>
 
@@ -278,11 +271,15 @@ const RadarSkillsSection = () => {
               </div>
             </div>
 
-            {selectedSkill && (
-              <div className="text-xs font-merriweather text-gray-500 animate-fade-in">
-                Selected: {selectedSkill}
-              </div>
-            )}
+            {/* Call to Action - Moved here */}
+            <div className="pt-4">
+              <Link 
+                to="/self-assessment-method" 
+                className="inline-flex items-center text-sm border-b border-black pb-1 hover:opacity-70 transition-opacity font-merriweather"
+              >
+                Learn more about my Self Assessment tool <ArrowRight size={14} className="ml-1" />
+              </Link>
+            </div>
           </div>
         </div>
       </div>
