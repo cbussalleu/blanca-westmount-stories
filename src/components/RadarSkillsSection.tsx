@@ -4,54 +4,60 @@ import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 
 const RadarSkillsSection = () => {
-  const [selectedSkill, setSelectedSkill] = useState<string | null>(null);
+  const [selectedSkill, setSelectedSkill] = useState<string>('Hard Skills');
 
   const radarData = [
     { label: "Organization Understanding", value: 65, angle: 0 },
-    { label: "Soft Skills", value: 65, angle: 60 },
-    { label: "Cognitive Skills", value: 80, angle: 120 },
-    { label: "Hard Skills", value: 80, angle: 180 },
-    { label: "Emotional management", value: 65, angle: 240 },
-    { label: "Leadership", value: 45, angle: 300 }
+    { label: "Soft Skills", value: 65, angle: 72 },
+    { label: "Cognitive Skills", value: 80, angle: 144 },
+    { label: "Hard Skills", value: 80, angle: 216 },
+    { label: "Leadership", value: 45, angle: 288 }
   ];
 
-  const getSkillContent = (skill: string | null) => {
+  const getSkillContent = (skill: string) => {
     switch (skill) {
       case "Organization Understanding":
-        return {
-          tags: ["Engage internal stakeholders with service design processes"],
-          text: null
-        };
+        return [
+          { name: "Strategic Alignment", category: "excelling" },
+          { name: "Organizational Dynamics Comprehension", category: "excelling" },
+          { name: "Cross-Departmental Integration", category: "building" },
+          { name: "Design Resource Management", category: "building" }
+        ];
       case "Soft Skills":
-        return {
-          tags: ["Facilitate group interactions", "Interdisciplinary communication"],
-          text: null
-        };
+        return [
+          { name: "Interdisciplinary Communication", category: "excelling" },
+          { name: "Workshop Facilitation", category: "excelling" },
+          { name: "Conflict Resolution", category: "building" },
+          { name: "Professional Relationship Building", category: "building" }
+        ];
       case "Cognitive Skills":
-        return {
-          tags: ["Adaptability in changing environments", "Service Conceptualization and Modeling"],
-          text: null
-        };
+        return [
+          { name: "Complex Systems Understanding", category: "excelling" },
+          { name: "Abstract Thinking", category: "excelling" },
+          { name: "Innovative Solution Generation", category: "building" },
+          { name: "Adaptability", category: "excelling" }
+        ];
       case "Hard Skills":
-        return {
-          tags: ["Service Prototyping and testing", "HCD mastery", "Complete tool suites for the entire design process"],
-          text: null
-        };
-      case "Emotional management":
-        return {
-          tags: [],
-          text: "Let's find out in a meeting"
-        };
+        return [
+          { name: "HCD", category: "excelling" },
+          { name: "System Thinking", category: "excelling" },
+          { name: "Agile", category: "excelling" },
+          { name: "Service Prototyping", category: "excelling" },
+          { name: "Digital Tools Proficiency", category: "excelling" },
+          { name: "Training & Change Management", category: "building" },
+          { name: "Data Analysis", category: "excelling" },
+          { name: "Process Design", category: "excelling" },
+          { name: "Continuous Improvement Management", category: "excelling" }
+        ];
       case "Leadership":
-        return {
-          tags: ["People engagement"],
-          text: "Currently working in my abilities for team building and up-skilling"
-        };
+        return [
+          { name: "Team Inspiration & Motivation", category: "building" },
+          { name: "Strategic Decision-Making", category: "excelling" },
+          { name: "Talent Development", category: "building" },
+          { name: "Innovation Promotion", category: "building" }
+        ];
       default:
-        return {
-          tags: ["Service Conceptualization and Modeling", "Service Prototyping and Testing"],
-          text: null
-        };
+        return [];
     }
   };
 
@@ -64,9 +70,9 @@ const RadarSkillsSection = () => {
   };
 
   const createRadarPath = () => {
-    const centerX = 150;
-    const centerY = 150;
-    const maxRadius = 100;
+    const centerX = 200;
+    const centerY = 200;
+    const maxRadius = 140;
     
     let path = "";
     radarData.forEach((point, index) => {
@@ -85,12 +91,12 @@ const RadarSkillsSection = () => {
   };
 
   const createSectionPath = (index: number) => {
-    const centerX = 150;
-    const centerY = 150;
-    const maxRadius = 100;
+    const centerX = 200;
+    const centerY = 200;
+    const maxRadius = 140;
     
-    const currentAngle = index * 60;
-    const nextAngle = ((index + 1) % radarData.length) * 60;
+    const currentAngle = index * 72;
+    const nextAngle = ((index + 1) % radarData.length) * 72;
     
     const currentCoords = polarToCartesian(centerX, centerY, maxRadius, currentAngle);
     const nextCoords = polarToCartesian(centerX, centerY, maxRadius, nextAngle);
@@ -103,18 +109,23 @@ const RadarSkillsSection = () => {
   return (
     <section className="py-8 sm:py-16">
       <div className="container-narrow">
-        <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-start">
+        {/* Title */}
+        <div className="text-center mb-8 sm:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-westmount">MY SELF ASSESSMENT TOOL</h2>
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
           {/* Radar Chart */}
           <div className="flex flex-col items-center">
-            <div className="relative w-80 h-80">
-              <svg viewBox="0 0 300 300" className="w-full h-full">
+            <div className="relative w-full max-w-md aspect-square">
+              <svg viewBox="0 0 400 400" className="w-full h-full">
                 {/* Grid circles */}
                 {[20, 40, 60, 80, 100].map((percent) => (
                   <circle
                     key={percent}
-                    cx="150"
-                    cy="150"
-                    r={percent}
+                    cx="200"
+                    cy="200"
+                    r={(percent / 100) * 140}
                     fill="none"
                     stroke="#e5e7eb"
                     strokeWidth="1"
@@ -123,12 +134,12 @@ const RadarSkillsSection = () => {
                 
                 {/* Grid lines */}
                 {radarData.map((_, index) => {
-                  const coords = polarToCartesian(150, 150, 100, index * 60);
+                  const coords = polarToCartesian(200, 200, 140, index * 72);
                   return (
                     <line
                       key={index}
-                      x1="150"
-                      y1="150"
+                      x1="200"
+                      y1="200"
                       x2={coords.x}
                       y2={coords.y}
                       stroke="#e5e7eb"
@@ -143,8 +154,8 @@ const RadarSkillsSection = () => {
                     key={`section-${index}`}
                     d={createSectionPath(index)}
                     fill={selectedSkill === point.label ? "rgba(138, 177, 162, 0.2)" : "transparent"}
-                    className="cursor-pointer transition-all duration-300 hover:fill-[rgba(138,177,162,0.1)]"
-                    onClick={() => setSelectedSkill(selectedSkill === point.label ? null : point.label)}
+                    className="cursor-pointer transition-all duration-500 hover:fill-[rgba(138,177,162,0.1)]"
+                    onClick={() => setSelectedSkill(point.label)}
                   />
                 ))}
                 
@@ -159,8 +170,8 @@ const RadarSkillsSection = () => {
                 
                 {/* Data points */}
                 {radarData.map((point, index) => {
-                  const radius = (point.value / 100) * 100;
-                  const coords = polarToCartesian(150, 150, radius, point.angle);
+                  const radius = (point.value / 100) * 140;
+                  const coords = polarToCartesian(200, 200, radius, point.angle);
                   const isSelected = selectedSkill === point.label;
                   return (
                     <circle
@@ -172,15 +183,15 @@ const RadarSkillsSection = () => {
                       stroke="#fff"
                       strokeWidth="2"
                       className="cursor-pointer transition-all duration-300 hover:r-8"
-                      onClick={() => setSelectedSkill(selectedSkill === point.label ? null : point.label)}
+                      onClick={() => setSelectedSkill(point.label)}
                     />
                   );
                 })}
                 
                 {/* Labels */}
                 {radarData.map((point, index) => {
-                  const labelRadius = 120;
-                  const coords = polarToCartesian(150, 150, labelRadius, point.angle);
+                  const labelRadius = 170;
+                  const coords = polarToCartesian(200, 200, labelRadius, point.angle);
                   const isSelected = selectedSkill === point.label;
                   return (
                     <text
@@ -201,8 +212,8 @@ const RadarSkillsSection = () => {
                 
                 {/* Percentage labels */}
                 {radarData.map((point, index) => {
-                  const radius = (point.value / 100) * 100;
-                  const coords = polarToCartesian(150, 150, radius - 15, point.angle);
+                  const radius = (point.value / 100) * 140;
+                  const coords = polarToCartesian(200, 200, radius - 15, point.angle);
                   return (
                     <text
                       key={index}
@@ -233,67 +244,43 @@ const RadarSkillsSection = () => {
 
           {/* Skills Content */}
           <div className="space-y-6">
-            <h2 className="text-2xl sm:text-3xl font-westmount">What I bring</h2>
-            
-            {/* Methodologies Group */}
-            <div className="space-y-3">
-              <h3 className="text-lg font-merriweather font-semibold">Methodologies</h3>
-              <div className="flex flex-wrap gap-2">
-                {["Human Centered Design", "System Thinking", "CAP", "EFQM", "PMO"].map((skill) => (
-                  <span
-                    key={skill}
-                    className="px-3 py-1 bg-gray-100 rounded-full text-sm font-merriweather transition-all duration-300"
-                  >
-                    {skill}
-                  </span>
-                ))}
+            {/* Legend */}
+            <div className="flex flex-wrap gap-4 text-xs font-merriweather">
+              <div className="flex items-center gap-2">
+                <div className="w-3 h-3 bg-[#8ab1a2] rounded-full"></div>
+                <span>Excelling at</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-3 h-3 bg-slate-400 rounded-full"></div>
+                <span>Building up</span>
               </div>
             </div>
 
-            {/* Core Capabilities Group */}
+            {/* Core Capabilities */}
             <div className="space-y-3">
               <h3 className="text-lg font-merriweather font-semibold">Core capabilities</h3>
-              <div className="flex flex-wrap gap-2">
-                {["Data Analysis", "Stakeholders Communication Strategy", "Cross-Regional Project Management", "Survey Design", "Workshop Facilitation", "Service Blueprinting and Processes Design", "Training Management", "Service Prototyping", "Continuous Improvement Management"].map((skill) => (
-                  <span
-                    key={skill}
-                    className="px-3 py-1 bg-gray-100 rounded-full text-sm font-merriweather transition-all duration-300"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            {/* Excelling at section */}
-            <div className="space-y-3">
-              <h3 className="text-lg font-merriweather font-semibold">Excelling at</h3>
               
               <div className="transition-all duration-500 ease-in-out">
-                {skillContent.tags.length > 0 && (
-                  <div className="flex flex-wrap gap-2 animate-fade-in">
-                    {skillContent.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-3 py-1 bg-[#8ab1a2] text-white rounded-full text-sm font-merriweather transition-all duration-300 animate-scale-in"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                )}
-                
-                {skillContent.text && (
-                  <p className="text-sm font-merriweather italic text-gray-600 animate-fade-in">
-                    {skillContent.text}
-                  </p>
-                )}
+                <div className="flex flex-wrap gap-2 animate-fade-in">
+                  {skillContent.map((skill) => (
+                    <span
+                      key={skill.name}
+                      className={`px-3 py-1 rounded-full text-sm font-merriweather transition-all duration-300 animate-scale-in ${
+                        skill.category === 'excelling'
+                          ? 'bg-[#8ab1a2] text-white'
+                          : 'bg-slate-400 text-white'
+                      }`}
+                    >
+                      {skill.name}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
 
             {selectedSkill && (
               <div className="text-xs font-merriweather text-gray-500 animate-fade-in">
-                Click again to deselect • Selected: {selectedSkill}
+                Selected: {selectedSkill}
               </div>
             )}
           </div>
