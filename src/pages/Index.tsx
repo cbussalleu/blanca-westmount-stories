@@ -102,21 +102,6 @@ const Index = () => {
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-westmount mb-8 sm:mb-16 text-center">
               GRUPO BIMBO AND I
             </h2>
-            <div className="grid md:grid-cols-2 gap-8 items-center mb-8">
-              <div className="space-y-4 order-2 md:order-1">
-                <h3 className="text-xl sm:text-2xl font-westmount">Over 7 years designing for bold brand in an ever-evolving industry</h3>
-              </div>
-              
-              <div className="image-with-overlay-bimbo rounded-lg overflow-hidden shadow-md order-1 md:order-2">
-                <div className="aspect-[4/3] w-full bimbo-image-container">
-                  <img 
-                    src="/lovable-uploads/aba0f719-b826-4af0-9302-5fe7b9bd47fa.png" 
-                    alt="Grupo Bimbo Bakery" 
-                    className="object-cover w-full h-full"
-                  />
-                </div>
-              </div>
-            </div>
             <BimboCaseStudies />
           </div>
         </section>
@@ -155,15 +140,15 @@ const Index = () => {
               </p>
             </div>
             
-            {/* Venn Diagram */}
+            {/* Updated Venn Diagram with better spacing */}
             <div className="flex justify-center mb-8 sm:mb-12">
               <svg 
-                viewBox="0 0 460 340" 
+                viewBox="0 0 520 340" 
                 className="w-[65%] xs:w-[63%] sm:w-[60%] md:w-[58%] lg:w-[55%] transition-all"
               >
-                {/* Left Circle - Human Systems */}
+                {/* Left Circle - Human Systems (moved further left) */}
                 <circle 
-                  cx="170" 
+                  cx="150" 
                   cy="150" 
                   r="110" 
                   fill="none" 
@@ -172,9 +157,9 @@ const Index = () => {
                   opacity="0.9"
                 />
                 
-                {/* Right Circle - Functional Systems */}
+                {/* Right Circle - Functional Systems (moved further right) */}
                 <circle 
-                  cx="290" 
+                  cx="370" 
                   cy="150" 
                   r="110" 
                   fill="none" 
@@ -185,7 +170,7 @@ const Index = () => {
                 
                 {/* Human Systems Text */}
                 <text 
-                  x="120" 
+                  x="100" 
                   y="100" 
                   textAnchor="middle" 
                   fontFamily="Merriweather" 
@@ -196,13 +181,13 @@ const Index = () => {
                 </text>
                 
                 {/* Human Systems List */}
-                <text x="70" y="130" fontFamily="Merriweather" fontSize="12">• Behaviors</text>
-                <text x="70" y="155" fontFamily="Merriweather" fontSize="12">• Culture</text>
-                <text x="70" y="180" fontFamily="Merriweather" fontSize="12">• Relationships</text>
+                <text x="50" y="130" fontFamily="Merriweather" fontSize="12">• Behaviors</text>
+                <text x="50" y="155" fontFamily="Merriweather" fontSize="12">• Culture</text>
+                <text x="50" y="180" fontFamily="Merriweather" fontSize="12">• Relationships</text>
                 
                 {/* Functional Systems Text */}
                 <text 
-                  x="340" 
+                  x="420" 
                   y="100" 
                   textAnchor="middle" 
                   fontFamily="Merriweather" 
@@ -213,13 +198,13 @@ const Index = () => {
                 </text>
                 
                 {/* Functional Systems List */}
-                <text x="290" y="130" fontFamily="Merriweather" fontSize="12">• Processes</text>
-                <text x="290" y="155" fontFamily="Merriweather" fontSize="12">• Technology</text>
-                <text x="290" y="180" fontFamily="Merriweather" fontSize="12">• Metrics</text>
+                <text x="370" y="130" fontFamily="Merriweather" fontSize="12">• Processes</text>
+                <text x="370" y="155" fontFamily="Merriweather" fontSize="12">• Technology</text>
+                <text x="370" y="180" fontFamily="Merriweather" fontSize="12">• Metrics</text>
                 
-                {/* SERVICE DESIGN Box */}
+                {/* SERVICE DESIGN Box - centered in intersection */}
                 <rect 
-                  x="180" 
+                  x="210" 
                   y="130" 
                   width="100" 
                   height="40" 
@@ -230,7 +215,7 @@ const Index = () => {
                 />
                 
                 <text 
-                  x="230" 
+                  x="260" 
                   y="155" 
                   textAnchor="middle" 
                   fontFamily="Merriweather" 
@@ -242,7 +227,7 @@ const Index = () => {
                 
                 {/* Bottom Labels */}
                 <text 
-                  x="120" 
+                  x="100" 
                   y="280" 
                   textAnchor="middle" 
                   fontFamily="Merriweather" 
@@ -252,7 +237,7 @@ const Index = () => {
                   Human experiences
                 </text>
                 <text 
-                  x="120" 
+                  x="100" 
                   y="300" 
                   textAnchor="middle" 
                   fontFamily="Merriweather" 
@@ -263,7 +248,7 @@ const Index = () => {
                 </text>
                 
                 <text 
-                  x="340" 
+                  x="420" 
                   y="280" 
                   textAnchor="middle" 
                   fontFamily="Merriweather" 
@@ -273,7 +258,7 @@ const Index = () => {
                   Functional elements
                 </text>
                 <text 
-                  x="340" 
+                  x="420" 
                   y="300" 
                   textAnchor="middle" 
                   fontFamily="Merriweather" 
@@ -284,12 +269,12 @@ const Index = () => {
                 </text>
                 
                 {/* Arrow with control labels */}
-                <line x1="70" y1="320" x2="390" y2="320" stroke="#333" strokeWidth="1" strokeDasharray="2,2" />
-                <polyline points="70,320 60,315 60,325 70,320" fill="#333" />
-                <polyline points="390,320 400,315 400,325 390,320" fill="#333" />
+                <line x1="50" y1="320" x2="470" y2="320" stroke="#333" strokeWidth="1" strokeDasharray="2,2" />
+                <polyline points="50,320 40,315 40,325 50,320" fill="#333" />
+                <polyline points="470,320 480,315 480,325 470,320" fill="#333" />
                 
                 <text 
-                  x="120" 
+                  x="100" 
                   y="335" 
                   textAnchor="middle" 
                   fontFamily="Merriweather" 
@@ -300,7 +285,7 @@ const Index = () => {
                 </text>
                 
                 <text 
-                  x="340" 
+                  x="420" 
                   y="335" 
                   textAnchor="middle" 
                   fontFamily="Merriweather" 

@@ -24,14 +24,23 @@ const bimboCases = [
 const BimboCaseStudies = () => {
   return (
     <div className="grid md:grid-cols-2 gap-10">
-      <div className="image-with-overlay-bimbo rounded-lg overflow-hidden relative group">
+      {/* Large image rectangle with overlay text */}
+      <div className="relative group cursor-pointer rounded-lg overflow-hidden">
         <AspectRatio ratio={3/4} className="w-full">
-          <div className="bimbo-image-container w-full h-full bg-[hsla(var(--bimbo-overlay))]">
+          <div className="relative w-full h-full">
             <img 
               src="/lovable-uploads/aba0f719-b826-4af0-9302-5fe7b9bd47fa.png" 
               alt="Bimbo bakery worker" 
-              className="object-cover w-full h-full"
+              className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
             />
+            {/* Yellow overlay on hover */}
+            <div className="absolute inset-0 bg-[hsl(var(--pastel-yellow))] opacity-0 group-hover:opacity-80 transition-opacity duration-500"></div>
+            {/* Text overlay */}
+            <div className="absolute inset-0 flex items-center justify-center p-6">
+              <h3 className="text-white text-xl sm:text-2xl font-westmount text-center transition-transform duration-300 group-hover:scale-110">
+                Over 7 years designing for bold brand in an ever-evolving industry
+              </h3>
+            </div>
           </div>
         </AspectRatio>
       </div>

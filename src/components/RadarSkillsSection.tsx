@@ -1,10 +1,14 @@
-import React, { useState } from 'react';
+
+import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 
 const RadarSkillsSection = () => {
   const [selectedSkill, setSelectedSkill] = useState<string>('Hard Skills');
   const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [showTooltip, setShowTooltip] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const radarData = [
     { label: "Organization Understanding", value: 65, angle: 0 },
@@ -102,6 +106,28 @@ const RadarSkillsSection = () => {
     const nextCoords = polarToCartesian(centerX, centerY, maxRadius, nextAngle);
     
     return `M ${centerX} ${centerY} L ${currentCoords.x} ${currentCoords.y} A ${maxRadius} ${maxRadius} 0 0 1 ${nextCoords.x} ${nextCoords.y} Z`;
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (containerRef.current) {
+      const rect = containerRef.current.getBoundingClientRect();
+      setMousePosition({
+        x: e.clientX - rect.left,
+        y: e.clientY - rect.top
+      });
+    }
+  };
+
+  const handleSkillHover = (skillName: string, isGreen: boolean) => {
+    if (isGreen) {
+      setHoveredSkill(skillName);
+      setTimeout(() => setShowTooltip(true), 150); // Delay to show border first
+    }
+  };
+
+  const handleSkillLeave = () => {
+    setHoveredSkill(null);
+    setShowTooltip(false);
   };
 
   const skillContent = getSkillContent(selectedSkill);
@@ -227,50 +253,65 @@ const RadarSkillsSection = () => {
           </div>
 
           {/* Skills Content */}
-          <div className="space-y-6 relative">
+          <div className="space-y-6 relative" ref={containerRef} onMouseMove={handleMouseMove}>
             {/* Core Capabilities */}
             <div className="space-y-3">
               <h3 className="text-lg font-merriweather font-semibold">Core capabilities</h3>
               
               <div className="transition-all duration-700 ease-in-out min-h-[120px] relative">
                 <div className="flex flex-wrap gap-2">
-                  {skillContent.map((skill, index) => (
-                    <span
-                      key={skill.name}
-                      className={`px-3 py-1 rounded-full text-sm font-merriweather transition-all duration-500 ease-in-out cursor-pointer relative ${
-                        skill.category === 'excelling'
-                          ? 'bg-[#8ab1a2] text-white hover:bg-[#7ca196]'
-                          : 'bg-slate-400 text-white hover:bg-slate-500'
-                      }`}
-                      style={{ 
-                        animationDelay: `${index * 100}ms`,
-                        opacity: 1,
-                        transform: 'translateY(0)'
-                      }}
-                      onMouseEnter={() => setHoveredSkill(skill.name)}
-                      onMouseLeave={() => setHoveredSkill(null)}
-                    >
-                      {skill.name}
-                    </span>
-                  ))}
+                  {skillContent.map((skill, index) => {
+                    const isGreen = skill.category === 'excelling';
+                    return (
+                      <span
+                        key={skill.name}
+                        className={`px-3 py-1 rounded-full text-sm font-merriweather transition-all duration-500 ease-in-out cursor-pointer relative ${
+                          isGreen
+                            ? 'bg-[#8ab1a2] text-white hover:bg-[#7ca196]'
+                            : 'bg-slate-400 text-white hover:bg-slate-500'
+                        }`}
+                        style={{ 
+                          animationDelay: `${index * 100}ms`,
+                          opacity: 1,
+                          transform: 'translateY(0)'
+                        }}
+                        onMouseEnter={() => handleSkillHover(skill.name, isGreen)}
+                        onMouseLeave={handleSkillLeave}
+                      >
+                        {skill.name}
+                      </span>
+                    );
+                  })}
                 </div>
                 
-                {/* Hover Tooltip */}
+                {/* Enhanced Hover Tooltip with progressive animation */}
                 {hoveredSkill && hoveredSkillData && (
-                  <div className="absolute z-20 bg-white border border-gray-200 rounded-lg shadow-lg p-3 w-48 transform -translate-x-1/2 left-1/2 top-full mt-2 transition-all duration-300 opacity-100">
-                    <div className="flex items-center space-x-3">
-                      <img 
-                        src={hoveredSkillData.caseStudy.image} 
-                        alt={hoveredSkillData.caseStudy.brand}
-                        className="w-12 h-8 object-cover rounded"
-                      />
-                      <div className="flex-1">
-                        <p className="text-xs font-merriweather text-gray-600 mb-1">{hoveredSkillData.caseStudy.brand}</p>
+                  <div 
+                    className="fixed z-30 pointer-events-auto"
+                    style={{
+                      left: mousePosition.x + 15,
+                      top: mousePosition.y - 20,
+                    }}
+                  >
+                    {/* Border animation first */}
+                    <div className={`w-48 h-20 border-2 border-gray-200 rounded-lg transition-all duration-200 ${hoveredSkill ? 'opacity-100' : 'opacity-0'}`}>
+                      {/* Content animation second */}
+                      <div className={`bg-white rounded-lg shadow-lg p-3 w-full h-full transition-all duration-300 delay-150 ${showTooltip ? 'opacity-100' : 'opacity-0'}`}>
                         <Link 
                           to={`/portfolio/${hoveredSkillData.caseStudy.slug}`}
-                          className="text-xs text-[#8ab1a2] hover:text-[#7ca196] font-merriweather flex items-center"
+                          className="flex items-center space-x-3 h-full group"
                         >
-                          Capability in action <ArrowRight size={10} className="ml-1" />
+                          <img 
+                            src={hoveredSkillData.caseStudy.image} 
+                            alt={hoveredSkillData.caseStudy.brand}
+                            className="w-12 h-8 object-cover rounded flex-shrink-0"
+                          />
+                          <div className="flex-1 min-w-0">
+                            <p className="text-xs font-merriweather text-gray-600 mb-1 truncate">{hoveredSkillData.caseStudy.brand}</p>
+                            <div className="text-xs text-[#8ab1a2] hover:text-[#7ca196] font-merriweather flex items-center group-hover:underline">
+                              Capability in action <ArrowRight size={10} className="ml-1 flex-shrink-0" />
+                            </div>
+                          </div>
                         </Link>
                       </div>
                     </div>
