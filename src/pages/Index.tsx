@@ -110,7 +110,7 @@ const Index = () => {
               <div className="image-with-overlay-bimbo rounded-lg overflow-hidden shadow-md order-1 md:order-2">
                 <div className="aspect-[4/3] w-full bimbo-image-container">
                   <img 
-                    src="/lovable-uploads/a6ee9f9a-abe6-4da9-98b2-39c69870532c.png" 
+                    src="/lovable-uploads/aba0f719-b826-4af0-9302-5fe7b9bd47fa.png" 
                     alt="Grupo Bimbo Bakery" 
                     className="object-cover w-full h-full"
                   />
@@ -155,40 +155,158 @@ const Index = () => {
               </p>
             </div>
             
-            <div className="flex justify-center mt-8 sm:mt-12 mb-8">
+            {/* Venn Diagram */}
+            <div className="flex justify-center mb-8 sm:mb-12">
               <svg 
-                viewBox="0 0 600 300" 
+                viewBox="0 0 460 340" 
                 className="w-[65%] xs:w-[63%] sm:w-[60%] md:w-[58%] lg:w-[55%] transition-all"
               >
-                {/* Arrow line */}
-                <line x1="50" y1="150" x2="550" y2="150" stroke="#000" strokeWidth="2" markerEnd="url(#arrowhead)" />
+                {/* Left Circle - Human Systems */}
+                <circle 
+                  cx="170" 
+                  cy="150" 
+                  r="110" 
+                  fill="none" 
+                  stroke="#333" 
+                  strokeWidth="1.5"
+                  opacity="0.9"
+                />
                 
-                {/* Arrow marker */}
-                <defs>
-                  <marker id="arrowhead" markerWidth="10" markerHeight="7" 
-                    refX="9" refY="3.5" orient="auto">
-                    <polygon points="0 0, 10 3.5, 0 7" fill="#000" />
-                  </marker>
-                </defs>
+                {/* Right Circle - Functional Systems */}
+                <circle 
+                  cx="290" 
+                  cy="150" 
+                  r="110" 
+                  fill="none" 
+                  stroke="#333" 
+                  strokeWidth="1.5"
+                  opacity="0.9"
+                />
                 
-                {/* Text labels */}
-                <text x="150" y="120" textAnchor="middle" fontSize="12" fontFamily="Merriweather" fill="#000">
-                  Human can only
+                {/* Human Systems Text */}
+                <text 
+                  x="120" 
+                  y="100" 
+                  textAnchor="middle" 
+                  fontFamily="Merriweather" 
+                  fontSize="14" 
+                  fontWeight="600"
+                >
+                  Human Systems
                 </text>
-                <text x="150" y="135" textAnchor="middle" fontSize="12" fontFamily="Merriweather" fill="#000">
-                  be enabled
+                
+                {/* Human Systems List */}
+                <text x="70" y="130" fontFamily="Merriweather" fontSize="12">• Behaviors</text>
+                <text x="70" y="155" fontFamily="Merriweather" fontSize="12">• Culture</text>
+                <text x="70" y="180" fontFamily="Merriweather" fontSize="12">• Relationships</text>
+                
+                {/* Functional Systems Text */}
+                <text 
+                  x="340" 
+                  y="100" 
+                  textAnchor="middle" 
+                  fontFamily="Merriweather" 
+                  fontSize="14" 
+                  fontWeight="600"
+                >
+                  Functional Systems
                 </text>
-                <text x="150" y="180" textAnchor="middle" fontSize="12" fontFamily="Merriweather" fill="#666">
+                
+                {/* Functional Systems List */}
+                <text x="290" y="130" fontFamily="Merriweather" fontSize="12">• Processes</text>
+                <text x="290" y="155" fontFamily="Merriweather" fontSize="12">• Technology</text>
+                <text x="290" y="180" fontFamily="Merriweather" fontSize="12">• Metrics</text>
+                
+                {/* SERVICE DESIGN Box */}
+                <rect 
+                  x="180" 
+                  y="130" 
+                  width="100" 
+                  height="40" 
+                  rx="6" 
+                  fill="white" 
+                  stroke="#333" 
+                  strokeWidth="1.5"
+                />
+                
+                <text 
+                  x="230" 
+                  y="155" 
+                  textAnchor="middle" 
+                  fontFamily="Merriweather" 
+                  fontSize="12" 
+                  fontWeight="700"
+                >
+                  SERVICE DESIGN
+                </text>
+                
+                {/* Bottom Labels */}
+                <text 
+                  x="120" 
+                  y="280" 
+                  textAnchor="middle" 
+                  fontFamily="Merriweather" 
+                  fontSize="11"
+                  fontStyle="italic"
+                >
+                  Human experiences
+                </text>
+                <text 
+                  x="120" 
+                  y="300" 
+                  textAnchor="middle" 
+                  fontFamily="Merriweather" 
+                  fontSize="11"
+                  fontStyle="italic"
+                >
+                  can only be enabled
+                </text>
+                
+                <text 
+                  x="340" 
+                  y="280" 
+                  textAnchor="middle" 
+                  fontFamily="Merriweather" 
+                  fontSize="11"
+                  fontStyle="italic"
+                >
+                  Functional elements
+                </text>
+                <text 
+                  x="340" 
+                  y="300" 
+                  textAnchor="middle" 
+                  fontFamily="Merriweather" 
+                  fontSize="11"
+                  fontStyle="italic"
+                >
+                  can be designed and controlled
+                </text>
+                
+                {/* Arrow with control labels */}
+                <line x1="70" y1="320" x2="390" y2="320" stroke="#333" strokeWidth="1" strokeDasharray="2,2" />
+                <polyline points="70,320 60,315 60,325 70,320" fill="#333" />
+                <polyline points="390,320 400,315 400,325 390,320" fill="#333" />
+                
+                <text 
+                  x="120" 
+                  y="335" 
+                  textAnchor="middle" 
+                  fontFamily="Merriweather" 
+                  fontSize="10"
+                  fill="#666"
+                >
                   less control
                 </text>
                 
-                <text x="450" y="120" textAnchor="middle" fontSize="12" fontFamily="Merriweather" fill="#000">
-                  Functional elements can be
-                </text>
-                <text x="450" y="135" textAnchor="middle" fontSize="12" fontFamily="Merriweather" fill="#000">
-                  designed and controlled
-                </text>
-                <text x="450" y="180" textAnchor="middle" fontSize="12" fontFamily="Merriweather" fill="#666">
+                <text 
+                  x="340" 
+                  y="335" 
+                  textAnchor="middle" 
+                  fontFamily="Merriweather" 
+                  fontSize="10"
+                  fill="#666"
+                >
                   more control
                 </text>
               </svg>
@@ -199,7 +317,7 @@ const Index = () => {
                 to="/methodology" 
                 className="inline-flex items-center text-sm border-b border-black pb-1 hover:opacity-70 transition-opacity font-merriweather"
               >
-                Learn More <ArrowRight size={14} className="ml-1" />
+                The thinking behind <ArrowRight size={14} className="ml-1" />
               </Link>
             </div>
           </div>

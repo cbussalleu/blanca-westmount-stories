@@ -62,16 +62,9 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <div className="flex items-center justify-end h-8 md:h-10">
-            <button onClick={toggleMenu} className="md:hidden text-black flex items-center justify-center">
+            <button onClick={toggleMenu} className="text-black flex items-center justify-center">
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
-            
-            {/* Desktop Navigation (hidden on mobile) */}
-            <nav className="hidden md:flex items-center">
-              <button onClick={toggleMenu} className="text-black flex items-center justify-center">
-                <Menu size={20} />
-              </button>
-            </nav>
           </div>
         </div>
       </div>

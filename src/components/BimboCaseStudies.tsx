@@ -27,14 +27,13 @@ const BimboCaseStudies = () => {
       <div className="image-with-overlay-bimbo rounded-lg overflow-hidden relative group">
         <AspectRatio ratio={3/4} className="w-full">
           <div className="bimbo-image-container w-full h-full bg-[hsla(var(--bimbo-overlay))]">
-            {/* Image removed but yellow box maintained */}
+            <img 
+              src="/lovable-uploads/aba0f719-b826-4af0-9302-5fe7b9bd47fa.png" 
+              alt="Bimbo bakery worker" 
+              className="object-cover w-full h-full"
+            />
           </div>
         </AspectRatio>
-        <div className="absolute inset-0 flex items-center justify-center">
-          <h3 className="text-lg md:text-2xl font-westmount text-center px-6 uppercase transition-transform duration-300 group-hover:scale-110 group-hover:font-bold text-black">
-            7 years designing for an ever-evolving industry
-          </h3>
-        </div>
       </div>
       
       <div>
@@ -58,7 +57,7 @@ const BimboCaseStudies = () => {
             to="/bimbo-relationship"
             className="inline-flex items-center text-sm border-b border-black pb-1 hover:opacity-70 transition-opacity font-merriweather"
           >
-            Learn More About My Work with Grupo Bimbo <ArrowRight size={14} className="ml-1" />
+            Inside the Bimbo story <ArrowRight size={14} className="ml-1" />
           </Link>
         </div>
       </div>

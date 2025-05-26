@@ -105,7 +105,7 @@ const RadarSkillsSection = () => {
   };
 
   const skillContent = getSkillContent(selectedSkill);
-  const hoveredSkillData = hoveredSkill ? getSkillContent(hoveredSkill).find(skill => skill.name === hoveredSkill) : null;
+  const hoveredSkillData = hoveredSkill ? getSkillContent(selectedSkill).find(skill => skill.name === hoveredSkill) : null;
 
   return (
     <section className="py-8 sm:py-16">
@@ -232,7 +232,7 @@ const RadarSkillsSection = () => {
             <div className="space-y-3">
               <h3 className="text-lg font-merriweather font-semibold">Core capabilities</h3>
               
-              <div className="transition-all duration-700 ease-in-out min-h-[120px]">
+              <div className="transition-all duration-700 ease-in-out min-h-[120px] relative">
                 <div className="flex flex-wrap gap-2">
                   {skillContent.map((skill, index) => (
                     <span
@@ -254,30 +254,30 @@ const RadarSkillsSection = () => {
                     </span>
                   ))}
                 </div>
+                
+                {/* Hover Tooltip */}
+                {hoveredSkill && hoveredSkillData && (
+                  <div className="absolute z-20 bg-white border border-gray-200 rounded-lg shadow-lg p-3 w-48 transform -translate-x-1/2 left-1/2 top-full mt-2 transition-all duration-300 opacity-100">
+                    <div className="flex items-center space-x-3">
+                      <img 
+                        src={hoveredSkillData.caseStudy.image} 
+                        alt={hoveredSkillData.caseStudy.brand}
+                        className="w-12 h-8 object-cover rounded"
+                      />
+                      <div className="flex-1">
+                        <p className="text-xs font-merriweather text-gray-600 mb-1">{hoveredSkillData.caseStudy.brand}</p>
+                        <Link 
+                          to={`/portfolio/${hoveredSkillData.caseStudy.slug}`}
+                          className="text-xs text-[#8ab1a2] hover:text-[#7ca196] font-merriweather flex items-center"
+                        >
+                          Capability in action <ArrowRight size={10} className="ml-1" />
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
-
-            {/* Hover Tooltip */}
-            {hoveredSkill && hoveredSkillData && (
-              <div className="absolute z-10 bg-white border border-gray-200 rounded-lg shadow-lg p-3 w-48 transform -translate-x-1/2 left-1/2 top-32 transition-all duration-300 opacity-100">
-                <div className="flex items-center space-x-3">
-                  <img 
-                    src={hoveredSkillData.caseStudy.image} 
-                    alt={hoveredSkillData.caseStudy.brand}
-                    className="w-12 h-8 object-cover rounded"
-                  />
-                  <div className="flex-1">
-                    <p className="text-xs font-merriweather text-gray-600 mb-1">{hoveredSkillData.caseStudy.brand}</p>
-                    <Link 
-                      to={`/portfolio/${hoveredSkillData.caseStudy.slug}`}
-                      className="text-xs text-[#8ab1a2] hover:text-[#7ca196] font-merriweather flex items-center"
-                    >
-                      Capability in action <ArrowRight size={10} className="ml-1" />
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            )}
 
             {/* Legend - Minimal and linear design */}
             <div className="flex items-center justify-start gap-6 text-xs font-merriweather py-2 transition-all duration-300">
@@ -298,7 +298,7 @@ const RadarSkillsSection = () => {
                 to="/self-assessment-method" 
                 className="inline-flex items-center text-sm border-b border-black pb-1 hover:opacity-70 transition-opacity font-merriweather"
               >
-                Learn more about my Self Assessment tool <ArrowRight size={14} className="ml-1" />
+                Behind the radar <ArrowRight size={14} className="ml-1" />
               </Link>
             </div>
           </div>
