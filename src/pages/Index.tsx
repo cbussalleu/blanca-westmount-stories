@@ -1,3 +1,4 @@
+
 import { useEffect, useRef } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -103,20 +104,7 @@ const Index = () => {
             </h2>
             <div className="grid md:grid-cols-2 gap-8 items-center mb-8">
               <div className="space-y-4 order-2 md:order-1">
-                <h3 className="text-xl sm:text-2xl font-westmount">7 years designing for bold brand in an ever-evolving industry</h3>
-                <p className="text-sm leading-relaxed font-merriweather">
-                  For the past 7 years, I have led Grupo Bimbo's largest customer experience 
-                  transformation initiative, establishing a new operational model for 
-                  customer engagement across global markets.
-                </p>
-                <div className="mt-4">
-                  <Link 
-                    to="/bimbo-relationship" 
-                    className="inline-flex items-center text-sm border-b border-black pb-1 hover:opacity-70 transition-opacity font-merriweather"
-                  >
-                    Learn More <ArrowRight size={14} className="ml-1" />
-                  </Link>
-                </div>
+                <h3 className="text-xl sm:text-2xl font-westmount">Over 7 years designing for bold brand in an ever-evolving industry</h3>
               </div>
               
               <div className="image-with-overlay-bimbo rounded-lg overflow-hidden shadow-md order-1 md:order-2">
@@ -167,15 +155,44 @@ const Index = () => {
               </p>
             </div>
             
-            <div className="flex justify-center mt-8 sm:mt-12">
-              <img 
-                src="/lovable-uploads/4d855693-db34-4044-ae33-765852e914a9.png" 
-                alt="Service Design Methodology" 
-                className="w-[65%] xs:w-[63%] sm:w-[60%] md:w-[58%] lg:w-[55%] transition-all" 
-              />
+            <div className="flex justify-center mt-8 sm:mt-12 mb-8">
+              <svg 
+                viewBox="0 0 600 300" 
+                className="w-[65%] xs:w-[63%] sm:w-[60%] md:w-[58%] lg:w-[55%] transition-all"
+              >
+                {/* Arrow line */}
+                <line x1="50" y1="150" x2="550" y2="150" stroke="#000" strokeWidth="2" markerEnd="url(#arrowhead)" />
+                
+                {/* Arrow marker */}
+                <defs>
+                  <marker id="arrowhead" markerWidth="10" markerHeight="7" 
+                    refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#000" />
+                  </marker>
+                </defs>
+                
+                {/* Text labels */}
+                <text x="150" y="120" textAnchor="middle" fontSize="12" fontFamily="Merriweather" fill="#000">
+                  Human can only
+                </text>
+                <text x="150" y="135" textAnchor="middle" fontSize="12" fontFamily="Merriweather" fill="#000">
+                  be enabled
+                </text>
+                <text x="150" y="180" textAnchor="middle" fontSize="12" fontFamily="Merriweather" fill="#666">
+                  less control
+                </text>
+                
+                <text x="450" y="120" textAnchor="middle" fontSize="12" fontFamily="Merriweather" fill="#000">
+                  Functional elements can be
+                </text>
+                <text x="450" y="135" textAnchor="middle" fontSize="12" fontFamily="Merriweather" fill="#000">
+                  designed and controlled
+                </text>
+                <text x="450" y="180" textAnchor="middle" fontSize="12" fontFamily="Merriweather" fill="#666">
+                  more control
+                </text>
+              </svg>
             </div>
-            
-            <AnimatedVennDiagram />
             
             <div className="text-center mt-8 sm:mt-12">
               <Link 
