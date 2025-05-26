@@ -54,6 +54,15 @@ const Index = () => {
     <div className="min-h-screen bg-[hsl(var(--pastel-yellow))]">
       <Header />
       <main className="pt-24">
+        {/* NO SILVER BULLETS Section */}
+        <section className="py-4 sm:py-8">
+          <div className="container-narrow text-center">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-['westmount-outline'] tracking-widest">
+              NO SILVER BULLETS
+            </h1>
+          </div>
+        </section>
+
         {/* About Me Section */}
         <section className="py-8 sm:py-16" ref={sectionRefs.about}>
           <div className="container-narrow">
@@ -92,6 +101,34 @@ const Index = () => {
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-westmount mb-8 sm:mb-16 text-center">
               GRUPO BIMBO AND I
             </h2>
+            <div className="grid md:grid-cols-2 gap-8 items-center mb-8">
+              <div className="space-y-4 order-2 md:order-1">
+                <h3 className="text-xl sm:text-2xl font-westmount">7 years designing for bold brand in an ever-evolving industry</h3>
+                <p className="text-sm leading-relaxed font-merriweather">
+                  For the past 7 years, I have led Grupo Bimbo's largest customer experience 
+                  transformation initiative, establishing a new operational model for 
+                  customer engagement across global markets.
+                </p>
+                <div className="mt-4">
+                  <Link 
+                    to="/bimbo-relationship" 
+                    className="inline-flex items-center text-sm border-b border-black pb-1 hover:opacity-70 transition-opacity font-merriweather"
+                  >
+                    Learn More <ArrowRight size={14} className="ml-1" />
+                  </Link>
+                </div>
+              </div>
+              
+              <div className="image-with-overlay-bimbo rounded-lg overflow-hidden shadow-md order-1 md:order-2">
+                <div className="aspect-[4/3] w-full bimbo-image-container">
+                  <img 
+                    src="/lovable-uploads/a6ee9f9a-abe6-4da9-98b2-39c69870532c.png" 
+                    alt="Grupo Bimbo Bakery" 
+                    className="object-cover w-full h-full"
+                  />
+                </div>
+              </div>
+            </div>
             <BimboCaseStudies />
           </div>
         </section>
@@ -126,21 +163,18 @@ const Index = () => {
             <div className="text-center mb-8 sm:mb-12">
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-westmount">MY APPROACH</h2>
               <p className="text-sm max-w-2xl mx-auto mt-4 sm:mt-8 text-base font-merriweather">
-                I <span className="text-[#8ab1a2]">tackle</span> a broad variety of 
-                disciplines in the <u>agile process</u>, 
-                of creating meaningful products
+                If you're serious about being human-centered, you better be systems-centered too. Break it down. Rebuild it better.
               </p>
             </div>
             
             <div className="flex justify-center mt-8 sm:mt-12">
               <img 
-                src="/lovable-uploads/a44d8134-2342-431d-aaf8-18fe1829dc0a.png" 
+                src="/lovable-uploads/4d855693-db34-4044-ae33-765852e914a9.png" 
                 alt="Service Design Methodology" 
                 className="w-[65%] xs:w-[63%] sm:w-[60%] md:w-[58%] lg:w-[55%] transition-all" 
               />
             </div>
             
-            {/* Add animated Venn diagram here */}
             <AnimatedVennDiagram />
             
             <div className="text-center mt-8 sm:mt-12">

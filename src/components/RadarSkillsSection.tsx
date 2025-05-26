@@ -4,6 +4,7 @@ import { ArrowRight } from 'lucide-react';
 
 const RadarSkillsSection = () => {
   const [selectedSkill, setSelectedSkill] = useState<string>('Hard Skills');
+  const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
 
   const radarData = [
     { label: "Organization Understanding", value: 65, angle: 0 },
@@ -17,43 +18,43 @@ const RadarSkillsSection = () => {
     switch (skill) {
       case "Organization Understanding":
         return [
-          { name: "Strategic Alignment", category: "excelling" },
-          { name: "Organizational Dynamics Comprehension", category: "excelling" },
-          { name: "Cross-Departmental Integration", category: "building" },
-          { name: "Design Resource Management", category: "building" }
+          { name: "Strategic Alignment", category: "excelling", caseStudy: { image: "/lovable-uploads/62c5b772-9c99-41b3-b48e-83926e910229.png", slug: "connection-center", brand: "Grupo Bimbo" } },
+          { name: "Organizational Dynamics Comprehension", category: "excelling", caseStudy: { image: "/lovable-uploads/62c5b772-9c99-41b3-b48e-83926e910229.png", slug: "crm-service-design", brand: "Grupo Bimbo" } },
+          { name: "Cross-Departmental Integration", category: "building", caseStudy: { image: "/lovable-uploads/62c5b772-9c99-41b3-b48e-83926e910229.png", slug: "continuous-improvement", brand: "Grupo Bimbo" } },
+          { name: "Design Resource Management", category: "building", caseStudy: { image: "/lovable-uploads/62c5b772-9c99-41b3-b48e-83926e910229.png", slug: "connection-center", brand: "Grupo Bimbo" } }
         ];
       case "Soft Skills":
         return [
-          { name: "Interdisciplinary Communication", category: "excelling" },
-          { name: "Workshop Facilitation", category: "excelling" },
-          { name: "Conflict Resolution", category: "building" },
-          { name: "Professional Relationship Building", category: "building" }
+          { name: "Interdisciplinary Communication", category: "excelling", caseStudy: { image: "https://images.unsplash.com/photo-1511920170033-f8396924c348?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80", slug: "bartista", brand: "Nestlé" } },
+          { name: "Workshop Facilitation", category: "excelling", caseStudy: { image: "/lovable-uploads/62c5b772-9c99-41b3-b48e-83926e910229.png", slug: "crm-service-design", brand: "Grupo Bimbo" } },
+          { name: "Conflict Resolution", category: "building", caseStudy: { image: "https://images.unsplash.com/photo-1589758438368-0ad531db3366?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80", slug: "loyalty-program-redesign", brand: "BBVA" } },
+          { name: "Professional Relationship Building", category: "building", caseStudy: { image: "/lovable-uploads/62c5b772-9c99-41b3-b48e-83926e910229.png", slug: "continuous-improvement", brand: "Grupo Bimbo" } }
         ];
       case "Cognitive Skills":
         return [
-          { name: "Complex Systems Understanding", category: "excelling" },
-          { name: "Abstract Thinking", category: "excelling" },
-          { name: "Innovative Solution Generation", category: "building" },
-          { name: "Adaptability", category: "excelling" }
+          { name: "Complex Systems Understanding", category: "excelling", caseStudy: { image: "/lovable-uploads/62c5b772-9c99-41b3-b48e-83926e910229.png", slug: "connection-center", brand: "Grupo Bimbo" } },
+          { name: "Abstract Thinking", category: "excelling", caseStudy: { image: "https://images.unsplash.com/photo-1511920170033-f8396924c348?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80", slug: "bartista", brand: "Nestlé" } },
+          { name: "Innovative Solution Generation", category: "building", caseStudy: { image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80", slug: "insurance-journey-redesign", brand: "La Positiva" } },
+          { name: "Adaptability", category: "excelling", caseStudy: { image: "/lovable-uploads/62c5b772-9c99-41b3-b48e-83926e910229.png", slug: "crm-service-design", brand: "Grupo Bimbo" } }
         ];
       case "Hard Skills":
         return [
-          { name: "HCD", category: "excelling" },
-          { name: "System Thinking", category: "excelling" },
-          { name: "Agile", category: "excelling" },
-          { name: "Service Prototyping", category: "excelling" },
-          { name: "Digital Tools Proficiency", category: "excelling" },
-          { name: "Training & Change Management", category: "building" },
-          { name: "Data Analysis", category: "excelling" },
-          { name: "Process Design", category: "excelling" },
-          { name: "Continuous Improvement Management", category: "excelling" }
+          { name: "HCD", category: "excelling", caseStudy: { image: "https://images.unsplash.com/photo-1589758438368-0ad531db3366?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80", slug: "loyalty-program-redesign", brand: "BBVA" } },
+          { name: "System Thinking", category: "excelling", caseStudy: { image: "/lovable-uploads/62c5b772-9c99-41b3-b48e-83926e910229.png", slug: "connection-center", brand: "Grupo Bimbo" } },
+          { name: "Agile", category: "excelling", caseStudy: { image: "https://images.unsplash.com/photo-1511920170033-f8396924c348?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80", slug: "bartista", brand: "Nestlé" } },
+          { name: "Service Prototyping", category: "excelling", caseStudy: { image: "/lovable-uploads/62c5b772-9c99-41b3-b48e-83926e910229.png", slug: "crm-service-design", brand: "Grupo Bimbo" } },
+          { name: "Digital Tools Proficiency", category: "excelling", caseStudy: { image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80", slug: "insurance-journey-redesign", brand: "La Positiva" } },
+          { name: "Training & Change Management", category: "building", caseStudy: { image: "/lovable-uploads/62c5b772-9c99-41b3-b48e-83926e910229.png", slug: "continuous-improvement", brand: "Grupo Bimbo" } },
+          { name: "Data Analysis", category: "excelling", caseStudy: { image: "https://images.unsplash.com/photo-1589758438368-0ad531db3366?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80", slug: "loyalty-program-redesign", brand: "BBVA" } },
+          { name: "Process Design", category: "excelling", caseStudy: { image: "/lovable-uploads/62c5b772-9c99-41b3-b48e-83926e910229.png", slug: "connection-center", brand: "Grupo Bimbo" } },
+          { name: "Continuous Improvement Management", category: "excelling", caseStudy: { image: "/lovable-uploads/62c5b772-9c99-41b3-b48e-83926e910229.png", slug: "continuous-improvement", brand: "Grupo Bimbo" } }
         ];
       case "Leadership":
         return [
-          { name: "Team Inspiration & Motivation", category: "building" },
-          { name: "Strategic Decision-Making", category: "excelling" },
-          { name: "Talent Development", category: "building" },
-          { name: "Innovation Promotion", category: "building" }
+          { name: "Team Inspiration & Motivation", category: "building", caseStudy: { image: "/lovable-uploads/62c5b772-9c99-41b3-b48e-83926e910229.png", slug: "crm-service-design", brand: "Grupo Bimbo" } },
+          { name: "Strategic Decision-Making", category: "excelling", caseStudy: { image: "/lovable-uploads/62c5b772-9c99-41b3-b48e-83926e910229.png", slug: "connection-center", brand: "Grupo Bimbo" } },
+          { name: "Talent Development", category: "building", caseStudy: { image: "/lovable-uploads/62c5b772-9c99-41b3-b48e-83926e910229.png", slug: "continuous-improvement", brand: "Grupo Bimbo" } },
+          { name: "Innovation Promotion", category: "building", caseStudy: { image: "https://images.unsplash.com/photo-1511920170033-f8396924c348?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80", slug: "bartista", brand: "Nestlé" } }
         ];
       default:
         return [];
@@ -104,6 +105,7 @@ const RadarSkillsSection = () => {
   };
 
   const skillContent = getSkillContent(selectedSkill);
+  const hoveredSkillData = hoveredSkill ? getSkillContent(hoveredSkill).find(skill => skill.name === hoveredSkill) : null;
 
   return (
     <section className="py-8 sm:py-16">
@@ -118,7 +120,6 @@ const RadarSkillsSection = () => {
           <div className="flex flex-col items-center">
             <div className="relative w-full max-w-md aspect-square">
               <svg viewBox="0 0 400 400" className="w-full h-full">
-                {/* Grid circles */}
                 {[20, 40, 60, 80, 100].map((percent) => (
                   <circle
                     key={percent}
@@ -131,7 +132,6 @@ const RadarSkillsSection = () => {
                   />
                 ))}
                 
-                {/* Grid lines */}
                 {radarData.map((_, index) => {
                   const coords = polarToCartesian(200, 200, 140, index * 72);
                   return (
@@ -147,7 +147,6 @@ const RadarSkillsSection = () => {
                   );
                 })}
                 
-                {/* Clickable sections */}
                 {radarData.map((point, index) => (
                   <path
                     key={`section-${index}`}
@@ -158,7 +157,6 @@ const RadarSkillsSection = () => {
                   />
                 ))}
                 
-                {/* Data area */}
                 <path
                   d={createRadarPath()}
                   fill="rgba(138, 177, 162, 0.3)"
@@ -167,7 +165,6 @@ const RadarSkillsSection = () => {
                   className="transition-all duration-500"
                 />
                 
-                {/* Data points */}
                 {radarData.map((point, index) => {
                   const radius = (point.value / 100) * 140;
                   const coords = polarToCartesian(200, 200, radius, point.angle);
@@ -187,7 +184,6 @@ const RadarSkillsSection = () => {
                   );
                 })}
                 
-                {/* Labels */}
                 {radarData.map((point, index) => {
                   const labelRadius = 170;
                   const coords = polarToCartesian(200, 200, labelRadius, point.angle);
@@ -209,7 +205,6 @@ const RadarSkillsSection = () => {
                   );
                 })}
                 
-                {/* Percentage labels */}
                 {radarData.map((point, index) => {
                   const radius = (point.value / 100) * 140;
                   const coords = polarToCartesian(200, 200, radius - 15, point.angle);
@@ -232,7 +227,7 @@ const RadarSkillsSection = () => {
           </div>
 
           {/* Skills Content */}
-          <div className="space-y-6">
+          <div className="space-y-6 relative">
             {/* Core Capabilities */}
             <div className="space-y-3">
               <h3 className="text-lg font-merriweather font-semibold">Core capabilities</h3>
@@ -242,16 +237,18 @@ const RadarSkillsSection = () => {
                   {skillContent.map((skill, index) => (
                     <span
                       key={skill.name}
-                      className={`px-3 py-1 rounded-full text-sm font-merriweather transition-all duration-500 ease-in-out ${
+                      className={`px-3 py-1 rounded-full text-sm font-merriweather transition-all duration-500 ease-in-out cursor-pointer relative ${
                         skill.category === 'excelling'
-                          ? 'bg-[#8ab1a2] text-white'
-                          : 'bg-slate-400 text-white'
+                          ? 'bg-[#8ab1a2] text-white hover:bg-[#7ca196]'
+                          : 'bg-slate-400 text-white hover:bg-slate-500'
                       }`}
                       style={{ 
                         animationDelay: `${index * 100}ms`,
                         opacity: 1,
                         transform: 'translateY(0)'
                       }}
+                      onMouseEnter={() => setHoveredSkill(skill.name)}
+                      onMouseLeave={() => setHoveredSkill(null)}
                     >
                       {skill.name}
                     </span>
@@ -259,6 +256,28 @@ const RadarSkillsSection = () => {
                 </div>
               </div>
             </div>
+
+            {/* Hover Tooltip */}
+            {hoveredSkill && hoveredSkillData && (
+              <div className="absolute z-10 bg-white border border-gray-200 rounded-lg shadow-lg p-3 w-48 transform -translate-x-1/2 left-1/2 top-32 transition-all duration-300 opacity-100">
+                <div className="flex items-center space-x-3">
+                  <img 
+                    src={hoveredSkillData.caseStudy.image} 
+                    alt={hoveredSkillData.caseStudy.brand}
+                    className="w-12 h-8 object-cover rounded"
+                  />
+                  <div className="flex-1">
+                    <p className="text-xs font-merriweather text-gray-600 mb-1">{hoveredSkillData.caseStudy.brand}</p>
+                    <Link 
+                      to={`/portfolio/${hoveredSkillData.caseStudy.slug}`}
+                      className="text-xs text-[#8ab1a2] hover:text-[#7ca196] font-merriweather flex items-center"
+                    >
+                      Capability in action <ArrowRight size={10} className="ml-1" />
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            )}
 
             {/* Legend - Minimal and linear design */}
             <div className="flex items-center justify-start gap-6 text-xs font-merriweather py-2 transition-all duration-300">

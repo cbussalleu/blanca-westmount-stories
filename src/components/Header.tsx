@@ -42,10 +42,10 @@ const Header = () => {
   };
 
   return (
-    <header className={`w-full z-30 transition-all duration-300 ${scrolled ? 'bg-[hsl(var(--pastel-yellow))]' : 'bg-[hsl(var(--pastel-yellow))]'} ${visible ? 'top-0' : '-top-24'}`}>
+    <header className={`fixed w-full z-30 transition-all duration-300 ${scrolled ? 'bg-[hsl(var(--pastel-yellow))]' : 'bg-[hsl(var(--pastel-yellow))]'} ${visible ? 'top-0' : '-top-24'}`}>
       <div className="container-narrow py-6">
         <div className="flex justify-between items-center">
-          {/* Logo - sin fondo */}
+          {/* Logo */}
           <div className="flex items-center h-8 md:h-10">
             <Link to="/" className="flex items-center">
               <img 
@@ -57,13 +57,8 @@ const Header = () => {
             </Link>
           </div>
 
-          <div className="text-center flex-1 flex justify-center items-center h-8 md:h-10">
-            <Link to="/" className="text-xl uppercase tracking-widest inline-block">
-              <span className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-['westmount-outline'] transition-all">
-                NO SILVER BULLETS
-              </span>
-            </Link>
-          </div>
+          {/* Empty center space */}
+          <div className="flex-1"></div>
 
           {/* Mobile Menu Button */}
           <div className="flex items-center justify-end h-8 md:h-10">
