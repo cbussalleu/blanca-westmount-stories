@@ -1,4 +1,3 @@
-
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
@@ -109,19 +108,16 @@ const RadarSkillsSection = () => {
   };
 
   const handleMouseMove = (e: React.MouseEvent) => {
-    if (containerRef.current) {
-      const rect = containerRef.current.getBoundingClientRect();
-      setMousePosition({
-        x: e.clientX - rect.left,
-        y: e.clientY - rect.top
-      });
-    }
+    setMousePosition({
+      x: e.clientX,
+      y: e.clientY
+    });
   };
 
   const handleSkillHover = (skillName: string, isGreen: boolean) => {
     if (isGreen) {
       setHoveredSkill(skillName);
-      setTimeout(() => setShowTooltip(true), 150); // Delay to show border first
+      setTimeout(() => setShowTooltip(true), 150);
     }
   };
 
@@ -134,7 +130,7 @@ const RadarSkillsSection = () => {
   const hoveredSkillData = hoveredSkill ? getSkillContent(selectedSkill).find(skill => skill.name === hoveredSkill) : null;
 
   return (
-    <section className="py-8 sm:py-16">
+    <section className="py-8 sm:py-16" onMouseMove={handleMouseMove}>
       <div className="container-narrow">
         {/* Title */}
         <div className="text-center mb-8 sm:mb-16">
@@ -253,7 +249,7 @@ const RadarSkillsSection = () => {
           </div>
 
           {/* Skills Content */}
-          <div className="space-y-6 relative" ref={containerRef} onMouseMove={handleMouseMove}>
+          <div className="space-y-6 relative" ref={containerRef}>
             {/* Core Capabilities */}
             <div className="space-y-3">
               <h3 className="text-lg font-merriweather font-semibold">Core capabilities</h3>
@@ -283,44 +279,10 @@ const RadarSkillsSection = () => {
                     );
                   })}
                 </div>
-                
-                {/* Enhanced Hover Tooltip with progressive animation */}
-                {hoveredSkill && hoveredSkillData && (
-                  <div 
-                    className="fixed z-30 pointer-events-auto"
-                    style={{
-                      left: mousePosition.x + 15,
-                      top: mousePosition.y - 20,
-                    }}
-                  >
-                    {/* Border animation first */}
-                    <div className={`w-48 h-20 border-2 border-gray-200 rounded-lg transition-all duration-200 ${hoveredSkill ? 'opacity-100' : 'opacity-0'}`}>
-                      {/* Content animation second */}
-                      <div className={`bg-white rounded-lg shadow-lg p-3 w-full h-full transition-all duration-300 delay-150 ${showTooltip ? 'opacity-100' : 'opacity-0'}`}>
-                        <Link 
-                          to={`/portfolio/${hoveredSkillData.caseStudy.slug}`}
-                          className="flex items-center space-x-3 h-full group"
-                        >
-                          <img 
-                            src={hoveredSkillData.caseStudy.image} 
-                            alt={hoveredSkillData.caseStudy.brand}
-                            className="w-12 h-8 object-cover rounded flex-shrink-0"
-                          />
-                          <div className="flex-1 min-w-0">
-                            <p className="text-xs font-merriweather text-gray-600 mb-1 truncate">{hoveredSkillData.caseStudy.brand}</p>
-                            <div className="text-xs text-[#8ab1a2] hover:text-[#7ca196] font-merriweather flex items-center group-hover:underline">
-                              Capability in action <ArrowRight size={10} className="ml-1 flex-shrink-0" />
-                            </div>
-                          </div>
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                )}
               </div>
             </div>
 
-            {/* Legend - Minimal and linear design */}
+            {/* Legend */}
             <div className="flex items-center justify-start gap-6 text-xs font-merriweather py-2 transition-all duration-300">
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-[#8ab1a2] rounded-full"></div>
@@ -333,7 +295,7 @@ const RadarSkillsSection = () => {
               </div>
             </div>
 
-            {/* Call to Action - Centered on larger screens, left-aligned on smaller */}
+            {/* Call to Action */}
             <div className="pt-4 text-center lg:text-left transition-all duration-300">
               <Link 
                 to="/self-assessment-method" 
@@ -345,6 +307,40 @@ const RadarSkillsSection = () => {
           </div>
         </div>
       </div>
+
+      {/* Enhanced Hover Tooltip - Fixed positioning */}
+      {hoveredSkill && hoveredSkillData && (
+        <div 
+          className="fixed z-50 pointer-events-none"
+          style={{
+            left: mousePosition.x + 15,
+            top: mousePosition.y - 40,
+          }}
+        >
+          {/* Border animation first */}
+          <div className={`w-48 h-20 border-2 border-gray-200 rounded-lg transition-all duration-200 ${hoveredSkill ? 'opacity-100' : 'opacity-0'}`}>
+            {/* Content animation second */}
+            <div className={`bg-white rounded-lg shadow-lg p-3 w-full h-full transition-all duration-300 delay-150 pointer-events-auto ${showTooltip ? 'opacity-100' : 'opacity-0'}`}>
+              <Link 
+                to={`/portfolio/${hoveredSkillData.caseStudy.slug}`}
+                className="flex items-center space-x-3 h-full group"
+              >
+                <img 
+                  src={hoveredSkillData.caseStudy.image} 
+                  alt={hoveredSkillData.caseStudy.brand}
+                  className="w-12 h-8 object-cover rounded flex-shrink-0"
+                />
+                <div className="flex-1 min-w-0">
+                  <p className="text-xs font-merriweather text-gray-600 mb-1 truncate">{hoveredSkillData.caseStudy.brand}</p>
+                  <div className="text-xs text-[#8ab1a2] hover:text-[#7ca196] font-merriweather flex items-center group-hover:underline">
+                    Capability in action <ArrowRight size={10} className="ml-1 flex-shrink-0" />
+                  </div>
+                </div>
+              </Link>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

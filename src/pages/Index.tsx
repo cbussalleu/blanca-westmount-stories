@@ -1,4 +1,3 @@
-
 import { useEffect, useRef } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -140,15 +139,15 @@ const Index = () => {
               </p>
             </div>
             
-            {/* Updated Venn Diagram with better spacing */}
+            {/* Updated Venn Diagram with more separated circles */}
             <div className="flex justify-center mb-8 sm:mb-12">
               <svg 
-                viewBox="0 0 520 340" 
-                className="w-[65%] xs:w-[63%] sm:w-[60%] md:w-[58%] lg:w-[55%] transition-all"
+                viewBox="0 0 580 340" 
+                className="w-[70%] xs:w-[68%] sm:w-[65%] md:w-[62%] lg:w-[60%] transition-all"
               >
-                {/* Left Circle - Human Systems (moved further left) */}
+                {/* Left Circle - Human Systems (moved more to the left) */}
                 <circle 
-                  cx="150" 
+                  cx="140" 
                   cy="150" 
                   r="110" 
                   fill="none" 
@@ -157,9 +156,9 @@ const Index = () => {
                   opacity="0.9"
                 />
                 
-                {/* Right Circle - Functional Systems (moved further right) */}
+                {/* Right Circle - Functional Systems (moved more to the right) */}
                 <circle 
-                  cx="370" 
+                  cx="440" 
                   cy="150" 
                   r="110" 
                   fill="none" 
@@ -168,10 +167,10 @@ const Index = () => {
                   opacity="0.9"
                 />
                 
-                {/* Human Systems Text */}
+                {/* Human Systems Text - positioned inside the left circle */}
                 <text 
-                  x="100" 
-                  y="100" 
+                  x="140" 
+                  y="95" 
                   textAnchor="middle" 
                   fontFamily="Merriweather" 
                   fontSize="14" 
@@ -180,15 +179,15 @@ const Index = () => {
                   Human Systems
                 </text>
                 
-                {/* Human Systems List */}
-                <text x="50" y="130" fontFamily="Merriweather" fontSize="12">• Behaviors</text>
-                <text x="50" y="155" fontFamily="Merriweather" fontSize="12">• Culture</text>
-                <text x="50" y="180" fontFamily="Merriweather" fontSize="12">• Relationships</text>
+                {/* Human Systems List - positioned inside the left circle */}
+                <text x="85" y="125" fontFamily="Merriweather" fontSize="12">• Behaviors</text>
+                <text x="85" y="150" fontFamily="Merriweather" fontSize="12">• Culture</text>
+                <text x="85" y="175" fontFamily="Merriweather" fontSize="12">• Relationships</text>
                 
-                {/* Functional Systems Text */}
+                {/* Functional Systems Text - positioned inside the right circle */}
                 <text 
-                  x="420" 
-                  y="100" 
+                  x="440" 
+                  y="95" 
                   textAnchor="middle" 
                   fontFamily="Merriweather" 
                   fontSize="14" 
@@ -197,14 +196,14 @@ const Index = () => {
                   Functional Systems
                 </text>
                 
-                {/* Functional Systems List */}
-                <text x="370" y="130" fontFamily="Merriweather" fontSize="12">• Processes</text>
-                <text x="370" y="155" fontFamily="Merriweather" fontSize="12">• Technology</text>
-                <text x="370" y="180" fontFamily="Merriweather" fontSize="12">• Metrics</text>
+                {/* Functional Systems List - positioned inside the right circle */}
+                <text x="385" y="125" fontFamily="Merriweather" fontSize="12">• Processes</text>
+                <text x="385" y="150" fontFamily="Merriweather" fontSize="12">• Technology</text>
+                <text x="385" y="175" fontFamily="Merriweather" fontSize="12">• Metrics</text>
                 
-                {/* SERVICE DESIGN Box - centered in intersection */}
+                {/* SERVICE DESIGN Box - centered between circles */}
                 <rect 
-                  x="210" 
+                  x="240" 
                   y="130" 
                   width="100" 
                   height="40" 
@@ -215,7 +214,7 @@ const Index = () => {
                 />
                 
                 <text 
-                  x="260" 
+                  x="290" 
                   y="155" 
                   textAnchor="middle" 
                   fontFamily="Merriweather" 
@@ -227,7 +226,7 @@ const Index = () => {
                 
                 {/* Bottom Labels */}
                 <text 
-                  x="100" 
+                  x="140" 
                   y="280" 
                   textAnchor="middle" 
                   fontFamily="Merriweather" 
@@ -237,7 +236,7 @@ const Index = () => {
                   Human experiences
                 </text>
                 <text 
-                  x="100" 
+                  x="140" 
                   y="300" 
                   textAnchor="middle" 
                   fontFamily="Merriweather" 
@@ -247,8 +246,9 @@ const Index = () => {
                   can only be enabled
                 </text>
                 
+                {/* Functional Systems Text */}
                 <text 
-                  x="420" 
+                  x="440" 
                   y="280" 
                   textAnchor="middle" 
                   fontFamily="Merriweather" 
@@ -258,7 +258,7 @@ const Index = () => {
                   Functional elements
                 </text>
                 <text 
-                  x="420" 
+                  x="440" 
                   y="300" 
                   textAnchor="middle" 
                   fontFamily="Merriweather" 
@@ -269,12 +269,12 @@ const Index = () => {
                 </text>
                 
                 {/* Arrow with control labels */}
-                <line x1="50" y1="320" x2="470" y2="320" stroke="#333" strokeWidth="1" strokeDasharray="2,2" />
+                <line x1="50" y1="320" x2="530" y2="320" stroke="#333" strokeWidth="1" strokeDasharray="2,2" />
                 <polyline points="50,320 40,315 40,325 50,320" fill="#333" />
-                <polyline points="470,320 480,315 480,325 470,320" fill="#333" />
+                <polyline points="530,320 540,315 540,325 530,320" fill="#333" />
                 
                 <text 
-                  x="100" 
+                  x="140" 
                   y="335" 
                   textAnchor="middle" 
                   fontFamily="Merriweather" 
@@ -285,7 +285,7 @@ const Index = () => {
                 </text>
                 
                 <text 
-                  x="420" 
+                  x="440" 
                   y="335" 
                   textAnchor="middle" 
                   fontFamily="Merriweather" 
@@ -312,5 +312,32 @@ const Index = () => {
     </div>
   );
 };
+
+const projects = [
+  {
+    number: 1,
+    title: "Cardholder Loyalty Program Redesign",
+    description: "Redesigned loyalty program for credit card holders to drive card usage and retention with optimized points accrual system.",
+    client: "BBVA",
+    slug: "loyalty-program-redesign",
+    imageSrc: "https://images.unsplash.com/photo-1589758438368-0ad531db3366?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+  },
+  {
+    number: 2,
+    title: "BARTISTA - Global Coffee Content Production Model",
+    description: "Designed an operational model for producing content at global scale for Nestlé's premium coffee brands, balancing global consistency with local relevance.",
+    client: "Nestlé",
+    slug: "bartista",
+    imageSrc: "https://images.unsplash.com/photo-1511920170033-f8396924c348?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+  },
+  {
+    number: 3,
+    title: "Insurance Customer Journey Redesign",
+    description: "Redesigned end-to-end customer journey for insurance claims processing to improve satisfaction and operational efficiency.",
+    client: "La Positiva",
+    slug: "insurance-journey-redesign",
+    imageSrc: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+  }
+];
 
 export default Index;
