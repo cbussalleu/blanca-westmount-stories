@@ -108,10 +108,13 @@ const RadarSkillsSection = () => {
   };
 
   const handleMouseMove = (e: React.MouseEvent) => {
-    setMousePosition({
-      x: e.clientX,
-      y: e.clientY
-    });
+    if (containerRef.current) {
+      const rect = containerRef.current.getBoundingClientRect();
+      setMousePosition({
+        x: e.clientX - rect.left,
+        y: e.clientY - rect.top
+      });
+    }
   };
 
   const handleSkillHover = (skillName: string, isGreen: boolean) => {
@@ -134,7 +137,7 @@ const RadarSkillsSection = () => {
       <div className="container-narrow">
         {/* Title */}
         <div className="text-center mb-8 sm:mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-westmount">MY SELF ASSESSMENT TOOL</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-westmount">WHAT I BRING</h2>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
@@ -301,46 +304,42 @@ const RadarSkillsSection = () => {
                 to="/self-assessment-method" 
                 className="inline-flex items-center text-sm border-b border-black pb-1 hover:opacity-70 transition-opacity font-merriweather"
               >
-                Behind the radar <ArrowRight size={14} className="ml-1" />
+                See the method <ArrowRight size={14} className="ml-1" />
               </Link>
             </div>
+
+            {/* Fixed Hover Tooltip */}
+            {hoveredSkill && hoveredSkillData && showTooltip && (
+              <div 
+                className="absolute z-50 pointer-events-none"
+                style={{
+                  left: mousePosition.x + 15,
+                  top: mousePosition.y - 40,
+                }}
+              >
+                <div className="w-48 h-20 border-2 border-gray-200 rounded-lg bg-white shadow-lg p-3">
+                  <Link 
+                    to={`/portfolio/${hoveredSkillData.caseStudy.slug}`}
+                    className="flex items-center space-x-3 h-full group pointer-events-auto"
+                  >
+                    <img 
+                      src={hoveredSkillData.caseStudy.image} 
+                      alt={hoveredSkillData.caseStudy.brand}
+                      className="w-12 h-8 object-cover rounded flex-shrink-0"
+                    />
+                    <div className="flex-1 min-w-0">
+                      <p className="text-xs font-merriweather text-gray-600 mb-1 truncate">{hoveredSkillData.caseStudy.brand}</p>
+                      <div className="text-xs text-[#8ab1a2] hover:text-[#7ca196] font-merriweather flex items-center group-hover:underline">
+                        Capability in action <ArrowRight size={10} className="ml-1 flex-shrink-0" />
+                      </div>
+                    </div>
+                  </Link>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
-
-      {/* Enhanced Hover Tooltip - Fixed positioning */}
-      {hoveredSkill && hoveredSkillData && (
-        <div 
-          className="fixed z-50 pointer-events-none"
-          style={{
-            left: mousePosition.x + 15,
-            top: mousePosition.y - 40,
-          }}
-        >
-          {/* Border animation first */}
-          <div className={`w-48 h-20 border-2 border-gray-200 rounded-lg transition-all duration-200 ${hoveredSkill ? 'opacity-100' : 'opacity-0'}`}>
-            {/* Content animation second */}
-            <div className={`bg-white rounded-lg shadow-lg p-3 w-full h-full transition-all duration-300 delay-150 pointer-events-auto ${showTooltip ? 'opacity-100' : 'opacity-0'}`}>
-              <Link 
-                to={`/portfolio/${hoveredSkillData.caseStudy.slug}`}
-                className="flex items-center space-x-3 h-full group"
-              >
-                <img 
-                  src={hoveredSkillData.caseStudy.image} 
-                  alt={hoveredSkillData.caseStudy.brand}
-                  className="w-12 h-8 object-cover rounded flex-shrink-0"
-                />
-                <div className="flex-1 min-w-0">
-                  <p className="text-xs font-merriweather text-gray-600 mb-1 truncate">{hoveredSkillData.caseStudy.brand}</p>
-                  <div className="text-xs text-[#8ab1a2] hover:text-[#7ca196] font-merriweather flex items-center group-hover:underline">
-                    Capability in action <ArrowRight size={10} className="ml-1 flex-shrink-0" />
-                  </div>
-                </div>
-              </Link>
-            </div>
-          </div>
-        </div>
-      )}
     </section>
   );
 };

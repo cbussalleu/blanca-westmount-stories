@@ -19,15 +19,15 @@ const MyApproachSection = forwardRef<HTMLElement, MyApproachSectionProps>(
             </p>
           </div>
           
-          {/* Updated Venn Diagram with more separated circles */}
-          <div className="flex justify-center mb-8 sm:mb-12">
+          {/* Desktop/Tablet Horizontal Diagram */}
+          <div className="hidden sm:flex justify-center mb-8 sm:mb-12">
             <svg 
-              viewBox="0 0 580 340" 
+              viewBox="0 0 500 340" 
               className="w-[70%] xs:w-[68%] sm:w-[65%] md:w-[62%] lg:w-[60%] transition-all"
             >
-              {/* Left Circle - Human Systems (moved more to the left) */}
+              {/* Left Circle - Human Systems (moved closer to center) */}
               <circle 
-                cx="140" 
+                cx="170" 
                 cy="150" 
                 r="110" 
                 fill="none" 
@@ -36,9 +36,9 @@ const MyApproachSection = forwardRef<HTMLElement, MyApproachSectionProps>(
                 opacity="0.9"
               />
               
-              {/* Right Circle - Functional Systems (moved more to the right) */}
+              {/* Right Circle - Functional Systems (moved closer to center) */}
               <circle 
-                cx="440" 
+                cx="330" 
                 cy="150" 
                 r="110" 
                 fill="none" 
@@ -49,7 +49,7 @@ const MyApproachSection = forwardRef<HTMLElement, MyApproachSectionProps>(
               
               {/* Human Systems Text - positioned inside the left circle */}
               <text 
-                x="140" 
+                x="170" 
                 y="95" 
                 textAnchor="middle" 
                 fontFamily="Merriweather" 
@@ -60,13 +60,13 @@ const MyApproachSection = forwardRef<HTMLElement, MyApproachSectionProps>(
               </text>
               
               {/* Human Systems List - positioned inside the left circle */}
-              <text x="85" y="125" fontFamily="Merriweather" fontSize="12">• Behaviors</text>
-              <text x="85" y="150" fontFamily="Merriweather" fontSize="12">• Culture</text>
-              <text x="85" y="175" fontFamily="Merriweather" fontSize="12">• Relationships</text>
+              <text x="115" y="125" fontFamily="Merriweather" fontSize="12">• Behaviors</text>
+              <text x="115" y="150" fontFamily="Merriweather" fontSize="12">• Culture</text>
+              <text x="115" y="175" fontFamily="Merriweather" fontSize="12">• Relationships</text>
               
               {/* Functional Systems Text - positioned inside the right circle */}
               <text 
-                x="440" 
+                x="330" 
                 y="95" 
                 textAnchor="middle" 
                 fontFamily="Merriweather" 
@@ -77,13 +77,13 @@ const MyApproachSection = forwardRef<HTMLElement, MyApproachSectionProps>(
               </text>
               
               {/* Functional Systems List - positioned inside the right circle */}
-              <text x="385" y="125" fontFamily="Merriweather" fontSize="12">• Processes</text>
-              <text x="385" y="150" fontFamily="Merriweather" fontSize="12">• Technology</text>
-              <text x="385" y="175" fontFamily="Merriweather" fontSize="12">• Metrics</text>
+              <text x="275" y="125" fontFamily="Merriweather" fontSize="12">• Processes</text>
+              <text x="275" y="150" fontFamily="Merriweather" fontSize="12">• Technology</text>
+              <text x="275" y="175" fontFamily="Merriweather" fontSize="12">• Metrics</text>
               
               {/* SERVICE DESIGN Box - centered between circles */}
               <rect 
-                x="240" 
+                x="200" 
                 y="130" 
                 width="100" 
                 height="40" 
@@ -94,7 +94,7 @@ const MyApproachSection = forwardRef<HTMLElement, MyApproachSectionProps>(
               />
               
               <text 
-                x="290" 
+                x="250" 
                 y="155" 
                 textAnchor="middle" 
                 fontFamily="Merriweather" 
@@ -106,7 +106,7 @@ const MyApproachSection = forwardRef<HTMLElement, MyApproachSectionProps>(
               
               {/* Bottom Labels */}
               <text 
-                x="140" 
+                x="170" 
                 y="280" 
                 textAnchor="middle" 
                 fontFamily="Merriweather" 
@@ -116,7 +116,7 @@ const MyApproachSection = forwardRef<HTMLElement, MyApproachSectionProps>(
                 Human experiences
               </text>
               <text 
-                x="140" 
+                x="170" 
                 y="300" 
                 textAnchor="middle" 
                 fontFamily="Merriweather" 
@@ -128,7 +128,7 @@ const MyApproachSection = forwardRef<HTMLElement, MyApproachSectionProps>(
               
               {/* Functional Systems Text */}
               <text 
-                x="440" 
+                x="330" 
                 y="280" 
                 textAnchor="middle" 
                 fontFamily="Merriweather" 
@@ -138,7 +138,7 @@ const MyApproachSection = forwardRef<HTMLElement, MyApproachSectionProps>(
                 Functional elements
               </text>
               <text 
-                x="440" 
+                x="330" 
                 y="300" 
                 textAnchor="middle" 
                 fontFamily="Merriweather" 
@@ -149,12 +149,12 @@ const MyApproachSection = forwardRef<HTMLElement, MyApproachSectionProps>(
               </text>
               
               {/* Arrow with control labels */}
-              <line x1="50" y1="320" x2="530" y2="320" stroke="#333" strokeWidth="1" strokeDasharray="2,2" />
-              <polyline points="50,320 40,315 40,325 50,320" fill="#333" />
-              <polyline points="530,320 540,315 540,325 530,320" fill="#333" />
+              <line x1="80" y1="320" x2="420" y2="320" stroke="#333" strokeWidth="1" strokeDasharray="2,2" />
+              <polyline points="80,320 70,315 70,325 80,320" fill="#333" />
+              <polyline points="420,320 430,315 430,325 420,320" fill="#333" />
               
               <text 
-                x="140" 
+                x="170" 
                 y="335" 
                 textAnchor="middle" 
                 fontFamily="Merriweather" 
@@ -165,12 +165,154 @@ const MyApproachSection = forwardRef<HTMLElement, MyApproachSectionProps>(
               </text>
               
               <text 
-                x="440" 
+                x="330" 
                 y="335" 
                 textAnchor="middle" 
                 fontFamily="Merriweather" 
                 fontSize="10"
                 fill="#666"
+              >
+                more control
+              </text>
+            </svg>
+          </div>
+
+          {/* Mobile Vertical Diagram */}
+          <div className="flex sm:hidden justify-center mb-8">
+            <svg 
+              viewBox="0 0 280 500" 
+              className="w-[85%] transition-all"
+            >
+              {/* Top Circle - Human Systems */}
+              <circle 
+                cx="140" 
+                cy="110" 
+                r="90" 
+                fill="none" 
+                stroke="#333" 
+                strokeWidth="1.5"
+                opacity="0.9"
+              />
+              
+              {/* Bottom Circle - Functional Systems */}
+              <circle 
+                cx="140" 
+                cy="320" 
+                r="90" 
+                fill="none" 
+                stroke="#333" 
+                strokeWidth="1.5"
+                opacity="0.9"
+              />
+              
+              {/* Human Systems Text */}
+              <text 
+                x="140" 
+                y="70" 
+                textAnchor="middle" 
+                fontFamily="Merriweather" 
+                fontSize="12" 
+                fontWeight="600"
+              >
+                Human Systems
+              </text>
+              
+              {/* Human Systems List */}
+              <text x="95" y="95" fontFamily="Merriweather" fontSize="10">• Behaviors</text>
+              <text x="95" y="110" fontFamily="Merriweather" fontSize="10">• Culture</text>
+              <text x="95" y="125" fontFamily="Merriweather" fontSize="10">• Relationships</text>
+              
+              {/* SERVICE DESIGN Box - between circles */}
+              <rect 
+                x="90" 
+                y="195" 
+                width="100" 
+                height="35" 
+                rx="6" 
+                fill="white" 
+                stroke="#333" 
+                strokeWidth="1.5"
+              />
+              
+              <text 
+                x="140" 
+                y="218" 
+                textAnchor="middle" 
+                fontFamily="Merriweather" 
+                fontSize="11" 
+                fontWeight="700"
+              >
+                SERVICE DESIGN
+              </text>
+              
+              {/* Functional Systems Text */}
+              <text 
+                x="140" 
+                y="280" 
+                textAnchor="middle" 
+                fontFamily="Merriweather" 
+                fontSize="12" 
+                fontWeight="600"
+              >
+                Functional Systems
+              </text>
+              
+              {/* Functional Systems List */}
+              <text x="95" y="305" fontFamily="Merriweather" fontSize="10">• Processes</text>
+              <text x="95" y="320" fontFamily="Merriweather" fontSize="10">• Technology</text>
+              <text x="95" y="335" fontFamily="Merriweather" fontSize="10">• Metrics</text>
+              
+              {/* Left Labels */}
+              <text 
+                x="50" 
+                y="110" 
+                textAnchor="middle" 
+                fontFamily="Merriweather" 
+                fontSize="9"
+                fontStyle="italic"
+                transform="rotate(-90 50 110)"
+              >
+                Human experiences can only be enabled
+              </text>
+              
+              {/* Right Labels */}
+              <text 
+                x="230" 
+                y="320" 
+                textAnchor="middle" 
+                fontFamily="Merriweather" 
+                fontSize="9"
+                fontStyle="italic"
+                transform="rotate(-90 230 320)"
+              >
+                Functional elements can be designed and controlled
+              </text>
+              
+              {/* Vertical Arrow with control labels */}
+              <line x1="25" y1="80" x2="25" y2="350" stroke="#333" strokeWidth="1" strokeDasharray="2,2" />
+              <polyline points="25,80 20,90 30,90 25,80" fill="#333" />
+              <polyline points="25,350 20,340 30,340 25,350" fill="#333" />
+              
+              <text 
+                x="10" 
+                y="115" 
+                textAnchor="middle" 
+                fontFamily="Merriweather" 
+                fontSize="8"
+                fill="#666"
+                transform="rotate(-90 10 115)"
+              >
+                less control
+              </text>
+              
+              <text 
+                x="10" 
+                y="315" 
+                textAnchor="middle" 
+                fontFamily="Merriweather" 
+                fontSize="8"
+                fill="#666"
+                transform="rotate(-90 10 315)"
               >
                 more control
               </text>

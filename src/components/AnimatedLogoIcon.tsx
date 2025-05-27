@@ -8,12 +8,7 @@ const AnimatedLogoIcon = ({ className = '' }: { className?: string }) => {
       viewBox="0 0 100 100" 
       className={`h-full w-auto ${className}`}
     >
-      <path 
-        d="M20 25 H80 M20 50 H80 M20 75 H80" 
-        stroke="black" 
-        strokeWidth="2"
-        fill="none"
-      />
+      {/* Removed the three horizontal lines */}
     </svg>
   );
 };
