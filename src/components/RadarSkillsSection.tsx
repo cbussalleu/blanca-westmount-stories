@@ -308,19 +308,20 @@ const RadarSkillsSection = () => {
               </Link>
             </div>
 
-            {/* Fixed Hover Tooltip */}
+            {/* Fixed Hover Tooltip with improved positioning */}
             {hoveredSkill && hoveredSkillData && showTooltip && (
               <div 
-                className="absolute z-50 pointer-events-none"
+                className="fixed z-50"
                 style={{
-                  left: mousePosition.x + 15,
-                  top: mousePosition.y - 40,
+                  left: Math.min(mousePosition.x - 100, window.innerWidth - 220),
+                  top: mousePosition.y - 100,
+                  pointerEvents: 'auto'
                 }}
               >
                 <div className="w-48 h-20 border-2 border-gray-200 rounded-lg bg-white shadow-lg p-3">
                   <Link 
                     to={`/portfolio/${hoveredSkillData.caseStudy.slug}`}
-                    className="flex items-center space-x-3 h-full group pointer-events-auto"
+                    className="flex items-center space-x-3 h-full group"
                   >
                     <img 
                       src={hoveredSkillData.caseStudy.image} 
