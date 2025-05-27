@@ -1,40 +1,13 @@
+
 import { useEffect, useRef } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import ProjectCard from '../components/ProjectCard';
-import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
-import ImageHero from '../components/ImageHero';
 import BimboCaseStudies from '../components/BimboCaseStudies';
-import AnimatedVennDiagram from '../components/methodology/AnimatedVennDiagram';
 import RadarSkillsSection from '../components/RadarSkillsSection';
-
-const projects = [
-  {
-    number: 1,
-    title: "Cardholder Loyalty Program Redesign",
-    description: "Redesigned loyalty program for credit card holders to drive card usage and retention with optimized points accrual system.",
-    client: "BBVA",
-    slug: "loyalty-program-redesign",
-    imageSrc: "https://images.unsplash.com/photo-1589758438368-0ad531db3366?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
-  },
-  {
-    number: 2,
-    title: "BARTISTA - Global Coffee Content Production Model",
-    description: "Designed an operational model for producing content at global scale for Nestlé's premium coffee brands, balancing global consistency with local relevance.",
-    client: "Nestlé",
-    slug: "bartista",
-    imageSrc: "https://images.unsplash.com/photo-1511920170033-f8396924c348?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
-  },
-  {
-    number: 3,
-    title: "Insurance Customer Journey Redesign",
-    description: "Redesigned end-to-end customer journey for insurance claims processing to improve satisfaction and operational efficiency.",
-    client: "La Positiva",
-    slug: "insurance-journey-redesign",
-    imageSrc: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
-  }
-];
+import NoSilverBulletsSection from '../components/sections/NoSilverBulletsSection';
+import AboutMeSection from '../components/sections/AboutMeSection';
+import FeaturedProjectsSection from '../components/sections/FeaturedProjectsSection';
+import MyApproachSection from '../components/sections/MyApproachSection';
 
 const Index = () => {
   const sectionRefs = {
@@ -55,40 +28,10 @@ const Index = () => {
       <Header />
       <main className="pt-24">
         {/* NO SILVER BULLETS Section */}
-        <section className="py-4 sm:py-8">
-          <div className="container-narrow text-center">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-['westmount-outline'] tracking-widest">
-              NO SILVER BULLETS
-            </h1>
-          </div>
-        </section>
+        <NoSilverBulletsSection />
 
         {/* About Me Section */}
-        <section className="py-8 sm:py-16" ref={sectionRefs.about}>
-          <div className="container-narrow">
-            <div className="mb-8 sm:mb-12">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-merriweather mb-8 sm:mb-16 text-left sm:text-center">
-                Hello, I'm Christian.<br className="hidden sm:block" />
-                <span className="inline sm:hidden"> </span>Service Designer in Barcelona.<br className="hidden sm:block" />
-                <span className="inline sm:hidden"> </span>I don't bring perfect answers —<br className="hidden sm:block" />
-                <span className="inline sm:hidden"> </span>I help teams ask better questions<br className="hidden sm:block" />
-                <span className="inline sm:hidden"> </span>and build adaptive solutions
-              </h1>
-            </div>
-            <div className="grid md:grid-cols-2 gap-6 md:gap-16">
-              <div className="space-y-4 md:space-y-6">
-                <p className="text-sm leading-relaxed font-merriweather">
-                  With over a decade in service design across global organizations, I've learned the importance of guiding teams through complexity. My approach emphasizes understanding patterns and creating adaptable solutions. This perspective works in environments where stakeholder needs shift and service ecosystems grow increasingly interconnected.
-                </p>
-              </div>
-              <div className="space-y-4 md:space-y-6">
-                <p className="text-sm leading-relaxed font-merriweather">
-                  My background in communication strategy helps translate research into narratives that drive stakeholder alignment. This becomes valuable when working across departments with competing priorities. While I enjoy the engineering aspects of blueprinting, I've learned that effective service design is equally about politics and maintaining curiosity about improvement.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
+        <AboutMeSection ref={sectionRefs.about} />
         
         {/* Skills Radar Section */}
         <section ref={sectionRefs.skills}>
@@ -106,207 +49,10 @@ const Index = () => {
         </section>
         
         {/* Featured Projects Section */}
-        <section className="py-8 sm:py-16" ref={sectionRefs.projects}>
-          <div className="container-narrow">
-            <div className="text-center mb-8 sm:mb-16">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-westmount">FEATURED PROJECTS</h2>
-            </div>
-            
-            <div className="grid md:grid-cols-3 gap-8 sm:gap-12">
-              {projects.map((project) => (
-                <ProjectCard key={project.slug} {...project} />
-              ))}
-            </div>
-            
-            <div className="text-center mt-8 sm:mt-12">
-              <Link 
-                to="/portfolio" 
-                className="inline-flex items-center text-sm border-b border-black pb-1 hover:opacity-70 transition-opacity font-merriweather"
-              >
-                View All Projects <ArrowRight size={14} className="ml-1" />
-              </Link>
-            </div>
-          </div>
-        </section>
+        <FeaturedProjectsSection ref={sectionRefs.projects} />
         
         {/* Methodology Section */}
-        <section className="py-8 sm:py-16" ref={sectionRefs.methodology}>
-          <div className="container-narrow">
-            <div className="text-center mb-8 sm:mb-12">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-westmount">MY APPROACH</h2>
-              <p className="text-sm max-w-2xl mx-auto mt-4 sm:mt-8 text-base font-merriweather">
-                If you're serious about being human-centered, you better be systems-centered too. Break it down. Rebuild it better.
-              </p>
-            </div>
-            
-            {/* Updated Venn Diagram with more separated circles */}
-            <div className="flex justify-center mb-8 sm:mb-12">
-              <svg 
-                viewBox="0 0 580 340" 
-                className="w-[70%] xs:w-[68%] sm:w-[65%] md:w-[62%] lg:w-[60%] transition-all"
-              >
-                {/* Left Circle - Human Systems (moved more to the left) */}
-                <circle 
-                  cx="140" 
-                  cy="150" 
-                  r="110" 
-                  fill="none" 
-                  stroke="#333" 
-                  strokeWidth="1.5"
-                  opacity="0.9"
-                />
-                
-                {/* Right Circle - Functional Systems (moved more to the right) */}
-                <circle 
-                  cx="440" 
-                  cy="150" 
-                  r="110" 
-                  fill="none" 
-                  stroke="#333" 
-                  strokeWidth="1.5"
-                  opacity="0.9"
-                />
-                
-                {/* Human Systems Text - positioned inside the left circle */}
-                <text 
-                  x="140" 
-                  y="95" 
-                  textAnchor="middle" 
-                  fontFamily="Merriweather" 
-                  fontSize="14" 
-                  fontWeight="600"
-                >
-                  Human Systems
-                </text>
-                
-                {/* Human Systems List - positioned inside the left circle */}
-                <text x="85" y="125" fontFamily="Merriweather" fontSize="12">• Behaviors</text>
-                <text x="85" y="150" fontFamily="Merriweather" fontSize="12">• Culture</text>
-                <text x="85" y="175" fontFamily="Merriweather" fontSize="12">• Relationships</text>
-                
-                {/* Functional Systems Text - positioned inside the right circle */}
-                <text 
-                  x="440" 
-                  y="95" 
-                  textAnchor="middle" 
-                  fontFamily="Merriweather" 
-                  fontSize="14" 
-                  fontWeight="600"
-                >
-                  Functional Systems
-                </text>
-                
-                {/* Functional Systems List - positioned inside the right circle */}
-                <text x="385" y="125" fontFamily="Merriweather" fontSize="12">• Processes</text>
-                <text x="385" y="150" fontFamily="Merriweather" fontSize="12">• Technology</text>
-                <text x="385" y="175" fontFamily="Merriweather" fontSize="12">• Metrics</text>
-                
-                {/* SERVICE DESIGN Box - centered between circles */}
-                <rect 
-                  x="240" 
-                  y="130" 
-                  width="100" 
-                  height="40" 
-                  rx="6" 
-                  fill="white" 
-                  stroke="#333" 
-                  strokeWidth="1.5"
-                />
-                
-                <text 
-                  x="290" 
-                  y="155" 
-                  textAnchor="middle" 
-                  fontFamily="Merriweather" 
-                  fontSize="12" 
-                  fontWeight="700"
-                >
-                  SERVICE DESIGN
-                </text>
-                
-                {/* Bottom Labels */}
-                <text 
-                  x="140" 
-                  y="280" 
-                  textAnchor="middle" 
-                  fontFamily="Merriweather" 
-                  fontSize="11"
-                  fontStyle="italic"
-                >
-                  Human experiences
-                </text>
-                <text 
-                  x="140" 
-                  y="300" 
-                  textAnchor="middle" 
-                  fontFamily="Merriweather" 
-                  fontSize="11"
-                  fontStyle="italic"
-                >
-                  can only be enabled
-                </text>
-                
-                {/* Functional Systems Text */}
-                <text 
-                  x="440" 
-                  y="280" 
-                  textAnchor="middle" 
-                  fontFamily="Merriweather" 
-                  fontSize="11"
-                  fontStyle="italic"
-                >
-                  Functional elements
-                </text>
-                <text 
-                  x="440" 
-                  y="300" 
-                  textAnchor="middle" 
-                  fontFamily="Merriweather" 
-                  fontSize="11"
-                  fontStyle="italic"
-                >
-                  can be designed and controlled
-                </text>
-                
-                {/* Arrow with control labels */}
-                <line x1="50" y1="320" x2="530" y2="320" stroke="#333" strokeWidth="1" strokeDasharray="2,2" />
-                <polyline points="50,320 40,315 40,325 50,320" fill="#333" />
-                <polyline points="530,320 540,315 540,325 530,320" fill="#333" />
-                
-                <text 
-                  x="140" 
-                  y="335" 
-                  textAnchor="middle" 
-                  fontFamily="Merriweather" 
-                  fontSize="10"
-                  fill="#666"
-                >
-                  less control
-                </text>
-                
-                <text 
-                  x="440" 
-                  y="335" 
-                  textAnchor="middle" 
-                  fontFamily="Merriweather" 
-                  fontSize="10"
-                  fill="#666"
-                >
-                  more control
-                </text>
-              </svg>
-            </div>
-            
-            <div className="text-center mt-8 sm:mt-12">
-              <Link 
-                to="/methodology" 
-                className="inline-flex items-center text-sm border-b border-black pb-1 hover:opacity-70 transition-opacity font-merriweather"
-              >
-                The thinking behind <ArrowRight size={14} className="ml-1" />
-              </Link>
-            </div>
-          </div>
-        </section>
+        <MyApproachSection ref={sectionRefs.methodology} />
       </main>
       <Footer />
     </div>
