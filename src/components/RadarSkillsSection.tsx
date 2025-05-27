@@ -108,13 +108,10 @@ const RadarSkillsSection = () => {
   };
 
   const handleMouseMove = (e: React.MouseEvent) => {
-    if (containerRef.current) {
-      const rect = containerRef.current.getBoundingClientRect();
-      setMousePosition({
-        x: e.clientX - rect.left,
-        y: e.clientY - rect.top
-      });
-    }
+    setMousePosition({
+      x: e.clientX,
+      y: e.clientY
+    });
   };
 
   const handleSkillHover = (skillName: string, isGreen: boolean) => {
@@ -308,14 +305,13 @@ const RadarSkillsSection = () => {
               </Link>
             </div>
 
-            {/* Fixed Hover Tooltip with improved positioning */}
+            {/* Fixed Hover Tooltip positioned near mouse cursor */}
             {hoveredSkill && hoveredSkillData && showTooltip && (
               <div 
-                className="fixed z-50"
+                className="fixed z-50 pointer-events-auto"
                 style={{
-                  left: Math.min(mousePosition.x - 100, window.innerWidth - 220),
-                  top: mousePosition.y - 100,
-                  pointerEvents: 'auto'
+                  left: mousePosition.x - 120,
+                  top: mousePosition.y - 60,
                 }}
               >
                 <div className="w-48 h-20 border-2 border-gray-200 rounded-lg bg-white shadow-lg p-3">
