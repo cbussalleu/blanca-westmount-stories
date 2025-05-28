@@ -27,18 +27,17 @@ const BimboCaseStudies = () => {
       <div className="relative group cursor-pointer rounded-lg overflow-hidden">
         <AspectRatio ratio={3 / 4} className="w-full">
           <div className="relative w-full h-full">
-            {/* Imagen de fondo que cubre el contenedor */}
-            <div
-              className="absolute inset-0 w-full h-full bg-center bg-cover transition-transform duration-500 group-hover:scale-105"
-              style={{
-                backgroundImage: "url('/lovable-uploads/aba0f719-b826-4af0-9302-5fe7b9bd47fa.png')"
-              }}
+            {/* Imagen de fondo mejorada */}
+            <img
+              src="/lovable-uploads/aba0f719-b826-4af0-9302-5fe7b9bd47fa.png"
+              alt="Grupo Bimbo Connection Center"
+              className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
             />
             {/* Overlay amarillo animado al hacer hover */}
             <div className="absolute inset-0 bg-[hsl(var(--pastel-yellow))] opacity-0 group-hover:opacity-80 transition-opacity duration-500"></div>
             {/* Texto sobre la imagen */}
             <div className="absolute inset-0 flex items-center justify-center p-6">
-              <h3 className="text-white text-xl sm:text-2xl font-westmount text-center transition-transform duration-300 group-hover:scale-110">
+              <h3 className="text-white text-xl sm:text-2xl font-westmount text-center transition-transform duration-300 group-hover:scale-110 drop-shadow-lg">
                 Over 7 years designing for bold brand in an ever-evolving industry
               </h3>
             </div>
