@@ -23,26 +23,35 @@ const bimboCases = [
 const BimboCaseStudies = () => {
   return (
     <div className="grid md:grid-cols-2 gap-10">
-      {/* Large image rectangle with overlay text - VISIBLE EN MÓVIL */}
-      <div className="relative group cursor-pointer rounded-lg overflow-hidden mb-8 md:mb-0">
-        <AspectRatio ratio={4 / 3} className="w-full md:aspect-[3/4]">
-          <div className="relative w-full h-full">
-            {/* Solo imagen normal, sin background */}
-            <img
-              src="/lovable-uploads/aba0f719-b826-4af0-9302-5fe7b9bd47fa.png"
-              alt="Grupo Bimbo Connection Center"
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-            {/* Overlay amarillo animado al hacer hover */}
+const BimboCaseStudies = () => {
+  return (
+    <div className="grid md:grid-cols-2 gap-10">
+      {/* Sección de imagen hero - COMPLETAMENTE REPLANTEADA */}
+      <div className="relative group cursor-pointer">
+        {/* Contenedor principal con bordes redondeados */}
+        <div className="rounded-lg overflow-hidden shadow-md bg-gray-200">
+          {/* Imagen con dimensiones fijas y claras */}
+          <div className="relative">
+            {/* En móvil: 350x260px (4:3), En desktop: 350x467px (3:4) */}
+            <div className="w-full h-[260px] md:h-[400px]">
+              <img
+                src="https://images.unsplash.com/photo-1565767292670-bbc01d6ce4a7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                alt="Test image - Bread bakery"
+                className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+              />
+            </div>
+            
+            {/* Overlay hover */}
             <div className="absolute inset-0 bg-[hsl(var(--pastel-yellow))] opacity-0 group-hover:opacity-80 transition-opacity duration-500"></div>
-            {/* Texto sobre la imagen */}
+            
+            {/* Texto superpuesto */}
             <div className="absolute inset-0 flex items-center justify-center p-4 sm:p-6">
               <h3 className="text-white text-lg sm:text-xl md:text-2xl font-westmount text-center transition-transform duration-300 group-hover:scale-110 drop-shadow-lg leading-tight">
                 Over 7 years designing for bold brand in an ever-evolving industry
               </h3>
             </div>
           </div>
-        </AspectRatio>
+        </div>
       </div>
 
       <div>
