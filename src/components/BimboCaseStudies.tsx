@@ -1,4 +1,3 @@
-
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
@@ -26,12 +25,11 @@ const BimboCaseStudies = () => {
     <div className="grid md:grid-cols-2 gap-10">
       {/* Large image rectangle with overlay text */}
       <div className="relative group cursor-pointer rounded-lg overflow-hidden">
-        <AspectRatio ratio={3/4} className="w-full">
+        <AspectRatio ratio={3 / 4} className="w-full">
           <div className="relative w-full h-full">
-            <img 
-              src="/lovable-uploads/aba0f719-b826-4af0-9302-5fe7b9bd47fa.png" 
-              alt="Bimbo bakery worker" 
-              className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
+            <div
+              className="absolute inset-0 w-full h-full bg-center bg-cover transition-transform duration-500 group-hover:scale-105"
+              style={{ backgroundImage: "url('/lovable-uploads/aba0f719-b826-4af0-9302-5fe7b9bd47fa.png')" }}
             />
             {/* Yellow overlay on hover */}
             <div className="absolute inset-0 bg-[hsl(var(--pastel-yellow))] opacity-0 group-hover:opacity-80 transition-opacity duration-500"></div>
@@ -44,14 +42,14 @@ const BimboCaseStudies = () => {
           </div>
         </AspectRatio>
       </div>
-      
+
       <div>
         <div className="space-y-8">
           {bimboCases.map((caseStudy, index) => (
             <div key={index} className="group">
               <h3 className="text-lg font-merriweather mb-2">{caseStudy.title}</h3>
               <p className="text-sm text-gray-700 mb-2 font-merriweather">{caseStudy.description}</p>
-              <Link 
+              <Link
                 to={`/portfolio/${caseStudy.slug}`}
                 className="inline-flex items-center text-xs border-b border-black pb-0.5 hover:opacity-70 transition-opacity font-merriweather"
               >
@@ -60,9 +58,9 @@ const BimboCaseStudies = () => {
             </div>
           ))}
         </div>
-        
+
         <div className="mt-12">
-          <Link 
+          <Link
             to="/bimbo-relationship"
             className="inline-flex items-center text-sm border-b border-black pb-1 hover:opacity-70 transition-opacity font-merriweather"
           >
