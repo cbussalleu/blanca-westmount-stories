@@ -1,7 +1,7 @@
-import { forwardRef } from 'react';
+import { forwardRef, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 
 interface MyApproachSectionProps {
   className?: string;
@@ -26,6 +26,15 @@ const fadeIn = {
 
 const MyApproachSection = forwardRef<HTMLElement, MyApproachSectionProps>(
   ({ className }, ref) => {
+    const svgRef = useRef<SVGSVGElement>(null);
+    const isInView = useInView(svgRef, { once: true, amount: 0.3 });
+
+    // Desktop: círculos más cerca y caja más baja
+    const leftCircle = { cx: 155, cy: 150, r: 110 };
+    const rightCircle = { cx: 305, cy: 150, r: 110 };
+    const serviceBox = { x: 190, y: 205, width: 100, height: 38 };
+    const serviceText = { x: 240, y: 228 };
+
     return (
       <section className={`py-8 sm:py-16 ${className || ''}`} ref={ref}>
         <div className="container-narrow">
@@ -47,179 +56,178 @@ const MyApproachSection = forwardRef<HTMLElement, MyApproachSectionProps>(
           {/* Desktop/Tablet Horizontal Diagram */}
           <div className="hidden sm:flex justify-center mb-8 sm:mb-12">
             <motion.svg
-              viewBox="0 0 480 340"
-              className="w-[70%] xs:w-[68%] sm:w-[65%] md:w-[62%] lg:w-[60%] transition-all"
+              ref={svgRef}
+              viewBox="0 0 460 340"
+              className="w-[65%] md:w-[60%] transition-all"
               initial="hidden"
-              animate="visible"
+              animate={isInView ? "visible" : "hidden"}
             >
               {/* Left Circle - Human Systems */}
               <motion.circle
-                cx="130"
-                cy="150"
-                r="110"
+                {...leftCircle}
                 fill="none"
-                stroke="#444"
-                strokeWidth="2"
-                opacity="0.88"
-                whileHover={{ stroke: "#2e7d32", strokeWidth: 3 }}
-                transition={{ duration: 0.2 }}
-                variants={fadeIn}
-                custom={1}
+                stroke="#333"
+                strokeWidth={1.5}
+                opacity={0.9}
+                initial={{ opacity: 0, scale: 0.96 }}
+                animate={{ opacity: isInView ? 0.9 : 0, scale: isInView ? 1 : 0.96 }}
+                transition={{ duration: 0.7, delay: 0.1 }}
               />
               {/* Right Circle - Functional Systems */}
               <motion.circle
-                cx="350"
-                cy="150"
-                r="110"
+                {...rightCircle}
                 fill="none"
-                stroke="#444"
-                strokeWidth="2"
-                opacity="0.88"
-                whileHover={{ stroke: "#1565c0", strokeWidth: 3 }}
-                transition={{ duration: 0.2 }}
-                variants={fadeIn}
-                custom={2}
+                stroke="#333"
+                strokeWidth={1.5}
+                opacity={0.9}
+                initial={{ opacity: 0, scale: 0.96 }}
+                animate={{ opacity: isInView ? 0.9 : 0, scale: isInView ? 1 : 0.96 }}
+                transition={{ duration: 0.7, delay: 0.12 }}
               />
               {/* Human Systems Text */}
               <motion.text
-                x="130" y="95" textAnchor="middle"
-                fontFamily="Merriweather" fontSize="15" fontWeight="700"
+                x={leftCircle.cx}
+                y="95"
+                textAnchor="middle"
+                fontFamily="Merriweather"
+                fontSize="14"
+                fontWeight="600"
                 fill="#333"
-                variants={fadeInUp}
-                custom={3}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 10 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
               >
                 Human Systems
               </motion.text>
               {/* Human Systems List */}
-              <motion.text x="75" y="125" fontFamily="Merriweather" fontSize="13" fill="#2e7d32" variants={fadeInUp} custom={4}>• Behaviors</motion.text>
-              <motion.text x="75" y="150" fontFamily="Merriweather" fontSize="13" fill="#2e7d32" variants={fadeInUp} custom={5}>• Culture</motion.text>
-              <motion.text x="75" y="175" fontFamily="Merriweather" fontSize="13" fill="#2e7d32" variants={fadeInUp} custom={6}>• Relationships</motion.text>
+              <motion.text x="90" y="125" fontFamily="Merriweather" fontSize="12" fill="#2e7d32">• Behaviors</motion.text>
+              <motion.text x="90" y="150" fontFamily="Merriweather" fontSize="12" fill="#2e7d32">• Culture</motion.text>
+              <motion.text x="90" y="175" fontFamily="Merriweather" fontSize="12" fill="#2e7d32">• Relationships</motion.text>
               {/* Functional Systems Text */}
               <motion.text
-                x="350" y="95" textAnchor="middle"
-                fontFamily="Merriweather" fontSize="15" fontWeight="700"
+                x={rightCircle.cx}
+                y="95"
+                textAnchor="middle"
+                fontFamily="Merriweather"
+                fontSize="14"
+                fontWeight="600"
                 fill="#333"
-                variants={fadeInUp}
-                custom={7}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 10 }}
+                transition={{ duration: 0.8, delay: 0.23 }}
               >
                 Functional Systems
               </motion.text>
               {/* Functional Systems List */}
-              <motion.text x="295" y="125" fontFamily="Merriweather" fontSize="13" fill="#1565c0" variants={fadeInUp} custom={8}>• Processes</motion.text>
-              <motion.text x="295" y="150" fontFamily="Merriweather" fontSize="13" fill="#1565c0" variants={fadeInUp} custom={9}>• Technology</motion.text>
-              <motion.text x="295" y="175" fontFamily="Merriweather" fontSize="13" fill="#1565c0" variants={fadeInUp} custom={10}>• Metrics</motion.text>
-              {/* SERVICE DESIGN Box */}
+              <motion.text x="260" y="125" fontFamily="Merriweather" fontSize="12" fill="#1565c0">• Processes</motion.text>
+              <motion.text x="260" y="150" fontFamily="Merriweather" fontSize="12" fill="#1565c0">• Technology</motion.text>
+              <motion.text x="260" y="175" fontFamily="Merriweather" fontSize="12" fill="#1565c0">• Metrics</motion.text>
+              {/* SERVICE DESIGN Box - Más abajo */}
               <motion.rect
-                x="180" y="145" width="120" height="40" rx="8"
-                fill="white" stroke="#333" strokeWidth="1.8"
-                style={{ filter: 'drop-shadow(0 2px 8px rgba(0,0,0,0.06))'}}
-                initial={{ opacity: 0, scale: 0.7 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.55, duration: 0.5 }}
+                {...serviceBox}
+                rx="8"
+                fill="white"
+                stroke="#333"
+                strokeWidth="1.7"
+                style={{ filter: 'drop-shadow(0 2px 8px rgba(0,0,0,0.08))' }}
+                initial={{ opacity: 0, scale: 0.85 }}
+                animate={{ opacity: isInView ? 1 : 0, scale: isInView ? 1 : 0.85 }}
+                transition={{ duration: 0.7, delay: 0.5 }}
               />
               <motion.text
-                x="240" y="170" textAnchor="middle"
-                fontFamily="Merriweather" fontSize="13" fontWeight="900"
+                x={serviceText.x}
+                y={serviceText.y}
+                textAnchor="middle"
+                fontFamily="Merriweather"
+                fontSize="13"
+                fontWeight="700"
                 fill="#333"
-                variants={fadeInUp}
-                custom={11}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 10 }}
+                transition={{ duration: 0.7, delay: 0.6 }}
                 style={{ letterSpacing: 1.2 }}
               >
                 SERVICE DESIGN
               </motion.text>
               {/* Bottom Labels */}
-              <motion.text x="130" y="280" textAnchor="middle" fontFamily="Merriweather" fontSize="12" fontStyle="italic" fill="#666" variants={fadeInUp} custom={12}>
+              <motion.text x="155" y="280" textAnchor="middle" fontFamily="Merriweather" fontSize="12" fontStyle="italic" fill="#666">
                 Human experiences
               </motion.text>
-              <motion.text x="130" y="300" textAnchor="middle" fontFamily="Merriweather" fontSize="12" fontStyle="italic" fill="#666" variants={fadeInUp} custom={13}>
+              <motion.text x="155" y="300" textAnchor="middle" fontFamily="Merriweather" fontSize="12" fontStyle="italic" fill="#666">
                 can only be enabled
               </motion.text>
-              <motion.text x="350" y="280" textAnchor="middle" fontFamily="Merriweather" fontSize="12" fontStyle="italic" fill="#666" variants={fadeInUp} custom={14}>
+              <motion.text x="305" y="280" textAnchor="middle" fontFamily="Merriweather" fontSize="12" fontStyle="italic" fill="#666">
                 Functional elements
               </motion.text>
-              <motion.text x="350" y="300" textAnchor="middle" fontFamily="Merriweather" fontSize="12" fontStyle="italic" fill="#666" variants={fadeInUp} custom={15}>
+              <motion.text x="305" y="300" textAnchor="middle" fontFamily="Merriweather" fontSize="12" fontStyle="italic" fill="#666">
                 can be designed and controlled
               </motion.text>
               {/* Arrow with control labels */}
-              <motion.line x1="40" y1="320" x2="440" y2="320" stroke="#333" strokeWidth="1.2" strokeDasharray="2,2"
-                initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 1, delay: 0.2 }} />
-              <polyline points="40,320 30,315 30,325 40,320" fill="#333" />
-              <polyline points="440,320 450,315 450,325 440,320" fill="#333" />
-              <motion.text x="130" y="335" textAnchor="middle" fontFamily="Merriweather" fontSize="11" fill="#888" variants={fadeIn} custom={16}>
+              <motion.line x1="50" y1="320" x2="410" y2="320" stroke="#333" strokeWidth="1.2" strokeDasharray="2,2"
+                initial={{ pathLength: 0 }} animate={{ pathLength: isInView ? 1 : 0 }} transition={{ duration: 1, delay: 0.2 }} />
+              <polyline points="50,320 40,315 40,325 50,320" fill="#333" />
+              <polyline points="410,320 420,315 420,325 410,320" fill="#333" />
+              <motion.text x="120" y="335" textAnchor="middle" fontFamily="Merriweather" fontSize="11" fill="#888">
                 less control
               </motion.text>
-              <motion.text x="350" y="335" textAnchor="middle" fontFamily="Merriweather" fontSize="11" fill="#888" variants={fadeIn} custom={17}>
+              <motion.text x="340" y="335" textAnchor="middle" fontFamily="Merriweather" fontSize="11" fill="#888">
                 more control
               </motion.text>
             </motion.svg>
           </div>
 
-          {/* Mobile Vertical Diagram */}
+          {/* Mobile Vertical Diagram (sin cambios, pero puedes ajustar similar si lo deseas) */}
           <div className="flex sm:hidden justify-center mb-8">
-            <motion.svg
+            <svg
               viewBox="0 0 280 400"
               className="w-[85%] transition-all"
-              initial="hidden"
-              animate="visible"
             >
               {/* Top Circle - Human Systems */}
-              <motion.circle
+              <circle
                 cx="140" cy="90" r="80"
                 fill="none" stroke="#444" strokeWidth="2" opacity="0.88"
-                whileHover={{ stroke: "#2e7d32", strokeWidth: 3 }}
-                transition={{ duration: 0.2 }}
-                variants={fadeIn}
-                custom={1}
               />
               {/* Bottom Circle - Functional Systems */}
-              <motion.circle
+              <circle
                 cx="140" cy="260" r="80"
                 fill="none" stroke="#444" strokeWidth="2" opacity="0.88"
-                whileHover={{ stroke: "#1565c0", strokeWidth: 3 }}
-                transition={{ duration: 0.2 }}
-                variants={fadeIn}
-                custom={2}
               />
               {/* Human Systems Text */}
-              <motion.text x="140" y="55" textAnchor="middle" fontFamily="Merriweather" fontSize="13" fontWeight="700" fill="#333" variants={fadeInUp} custom={3}>
+              <text x="140" y="55" textAnchor="middle" fontFamily="Merriweather" fontSize="13" fontWeight="700" fill="#333">
                 Human Systems
-              </motion.text>
+              </text>
               {/* Human Systems List */}
-              <motion.text x="100" y="75" fontFamily="Merriweather" fontSize="11" fill="#2e7d32" variants={fadeInUp} custom={4}>• Behaviors</motion.text>
-              <motion.text x="100" y="90" fontFamily="Merriweather" fontSize="11" fill="#2e7d32" variants={fadeInUp} custom={5}>• Culture</motion.text>
-              <motion.text x="100" y="105" fontFamily="Merriweather" fontSize="11" fill="#2e7d32" variants={fadeInUp} custom={6}>• Relationships</motion.text>
+              <text x="100" y="75" fontFamily="Merriweather" fontSize="11" fill="#2e7d32">• Behaviors</text>
+              <text x="100" y="90" fontFamily="Merriweather" fontSize="11" fill="#2e7d32">• Culture</text>
+              <text x="100" y="105" fontFamily="Merriweather" fontSize="11" fill="#2e7d32">• Relationships</text>
               {/* SERVICE DESIGN Box */}
-              <motion.rect
+              <rect
                 x="90" y="160" width="100" height="30" rx="8"
                 fill="white" stroke="#333" strokeWidth="1.7"
                 style={{ filter: 'drop-shadow(0 2px 8px rgba(0,0,0,0.07))'}}
-                initial={{ opacity: 0, scale: 0.7 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.55, duration: 0.5 }}
               />
-              <motion.text x="140" y="180" textAnchor="middle" fontFamily="Merriweather" fontSize="11" fontWeight="900" fill="#333" style={{ letterSpacing: 1.2 }} variants={fadeInUp} custom={7}>
+              <text x="140" y="180" textAnchor="middle" fontFamily="Merriweather" fontSize="11" fontWeight="900" fill="#333" style={{ letterSpacing: 1.2 }}>
                 SERVICE DESIGN
-              </motion.text>
+              </text>
               {/* Functional Systems Text */}
-              <motion.text x="140" y="225" textAnchor="middle" fontFamily="Merriweather" fontSize="13" fontWeight="700" fill="#333" variants={fadeInUp} custom={8}>
+              <text x="140" y="225" textAnchor="middle" fontFamily="Merriweather" fontSize="13" fontWeight="700" fill="#333">
                 Functional Systems
-              </motion.text>
+              </text>
               {/* Functional Systems List */}
-              <motion.text x="100" y="245" fontFamily="Merriweather" fontSize="11" fill="#1565c0" variants={fadeInUp} custom={9}>• Processes</motion.text>
-              <motion.text x="100" y="260" fontFamily="Merriweather" fontSize="11" fill="#1565c0" variants={fadeInUp} custom={10}>• Technology</motion.text>
-              <motion.text x="100" y="275" fontFamily="Merriweather" fontSize="11" fill="#1565c0" variants={fadeInUp} custom={11}>• Metrics</motion.text>
+              <text x="100" y="245" fontFamily="Merriweather" fontSize="11" fill="#1565c0">• Processes</text>
+              <text x="100" y="260" fontFamily="Merriweather" fontSize="11" fill="#1565c0">• Technology</text>
+              <text x="100" y="275" fontFamily="Merriweather" fontSize="11" fill="#1565c0">• Metrics</text>
               {/* Vertical Arrow with control labels */}
-              <motion.line x1="20" y1="60" x2="20" y2="290" stroke="#333" strokeWidth="1.2" strokeDasharray="2,2"
-                initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 1, delay: 0.2 }} />
+              <line x1="20" y1="60" x2="20" y2="290" stroke="#333" strokeWidth="1.2" strokeDasharray="2,2" />
               <polyline points="20,60 15,70 25,70 20,60" fill="#333" />
               <polyline points="20,290 15,280 25,280 20,290" fill="#333" />
-              <motion.text x="8" y="90" textAnchor="middle" fontFamily="Merriweather" fontSize="9" fill="#888" transform="rotate(-90 8 90)" variants={fadeIn} custom={12}>
+              <text x="8" y="90" textAnchor="middle" fontFamily="Merriweather" fontSize="9" fill="#888" transform="rotate(-90 8 90)">
                 less control
-              </motion.text>
-              <motion.text x="8" y="260" textAnchor="middle" fontFamily="Merriweather" fontSize="9" fill="#888" transform="rotate(-90 8 260)" variants={fadeIn} custom={13}>
+              </text>
+              <text x="8" y="260" textAnchor="middle" fontFamily="Merriweather" fontSize="9" fill="#888" transform="rotate(-90 8 260)">
                 more control
-              </motion.text>
-            </motion.svg>
+              </text>
+            </svg>
           </div>
 
           <motion.div
