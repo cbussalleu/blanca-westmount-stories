@@ -7,6 +7,7 @@ const RadarSkillsSection = () => {
   const [tooltipSkill, setTooltipSkill] = useState<string | null>(null);
   const [tooltipPosition, setTooltipPosition] = useState<{ x: number; y: number } | null>(null);
   const tooltipRef = useRef<HTMLDivElement>(null);
+  const skillsContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -236,7 +237,7 @@ const RadarSkillsSection = () => {
             <div className="space-y-3">
               <h3 className="text-lg font-merriweather font-semibold">Core capabilities</h3>
               <div className="transition-all duration-700 ease-in-out min-h-[120px] relative">
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2" ref={skillsContainerRef}>
                   {skillContent.map((skill, index) => {
                     const isGreen = skill.category === 'excelling';
                     return (
@@ -258,12 +259,15 @@ const RadarSkillsSection = () => {
                               setTooltipSkill(null);
                               setTooltipPosition(null);
                             } else {
-                              const rect = (e.target as HTMLElement).getBoundingClientRect();
-                              setTooltipSkill(skill.name);
-                              setTooltipPosition({
-                                x: rect.left + rect.width / 2,
-                                y: rect.top
-                              });
+                              const skillRect = (e.target as HTMLElement).getBoundingClientRect();
+                              const containerRect = skillsContainerRef.current?.getBoundingClientRect();
+                              if (containerRect) {
+                                setTooltipSkill(skill.name);
+                                setTooltipPosition({
+                                  x: skillRect.left - containerRect.left + skillRect.width / 2,
+                                  y: skillRect.top - containerRect.top,
+                                });
+                              }
                             }
                           }
                         }}
@@ -276,6 +280,37 @@ const RadarSkillsSection = () => {
                     );
                   })}
                 </div>
+                {tooltipSkill && tooltipSkillData && tooltipPosition && (
+                  <div
+                    className="absolute z-50 pointer-events-auto animate-[tooltip-bounce_0.3s] transition-transform"
+                    style={{
+                      left: tooltipPosition.x - 120,
+                      top: tooltipPosition.y - 70,
+                    }}
+                    ref={tooltipRef}
+                  >
+                    <div className="w-48 h-20 border-2 border-gray-200 rounded-lg bg-white shadow-lg p-3 hover:scale-105 transition-transform duration-200 cursor-pointer">
+                      <Link
+                        to={`/portfolio/${tooltipSkillData.caseStudy.slug}`}
+                        className="flex items-center space-x-3 h-full group"
+                      >
+                        <img
+                          src={tooltipSkillData.caseStudy.image}
+                          alt={tooltipSkillData.caseStudy.brand}
+                          className="w-12 h-8 object-cover rounded flex-shrink-0"
+                        />
+                        <div className="flex-1 min-w-0">
+                          <p className="text-xs font-merriweather text-gray-600 mb-1 truncate">
+                            {tooltipSkillData.caseStudy.brand}
+                          </p>
+                          <div className="text-xs text-[#8ab1a2] hover:text-[#7ca196] font-merriweather flex items-center group-hover:underline">
+                            Capability in action <ArrowRight size={10} className="ml-1 flex-shrink-0" />
+                          </div>
+                        </div>
+                      </Link>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
             <div className="flex items-center justify-start gap-6 text-xs font-merriweather py-2 transition-all duration-300">
@@ -297,37 +332,6 @@ const RadarSkillsSection = () => {
                 See the method <ArrowRight size={14} className="ml-1" />
               </Link>
             </div>
-            {tooltipSkill && tooltipSkillData && tooltipPosition && (
-              <div
-                className="fixed z-50 pointer-events-auto animate-[tooltip-bounce_0.3s] transition-transform"
-                style={{
-                  left: tooltipPosition.x - 120,
-                  top: tooltipPosition.y - 70,
-                }}
-                ref={tooltipRef}
-              >
-                <div className="w-48 h-20 border-2 border-gray-200 rounded-lg bg-white shadow-lg p-3 hover:scale-105 transition-transform duration-200 cursor-pointer">
-                  <Link
-                    to={`/portfolio/${tooltipSkillData.caseStudy.slug}`}
-                    className="flex items-center space-x-3 h-full group"
-                  >
-                    <img
-                      src={tooltipSkillData.caseStudy.image}
-                      alt={tooltipSkillData.caseStudy.brand}
-                      className="w-12 h-8 object-cover rounded flex-shrink-0"
-                    />
-                    <div className="flex-1 min-w-0">
-                      <p className="text-xs font-merriweather text-gray-600 mb-1 truncate">
-                        {tooltipSkillData.caseStudy.brand}
-                      </p>
-                      <div className="text-xs text-[#8ab1a2] hover:text-[#7ca196] font-merriweather flex items-center group-hover:underline">
-                        Capability in action <ArrowRight size={10} className="ml-1 flex-shrink-0" />
-                      </div>
-                    </div>
-                  </Link>
-                </div>
-              </div>
-            )}
           </div>
         </div>
       </div>
