@@ -1,14 +1,30 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 
 const RadarSkillsSection = () => {
   const [selectedSkill, setSelectedSkill] = useState<string>('Hard Skills');
-  const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [showTooltip, setShowTooltip] = useState(false);
-  const [isTooltipHovered, setIsTooltipHovered] = useState(false); // Nuevo estado
-  const containerRef = useRef<HTMLDivElement>(null);
+  const [tooltipSkill, setTooltipSkill] = useState<string | null>(null);
+  const [tooltipPosition, setTooltipPosition] = useState<{ x: number; y: number } | null>(null);
+  const tooltipRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        tooltipRef.current &&
+        !tooltipRef.current.contains(event.target as Node)
+      ) {
+        setTooltipSkill(null);
+        setTooltipPosition(null);
+      }
+    }
+    if (tooltipSkill) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [tooltipSkill]);
 
   const radarData = [
     { label: "Organization Understanding", value: 65, angle: 0 },
@@ -102,35 +118,13 @@ const RadarSkillsSection = () => {
     return `M ${centerX} ${centerY} L ${currentCoords.x} ${currentCoords.y} A ${maxRadius} ${maxRadius} 0 0 1 ${nextCoords.x} ${nextCoords.y} Z`;
   };
 
-  const handleMouseMove = (e: React.MouseEvent) => {
-    setMousePosition({
-      x: e.clientX,
-      y: e.clientY
-    });
-  };
-
-  const handleSkillHover = (skillName: string, isGreen: boolean) => {
-    if (isGreen) {
-      setHoveredSkill(skillName);
-      setTimeout(() => setShowTooltip(true), 150);
-    }
-  };
-
-  const handleSkillLeave = () => {
-    setTimeout(() => {
-      if (!isTooltipHovered) {
-        setHoveredSkill(null);
-        setShowTooltip(false);
-      }
-    }, 80);
-  };
-
   const skillContent = getSkillContent(selectedSkill);
-  const hoveredSkillData = hoveredSkill ? getSkillContent(selectedSkill).find(skill => skill.name === hoveredSkill) : null;
-  const shouldShowTooltip = hoveredSkill && hoveredSkillData && (showTooltip || isTooltipHovered);
+  const tooltipSkillData = tooltipSkill
+    ? skillContent.find(skill => skill.name === tooltipSkill)
+    : null;
 
   return (
-    <section className="py-8 sm:py-16" onMouseMove={handleMouseMove}>
+    <section className="py-8 sm:py-16">
       <div className="container-narrow">
         <div className="text-center mb-8 sm:mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-westmount">WHAT I BRING</h2>
@@ -238,7 +232,7 @@ const RadarSkillsSection = () => {
               </svg>
             </div>
           </div>
-          <div className="space-y-6 relative" ref={containerRef}>
+          <div className="space-y-6 relative">
             <div className="space-y-3">
               <h3 className="text-lg font-merriweather font-semibold">Core capabilities</h3>
               <div className="transition-all duration-700 ease-in-out min-h-[120px] relative">
@@ -258,8 +252,24 @@ const RadarSkillsSection = () => {
                           opacity: 1,
                           transform: 'translateY(0)'
                         }}
-                        onMouseEnter={() => handleSkillHover(skill.name, isGreen)}
-                        onMouseLeave={handleSkillLeave}
+                        onClick={e => {
+                          if (isGreen) {
+                            if (tooltipSkill === skill.name) {
+                              setTooltipSkill(null);
+                              setTooltipPosition(null);
+                            } else {
+                              const rect = (e.target as HTMLElement).getBoundingClientRect();
+                              setTooltipSkill(skill.name);
+                              setTooltipPosition({
+                                x: rect.left + rect.width / 2,
+                                y: rect.top
+                              });
+                            }
+                          }
+                        }}
+                        tabIndex={isGreen ? 0 : -1}
+                        aria-haspopup={isGreen ? "dialog" : undefined}
+                        aria-expanded={isGreen && tooltipSkill === skill.name}
                       >
                         {skill.name}
                       </span>
@@ -287,34 +297,28 @@ const RadarSkillsSection = () => {
                 See the method <ArrowRight size={14} className="ml-1" />
               </Link>
             </div>
-            {/* Tooltip */}
-            {shouldShowTooltip && (
+            {tooltipSkill && tooltipSkillData && tooltipPosition && (
               <div
-                className="fixed z-50 pointer-events-auto"
+                className="fixed z-50 pointer-events-auto animate-[tooltip-bounce_0.3s] transition-transform"
                 style={{
-                  left: mousePosition.x - 120,
-                  top: mousePosition.y - 60,
+                  left: tooltipPosition.x - 120,
+                  top: tooltipPosition.y - 70,
                 }}
-                onMouseEnter={() => setIsTooltipHovered(true)}
-                onMouseLeave={() => {
-                  setIsTooltipHovered(false);
-                  setHoveredSkill(null);
-                  setShowTooltip(false);
-                }}
+                ref={tooltipRef}
               >
-                <div className="w-48 h-20 border-2 border-gray-200 rounded-lg bg-white shadow-lg p-3">
+                <div className="w-48 h-20 border-2 border-gray-200 rounded-lg bg-white shadow-lg p-3 hover:scale-105 transition-transform duration-200 cursor-pointer">
                   <Link
-                    to={`/portfolio/${hoveredSkillData.caseStudy.slug}`}
+                    to={`/portfolio/${tooltipSkillData.caseStudy.slug}`}
                     className="flex items-center space-x-3 h-full group"
                   >
                     <img
-                      src={hoveredSkillData.caseStudy.image}
-                      alt={hoveredSkillData.caseStudy.brand}
+                      src={tooltipSkillData.caseStudy.image}
+                      alt={tooltipSkillData.caseStudy.brand}
                       className="w-12 h-8 object-cover rounded flex-shrink-0"
                     />
                     <div className="flex-1 min-w-0">
                       <p className="text-xs font-merriweather text-gray-600 mb-1 truncate">
-                        {hoveredSkillData.caseStudy.brand}
+                        {tooltipSkillData.caseStudy.brand}
                       </p>
                       <div className="text-xs text-[#8ab1a2] hover:text-[#7ca196] font-merriweather flex items-center group-hover:underline">
                         Capability in action <ArrowRight size={10} className="ml-1 flex-shrink-0" />
