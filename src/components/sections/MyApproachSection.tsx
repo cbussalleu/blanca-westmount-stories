@@ -16,24 +16,20 @@ const fadeInUp = {
   })
 };
 
-const fadeIn = {
-  hidden: { opacity: 0 },
-  visible: (i: number) => ({
-    opacity: 1,
-    transition: { delay: 0.05 * i, duration: 0.6 }
-  })
-};
-
 const MyApproachSection = forwardRef<HTMLElement, MyApproachSectionProps>(
   ({ className }, ref) => {
     const svgRef = useRef<SVGSVGElement>(null);
     const isInView = useInView(svgRef, { once: true, amount: 0.3 });
 
-    // Desktop: círculos más cerca y caja más baja
-    const leftCircle = { cx: 155, cy: 150, r: 110 };
-    const rightCircle = { cx: 305, cy: 150, r: 110 };
-    const serviceBox = { x: 190, y: 205, width: 100, height: 38 };
-    const serviceText = { x: 240, y: 228 };
+    // Desktop: círculos más cerca y caja más baja, todo alineado
+    const leftCircle = { cx: 155, cy: 170, r: 110 };
+    const rightCircle = { cx: 305, cy: 170, r: 110 };
+    const serviceBox = { x: 170, y: 225, width: 140, height: 40 };
+    const serviceText = { x: 240, y: 250 };
+
+    // Listas bien alineadas en cada círculo
+    const leftListX = leftCircle.cx - 52;
+    const rightListX = rightCircle.cx - 30;
 
     return (
       <section className={`py-8 sm:py-16 ${className || ''}`} ref={ref}>
@@ -62,7 +58,7 @@ const MyApproachSection = forwardRef<HTMLElement, MyApproachSectionProps>(
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
             >
-              {/* Left Circle - Human Systems */}
+              {/* Círculos */}
               <motion.circle
                 {...leftCircle}
                 fill="none"
@@ -73,7 +69,6 @@ const MyApproachSection = forwardRef<HTMLElement, MyApproachSectionProps>(
                 animate={{ opacity: isInView ? 0.9 : 0, scale: isInView ? 1 : 0.96 }}
                 transition={{ duration: 0.7, delay: 0.1 }}
               />
-              {/* Right Circle - Functional Systems */}
               <motion.circle
                 {...rightCircle}
                 fill="none"
@@ -84,48 +79,44 @@ const MyApproachSection = forwardRef<HTMLElement, MyApproachSectionProps>(
                 animate={{ opacity: isInView ? 0.9 : 0, scale: isInView ? 1 : 0.96 }}
                 transition={{ duration: 0.7, delay: 0.12 }}
               />
-              {/* Human Systems Text */}
+
+              {/* Títulos - más abajo, tamaño menor */}
               <motion.text
                 x={leftCircle.cx}
-                y="95"
+                y={leftCircle.cy - 50}
                 textAnchor="middle"
                 fontFamily="Merriweather"
-                fontSize="14"
+                fontSize="13"
                 fontWeight="600"
-                fill="#333"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 10 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
+                fill="#222"
               >
                 Human Systems
               </motion.text>
-              {/* Human Systems List */}
-              <motion.text x="90" y="125" fontFamily="Merriweather" fontSize="12" fill="#2e7d32">• Behaviors</motion.text>
-              <motion.text x="90" y="150" fontFamily="Merriweather" fontSize="12" fill="#2e7d32">• Culture</motion.text>
-              <motion.text x="90" y="175" fontFamily="Merriweather" fontSize="12" fill="#2e7d32">• Relationships</motion.text>
-              {/* Functional Systems Text */}
               <motion.text
                 x={rightCircle.cx}
-                y="95"
+                y={rightCircle.cy - 50}
                 textAnchor="middle"
                 fontFamily="Merriweather"
-                fontSize="14"
+                fontSize="13"
                 fontWeight="600"
-                fill="#333"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 10 }}
-                transition={{ duration: 0.8, delay: 0.23 }}
+                fill="#222"
               >
                 Functional Systems
               </motion.text>
-              {/* Functional Systems List */}
-              <motion.text x="260" y="125" fontFamily="Merriweather" fontSize="12" fill="#1565c0">• Processes</motion.text>
-              <motion.text x="260" y="150" fontFamily="Merriweather" fontSize="12" fill="#1565c0">• Technology</motion.text>
-              <motion.text x="260" y="175" fontFamily="Merriweather" fontSize="12" fill="#1565c0">• Metrics</motion.text>
-              {/* SERVICE DESIGN Box - Más abajo */}
+
+              {/* Listas centradas, color uniforme y sin superposición */}
+              <motion.text x={leftListX} y={leftCircle.cy - 10} fontFamily="Merriweather" fontSize="12" fill="#333">• Behaviors</motion.text>
+              <motion.text x={leftListX} y={leftCircle.cy + 14} fontFamily="Merriweather" fontSize="12" fill="#333">• Culture</motion.text>
+              <motion.text x={leftListX} y={leftCircle.cy + 38} fontFamily="Merriweather" fontSize="12" fill="#333">• Relationships</motion.text>
+
+              <motion.text x={rightListX} y={rightCircle.cy - 10} fontFamily="Merriweather" fontSize="12" fill="#333">• Processes</motion.text>
+              <motion.text x={rightListX} y={rightCircle.cy + 14} fontFamily="Merriweather" fontSize="12" fill="#333">• Technology</motion.text>
+              <motion.text x={rightListX} y={rightCircle.cy + 38} fontFamily="Merriweather" fontSize="12" fill="#333">• Metrics</motion.text>
+
+              {/* SERVICE DESIGN Box - más ancha y más grande, texto cabe */}
               <motion.rect
                 {...serviceBox}
-                rx="8"
+                rx="16"
                 fill="white"
                 stroke="#333"
                 strokeWidth="1.7"
@@ -139,32 +130,24 @@ const MyApproachSection = forwardRef<HTMLElement, MyApproachSectionProps>(
                 y={serviceText.y}
                 textAnchor="middle"
                 fontFamily="Merriweather"
-                fontSize="13"
+                fontSize="12"
                 fontWeight="700"
                 fill="#333"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 10 }}
-                transition={{ duration: 0.7, delay: 0.6 }}
                 style={{ letterSpacing: 1.2 }}
               >
                 SERVICE DESIGN
               </motion.text>
-              {/* Bottom Labels */}
-              <motion.text x="155" y="280" textAnchor="middle" fontFamily="Merriweather" fontSize="12" fontStyle="italic" fill="#666">
-                Human experiences
-              </motion.text>
-              <motion.text x="155" y="300" textAnchor="middle" fontFamily="Merriweather" fontSize="12" fontStyle="italic" fill="#666">
-                can only be enabled
-              </motion.text>
-              <motion.text x="305" y="280" textAnchor="middle" fontFamily="Merriweather" fontSize="12" fontStyle="italic" fill="#666">
-                Functional elements
-              </motion.text>
-              <motion.text x="305" y="300" textAnchor="middle" fontFamily="Merriweather" fontSize="12" fontStyle="italic" fill="#666">
-                can be designed and controlled
-              </motion.text>
-              {/* Arrow with control labels */}
-              <motion.line x1="50" y1="320" x2="410" y2="320" stroke="#333" strokeWidth="1.2" strokeDasharray="2,2"
-                initial={{ pathLength: 0 }} animate={{ pathLength: isInView ? 1 : 0 }} transition={{ duration: 1, delay: 0.2 }} />
+
+              {/* Flecha de control */}
+              <motion.line
+                x1="50" y1="320" x2="410" y2="320"
+                stroke="#333"
+                strokeWidth="1.2"
+                strokeDasharray="2,2"
+                initial={{ pathLength: 0 }}
+                animate={{ pathLength: isInView ? 1 : 0 }}
+                transition={{ duration: 1, delay: 0.2 }}
+              />
               <polyline points="50,320 40,315 40,325 50,320" fill="#333" />
               <polyline points="410,320 420,315 420,325 410,320" fill="#333" />
               <motion.text x="120" y="335" textAnchor="middle" fontFamily="Merriweather" fontSize="11" fill="#888">
@@ -176,7 +159,7 @@ const MyApproachSection = forwardRef<HTMLElement, MyApproachSectionProps>(
             </motion.svg>
           </div>
 
-          {/* Mobile Vertical Diagram (sin cambios, pero puedes ajustar similar si lo deseas) */}
+          {/* Mobile Vertical Diagram (puedes adaptar igual si lo necesitas) */}
           <div className="flex sm:hidden justify-center mb-8">
             <svg
               viewBox="0 0 280 400"
@@ -197,16 +180,16 @@ const MyApproachSection = forwardRef<HTMLElement, MyApproachSectionProps>(
                 Human Systems
               </text>
               {/* Human Systems List */}
-              <text x="100" y="75" fontFamily="Merriweather" fontSize="11" fill="#2e7d32">• Behaviors</text>
-              <text x="100" y="90" fontFamily="Merriweather" fontSize="11" fill="#2e7d32">• Culture</text>
-              <text x="100" y="105" fontFamily="Merriweather" fontSize="11" fill="#2e7d32">• Relationships</text>
+              <text x="100" y="75" fontFamily="Merriweather" fontSize="11" fill="#333">• Behaviors</text>
+              <text x="100" y="90" fontFamily="Merriweather" fontSize="11" fill="#333">• Culture</text>
+              <text x="100" y="105" fontFamily="Merriweather" fontSize="11" fill="#333">• Relationships</text>
               {/* SERVICE DESIGN Box */}
               <rect
-                x="90" y="160" width="100" height="30" rx="8"
+                x="75" y="160" width="130" height="30" rx="12"
                 fill="white" stroke="#333" strokeWidth="1.7"
                 style={{ filter: 'drop-shadow(0 2px 8px rgba(0,0,0,0.07))'}}
               />
-              <text x="140" y="180" textAnchor="middle" fontFamily="Merriweather" fontSize="11" fontWeight="900" fill="#333" style={{ letterSpacing: 1.2 }}>
+              <text x="140" y="180" textAnchor="middle" fontFamily="Merriweather" fontSize="12" fontWeight="900" fill="#333" style={{ letterSpacing: 1.2 }}>
                 SERVICE DESIGN
               </text>
               {/* Functional Systems Text */}
@@ -214,9 +197,9 @@ const MyApproachSection = forwardRef<HTMLElement, MyApproachSectionProps>(
                 Functional Systems
               </text>
               {/* Functional Systems List */}
-              <text x="100" y="245" fontFamily="Merriweather" fontSize="11" fill="#1565c0">• Processes</text>
-              <text x="100" y="260" fontFamily="Merriweather" fontSize="11" fill="#1565c0">• Technology</text>
-              <text x="100" y="275" fontFamily="Merriweather" fontSize="11" fill="#1565c0">• Metrics</text>
+              <text x="100" y="245" fontFamily="Merriweather" fontSize="11" fill="#333">• Processes</text>
+              <text x="100" y="260" fontFamily="Merriweather" fontSize="11" fill="#333">• Technology</text>
+              <text x="100" y="275" fontFamily="Merriweather" fontSize="11" fill="#333">• Metrics</text>
               {/* Vertical Arrow with control labels */}
               <line x1="20" y1="60" x2="20" y2="290" stroke="#333" strokeWidth="1.2" strokeDasharray="2,2" />
               <polyline points="20,60 15,70 25,70 20,60" fill="#333" />
