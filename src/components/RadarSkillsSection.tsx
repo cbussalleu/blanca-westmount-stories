@@ -243,7 +243,7 @@ const RadarSkillsSection = () => {
                     return (
                       <span
                         key={skill.name}
-                        className={`px-3 py-1 rounded-full text-sm font-merriweather transition-all duration-500 ease-in-out cursor-pointer relative ${
+                        className={`px-3 py-1 rounded-full text-sm font-merriweather transition-all duration-200 hover:scale-105 active:scale-95 cursor-pointer relative ${
                           isGreen
                             ? 'bg-[#8ab1a2] text-white hover:bg-[#7ca196]'
                             : 'bg-slate-400 text-white hover:bg-slate-500'
@@ -282,7 +282,7 @@ const RadarSkillsSection = () => {
                 </div>
                 {tooltipSkill && tooltipSkillData && tooltipPosition && (
                   <div
-                    className="absolute z-50 pointer-events-auto animate-[tooltip-bounce_0.3s] transition-transform"
+                    className="absolute z-50 pointer-events-auto animate-tooltip-fade-scale shadow-2xl"
                     style={{
                       left: tooltipPosition.x - 120,
                       top: tooltipPosition.y - 70,
@@ -303,7 +303,7 @@ const RadarSkillsSection = () => {
                           <p className="text-xs font-merriweather text-gray-600 mb-1 truncate">
                             {tooltipSkillData.caseStudy.brand}
                           </p>
-                          <div className="text-xs text-[#8ab1a2] hover:text-[#7ca196] font-merriweather flex items-center group-hover:underline">
+                          <div className="text-xs text-[#8ab1a2] hover:text-[#7ca196] font-merriweather flex items-center group-hover:underline transition-transform duration-200 group-hover:translate-x-1">
                             Capability in action <ArrowRight size={10} className="ml-1 flex-shrink-0" />
                           </div>
                         </div>
