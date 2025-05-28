@@ -1,4 +1,4 @@
-import { forwardRef, useRef } from 'react';
+import { forwardRef, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { motion, useInView } from 'framer-motion';
@@ -21,15 +21,23 @@ const MyApproachSection = forwardRef<HTMLElement, MyApproachSectionProps>(
     const svgRef = useRef<SVGSVGElement>(null);
     const isInView = useInView(svgRef, { once: true, amount: 0.3 });
 
-    // Desktop: círculos más cerca y caja más baja, todo alineado
+    // Hover state for 'SERVICE DESIGN'
+    const [hover, setHover] = useState(false);
+
+    // Círculos y caja
     const leftCircle = { cx: 155, cy: 170, r: 110 };
     const rightCircle = { cx: 305, cy: 170, r: 110 };
     const serviceBox = { x: 170, y: 225, width: 140, height: 40 };
     const serviceText = { x: 240, y: 250 };
 
-    // Listas bien alineadas en cada círculo
+    // Listas
     const leftListX = leftCircle.cx - 52;
     const rightListX = rightCircle.cx - 30;
+
+    // Para la animación de estela
+    const circumference = 2 * Math.PI * leftCircle.r;
+    const dashLength = 220; // Aproximadamente la longitud hasta la intersección
+    const dashOffsetStart = circumference - dashLength;
 
     return (
       <section className={`py-8 sm:py-16 ${className || ''}`} ref={ref}>
@@ -58,72 +66,109 @@ const MyApproachSection = forwardRef<HTMLElement, MyApproachSectionProps>(
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
             >
-              {/* Círculos */}
+              {/* Fondos para títulos */}
+              <rect
+                x={leftCircle.cx - 65}
+                y={leftCircle.cy - 61}
+                width={130}
+                height={24}
+                rx={8}
+                fill="white"
+                opacity={0.98}
+              />
+              <rect
+                x={rightCircle.cx - 75}
+                y={rightCircle.cy - 61}
+                width={150}
+                height={24}
+                rx={8}
+                fill="white"
+                opacity={0.98}
+              />
+
+              {/* Animación de estela en hover */}
               <motion.circle
                 {...leftCircle}
                 fill="none"
-                stroke="#333"
-                strokeWidth={1.5}
+                stroke={hover ? 'url(#leftGlow)' : '#333'}
+                strokeWidth={hover ? 3 : 1.5}
                 opacity={0.9}
-                initial={{ opacity: 0, scale: 0.96 }}
-                animate={{ opacity: isInView ? 0.9 : 0, scale: isInView ? 1 : 0.96 }}
-                transition={{ duration: 0.7, delay: 0.1 }}
+                strokeDasharray={hover ? `${dashLength},${circumference}` : undefined}
+                strokeDashoffset={hover ? dashOffsetStart : 0}
+                animate={hover ? { strokeDashoffset: 0 } : { strokeDashoffset: dashOffsetStart }}
+                transition={{ duration: 1, ease: 'easeInOut' }}
               />
               <motion.circle
                 {...rightCircle}
                 fill="none"
-                stroke="#333"
-                strokeWidth={1.5}
+                stroke={hover ? 'url(#rightGlow)' : '#333'}
+                strokeWidth={hover ? 3 : 1.5}
                 opacity={0.9}
-                initial={{ opacity: 0, scale: 0.96 }}
-                animate={{ opacity: isInView ? 0.9 : 0, scale: isInView ? 1 : 0.96 }}
-                transition={{ duration: 0.7, delay: 0.12 }}
+                strokeDasharray={hover ? `${dashLength},${circumference}` : undefined}
+                strokeDashoffset={hover ? dashOffsetStart : 0}
+                animate={hover ? { strokeDashoffset: 0 } : { strokeDashoffset: dashOffsetStart }}
+                transition={{ duration: 1, ease: 'easeInOut' }}
               />
 
-              {/* Títulos - más abajo, tamaño menor */}
+              {/* Gradientes para la estela */}
+              <defs>
+                <linearGradient id="leftGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#2e7d32" />
+                  <stop offset="100%" stopColor="#a5d6a7" />
+                </linearGradient>
+                <linearGradient id="rightGlow" x1="100%" y1="0%" x2="0%" y2="0%">
+                  <stop offset="0%" stopColor="#1565c0" />
+                  <stop offset="100%" stopColor="#90caf9" />
+                </linearGradient>
+              </defs>
+
+              {/* Títulos sobre fondo */}
               <motion.text
                 x={leftCircle.cx}
-                y={leftCircle.cy - 50}
+                y={leftCircle.cy - 47}
                 textAnchor="middle"
                 fontFamily="Merriweather"
                 fontSize="13"
                 fontWeight="600"
                 fill="#222"
+                style={{ pointerEvents: 'none' }}
               >
                 Human Systems
               </motion.text>
               <motion.text
                 x={rightCircle.cx}
-                y={rightCircle.cy - 50}
+                y={rightCircle.cy - 47}
                 textAnchor="middle"
                 fontFamily="Merriweather"
                 fontSize="13"
                 fontWeight="600"
                 fill="#222"
+                style={{ pointerEvents: 'none' }}
               >
                 Functional Systems
               </motion.text>
 
-              {/* Listas centradas, color uniforme y sin superposición */}
+              {/* Listas alineadas, color neutro */}
               <motion.text x={leftListX} y={leftCircle.cy - 10} fontFamily="Merriweather" fontSize="12" fill="#333">• Behaviors</motion.text>
               <motion.text x={leftListX} y={leftCircle.cy + 14} fontFamily="Merriweather" fontSize="12" fill="#333">• Culture</motion.text>
               <motion.text x={leftListX} y={leftCircle.cy + 38} fontFamily="Merriweather" fontSize="12" fill="#333">• Relationships</motion.text>
-
               <motion.text x={rightListX} y={rightCircle.cy - 10} fontFamily="Merriweather" fontSize="12" fill="#333">• Processes</motion.text>
               <motion.text x={rightListX} y={rightCircle.cy + 14} fontFamily="Merriweather" fontSize="12" fill="#333">• Technology</motion.text>
               <motion.text x={rightListX} y={rightCircle.cy + 38} fontFamily="Merriweather" fontSize="12" fill="#333">• Metrics</motion.text>
 
-              {/* SERVICE DESIGN Box - más ancha y más grande, texto cabe */}
+              {/* SERVICE DESIGN Box */}
               <motion.rect
                 {...serviceBox}
                 rx="16"
                 fill="white"
                 stroke="#333"
                 strokeWidth="1.7"
-                style={{ filter: 'drop-shadow(0 2px 8px rgba(0,0,0,0.08))' }}
+                style={{ filter: 'drop-shadow(0 2px 8px rgba(0,0,0,0.08))', cursor: 'pointer' }}
                 initial={{ opacity: 0, scale: 0.85 }}
                 animate={{ opacity: isInView ? 1 : 0, scale: isInView ? 1 : 0.85 }}
                 transition={{ duration: 0.7, delay: 0.5 }}
+                onMouseEnter={() => setHover(true)}
+                onMouseLeave={() => setHover(false)}
               />
               <motion.text
                 x={serviceText.x}
@@ -133,7 +178,7 @@ const MyApproachSection = forwardRef<HTMLElement, MyApproachSectionProps>(
                 fontSize="12"
                 fontWeight="700"
                 fill="#333"
-                style={{ letterSpacing: 1.2 }}
+                style={{ letterSpacing: 1.2, pointerEvents: 'none' }}
               >
                 SERVICE DESIGN
               </motion.text>
@@ -159,31 +204,26 @@ const MyApproachSection = forwardRef<HTMLElement, MyApproachSectionProps>(
             </motion.svg>
           </div>
 
-          {/* Mobile Vertical Diagram (puedes adaptar igual si lo necesitas) */}
+          {/* Mobile Vertical Diagram (sin cambios, puedes adaptar igual si lo deseas) */}
           <div className="flex sm:hidden justify-center mb-8">
             <svg
               viewBox="0 0 280 400"
               className="w-[85%] transition-all"
             >
-              {/* Top Circle - Human Systems */}
               <circle
                 cx="140" cy="90" r="80"
                 fill="none" stroke="#444" strokeWidth="2" opacity="0.88"
               />
-              {/* Bottom Circle - Functional Systems */}
               <circle
                 cx="140" cy="260" r="80"
                 fill="none" stroke="#444" strokeWidth="2" opacity="0.88"
               />
-              {/* Human Systems Text */}
               <text x="140" y="55" textAnchor="middle" fontFamily="Merriweather" fontSize="13" fontWeight="700" fill="#333">
                 Human Systems
               </text>
-              {/* Human Systems List */}
               <text x="100" y="75" fontFamily="Merriweather" fontSize="11" fill="#333">• Behaviors</text>
               <text x="100" y="90" fontFamily="Merriweather" fontSize="11" fill="#333">• Culture</text>
               <text x="100" y="105" fontFamily="Merriweather" fontSize="11" fill="#333">• Relationships</text>
-              {/* SERVICE DESIGN Box */}
               <rect
                 x="75" y="160" width="130" height="30" rx="12"
                 fill="white" stroke="#333" strokeWidth="1.7"
@@ -192,15 +232,12 @@ const MyApproachSection = forwardRef<HTMLElement, MyApproachSectionProps>(
               <text x="140" y="180" textAnchor="middle" fontFamily="Merriweather" fontSize="12" fontWeight="900" fill="#333" style={{ letterSpacing: 1.2 }}>
                 SERVICE DESIGN
               </text>
-              {/* Functional Systems Text */}
               <text x="140" y="225" textAnchor="middle" fontFamily="Merriweather" fontSize="13" fontWeight="700" fill="#333">
                 Functional Systems
               </text>
-              {/* Functional Systems List */}
               <text x="100" y="245" fontFamily="Merriweather" fontSize="11" fill="#333">• Processes</text>
               <text x="100" y="260" fontFamily="Merriweather" fontSize="11" fill="#333">• Technology</text>
               <text x="100" y="275" fontFamily="Merriweather" fontSize="11" fill="#333">• Metrics</text>
-              {/* Vertical Arrow with control labels */}
               <line x1="20" y1="60" x2="20" y2="290" stroke="#333" strokeWidth="1.2" strokeDasharray="2,2" />
               <polyline points="20,60 15,70 25,70 20,60" fill="#333" />
               <polyline points="20,290 15,280 25,280 20,290" fill="#333" />
