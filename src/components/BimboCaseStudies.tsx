@@ -26,38 +26,17 @@ const BimboCaseStudies = () => {
       {/* Large image rectangle with overlay text - VISIBLE EN MÓVIL */}
       <div className="relative group cursor-pointer rounded-lg overflow-hidden mb-8 md:mb-0">
         <AspectRatio ratio={4 / 3} className="w-full md:aspect-[3/4]">
-          <div className="relative w-full h-full bg-gray-100">
-            {/* Imagen de fondo usando background-image para mejor control */}
-            <div 
-              className="absolute inset-0 w-full h-full transition-transform duration-500 group-hover:scale-105"
-              style={{
-                backgroundImage: "url('/lovable-uploads/aba0f719-b826-4af0-9302-5fe7b9bd47fa.png')",
-                backgroundSize: 'cover',
-                backgroundPosition: 'center center',
-                backgroundRepeat: 'no-repeat',
-                minHeight: '250px'
-              }}
-            />
-            {/* Fallback: imagen normal por si background no funciona */}
+          <div className="relative w-full h-full">
+            {/* Solo imagen normal, sin background */}
             <img
               src="/lovable-uploads/aba0f719-b826-4af0-9302-5fe7b9bd47fa.png"
               alt="Grupo Bimbo Connection Center"
-              className="absolute inset-0 w-full h-full object-cover object-center opacity-0"
-              onLoad={(e) => {
-                // Si la imagen carga, ocultar el background y mostrar la img
-                const bgDiv = e.currentTarget.previousElementSibling as HTMLElement;
-                if (bgDiv) bgDiv.style.display = 'none';
-                e.currentTarget.style.opacity = '1';
-              }}
-              onError={(e) => {
-                // Si la imagen falla, mostrar el background
-                e.currentTarget.style.display = 'none';
-              }}
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
             {/* Overlay amarillo animado al hacer hover */}
-            <div className="absolute inset-0 bg-[hsl(var(--pastel-yellow))] opacity-0 group-hover:opacity-80 transition-opacity duration-500 z-10"></div>
+            <div className="absolute inset-0 bg-[hsl(var(--pastel-yellow))] opacity-0 group-hover:opacity-80 transition-opacity duration-500"></div>
             {/* Texto sobre la imagen */}
-            <div className="absolute inset-0 flex items-center justify-center p-4 sm:p-6 z-20">
+            <div className="absolute inset-0 flex items-center justify-center p-4 sm:p-6">
               <h3 className="text-white text-lg sm:text-xl md:text-2xl font-westmount text-center transition-transform duration-300 group-hover:scale-110 drop-shadow-lg leading-tight">
                 Over 7 years designing for bold brand in an ever-evolving industry
               </h3>
