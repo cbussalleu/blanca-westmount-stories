@@ -243,11 +243,12 @@ const RadarSkillsSection = () => {
                     return (
                       <span
                         key={skill.name}
-                        className={`px-3 py-1 rounded-full text-sm font-merriweather transition-all duration-200 hover:scale-105 active:scale-95 cursor-pointer relative ${
+                        className={[
+                          "px-3 py-1 rounded-full text-sm font-merriweather transition-all duration-200",
                           isGreen
-                            ? 'bg-[#8ab1a2] text-white hover:bg-[#7ca196]'
-                            : 'bg-slate-400 text-white hover:bg-slate-500'
-                        }`}
+                            ? "bg-[#8ab1a2] text-white cursor-pointer hover:bg-[#7ca196] hover:scale-105 active:scale-95"
+                            : "bg-slate-400 text-white"
+                        ].join(" ")}
                         style={{
                           animationDelay: `${index * 100}ms`,
                           opacity: 1,
