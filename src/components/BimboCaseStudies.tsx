@@ -23,21 +23,22 @@ const bimboCases = [
 const BimboCaseStudies = () => {
   return (
     <div className="grid md:grid-cols-2 gap-10">
-      {/* Large image rectangle with overlay text */}
-      <div className="relative group cursor-pointer rounded-lg overflow-hidden">
-        <AspectRatio ratio={3 / 4} className="w-full">
-          <div className="relative w-full h-full">
+      {/* Large image rectangle with overlay text - VISIBLE EN MÓVIL */}
+      <div className="relative group cursor-pointer rounded-lg overflow-hidden mb-8 md:mb-0">
+        <AspectRatio ratio={4 / 3} className="w-full md:aspect-[3/4]">
+          <div className="relative w-full h-full bg-gray-100">
             {/* Imagen de fondo mejorada */}
             <img
               src="/lovable-uploads/aba0f719-b826-4af0-9302-5fe7b9bd47fa.png"
               alt="Grupo Bimbo Connection Center"
               className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+              style={{ minHeight: '250px' }}
             />
             {/* Overlay amarillo animado al hacer hover */}
             <div className="absolute inset-0 bg-[hsl(var(--pastel-yellow))] opacity-0 group-hover:opacity-80 transition-opacity duration-500"></div>
             {/* Texto sobre la imagen */}
-            <div className="absolute inset-0 flex items-center justify-center p-6">
-              <h3 className="text-white text-xl sm:text-2xl font-westmount text-center transition-transform duration-300 group-hover:scale-110 drop-shadow-lg">
+            <div className="absolute inset-0 flex items-center justify-center p-4 sm:p-6">
+              <h3 className="text-white text-lg sm:text-xl md:text-2xl font-westmount text-center transition-transform duration-300 group-hover:scale-110 drop-shadow-lg leading-tight">
                 Over 7 years designing for bold brand in an ever-evolving industry
               </h3>
             </div>
