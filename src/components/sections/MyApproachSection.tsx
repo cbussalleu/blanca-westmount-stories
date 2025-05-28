@@ -1,10 +1,19 @@
-import { forwardRef, useRef, useState } from 'react';
+import { forwardRef, useRef, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView, useMotionValue, animate, useTransform } from 'framer-motion';
 
 interface MyApproachSectionProps {
   className?: string;
+}
+
+// Helper para convertir ángulo a coordenadas cartesianas
+function polarToCartesian(cx: number, cy: number, r: number, angleDeg: number) {
+  const angle = ((angleDeg - 90) * Math.PI) / 180;
+  return {
+    x: cx + r * Math.cos(angle),
+    y: cy + r * Math.sin(angle),
+  };
 }
 
 const fadeInUp = {
@@ -30,14 +39,39 @@ const MyApproachSection = forwardRef<HTMLElement, MyApproachSectionProps>(
     const serviceBox = { x: 170, y: 225, width: 140, height: 40 };
     const serviceText = { x: 240, y: 250 };
 
-    // Listas
+    // Listas alineadas
     const leftListX = leftCircle.cx - 52;
     const rightListX = rightCircle.cx - 30;
 
-    // Para la animación de estela
+    // Para la animación de estela y punto de luz
     const circumference = 2 * Math.PI * leftCircle.r;
-    const dashLength = 220; // Aproximadamente la longitud hasta la intersección
-    const dashOffsetStart = circumference - dashLength;
+
+    // Motion values para ángulo de los puntos de luz
+    const leftAngle = useMotionValue(0);
+    const rightAngle = useMotionValue(360);
+
+    useEffect(() => {
+      let leftAnim, rightAnim;
+      if (hover) {
+        leftAnim = animate(leftAngle, 360, { duration: 1.6, ease: "easeInOut" });
+        rightAnim = animate(rightAngle, 0, { duration: 1.6, ease: "easeInOut" });
+      } else {
+        leftAngle.set(0);
+        rightAngle.set(360);
+      }
+      return () => {
+        leftAnim?.stop();
+        rightAnim?.stop();
+      };
+    }, [hover, leftAngle, rightAngle]);
+
+    // Coordenadas de los puntos de luz
+    const leftPos = useTransform(leftAngle, (a) => polarToCartesian(leftCircle.cx, leftCircle.cy, leftCircle.r, a));
+    const rightPos = useTransform(rightAngle, (a) => polarToCartesian(rightCircle.cx, rightCircle.cy, rightCircle.r, a));
+
+    // Dashoffset para la estela (estela va de 0° a ángulo actual)
+    const leftDashOffset = useTransform(leftAngle, (a) => circumference - (circumference * a / 360));
+    const rightDashOffset = useTransform(rightAngle, (a) => circumference - (circumference * (360 - a) / 360));
 
     return (
       <section className={`py-8 sm:py-16 ${className || ''}`} ref={ref}>
@@ -69,45 +103,63 @@ const MyApproachSection = forwardRef<HTMLElement, MyApproachSectionProps>(
               {/* Fondos para títulos */}
               <rect
                 x={leftCircle.cx - 65}
-                y={leftCircle.cy - 61}
+                y={leftCircle.cy - 66}
                 width={130}
-                height={24}
+                height={34}
                 rx={8}
                 fill="white"
                 opacity={0.98}
               />
               <rect
                 x={rightCircle.cx - 75}
-                y={rightCircle.cy - 61}
+                y={rightCircle.cy - 66}
                 width={150}
-                height={24}
+                height={34}
                 rx={8}
                 fill="white"
                 opacity={0.98}
               />
 
-              {/* Animación de estela en hover */}
+              {/* Círculos base (negro, siempre) */}
+              <circle
+                {...leftCircle}
+                fill="none"
+                stroke="#333"
+                strokeWidth={1.5}
+                opacity={0.9}
+              />
+              <circle
+                {...rightCircle}
+                fill="none"
+                stroke="#333"
+                strokeWidth={1.5}
+                opacity={0.9}
+              />
+
+              {/* Estela de color animada en hover */}
               <motion.circle
                 {...leftCircle}
                 fill="none"
-                stroke={hover ? 'url(#leftGlow)' : '#333'}
-                strokeWidth={hover ? 3 : 1.5}
-                opacity={0.9}
-                strokeDasharray={hover ? `${dashLength},${circumference}` : undefined}
-                strokeDashoffset={hover ? dashOffsetStart : 0}
-                animate={hover ? { strokeDashoffset: 0 } : { strokeDashoffset: dashOffsetStart }}
-                transition={{ duration: 1, ease: 'easeInOut' }}
+                stroke="url(#leftGlow)"
+                strokeWidth={5}
+                opacity={hover ? 0.5 : 0}
+                strokeDasharray={circumference}
+                style={{
+                  strokeDashoffset: leftDashOffset,
+                  transition: "stroke-dashoffset 0.15s"
+                }}
               />
               <motion.circle
                 {...rightCircle}
                 fill="none"
-                stroke={hover ? 'url(#rightGlow)' : '#333'}
-                strokeWidth={hover ? 3 : 1.5}
-                opacity={0.9}
-                strokeDasharray={hover ? `${dashLength},${circumference}` : undefined}
-                strokeDashoffset={hover ? dashOffsetStart : 0}
-                animate={hover ? { strokeDashoffset: 0 } : { strokeDashoffset: dashOffsetStart }}
-                transition={{ duration: 1, ease: 'easeInOut' }}
+                stroke="url(#rightGlow)"
+                strokeWidth={5}
+                opacity={hover ? 0.5 : 0}
+                strokeDasharray={circumference}
+                style={{
+                  strokeDashoffset: rightDashOffset,
+                  transition: "stroke-dashoffset 0.15s"
+                }}
               />
 
               {/* Gradientes para la estela */}
@@ -122,30 +174,32 @@ const MyApproachSection = forwardRef<HTMLElement, MyApproachSectionProps>(
                 </linearGradient>
               </defs>
 
-              {/* Títulos sobre fondo */}
+              {/* Títulos en dos filas sobre fondo */}
               <motion.text
                 x={leftCircle.cx}
-                y={leftCircle.cy - 47}
+                y={leftCircle.cy - 54}
                 textAnchor="middle"
                 fontFamily="Merriweather"
-                fontSize="13"
+                fontSize="12"
                 fontWeight="600"
                 fill="#222"
                 style={{ pointerEvents: 'none' }}
               >
-                Human Systems
+                <tspan x={leftCircle.cx} dy="0">Human</tspan>
+                <tspan x={leftCircle.cx} dy="15">Systems</tspan>
               </motion.text>
               <motion.text
                 x={rightCircle.cx}
-                y={rightCircle.cy - 47}
+                y={rightCircle.cy - 54}
                 textAnchor="middle"
                 fontFamily="Merriweather"
-                fontSize="13"
+                fontSize="12"
                 fontWeight="600"
                 fill="#222"
                 style={{ pointerEvents: 'none' }}
               >
-                Functional Systems
+                <tspan x={rightCircle.cx} dy="0">Functional</tspan>
+                <tspan x={rightCircle.cx} dy="15">Systems</tspan>
               </motion.text>
 
               {/* Listas alineadas, color neutro */}
@@ -155,6 +209,28 @@ const MyApproachSection = forwardRef<HTMLElement, MyApproachSectionProps>(
               <motion.text x={rightListX} y={rightCircle.cy - 10} fontFamily="Merriweather" fontSize="12" fill="#333">• Processes</motion.text>
               <motion.text x={rightListX} y={rightCircle.cy + 14} fontFamily="Merriweather" fontSize="12" fill="#333">• Technology</motion.text>
               <motion.text x={rightListX} y={rightCircle.cy + 38} fontFamily="Merriweather" fontSize="12" fill="#333">• Metrics</motion.text>
+
+              {/* Puntos de luz animados */}
+              <motion.circle
+                r={8}
+                fill="url(#leftGlow)"
+                opacity={hover ? 1 : 0}
+                style={{
+                  x: leftPos.x,
+                  y: leftPos.y,
+                  filter: "drop-shadow(0 0 10px #2e7d32)"
+                }}
+              />
+              <motion.circle
+                r={8}
+                fill="url(#rightGlow)"
+                opacity={hover ? 1 : 0}
+                style={{
+                  x: rightPos.x,
+                  y: rightPos.y,
+                  filter: "drop-shadow(0 0 10px #1565c0)"
+                }}
+              />
 
               {/* SERVICE DESIGN Box */}
               <motion.rect
@@ -204,7 +280,7 @@ const MyApproachSection = forwardRef<HTMLElement, MyApproachSectionProps>(
             </motion.svg>
           </div>
 
-          {/* Mobile Vertical Diagram (sin cambios, puedes adaptar igual si lo deseas) */}
+          {/* Mobile Vertical Diagram (opcional adaptar la animación) */}
           <div className="flex sm:hidden justify-center mb-8">
             <svg
               viewBox="0 0 280 400"
