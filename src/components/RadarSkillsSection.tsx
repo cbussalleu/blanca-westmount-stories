@@ -320,26 +320,20 @@ const RadarSkillsSection = () => {
                     }}
                     ref={tooltipRef}
                   >
-                    <div className="w-48 h-20 border-2 border-gray-200 rounded-lg bg-white shadow-lg p-3 hover:scale-105 transition-transform duration-200 cursor-pointer">
-                      <Link
-                        to={`/portfolio/${tooltipSkillData.caseStudy.slug}`}
-                        className="flex items-center space-x-3 h-full group"
-                      >
-                        <img
-                          src={tooltipSkillData.caseStudy.image}
-                          alt={tooltipSkillData.caseStudy.brand}
-                          className="w-12 h-8 object-cover rounded flex-shrink-0"
-                        />
-                        <div className="flex-1 min-w-0">
-                          <p className="text-xs font-merriweather text-gray-600 mb-1 truncate">
-                            {tooltipSkillData.caseStudy.brand}
-                          </p>
-                          <div className="text-xs text-[#8ab1a2] hover:text-[#7ca196] font-merriweather flex items-center group-hover:underline transition-transform duration-200 group-hover:translate-x-1">
-                            Capability in action <ArrowRight size={10} className="ml-1 flex-shrink-0" />
-                          </div>
-                        </div>
-                      </Link>
-                    </div>
+                     <div 
+              className="pt-4 text-center lg:text-left transition-all duration-300"
+            >
+              <Link
+                to="/self-assessment-method"
+                className="inline-flex items-center text-sm border-b border-black pb-1 hover:opacity-70 transition-opacity font-merriweather group"
+              >
+                See the method 
+                <ArrowRight 
+                  size={14} 
+                  className="ml-1 group-hover:translate-x-1 transition-transform duration-200" 
+                />
+              </Link>
+            </div>
                   </div>
                 )}
               </div>
