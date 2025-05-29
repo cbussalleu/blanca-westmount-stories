@@ -32,13 +32,13 @@ const BimboCaseStudies = () => {
             <div className="w-full h-[260px] md:h-[400px]">
               {/* Imagen para móvil (derecha) - más vertical */}
               <img
-                src="/lovable-uploads/bimbo-baker-mobile.png"
+                src="/lovable-uploads/bimbo-bakery-mobile.png"
                 alt="Bimbo small business owner - mobile"
                 className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105 block md:hidden"
               />
               {/* Imagen para desktop (izquierda) - más horizontal */}
               <img
-                src="/lovable-uploads/bimbo-baker-desktop.png"
+                src="/lovable-uploads/bimbo-bakery-desktop.PNG"
                 alt="Bimbo small business owner - desktop"
                 className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105 hidden md:block"
               />
