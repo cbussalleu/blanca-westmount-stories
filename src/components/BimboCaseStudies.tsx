@@ -37,7 +37,10 @@ const BimboCaseStudies = () => {
               />
             </div>
             
-            {/* Overlay hover */}
+            {/* Overlay permanente (siempre visible) */}
+            <div className="absolute inset-0 bg-[hsl(var(--image-overlay))] opacity-70 mix-blend-multiply"></div>
+            
+            {/* Overlay hover (solo en hover) */}
             <div className="absolute inset-0 bg-[hsl(var(--pastel-yellow))] opacity-0 group-hover:opacity-80 transition-opacity duration-500"></div>
             
             {/* Texto superpuesto */}
