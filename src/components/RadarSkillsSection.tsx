@@ -269,7 +269,7 @@ const RadarSkillsSection = () => {
                   {skillContent.map((skill, index) => {
                     const isGreen = skill.category === 'excelling';
                     return (
-                      <motion.span
+                       <motion.span
                         key={skill.name}
                         className={[
                           "px-3 py-1 rounded-full text-sm font-merriweather transition-all duration-200",
@@ -280,7 +280,11 @@ const RadarSkillsSection = () => {
                         initial={{ opacity: 0, y: 10 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.4, delay: 0.7 + (index * 0.1) }}
+                        transition={{ 
+                          duration: 0.4, 
+                          delay: 0.7 + (index * 0.1),
+                          ease: "easeOut"
+                        }}
                         onClick={e => {
                           if (isGreen) {
                             if (tooltipSkill === skill.name) {
