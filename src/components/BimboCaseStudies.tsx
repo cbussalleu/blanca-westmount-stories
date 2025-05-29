@@ -50,15 +50,15 @@ const BimboCaseStudies = () => {
             </div>
             
             {/* Overlay permanente (siempre visible) - reduciendo la opacidad para menos amarillo */}
-            <div className="absolute inset-0 bg-[hsl(var(--image-overlay))] opacity-70 mix-blend-multiply"></div>
+            <div className="absolute inset-0 bg-[hsl(var(--image-overlay))] opacity-0 mix-blend-multiply"></div>
             
             {/* Overlay hover (solo en hover) */}
-           <div className="absolute inset-0 bg-[hsl(var(--pastel-yellow))] opacity-70 group-hover:opacity-0 transition-opacity duration-500"></div>
+           <div className="absolute inset-0 bg-[hsl(var(--pastel-yellow))] opacity-0 group-hover:opacity-70 transition-opacity duration-500"></div>
             
             {/* Texto superpuesto */}
             <div className="absolute inset-0 flex items-center justify-center p-4 sm:p-6">
               <h3 className="text-white group-hover:text-black text-lg sm:text-xl md:text-2xl font-westmount text-center transition-all duration-300 group-hover:scale-110 drop-shadow-lg leading-tight">
-                Over 7 years designing for bold brand in an ever-evolving industry
+                Over 7 years designing for a bold brand in an ever-evolving industry
               </h3>
             </div>
           </div>
