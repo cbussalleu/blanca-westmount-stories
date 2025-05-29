@@ -42,7 +42,7 @@ const BimboCaseStudies = () => {
             
             {/* Texto superpuesto */}
             <div className="absolute inset-0 flex items-center justify-center p-4 sm:p-6">
-              <h3 className="text-white text-lg sm:text-xl md:text-2xl font-westmount text-center transition-transform duration-300 group-hover:scale-110 drop-shadow-lg leading-tight">
+              <h3 className="text-white group-hover:text-black text-lg sm:text-xl md:text-2xl font-westmount text-center transition-all duration-300 group-hover:scale-110 drop-shadow-lg leading-tight">
                 Over 7 years designing for bold brand in an ever-evolving industry
               </h3>
             </div>
