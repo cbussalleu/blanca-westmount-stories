@@ -41,7 +41,7 @@ const ProjectCard = ({ title, description, client, slug, imageSrc }: ProjectCard
           {description}
         </p>
         
-        <div className="pt-1">
+        <div className="pt-2">
           <Link 
             to={`/portfolio/${slug}`} 
             className="inline-flex items-center text-xs border-b border-black pb-0.5 hover:opacity-70 transition-opacity font-merriweather group"
