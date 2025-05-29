@@ -53,8 +53,10 @@ const MyApproachSection = forwardRef<HTMLElement, MyApproachSectionProps>(
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-westmount tracking-tight">
               MY APPROACH
             </h2>
-            <p className="text-base max-w-2xl mx-auto mt-4 sm:mt-8 font-merriweather text-neutral-700">
-              If you're serious about being human-centered, you better be systems-centered too. Break it down. Rebuild it better.
+            <p className="text-lg md:text-xl max-w-3xl mx-auto mt-4 sm:mt-8 font-merriweather text-neutral-700 leading-relaxed">
+              If you're serious about being human-centered, you better be{' '}
+              <span className="text-[#8ab1a2] font-semibold">systems-centered</span>{' '}
+              too. Break it down. Rebuild it better.
             </p>
           </motion.div>
 
@@ -165,7 +167,7 @@ const MyApproachSection = forwardRef<HTMLElement, MyApproachSectionProps>(
             </motion.svg>
           </div>
 
-          {/* Mobile Vertical Diagram (sin cambios, puedes adaptar igual si lo deseas) */}
+          {/* Mobile Vertical Diagram */}
           <div className="flex sm:hidden justify-center mb-8">
             <svg
               viewBox="0 0 280 400"
