@@ -31,8 +31,8 @@ const BimboCaseStudies = () => {
             {/* En móvil: 350x260px (4:3), En desktop: 350x467px (3:4) */}
             <div className="w-full h-[260px] md:h-[400px]">
               <img
-                src="/lovable-uploads/aba0f719-b826-4af0-9302-5fe7b9bd47fa.png"
-                alt="Grupo Bimbo Connection Center"
+                src="https://picsum.photos/800/600?random=1"
+                alt="Test image for Grupo Bimbo"
                 className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
               />
             </div>
