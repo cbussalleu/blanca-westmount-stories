@@ -31,10 +31,10 @@ const ProjectCard = ({ title, description, client, slug, imageSrc }: ProjectCard
         <h3 className="text-lg font-merriweather">{title}</h3>
         <p className="text-sm text-gray-600 font-merriweather" style={{ 
           display: '-webkit-box',
-          WebkitLineClamp: 2,
+          WebkitLineClamp: 3,
           WebkitBoxOrient: 'vertical',
           overflow: 'hidden',
-          minHeight: 'calc(1.5 * 1rem * 2)', // 2 líneas con line-height 1.5
+          minHeight: 'calc(1.5 * 1rem * 3)', // 3 líneas con line-height 1.5
           lineHeight: '1.5',
           marginBottom: '1rem'
         }}>
