@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
-import { AspectRatio } from '@/components/ui/aspect-ratio';
 
 const bimboCases = [
   {
@@ -23,9 +22,6 @@ const bimboCases = [
 const BimboCaseStudies = () => {
   return (
     <div className="grid md:grid-cols-2 gap-10">
-const BimboCaseStudies = () => {
-  return (
-    <div className="grid md:grid-cols-2 gap-10">
       {/* Sección de imagen hero - COMPLETAMENTE REPLANTEADA */}
       <div className="relative group cursor-pointer">
         {/* Contenedor principal con bordes redondeados */}
@@ -35,8 +31,8 @@ const BimboCaseStudies = () => {
             {/* En móvil: 350x260px (4:3), En desktop: 350x467px (3:4) */}
             <div className="w-full h-[260px] md:h-[400px]">
               <img
-                src="https://images.unsplash.com/photo-1565767292670-bbc01d6ce4a7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                alt="Test image - Bread bakery"
+                src="/lovable-uploads/aba0f719-b826-4af0-9302-5fe7b9bd47fa.png"
+                alt="Grupo Bimbo Connection Center"
                 className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
               />
             </div>
