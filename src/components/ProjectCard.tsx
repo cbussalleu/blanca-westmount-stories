@@ -1,4 +1,3 @@
-
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
@@ -30,14 +29,27 @@ const ProjectCard = ({ title, description, client, slug, imageSrc }: ProjectCard
       <div className="space-y-2">
         <div className="uppercase text-xs tracking-widest font-westmount font-extralight">{client}</div>
         <h3 className="text-lg font-merriweather">{title}</h3>
-        <p className="text-sm text-gray-600 line-clamp-3 font-merriweather">{description}</p>
+        <p className="text-sm text-gray-600 font-merriweather leading-relaxed" style={{ 
+          display: '-webkit-box',
+          WebkitLineClamp: 3,
+          WebkitBoxOrient: 'vertical',
+          overflow: 'hidden',
+          minHeight: 'calc(1.625 * 1rem * 3)', // 3 líneas con line-height 1.625
+          lineHeight: '1.625'
+        }}>
+          {description}
+        </p>
         
         <div className="pt-2">
           <Link 
             to={`/portfolio/${slug}`} 
-            className="inline-flex items-center text-xs border-b border-black pb-0.5 hover:opacity-70 transition-opacity font-merriweather"
+            className="inline-flex items-center text-xs border-b border-black pb-0.5 hover:opacity-70 transition-opacity font-merriweather group"
           >
-            View Project <ArrowRight size={12} className="ml-1" />
+            View Project 
+            <ArrowRight 
+              size={12} 
+              className="ml-1 group-hover:translate-x-1 transition-transform duration-200" 
+            />
           </Link>
         </div>
       </div>
