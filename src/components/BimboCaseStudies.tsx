@@ -29,7 +29,7 @@ const BimboCaseStudies = () => {
           {/* Imagen con dimensiones fijas y claras */}
           <div className="relative">
             {/* En móvil: 350x260px (4:3), En desktop: 350x467px (3:4) */}
-            <div className="w-full h-[260px] md:h-[400px]">
+            <div className="w-full h-[260px] md:h-[580px]">
               {/* Imagen para móvil (derecha) - más vertical */}
               <img
                 src="/lovable-uploads/bimbo-bakery-mobile.png"
