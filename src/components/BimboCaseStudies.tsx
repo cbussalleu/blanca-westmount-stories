@@ -49,11 +49,11 @@ const BimboCaseStudies = () => {
               />
             </div>
             
-            {/* Overlay permanente (siempre visible) - igual que ProjectCard */}
-            <div className="absolute inset-0 bg-[hsl(var(--image-overlay))] opacity-70 mix-blend-multiply"></div>
+            {/* Overlay permanente (siempre visible) - reduciendo la opacidad para menos amarillo */}
+            <div className="absolute inset-0 bg-[hsl(var(--image-overlay))] opacity-50 mix-blend-multiply"></div>
             
             {/* Overlay hover (solo en hover) */}
-            <div className="absolute inset-0 bg-[hsl(var(--pastel-yellow))] opacity-0 group-hover:opacity-80 transition-opacity duration-500"></div>
+           <div className="absolute inset-0 bg-[hsl(var(--pastel-yellow))] opacity-0 group-hover:opacity-60 transition-opacity duration-500"></div>
             
             {/* Texto superpuesto */}
             <div className="absolute inset-0 flex items-center justify-center p-4 sm:p-6">
