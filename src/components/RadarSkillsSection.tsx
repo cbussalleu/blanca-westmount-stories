@@ -316,20 +316,30 @@ const RadarSkillsSection = () => {
                     }}
                     ref={tooltipRef}
                   >
-                     <div 
-              className="pt-4 text-center lg:text-left transition-all duration-300"
-            >
-              <Link
-                to="/self-assessment-method"
-                className="inline-flex items-center text-sm border-b border-black pb-1 hover:opacity-70 transition-opacity font-merriweather group"
-              >
-                See the method 
-                <ArrowRight 
-                  size={14} 
-                  className="ml-1 group-hover:translate-x-1 transition-transform duration-200" 
-                />
-              </Link>
-            </div>
+                    <div className="bg-white border border-gray-200 rounded-lg p-4 max-w-xs">
+                      <div className="flex items-start gap-3">
+                        <img 
+                          src={tooltipSkillData.caseStudy.image} 
+                          alt={tooltipSkillData.caseStudy.brand}
+                          className="w-16 h-12 object-cover rounded"
+                        />
+                        <div className="flex-1 min-w-0">
+                          <h4 className="font-merriweather font-semibold text-sm leading-tight">
+                            {tooltipSkill}
+                          </h4>
+                          <p className="text-xs text-gray-600 mt-1 font-merriweather">
+                            {tooltipSkillData.caseStudy.brand}
+                          </p>
+                          <Link
+                            to={`/portfolio/${tooltipSkillData.caseStudy.slug}`}
+                            className="inline-flex items-center text-xs text-blue-600 hover:text-blue-800 mt-2 font-merriweather"
+                          >
+                            View case study
+                            <ArrowRight size={10} className="ml-1" />
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 )}
               </div>
