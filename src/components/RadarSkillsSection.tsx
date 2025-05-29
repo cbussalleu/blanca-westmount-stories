@@ -258,18 +258,14 @@ const RadarSkillsSection = () => {
             >
               <h3 className="text-lg font-merriweather font-semibold">Core capabilities</h3>
               <div className="transition-all duration-700 ease-in-out min-h-[120px] relative">
-                <motion.div 
+                <div 
                   className="flex flex-wrap gap-2" 
                   ref={skillsContainerRef}
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true, amount: 0.3 }}
-                  transition={{ duration: 0.6, delay: 0.6 }}
                 >
                   {skillContent.map((skill, index) => {
                     const isGreen = skill.category === 'excelling';
                     return (
-                        <motion.span
+                      <motion.span
                         key={skill.name}
                         className={[
                           "px-3 py-1 rounded-full text-sm font-merriweather transition-all duration-200",
@@ -310,7 +306,7 @@ const RadarSkillsSection = () => {
                       </motion.span>
                     );
                   })}
-                </motion.div>
+                </div>
                 {tooltipSkill && tooltipSkillData && tooltipPosition && (
                   <div
                     className="absolute z-50 pointer-events-auto animate-tooltip-fade-scale shadow-2xl"
@@ -339,26 +335,6 @@ const RadarSkillsSection = () => {
               </div>
             </motion.div>
             
-            <motion.div 
-              className="flex items-center justify-start gap-6 text-xs font-merriweather py-2 transition-all duration-300"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true, amount: 0.8 }}
-              transition={{ duration: 0.6, delay: 0.8 }}
-            >
-              <div className="flex items-center justify-start gap-6 text-xs font-merriweather py-2 transition-all duration-300">
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-[#8ab1a2] rounded-full"></div>
-                <span className="text-gray-600">Excelling at</span>
-              </div>
-              <div className="w-px h-3 bg-gray-300"></div>
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-slate-400 rounded-full"></div>
-                <span className="text-gray-600">Building up</span>
-              </div>
-            </div>
-            </motion.div>
-            
             <div 
               className="flex items-center justify-start gap-6 text-xs font-merriweather py-2 transition-all duration-300"
             >
@@ -371,6 +347,21 @@ const RadarSkillsSection = () => {
                 <div className="w-2 h-2 bg-slate-400 rounded-full"></div>
                 <span className="text-gray-600">Building up</span>
               </div>
+            </div>
+            
+            <div 
+              className="pt-4 text-center lg:text-left transition-all duration-300"
+            >
+              <Link
+                to="/self-assessment-method"
+                className="inline-flex items-center text-sm border-b border-black pb-1 hover:opacity-70 transition-opacity font-merriweather group"
+              >
+                See the method 
+                <ArrowRight 
+                  size={14} 
+                  className="ml-1 group-hover:translate-x-1 transition-transform duration-200" 
+                />
+              </Link>
             </div>
           </div>
         </div>
