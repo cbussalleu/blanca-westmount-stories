@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const RadarSkillsSection = () => {
   const [selectedSkill, setSelectedSkill] = useState<string>('Hard Skills');
@@ -60,13 +61,13 @@ const RadarSkillsSection = () => {
         ];
       case "Hard Skills":
         return [
-          { name: "HCD", category: "excelling", caseStudy: { image: "https://images.unsplash.com/photo-1589758438368-0ad531db3366?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80", slug: "loyalty-program", brand: "RetailX" } },
+          { name: "HCD", category: "excelling", caseStudy: { image: "/lovable-uploads/loyaltyprogram-visa.png", slug: "loyalty-program", brand: "BBVA" } },
           { name: "System Thinking", category: "excelling", caseStudy: { image: "/lovable-uploads/62c5b772-9c99-41b3-b48e-83926e910229.png", slug: "connection-center", brand: "Grupo Bimbo" } },
-          { name: "Agile", category: "excelling", caseStudy: { image: "https://images.unsplash.com/photo-1511920170033-f8396924c348?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80", slug: "bartista", brand: "Cafe Inc." } },
+          { name: "Agile", category: "excelling", caseStudy: { image: "/lovable-uploads/nespresso.png", slug: "bartista", brand: "Nestlé" } },
           { name: "Service Prototyping", category: "excelling", caseStudy: { image: "/lovable-uploads/62c5b772-9c99-41b3-b48e-83926e910229.png", slug: "crm-service-design", brand: "Grupo Bimbo" } },
-          { name: "Digital Tools Proficiency", category: "excelling", caseStudy: { image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80", slug: "digital-transformation", brand: "Techies" } },
+          { name: "Digital Tools Proficiency", category: "excelling", caseStudy: { image: "/lovable-uploads/lapositiva.png", slug: "digital-transformation", brand: "La Positiva" } },
           { name: "Training & Change Management", category: "building", caseStudy: { image: "/lovable-uploads/62c5b772-9c99-41b3-b48e-83926e910229.png", slug: "continuous-improvement", brand: "Grupo Bimbo" } },
-          { name: "Data Analysis", category: "excelling", caseStudy: { image: "https://images.unsplash.com/photo-1589758438368-0ad531db3366?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80", slug: "loyalty-program", brand: "RetailX" } },
+          { name: "Data Analysis", category: "excelling", caseStudy: { image: "/lovable-uploads/loyaltyprogram-visa.png", slug: "loyalty-program", brand: "BBVA" } },
           { name: "Process Design", category: "excelling", caseStudy: { image: "/lovable-uploads/62c5b772-9c99-41b3-b48e-83926e910229.png", slug: "connection-center", brand: "Grupo Bimbo" } },
           { name: "Continuous Improvement Management", category: "excelling", caseStudy: { image: "/lovable-uploads/62c5b772-9c99-41b3-b48e-83926e910229.png", slug: "continuous-improvement", brand: "Grupo Bimbo" } }
         ];
@@ -75,7 +76,7 @@ const RadarSkillsSection = () => {
           { name: "Team Inspiration & Motivation", category: "building", caseStudy: { image: "/lovable-uploads/62c5b772-9c99-41b3-b48e-83926e910229.png", slug: "crm-service-design", brand: "Grupo Bimbo" } },
           { name: "Strategic Decision-Making", category: "excelling", caseStudy: { image: "/lovable-uploads/62c5b772-9c99-41b3-b48e-83926e910229.png", slug: "connection-center", brand: "Grupo Bimbo" } },
           { name: "Talent Development", category: "building", caseStudy: { image: "/lovable-uploads/62c5b772-9c99-41b3-b48e-83926e910229.png", slug: "continuous-improvement", brand: "Grupo Bimbo" } },
-          { name: "Innovation Promotion", category: "building", caseStudy: { image: "https://images.unsplash.com/photo-1511920170033-f8396924c348?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80", slug: "innovation-lab", brand: "Innovators Ltd." } }
+          { name: "Innovation Promotion", category: "building", caseStudy: { image: "/lovable-uploads/nespresso.png", slug: "innovation-lab", brand: "Nestlé" } }
         ];
       default:
         return [];
@@ -127,11 +128,24 @@ const RadarSkillsSection = () => {
   return (
     <section className="py-8 sm:py-16">
       <div className="container-narrow">
-        <div className="text-center mb-8 sm:mb-16">
+        <motion.div 
+          className="text-center mb-8 sm:mb-16"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6 }}
+        >
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-westmount">WHAT I BRING</h2>
-        </div>
+        </motion.div>
+        
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
-          <div className="flex flex-col items-center">
+          <motion.div 
+            className="flex flex-col items-center"
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
             <div className="relative w-full max-w-md aspect-square">
               <svg viewBox="0 0 400 400" className="w-full h-full">
                 {[20, 40, 60, 80, 100].map((percent) => (
@@ -232,16 +246,30 @@ const RadarSkillsSection = () => {
                 })}
               </svg>
             </div>
-          </div>
+          </motion.div>
+          
           <div className="space-y-6 relative">
-            <div className="space-y-3">
+            <motion.div 
+              className="space-y-3"
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
               <h3 className="text-lg font-merriweather font-semibold">Core capabilities</h3>
               <div className="transition-all duration-700 ease-in-out min-h-[120px] relative">
-                <div className="flex flex-wrap gap-2" ref={skillsContainerRef}>
+                <motion.div 
+                  className="flex flex-wrap gap-2" 
+                  ref={skillsContainerRef}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 0.6, delay: 0.6 }}
+                >
                   {skillContent.map((skill, index) => {
                     const isGreen = skill.category === 'excelling';
                     return (
-                      <span
+                      <motion.span
                         key={skill.name}
                         className={[
                           "px-3 py-1 rounded-full text-sm font-merriweather transition-all duration-200",
@@ -249,11 +277,10 @@ const RadarSkillsSection = () => {
                             ? "bg-[#8ab1a2] text-white cursor-pointer hover:bg-[#7ca196] hover:scale-105 active:scale-95"
                             : "bg-slate-400 text-white"
                         ].join(" ")}
-                        style={{
-                          animationDelay: `${index * 100}ms`,
-                          opacity: 1,
-                          transform: 'translateY(0)'
-                        }}
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.4, delay: 0.7 + (index * 0.1) }}
                         onClick={e => {
                           if (isGreen) {
                             if (tooltipSkill === skill.name) {
@@ -277,10 +304,10 @@ const RadarSkillsSection = () => {
                         aria-expanded={isGreen && tooltipSkill === skill.name}
                       >
                         {skill.name}
-                      </span>
+                      </motion.span>
                     );
                   })}
-                </div>
+                </motion.div>
                 {tooltipSkill && tooltipSkillData && tooltipPosition && (
                   <div
                     className="absolute z-50 pointer-events-auto animate-tooltip-fade-scale shadow-2xl"
@@ -313,8 +340,15 @@ const RadarSkillsSection = () => {
                   </div>
                 )}
               </div>
-            </div>
-            <div className="flex items-center justify-start gap-6 text-xs font-merriweather py-2 transition-all duration-300">
+            </motion.div>
+            
+            <motion.div 
+              className="flex items-center justify-start gap-6 text-xs font-merriweather py-2 transition-all duration-300"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true, amount: 0.8 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
+            >
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-[#8ab1a2] rounded-full"></div>
                 <span className="text-gray-600">Excelling at</span>
@@ -324,15 +358,26 @@ const RadarSkillsSection = () => {
                 <div className="w-2 h-2 bg-slate-400 rounded-full"></div>
                 <span className="text-gray-600">Building up</span>
               </div>
-            </div>
-            <div className="pt-4 text-center lg:text-left transition-all duration-300">
+            </motion.div>
+            
+            <motion.div 
+              className="pt-4 text-center lg:text-left transition-all duration-300"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.8 }}
+              transition={{ duration: 0.6, delay: 1 }}
+            >
               <Link
                 to="/self-assessment-method"
-                className="inline-flex items-center text-sm border-b border-black pb-1 hover:opacity-70 transition-opacity font-merriweather"
+                className="inline-flex items-center text-sm border-b border-black pb-1 hover:opacity-70 transition-opacity font-merriweather group"
               >
-                See the method <ArrowRight size={14} className="ml-1" />
+                See the method 
+                <ArrowRight 
+                  size={14} 
+                  className="ml-1 group-hover:translate-x-1 transition-transform duration-200" 
+                />
               </Link>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
