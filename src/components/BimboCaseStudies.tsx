@@ -25,10 +25,9 @@ const BimboCaseStudies = () => {
       {/* Sección de imagen hero - COMPLETAMENTE REPLANTEADA */}
       <div className="relative group cursor-pointer">
         {/* Contenedor principal con bordes redondeados */}
-        <div className="rounded-lg overflow-hidden shadow-md bg-gray-200">
+        <div className="image-with-overlay rounded-lg overflow-hidden shadow-md bg-gray-200">
           {/* Imagen con dimensiones fijas y claras */}
           <div className="relative">
-            {/* En móvil: 350x260px (4:3), En desktop: 350x467px (3:4) */}
             <div className="w-full h-[260px] md:h-[580px]">
               {/* Imagen para móvil (derecha) - más vertical */}
               <img
@@ -49,9 +48,6 @@ const BimboCaseStudies = () => {
                 }}
               />
             </div>
-            
-            {/* Overlay permanente (siempre visible) */}
-            <div className="absolute inset-0 bg-[hsl(var(--image-overlay))] opacity-70 mix-blend-multiply"></div>
             
             {/* Overlay permanente (siempre visible) - igual que ProjectCard */}
             <div className="absolute inset-0 bg-[hsl(var(--image-overlay))] opacity-70 mix-blend-multiply"></div>
@@ -85,12 +81,16 @@ const BimboCaseStudies = () => {
           ))}
         </div>
 
-        <div className="mt-12">
+        <div className="mt-12 text-center md:text-left">
           <Link
             to="/bimbo-relationship"
-            className="inline-flex items-center text-sm border-b border-black pb-1 hover:opacity-70 transition-opacity font-merriweather"
+            className="inline-flex items-center text-sm border-b border-black pb-1 hover:opacity-70 transition-opacity font-merriweather group"
           >
-            Inside the Bimbo story <ArrowRight size={14} className="ml-1" />
+            Inside the Bimbo story 
+            <ArrowRight 
+              size={14} 
+              className="ml-1 group-hover:translate-x-1 transition-transform duration-200" 
+            />
           </Link>
         </div>
       </div>
