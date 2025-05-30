@@ -405,7 +405,7 @@ const RadarSkillsSection = () => {
                             onClick={openFullscreenTooltip}
                             className="inline-flex items-center text-xs text-blue-600 hover:text-blue-800 mt-2 font-merriweather"
                           >
-                            View case study
+                            See skill in action
                             <ArrowRight size={10} className="ml-1" />
                           </button>
                         </div>
