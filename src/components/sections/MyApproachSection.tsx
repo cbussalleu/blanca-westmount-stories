@@ -125,7 +125,7 @@ const MyApproachSection = forwardRef<HTMLElement, MyApproachSectionProps>(
               <motion.rect
                 {...serviceBox}
                 rx="16"
-                fill="white"
+                fill="#8ab1a2"
                 stroke="#333"
                 strokeWidth="1.7"
                 style={{ filter: 'drop-shadow(0 2px 8px rgba(0,0,0,0.08))', cursor: 'pointer' }}
@@ -140,7 +140,7 @@ const MyApproachSection = forwardRef<HTMLElement, MyApproachSectionProps>(
                 fontFamily="Merriweather"
                 fontSize="12"
                 fontWeight="700"
-                fill="#333"
+                fill="#ffffff"
                 style={{ letterSpacing: 1.2, pointerEvents: 'none' }}
               >
                 SERVICE DESIGN
