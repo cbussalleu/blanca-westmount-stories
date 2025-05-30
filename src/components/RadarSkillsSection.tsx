@@ -144,48 +144,17 @@ const RadarSkillsSection = () => {
     setTooltipPosition(null);
   };
 
-  // Animación variants para skills
+  // Sin animación para los skills
   const skillsContainerVariants = {
     hidden: { opacity: 1 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.08,
-        delayChildren: 0.1
-      }
-    },
-    exit: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.03,
-        staggerDirection: -1
-      }
-    }
+    visible: { opacity: 1 },
+    exit: { opacity: 1 }
   };
 
   const skillVariants = {
-    hidden: { 
-      opacity: 0, 
-      y: 15,
-      scale: 0.95
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: {
-        duration: 0.3,
-        ease: [0.25, 0.1, 0.25, 1]
-      }
-    },
-    exit: {
-      opacity: 0,
-      y: -8,
-      scale: 0.98,
-      transition: {
-        duration: 0.15
-      }
-    }
+    hidden: { opacity: 1 },
+    visible: { opacity: 1 },
+    exit: { opacity: 1 }
   };
 
   return (
@@ -320,21 +289,21 @@ const RadarSkillsSection = () => {
               transition={{ duration: 0.6, delay: 0.4 }}
             >
               <h3 className="text-lg font-merriweather font-semibold">Core capabilities</h3>
-              <div className="transition-all duration-700 ease-in-out min-h-[120px] relative">
+              <div className="transition-all duration-300 ease-in-out min-h-[120px] relative">
                 <div ref={skillsContainerRef}>
                   <AnimatePresence mode="wait">
                     <motion.div
                       key={selectedSkill}
                       className="flex flex-wrap gap-2"
-                      variants={skillsContainerVariants}
-                      initial="hidden"
-                      animate="visible"
-                      exit="exit"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.2 }}
                     >
                       {skillContent.map((skill, index) => {
                         const isGreen = skill.category === 'excelling';
                         return (
-                          <motion.span
+                          <span
                             key={skill.name}
                             className={[
                               "px-3 py-1 rounded-full text-sm font-merriweather transition-all duration-200",
@@ -342,7 +311,6 @@ const RadarSkillsSection = () => {
                                 ? "bg-[#8ab1a2] text-white cursor-pointer hover:bg-[#7ca196] hover:scale-105 active:scale-95"
                                 : "bg-slate-400 text-white"
                             ].join(" ")}
-                            variants={skillVariants}
                             onClick={e => {
                               if (isGreen) {
                                 if (tooltipSkill === skill.name) {
@@ -366,7 +334,7 @@ const RadarSkillsSection = () => {
                             aria-expanded={isGreen && tooltipSkill === skill.name}
                           >
                             {skill.name}
-                          </motion.span>
+                          </span>
                         );
                       })}
                     </motion.div>
@@ -401,13 +369,13 @@ const RadarSkillsSection = () => {
                           <p className="text-xs text-gray-600 mt-1 font-merriweather">
                             {tooltipSkillData.caseStudy.brand}
                           </p>
-                          <button
-                            onClick={openFullscreenTooltip}
+                          <Link
+                            to={`/portfolio/${tooltipSkillData.caseStudy.slug}`}
                             className="inline-flex items-center text-xs text-blue-600 hover:text-blue-800 mt-2 font-merriweather"
                           >
                             See skill in action
                             <ArrowRight size={10} className="ml-1" />
-                          </button>
+                          </Link>
                         </div>
                       </div>
                     </div>
@@ -448,79 +416,7 @@ const RadarSkillsSection = () => {
         </div>
       </div>
 
-      {/* Fullscreen Tooltip */}
-      <AnimatePresence>
-        {isFullscreenTooltip && tooltipSkillData && (
-          <motion.div
-            className="fixed inset-0 z-50 bg-white"
-            initial={{ 
-              clipPath: tooltipPosition 
-                ? `circle(60px at ${tooltipPosition.x}px ${tooltipPosition.y + 100}px)`
-                : "circle(60px at 50% 50%)"
-            }}
-            animate={{ 
-              clipPath: "circle(150% at 50% 50%)" 
-            }}
-            exit={{ 
-              clipPath: tooltipPosition 
-                ? `circle(60px at ${tooltipPosition.x}px ${tooltipPosition.y + 100}px)`
-                : "circle(60px at 50% 50%)"
-            }}
-            transition={{
-              type: "spring",
-              stiffness: 30,
-              damping: 20,
-              duration: 0.5
-            }}
-          >
-            <div className="h-full flex flex-col">
-              <div className="flex justify-between items-center p-6 border-b">
-                <div>
-                  <h2 className="text-2xl font-westmount">{tooltipSkill}</h2>
-                  <p className="text-gray-600 font-merriweather">{tooltipSkillData.caseStudy.brand}</p>
-                </div>
-                <button
-                  onClick={closeFullscreenTooltip}
-                  className="p-2 hover:bg-gray-100 rounded-full transition-colors"
-                >
-                  <X size={24} />
-                </button>
-              </div>
-              
-              <div className="flex-1 p-6 overflow-auto">
-                <div className="max-w-4xl mx-auto">
-                  <div className="grid md:grid-cols-2 gap-8 items-start">
-                    <div>
-                      <img 
-                        src={tooltipSkillData.caseStudy.image} 
-                        alt={tooltipSkillData.caseStudy.brand}
-                        className="w-full h-64 object-cover rounded-lg"
-                      />
-                    </div>
-                    <div className="space-y-4">
-                      <h3 className="text-xl font-merriweather">About this skill</h3>
-                      <p className="font-merriweather text-gray-700">
-                        This skill was developed and refined through my work on the {tooltipSkillData.caseStudy.brand} project, 
-                        where I applied {tooltipSkill.toLowerCase()} principles to solve complex business challenges.
-                      </p>
-                      <div className="pt-4">
-                        <Link
-                          to={`/portfolio/${tooltipSkillData.caseStudy.slug}`}
-                          onClick={closeFullscreenTooltip}
-                          className="inline-flex items-center bg-black text-white px-6 py-3 rounded-md hover:bg-gray-800 transition-colors font-merriweather"
-                        >
-                          Skill in action
-                          <ArrowRight size={16} className="ml-2" />
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {/* Eliminamos el Fullscreen Tooltip completamente */}
     </section>
   );
 };
