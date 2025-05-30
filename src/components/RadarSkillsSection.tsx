@@ -146,18 +146,18 @@ const RadarSkillsSection = () => {
 
   // Animación variants para skills
   const skillsContainerVariants = {
-    hidden: { opacity: 0 },
+    hidden: { opacity: 1 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2
+        staggerChildren: 0.08,
+        delayChildren: 0.1
       }
     },
     exit: {
-      opacity: 0,
+      opacity: 1,
       transition: {
-        staggerChildren: 0.05,
+        staggerChildren: 0.03,
         staggerDirection: -1
       }
     }
@@ -166,24 +166,24 @@ const RadarSkillsSection = () => {
   const skillVariants = {
     hidden: { 
       opacity: 0, 
-      y: 20, 
-      scale: 0.8 
+      y: 15,
+      scale: 0.95
     },
     visible: {
       opacity: 1,
       y: 0,
       scale: 1,
       transition: {
-        duration: 0.4,
-        ease: [0.4, 0, 0.2, 1]
+        duration: 0.3,
+        ease: [0.25, 0.1, 0.25, 1]
       }
     },
     exit: {
       opacity: 0,
-      y: -10,
-      scale: 0.9,
+      y: -8,
+      scale: 0.98,
       transition: {
-        duration: 0.2
+        duration: 0.15
       }
     }
   };
@@ -382,10 +382,10 @@ const RadarSkillsSection = () => {
                       top: tooltipPosition.y - 70,
                     }}
                     ref={tooltipRef}
-                    initial={{ opacity: 0, scale: 0.8 }}
+                    initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.8 }}
-                    transition={{ duration: 0.2 }}
+                    exit={{ opacity: 0, scale: 0.9 }}
+                    transition={{ duration: 0.15 }}
                   >
                     <div className="bg-white border border-gray-200 rounded-lg p-4 max-w-xs">
                       <div className="flex items-start gap-3">
@@ -455,22 +455,22 @@ const RadarSkillsSection = () => {
             className="fixed inset-0 z-50 bg-white"
             initial={{ 
               clipPath: tooltipPosition 
-                ? `circle(20px at ${tooltipPosition.x + 120}px ${tooltipPosition.y + 70}px)`
-                : "circle(20px at 50% 50%)"
+                ? `circle(60px at ${tooltipPosition.x}px ${tooltipPosition.y + 100}px)`
+                : "circle(60px at 50% 50%)"
             }}
             animate={{ 
-              clipPath: "circle(100% at 50% 50%)" 
+              clipPath: "circle(150% at 50% 50%)" 
             }}
             exit={{ 
               clipPath: tooltipPosition 
-                ? `circle(20px at ${tooltipPosition.x + 120}px ${tooltipPosition.y + 70}px)`
-                : "circle(20px at 50% 50%)"
+                ? `circle(60px at ${tooltipPosition.x}px ${tooltipPosition.y + 100}px)`
+                : "circle(60px at 50% 50%)"
             }}
             transition={{
               type: "spring",
-              stiffness: 20,
-              restDelta: 2,
-              duration: 0.6
+              stiffness: 30,
+              damping: 20,
+              duration: 0.5
             }}
           >
             <div className="h-full flex flex-col">
