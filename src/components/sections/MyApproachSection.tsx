@@ -189,10 +189,10 @@ const MyApproachSection = forwardRef<HTMLElement, MyApproachSectionProps>(
               <text x="100" y="105" fontFamily="Merriweather" fontSize="11" fill="#333">• Relationships</text>
               <rect
                 x="75" y="160" width="130" height="30" rx="12"
-                fill="white" stroke="#333" strokeWidth="1.7"
+                fill="#8ab1a2" stroke="#333" strokeWidth="1.7"
                 style={{ filter: 'drop-shadow(0 2px 8px rgba(0,0,0,0.07))'}}
               />
-              <text x="140" y="180" textAnchor="middle" fontFamily="Merriweather" fontSize="12" fontWeight="900" fill="#333" style={{ letterSpacing: 1.2 }}>
+              <text x="140" y="180" textAnchor="middle" fontFamily="Merriweather" fontSize="12" fontWeight="900" fill="#ffffff" style={{ letterSpacing: 1.2 }}>
                 SERVICE DESIGN
               </text>
               <text x="140" y="225" textAnchor="middle" fontFamily="Merriweather" fontSize="13" fontWeight="700" fill="#333">
