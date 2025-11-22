@@ -29,20 +29,14 @@ const Header = () => {
     };
   }, [prevScrollPos]);
 
-  const openEmail = (e) => {
+  const openEmail = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     window.location.href = "mailto:christian.bussalleu@gmail.com";
     toggleMenu();
   };
 
-  const initiateCall = (e) => {
-    e.preventDefault();
-    window.location.href = "tel:+34626557807";
-    toggleMenu();
-  };
-
   return (
-    <header className={`fixed w-full z-30 transition-all duration-300 ${scrolled ? 'bg-[hsl(var(--pastel-yellow))]' : 'bg-[hsl(var(--pastel-yellow))]'} ${visible ? 'top-0' : '-top-24'}`}>
+    <header className={`fixed w-full z-30 transition-all duration-300 bg-[hsl(var(--pastel-yellow))] ${visible ? 'top-0' : '-top-24'}`}>
       <div className="container-narrow py-6">
         <div className="flex justify-between items-center">
           {/* Logo */}
@@ -79,20 +73,13 @@ const Header = () => {
             <Link to="/methodology" className="text-2xl font-westmount hover:opacity-70 transition-opacity" onClick={toggleMenu}>Methodology</Link>
             
             {/* Email Me link replacing Contact */}
-            <a 
-              href="mailto:christian.bussalleu@gmail.com" 
+            <a
+              href="mailto:christian.bussalleu@gmail.com"
               className="text-2xl font-westmount hover:opacity-70 transition-opacity"
               onClick={openEmail}
             >
               Email Me
             </a>
-            
-            <button 
-              className="absolute top-6 right-6 text-black" 
-              onClick={toggleMenu}
-            >
-              <X size={24} />
-            </button>
           </nav>
         </div>
       )}
