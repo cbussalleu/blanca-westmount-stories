@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Hero from '../components/Hero';
@@ -6,12 +5,10 @@ import ProjectCard from '../components/ProjectCard';
 import { Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import { projects } from '../data/ProjectsData';
+import { useScrollToTop } from '../hooks/use-scroll-to-top';
 
 const Portfolio = () => {
-  // Scroll to top when component mounts
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  useScrollToTop();
   
   return (
     <div className="min-h-screen bg-[hsl(var(--pastel-yellow))]">

@@ -34,15 +34,7 @@ const ProjectCard = ({ title, description, client, slug, imageSrc }: ProjectCard
       <div className="space-y-2">
         <div className="uppercase text-xs tracking-widest font-westmount font-extralight">{client}</div>
         <h3 className="text-lg font-merriweather">{title}</h3>
-        <p className="text-sm text-gray-600 font-merriweather" style={{ 
-          display: '-webkit-box',
-          WebkitLineClamp: 3,
-          WebkitBoxOrient: 'vertical',
-          overflow: 'hidden',
-          minHeight: 'calc(1.5 * 1rem * 3)', // 3 líneas con line-height 1.5
-          lineHeight: '1.5',
-          marginBottom: '1rem'
-        }}>
+        <p className="text-sm text-gray-600 font-merriweather line-clamp-3 leading-[1.5] mb-4">
           {description}
         </p>
         

@@ -1,17 +1,13 @@
 import { useParams, Link } from 'react-router-dom';
-import { useEffect } from 'react';
 import { ArrowLeft, CheckCircle } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { getProjectBySlug } from '../data/ProjectsData';
+import { useScrollToTop } from '../hooks/use-scroll-to-top';
 
 const ProjectDetail = () => {
+  useScrollToTop();
   const { slug } = useParams<{ slug: string }>();
-
-  // Scroll to top when component mounts
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   const project = getProjectBySlug(slug || "") || {
     title: "Project Not Found",

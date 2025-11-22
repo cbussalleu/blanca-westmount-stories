@@ -1,5 +1,4 @@
-
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import BimboCaseStudies from '../components/BimboCaseStudies';
@@ -8,8 +7,11 @@ import NoSilverBulletsSection from '../components/sections/NoSilverBulletsSectio
 import AboutMeSection from '../components/sections/AboutMeSection';
 import FeaturedProjectsSection from '../components/sections/FeaturedProjectsSection';
 import MyApproachSection from '../components/sections/MyApproachSection';
+import { useScrollToTop } from '../hooks/use-scroll-to-top';
 
 const Index = () => {
+  useScrollToTop();
+
   const sectionRefs = {
     about: useRef(null),
     skills: useRef(null),
@@ -17,11 +19,6 @@ const Index = () => {
     projects: useRef(null),
     methodology: useRef(null)
   };
-
-  // Scroll to top when component mounts
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   return (
     <div className="min-h-screen bg-[hsl(var(--pastel-yellow))]">
