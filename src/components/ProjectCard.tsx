@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
+import { OptimizedImage } from '@/components/OptimizedImage';
 
 interface ProjectCardProps {
   number: number;
@@ -17,7 +18,11 @@ const ProjectCard = ({ title, description, client, slug, imageSrc }: ProjectCard
       <div className="image-with-overlay rounded-lg overflow-hidden shadow-md hidden sm:block">
         <AspectRatio ratio={1} className="w-full">
           {imageSrc ? (
-            <img src={imageSrc} alt={title} className="w-full h-full object-cover" />
+            <OptimizedImage
+              src={imageSrc}
+              alt={title}
+              className="w-full h-full"
+            />
           ) : (
             <div className="w-full h-full bg-gray-100 flex items-center justify-center text-2xl">
               {title.charAt(0)}
