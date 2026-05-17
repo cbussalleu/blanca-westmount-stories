@@ -7,7 +7,6 @@ const RadarSkillsSection = () => {
   const [selectedSkill, setSelectedSkill] = useState<string>('Hard Skills');
   const [tooltipSkill, setTooltipSkill] = useState<string | null>(null);
   const [tooltipPosition, setTooltipPosition] = useState<{ x: number; y: number } | null>(null);
-  const [isFullscreenTooltip, setIsFullscreenTooltip] = useState(false);
   const tooltipRef = useRef<HTMLDivElement>(null);
   const skillsContainerRef = useRef<HTMLDivElement>(null);
 
@@ -15,8 +14,7 @@ const RadarSkillsSection = () => {
     function handleClickOutside(event: MouseEvent) {
       if (
         tooltipRef.current &&
-        !tooltipRef.current.contains(event.target as Node) &&
-        !isFullscreenTooltip
+        !tooltipRef.current.contains(event.target as Node)
       ) {
         setTooltipSkill(null);
         setTooltipPosition(null);
@@ -28,7 +26,7 @@ const RadarSkillsSection = () => {
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [tooltipSkill, isFullscreenTooltip]);
+  }, [tooltipSkill]);
 
   const radarData = [
     { label: "Organization Understanding", value: 65, angle: 0 },
@@ -131,30 +129,6 @@ const RadarSkillsSection = () => {
     if (newSkill !== selectedSkill) {
       setSelectedSkill(newSkill);
     }
-  };
-
-  const openFullscreenTooltip = (e: React.MouseEvent) => {
-    e.preventDefault();
-    setIsFullscreenTooltip(true);
-  };
-
-  const closeFullscreenTooltip = () => {
-    setIsFullscreenTooltip(false);
-    setTooltipSkill(null);
-    setTooltipPosition(null);
-  };
-
-  // Sin animación para los skills
-  const skillsContainerVariants = {
-    hidden: { opacity: 1 },
-    visible: { opacity: 1 },
-    exit: { opacity: 1 }
-  };
-
-  const skillVariants = {
-    hidden: { opacity: 1 },
-    visible: { opacity: 1 },
-    exit: { opacity: 1 }
   };
 
   return (
@@ -415,8 +389,6 @@ const RadarSkillsSection = () => {
           </div>
         </div>
       </div>
-
-      {/* Eliminamos el Fullscreen Tooltip completamente */}
     </section>
   );
 };

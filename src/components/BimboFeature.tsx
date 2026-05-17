@@ -1,7 +1,7 @@
-
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
+import { OptimizedImage } from '@/components/OptimizedImage';
 
 const BimboFeature = () => {
   return (
@@ -27,10 +27,10 @@ const BimboFeature = () => {
           
           <div className="image-with-overlay rounded-lg overflow-hidden shadow-md order-1 md:order-2">
             <AspectRatio ratio={4/3} className="w-full">
-              <img 
-                src="/lovable-uploads/62c5b772-9c99-41b3-b48e-83926e910229.png" 
-                alt="Grupo Bimbo Connection Center" 
-                className="object-cover"
+              <OptimizedImage
+                src="/lovable-uploads/62c5b772-9c99-41b3-b48e-83926e910229.png"
+                alt="Grupo Bimbo Connection Center"
+                className="w-full h-full"
               />
             </AspectRatio>
           </div>

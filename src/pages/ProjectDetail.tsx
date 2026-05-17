@@ -1,113 +1,23 @@
-
 import { useParams, Link } from 'react-router-dom';
-import { useEffect } from 'react';
 import { ArrowLeft, CheckCircle } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { getProjectBySlug } from '../data/ProjectsData';
+import { useScrollToTop } from '../hooks/use-scroll-to-top';
 
 const ProjectDetail = () => {
+  useScrollToTop();
   const { slug } = useParams<{ slug: string }>();
-  
-  // Scroll to top when component mounts
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-  
-  // In a real application, you would fetch project data based on slug
-  // This is simplified for example purposes
-  const getProjectData = () => {
-    const projects: Record<string, any> = {
-      "connection-center": {
-        title: "Omnichannel Connection Center Research & Design",
-        client: "Grupo Bimbo",
-        description: "Designed a global omnichannel customer experience model capable of standardizing consumer and customer engagement while adapting to diverse market needs across 17 countries in Latin America, Europe, and Asia.",
-        challenge: "Design a global omnichannel customer experience model capable of standardizing consumer and customer engagement while adapting to diverse market needs across 17 countries in Latin America, Europe, and Asia.",
-        complexity: [
-          "Highly variable digital maturity levels between developed markets (Spain) and emerging markets (India)",
-          "Multiple stakeholder groups with competing priorities",
-          "Regulatory variations across regions",
-          "Diverse cultural contexts affecting customer service expectations",
-          "Need to balance global standardization with local adaptability"
-        ],
-        research: [
-          "Process Audit across 9 initial markets",
-          "65+ in-depth stakeholder interviews",
-          "Journey mapping workshops documenting 24 key customer journeys",
-          "Contextual inquiry in 5 key markets",
-          "Competitive benchmarking with leading FMCG companies"
-        ],
-        insights: [
-          "Fragmented structure with 3 different departments managing aspects of customer experience",
-          "Absence of multichannel approach for consumer and B2B data management",
-          "Average response times of 24 hours for inquiries, 11 days for complaint resolution",
-          "Low usability level of reports intended for key stakeholders",
-          "Disconnection between customer experience efforts and innovation cycle"
-        ],
-        process: [
-          "Developed user personas for both external and internal users",
-          "Created 43 documented processes in Blueprint format",
-          "Designed service blueprints for key journeys",
-          "Created usability-focused reporting model with 54 personalized reports",
-          "Developed online playbook with version control"
-        ],
-        impact: [
-          "Established baseline measurements for complaint handling time and response time",
-          "Designed balanced scorecard approach for efficiency and effectiveness",
-          "Created continuous measurement system with feedback loops"
-        ],
-        tools: ["Miro", "Optimal Workshop", "Figma", "JIRA", "Salesforce"],
-        icon: "🌐"
-      },
-      "crm-service-design": {
-        title: "CRM Service Design & Implementation",
-        client: "Grupo Bimbo",
-        description: "Transformed research insights and service blueprints into a functional, scalable CRM implementation that would unify customer experience processes while enabling local adaptation.",
-        challenge: "Transform research insights and service blueprints into a functional, scalable CRM implementation that would unify customer experience processes while enabling local adaptation.",
-        complexity: [
-          "Integration with diverse legacy systems across markets",
-          "Varying levels of digital literacy among end users",
-          "Multiple user types requiring different interfaces and workflows",
-          "Need to balance standardization with local requirements"
-        ],
-        research: [],
-        insights: [],
-        process: [
-          "Translated service blueprints into detailed process flows",
-          "Designed modular system architecture for market customization",
-          "Created adaptive workflows for diverse organizational structures",
-          "Designed specialized modules for different departments",
-          "Conducted extensive usability testing with representative users"
-        ],
-        impact: [
-          "60% reduction in complaint handling time",
-          "30% reduction in customer response time",
-          "25% increase in marketing campaign effectiveness",
-          "System adoption rates above 85% across all markets",
-          "Enhanced sales performance visibility",
-          "Improved cross-team coordination"
-        ],
-        tools: ["Salesforce", "Figma", "InVision", "JIRA", "Confluence"],
-        icon: "💼"
-      },
-      // Add more projects as needed with icons instead of imageUrls
-    };
-    
-    return projects[slug || ""] || {
-      title: "Project Not Found",
-      client: "",
-      description: "This project could not be found.",
-      challenge: "",
-      complexity: [],
-      research: [],
-      insights: [],
-      process: [],
-      impact: [],
-      tools: [],
-      icon: "❓"
-    };
+
+  const project = getProjectBySlug(slug || "") || {
+    title: "Project Not Found",
+    client: "",
+    description: "This project could not be found.",
+    number: 0,
+    slug: "",
+    imageSrc: "",
+    icon: "❓"
   };
-  
-  const project = getProjectData();
 
   return (
     <div className="min-h-screen bg-[hsl(var(--pastel-yellow))]">

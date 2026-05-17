@@ -1,7 +1,7 @@
-
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import MethodologyDiagram from './methodology/MethodologyDiagram';
+import { OptimizedImage } from '@/components/OptimizedImage';
 
 const MethodologySection = () => {
   return (
@@ -16,9 +16,9 @@ const MethodologySection = () => {
           </p>
           
           <div className="flex justify-center mb-8">
-            <img 
-              src="/lovable-uploads/472e4aed-29ea-4e3d-a5b2-e83280e3be88.png" 
-              alt="Service Design Methodology" 
+            <OptimizedImage
+              src="/lovable-uploads/472e4aed-29ea-4e3d-a5b2-e83280e3be88.png"
+              alt="Service Design Methodology"
               className="w-[57%] sm:w-[55%] md:w-[52%] lg:w-[49%] transition-all"
             />
           </div>
