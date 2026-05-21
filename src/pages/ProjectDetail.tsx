@@ -1,5 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, CheckCircle } from 'lucide-react';
+import { ArrowLeft, ArrowRight, CheckCircle } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { getProjectBySlug } from '../data/ProjectsData';
@@ -18,6 +18,22 @@ const ProjectDetail = () => {
     imageSrc: "",
     icon: "❓"
   };
+
+  const projectSlugs = [
+    "connection-center",
+    "crm-service-design", 
+    "continuous-improvement",
+    "digital-sales-transformation",
+    "t-conecta",
+    "bartista",
+    "innovation-maturity-index",
+    "meta-sales-optimization",
+    "loyalty-program-redesign"
+  ];
+
+  const currentIndex = projectSlugs.indexOf(slug || '');
+  const prevSlug = currentIndex > 0 ? projectSlugs[currentIndex - 1] : null;
+  const nextSlug = currentIndex < projectSlugs.length - 1 ? projectSlugs[currentIndex + 1] : null;
 
   return (
     <div className="min-h-screen bg-[hsl(var(--pastel-yellow))]">
@@ -136,7 +152,7 @@ const ProjectDetail = () => {
             )}
             
             {project.tools && project.tools.length > 0 && (
-              <div>
+              <div className="mb-12">
                 <h2 className="font-westmount text-2xl mb-4">Tools Used</h2>
                 <div className="flex flex-wrap gap-2">
                   {project.tools.map((tool: string, index: number) => (
@@ -147,6 +163,49 @@ const ProjectDetail = () => {
                 </div>
               </div>
             )}
+
+            {/* Contact CTA */}
+            <div className="mt-16 py-12 border-t border-black text-center">
+              <p className="text-sm mb-6 max-w-md mx-auto font-helvetica text-gray-700">
+                Interested in working together or want to know more about this project?
+              </p>
+              <Link 
+                to="/contact"
+                className="inline-block border border-black px-8 py-3 text-xs font-westmount tracking-widest uppercase hover:bg-black hover:text-[hsl(var(--pastel-yellow))] transition-colors"
+              >
+                Get in Touch
+              </Link>
+            </div>
+
+            {/* Prev / Next Navigation */}
+            <div className="border-t border-black mt-16 pt-8 flex justify-between items-center">
+              <div>
+                {prevSlug && (
+                  <Link 
+                    to={`/portfolio/${prevSlug}`}
+                    className="inline-flex items-center gap-2 text-xs font-westmount tracking-widest uppercase hover:opacity-60 transition-opacity"
+                  >
+                    <ArrowLeft size={14} /> Previous Project
+                  </Link>
+                )}
+              </div>
+              <Link 
+                to="/portfolio"
+                className="text-xs font-westmount tracking-widest uppercase hover:opacity-60 transition-opacity"
+              >
+                All Work
+              </Link>
+              <div>
+                {nextSlug && (
+                  <Link 
+                    to={`/portfolio/${nextSlug}`}
+                    className="inline-flex items-center gap-2 text-xs font-westmount tracking-widest uppercase hover:opacity-60 transition-opacity"
+                  >
+                    Next Project <ArrowRight size={14} />
+                  </Link>
+                )}
+              </div>
+            </div>
           </div>
         </div>
       </main>

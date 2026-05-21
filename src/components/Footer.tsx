@@ -11,13 +11,25 @@ const Footer = () => {
           </div>
           
           <div className="text-center">
-            <div className="flex flex-col space-y-2 items-center">
+            <div className="flex flex-col space-y-4 items-center">
               <a 
                 href="mailto:christian.bussalleu@gmail.com" 
                 className="text-sm hover:opacity-70 transition-opacity"
               >
                 christian.bussalleu@gmail.com
               </a>
+              <div className="flex items-center gap-6">
+                <Link to="/contact" className="text-xs font-westmount tracking-widest uppercase hover:opacity-60 transition-opacity">
+                  Contact
+                </Link>
+                <a 
+                  href="/CV_SD_Christian_Bussalleu_2024_ENG.pdf" 
+                  download
+                  className="text-xs font-westmount tracking-widest uppercase hover:opacity-60 transition-opacity border border-black px-4 py-2"
+                >
+                  Download CV
+                </a>
+              </div>
             </div>
           </div>
           

@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from 'react';
-import { Menu, X, Mail, Phone } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import AnimatedLogoIcon from './AnimatedLogoIcon';
 
@@ -29,12 +29,6 @@ const Header = () => {
     };
   }, [prevScrollPos]);
 
-  const openEmail = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    window.location.href = "mailto:christian.bussalleu@gmail.com";
-    toggleMenu();
-  };
-
   return (
     <header className={`fixed w-full z-30 transition-all duration-300 bg-[hsl(var(--pastel-yellow))] ${visible ? 'top-0' : '-top-24'}`}>
       <div className="container-narrow py-6">
@@ -51,11 +45,36 @@ const Header = () => {
             </Link>
           </div>
 
-          {/* Empty center space */}
-          <div className="flex-1"></div>
+          {/* Desktop Navigation — visible on md and up */}
+          <nav className="hidden md:flex items-center gap-8">
+            <Link
+              to="/portfolio"
+              className="text-xs font-westmount tracking-widest uppercase hover:opacity-60 transition-opacity"
+            >
+              Work
+            </Link>
+            <Link
+              to="/bimbo-relationship"
+              className="text-xs font-westmount tracking-widest uppercase hover:opacity-60 transition-opacity"
+            >
+              Bimbo
+            </Link>
+            <Link
+              to="/methodology"
+              className="text-xs font-westmount tracking-widest uppercase hover:opacity-60 transition-opacity"
+            >
+              Methodology
+            </Link>
+            <Link
+              to="/contact"
+              className="text-xs font-westmount tracking-widest uppercase hover:opacity-60 transition-opacity"
+            >
+              Contact
+            </Link>
+          </nav>
 
-          {/* Mobile Menu Button */}
-          <div className="flex items-center justify-end h-8 md:h-10">
+          {/* Mobile Menu Button — visible only on small screens */}
+          <div className="flex md:hidden items-center justify-end h-8 md:h-10">
             <button onClick={toggleMenu} className="text-black flex items-center justify-center">
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -68,18 +87,10 @@ const Header = () => {
         <div className="fixed inset-0 bg-[hsl(var(--pastel-yellow))] z-40 animate-fade-in py-24">
           <nav className="container-narrow flex flex-col space-y-8 text-center items-center">
             <Link to="/" className="text-2xl font-westmount hover:opacity-70 transition-opacity" onClick={toggleMenu}>Home</Link>
-            <Link to="/portfolio" className="text-2xl font-westmount hover:opacity-70 transition-opacity" onClick={toggleMenu}>Portfolio</Link>
+            <Link to="/portfolio" className="text-2xl font-westmount hover:opacity-70 transition-opacity" onClick={toggleMenu}>Work</Link>
             <Link to="/bimbo-relationship" className="text-2xl font-westmount hover:opacity-70 transition-opacity" onClick={toggleMenu}>Grupo Bimbo</Link>
             <Link to="/methodology" className="text-2xl font-westmount hover:opacity-70 transition-opacity" onClick={toggleMenu}>Methodology</Link>
-            
-            {/* Email Me link replacing Contact */}
-            <a
-              href="mailto:christian.bussalleu@gmail.com"
-              className="text-2xl font-westmount hover:opacity-70 transition-opacity"
-              onClick={openEmail}
-            >
-              Email Me
-            </a>
+            <Link to="/contact" className="text-2xl font-westmount hover:opacity-70 transition-opacity" onClick={toggleMenu}>Contact</Link>
           </nav>
         </div>
       )}

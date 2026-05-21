@@ -30,6 +30,9 @@ const itemVariants = {
 
 const FeaturedProjectsSection = forwardRef<HTMLElement, FeaturedProjectsSectionProps>(
   ({ className }, ref) => {
+    const featuredSlugs = ["connection-center", "digital-sales-transformation", "bartista"];
+    const featuredProjects = projects.filter(project => featuredSlugs.includes(project.slug));
+
     return (
       <section className={`py-8 sm:py-16 ${className || ''}`} ref={ref}>
         <div className="container-narrow">
@@ -50,7 +53,7 @@ const FeaturedProjectsSection = forwardRef<HTMLElement, FeaturedProjectsSectionP
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
           >
-            {projects.map((project) => (
+            {featuredProjects.map((project) => (
               <motion.div key={project.slug} variants={itemVariants}>
                 <ProjectCard {...project} />
               </motion.div>
