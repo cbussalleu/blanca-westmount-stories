@@ -92,8 +92,8 @@ const BimboRelationship = () => {
               <div style={{ fontFamily:'var(--ff-display)', fontWeight:200, fontSize:32, lineHeight:1, letterSpacing:'-0.03em', color:'var(--ink-4)', paddingTop:4 }}>{years.split('–')[0]}</div>
               <div>
                 <div style={{ fontFamily:'var(--ff-display)', fontWeight:300, fontSize:10, letterSpacing:'0.20em', textTransform:'uppercase', color:'var(--ink-3)', marginBottom:'var(--s-2)' }}>{years}</div>
-                <h3 style={{ fontFamily:'var(--ff-editorial)', fontWeight:400, fontSize:17, lineHeight:1.3, letterSpacing:'-0.01em', margin:'0 0 var(--s-3)', maxWidth:'52ch' }}>{title}</h3>
-                <p style={{ fontFamily:'var(--ff-editorial)', fontSize:13.5, lineHeight:1.65, color:'var(--ink-2)', margin:0, maxWidth:'64ch' }}>{description}</p>
+                <h3 style={{ fontFamily:'var(--ff-editorial)', fontWeight:400, fontSize:17, lineHeight:1.3, letterSpacing:'-0.01em', margin:'0 0 var(--s-3)' }}>{title}</h3>
+                <p style={{ fontFamily:'var(--ff-editorial)', fontSize:13.5, lineHeight:1.65, color:'var(--ink-2)', margin:0 }}>{description}</p>
                 {timelineLinks[years.split('–')[0]] && (
                   <Link
                     to={timelineLinks[years.split('–')[0]]}
@@ -123,19 +123,6 @@ const BimboRelationship = () => {
           ))}
         </div>
 
-        {/* CTA */}
-        <div style={{ paddingTop: 'var(--s-8)', textAlign: 'center', borderTop: '1px solid var(--rule)' }}>
-          <Link to="/portfolio" style={{
-            fontFamily: 'var(--ff-display)', fontWeight: 300, fontSize: 11,
-            letterSpacing: '0.20em', textTransform: 'uppercase', color: 'var(--ink)',
-            borderBottom: '1px solid var(--ink)', paddingBottom: 2,
-            transition: 'opacity 200ms'
-          }}
-          onMouseEnter={e => e.currentTarget.style.opacity = '0.6'}
-          onMouseLeave={e => e.currentTarget.style.opacity = '1'}>
-            All 13 cases →
-          </Link>
-        </div>
       </div>
 
       {/* Closing */}
