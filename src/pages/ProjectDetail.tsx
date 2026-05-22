@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -38,6 +38,7 @@ const ProjectDetail = () => {
   const currentIndex = projectSlugs.indexOf(slug || '');
   const prevSlug = currentIndex > 0 ? projectSlugs[currentIndex - 1] : null;
   const nextSlug = currentIndex < projectSlugs.length - 1 ? projectSlugs[currentIndex + 1] : null;
+  const [activeStage, setActiveStage] = useState<'before' | 'after'>('after');
 
   return (
     <div className="min-h-screen bg-[hsl(var(--pastel-yellow))]" style={{ paddingTop: '80px' }}>
@@ -219,6 +220,87 @@ const ProjectDetail = () => {
                 </div>
               </article>
             ))}
+          </div>
+        </section>
+      )}
+
+      {/* Section E — Before / After */}
+      {project.impact && project.impact.length > 0 && (
+        <section className="pd-stage-section" id="outcome">
+          <div className="container-narrow">
+            <header className="pd-stage-head">
+              <div className="case-letter">E</div>
+              <div>
+                <div className="case-verbose">Section E · What changed</div>
+                <h2>The outcome.</h2>
+                <p>Measured against the baseline established in the research phase. The numbers below were tracked and reported quarterly using the same reporting model the project produced.</p>
+              </div>
+            </header>
+
+            {/* Toggle */}
+            <div className="pd-stage-toggle">
+              <button
+                aria-pressed={activeStage === 'before'}
+                onClick={() => setActiveStage('before')}
+              >
+                Before
+              </button>
+              <button
+                aria-pressed={activeStage === 'after'}
+                onClick={() => setActiveStage('after')}
+              >
+                After
+              </button>
+            </div>
+
+            {/* Stage grid */}
+            <div className="pd-stage-grid">
+              <div className={`pd-stage-col before ${activeStage === 'after' ? 'opacity-40' : ''}`} style={{ transition: 'opacity 300ms' }}>
+                <div className="stage-col-label">Before · Baseline</div>
+                <h4>The situation before the project.</h4>
+                <ul>
+                  {project.complexity?.slice(0, 4).map((item, i) => (
+                    <li key={i}>
+                      <span className="mark">×</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="stage-footer">Source · research phase baseline</div>
+              </div>
+              <div className={`pd-stage-col after ${activeStage === 'before' ? 'opacity-40' : ''}`} style={{ transition: 'opacity 300ms' }}>
+                <div className="stage-col-label">After · Measured</div>
+                <h4>What the project delivered.</h4>
+                <ul>
+                  {project.impact?.slice(0, 4).map((item, i) => (
+                    <li key={i}>
+                      <span className="mark">+</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="stage-footer">Source · project reporting model</div>
+              </div>
+            </div>
+
+            {/* Delta tiles — headline figures */}
+            <div className="pd-deltas">
+              {project.impact?.slice(0, 5).map((item, i) => {
+                const match = item.match(/^([−\-+]?\d+[\.,]?\d*\s*[%+]?)/);
+                const stat = match ? match[1] : String(i + 1);
+                const rest = match ? item.replace(match[1], '').trim() : item;
+                const firstWord = rest.split(' ').slice(0, 3).join(' ');
+                const body = rest.split(' ').slice(3).join(' ');
+                return (
+                  <div className="pd-delta-tile" key={i}>
+                    <div className="delta-stat">{stat}</div>
+                    <div className="delta-label">{firstWord}</div>
+                    <div className="delta-body">{body}</div>
+                  </div>
+                );
+              })}
+            </div>
+
           </div>
         </section>
       )}
