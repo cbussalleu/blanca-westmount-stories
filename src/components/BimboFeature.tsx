@@ -10,7 +10,7 @@ const BimboFeature = () => {
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div className="space-y-4 order-2 md:order-1">
             <h2 className="text-2xl mb-2">Grupo Bimbo and I</h2>
-            <p className="text-sm">
+            <p className="font-merriweather text-[15px] leading-[1.65] text-gray-700">
               For the past 7 years, I have led Grupo Bimbo's largest customer experience 
               transformation initiative, establishing a new operational model for 
               customer engagement across global markets.
@@ -18,7 +18,7 @@ const BimboFeature = () => {
             <div className="mt-4">
               <Link 
                 to="/bimbo-relationship" 
-                className="inline-flex items-center text-sm border-b border-black pb-1 hover:opacity-70 transition-opacity"
+                className="inline-flex items-center text-sm border-b border-black pb-1 hover:opacity-60 transition-opacity"
               >
                 Learn More <ArrowRight size={14} className="ml-1" />
               </Link>

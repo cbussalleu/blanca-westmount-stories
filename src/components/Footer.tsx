@@ -14,7 +14,7 @@ const Footer = () => {
             <div className="flex flex-col space-y-4 items-center">
               <a 
                 href="mailto:christian.bussalleu@gmail.com" 
-                className="text-sm hover:opacity-70 transition-opacity"
+                className="font-merriweather text-[15px] hover:opacity-60 transition-opacity"
               >
                 christian.bussalleu@gmail.com
               </a>
@@ -25,7 +25,7 @@ const Footer = () => {
                 <a 
                   href="/CV_SD_Christian_Bussalleu_2024_ENG.pdf" 
                   download
-                  className="text-xs font-westmount tracking-widest uppercase hover:opacity-60 transition-opacity border border-black px-4 py-2"
+                  className="text-xs font-westmount tracking-widest uppercase border border-black px-4 py-2 hover:bg-black hover:text-[hsl(var(--pastel-yellow))] transition-colors"
                 >
                   Download CV
                 </a>

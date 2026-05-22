@@ -25,7 +25,7 @@ const BimboCaseStudies = () => {
       {/* Sección de imagen hero - COMPLETAMENTE REPLANTEADA */}
       <div className="relative group cursor-pointer">
         {/* Contenedor principal con bordes redondeados */}
-        <div className="image-with-overlay rounded-lg overflow-hidden shadow-md bg-gray-200">
+        <div className="image-with-overlay rounded-lg overflow-hidden shadow-md bg-[hsl(var(--pastel-yellow))]">
           {/* Imagen con dimensiones fijas y claras */}
           <div className="relative">
             <div className="w-full h-[260px] md:h-[580px]">
@@ -70,10 +70,10 @@ const BimboCaseStudies = () => {
           {bimboCases.map((caseStudy, index) => (
             <div key={index} className="group">
               <h3 className="text-lg font-merriweather mb-2">{caseStudy.title}</h3>
-              <p className="text-sm text-gray-700 mb-2 font-merriweather">{caseStudy.description}</p>
+              <p className="font-merriweather text-[15px] leading-[1.65] text-gray-700 mb-2">{caseStudy.description}</p>
               <Link
                 to={`/portfolio/${caseStudy.slug}`}
-                className="inline-flex items-center text-xs border-b border-black pb-0.5 hover:opacity-70 transition-opacity font-merriweather"
+                className="inline-flex items-center text-xs border-b border-black pb-0.5 hover:opacity-60 transition-opacity font-merriweather"
               >
                 View Project <ArrowRight size={12} className="ml-1" />
               </Link>
@@ -84,7 +84,7 @@ const BimboCaseStudies = () => {
         <div className="mt-12 text-center md:text-left">
           <Link
             to="/bimbo-relationship"
-            className="inline-flex items-center text-sm border-b border-black pb-1 hover:opacity-70 transition-opacity font-merriweather group"
+            className="inline-flex items-center text-sm border-b border-black pb-1 hover:opacity-60 transition-opacity font-merriweather group"
           >
             Inside the Bimbo story 
             <ArrowRight 

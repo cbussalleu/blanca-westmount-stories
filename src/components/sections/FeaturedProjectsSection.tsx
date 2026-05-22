@@ -69,7 +69,7 @@ const FeaturedProjectsSection = forwardRef<HTMLElement, FeaturedProjectsSectionP
           >
             <Link 
               to="/portfolio" 
-              className="inline-flex items-center text-sm border-b border-black pb-1 hover:opacity-70 transition-opacity font-merriweather group"
+              className="inline-flex items-center text-sm border-b border-black pb-1 hover:opacity-60 transition-opacity font-merriweather group"
             >
               View All Projects 
               <ArrowRight 

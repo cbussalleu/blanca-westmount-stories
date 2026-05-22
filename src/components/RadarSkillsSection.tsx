@@ -330,7 +330,7 @@ const RadarSkillsSection = () => {
                     exit={{ opacity: 0, scale: 0.9 }}
                     transition={{ duration: 0.15 }}
                   >
-                    <div className="bg-white border border-gray-200 rounded-lg p-4 max-w-xs">
+                    <div className="bg-white border border-gray-400 rounded-lg p-4 max-w-xs">
                       <div className="flex items-start gap-3">
                         <img 
                           src={tooltipSkillData.caseStudy.image} 
@@ -346,7 +346,7 @@ const RadarSkillsSection = () => {
                           </p>
                           <Link
                             to={`/portfolio/${tooltipSkillData.caseStudy.slug}`}
-                            className="inline-flex items-center text-xs text-blue-600 hover:text-blue-800 mt-2 font-merriweather"
+                            className="inline-flex items-center text-xs hover:opacity-60 transition-opacity mt-2 font-merriweather"
                           >
                             See skill in action
                             <ArrowRight size={10} className="ml-1" />
@@ -378,7 +378,7 @@ const RadarSkillsSection = () => {
             >
               <Link
                 to="/portfolio/self-assessment-framework"
-                className="inline-flex items-center text-sm border-b border-black pb-1 hover:opacity-70 transition-opacity font-merriweather group"
+                className="inline-flex items-center text-sm border-b border-black pb-1 hover:opacity-60 transition-opacity font-merriweather group"
               >
                 See the method 
                 <ArrowRight 
