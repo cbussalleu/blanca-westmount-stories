@@ -7,6 +7,7 @@ const RadarSkillsSection = () => {
   const [selectedSkill, setSelectedSkill] = useState<string>('Hard Skills');
   const [tooltipSkill, setTooltipSkill] = useState<string | null>(null);
   const [tooltipPosition, setTooltipPosition] = useState<{ x: number; y: number } | null>(null);
+  const [isFullscreenTooltip] = useState<boolean>(false);
   const tooltipRef = useRef<HTMLDivElement>(null);
   const skillsContainerRef = useRef<HTMLDivElement>(null);
 
@@ -47,27 +48,27 @@ const RadarSkillsSection = () => {
         ];
       case "Soft Skills":
         return [
-          { name: "Interdisciplinary Communication", category: "excelling", caseStudy: { image: "https://images.unsplash.com/photo-1511920170033-f8396924c348?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80", slug: "communication-project", brand: "Global Org" } },
+          { name: "Interdisciplinary Communication", category: "excelling", caseStudy: { image: "https://images.unsplash.com/photo-1511920170033-f8396924c348?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80", slug: "crm-service-design", brand: "Grupo Bimbo" } },
           { name: "Workshop Facilitation", category: "excelling", caseStudy: { image: "/lovable-uploads/62c5b772-9c99-41b3-b48e-83926e910229.png", slug: "crm-service-design", brand: "Grupo Bimbo" } },
-          { name: "Conflict Resolution", category: "building", caseStudy: { image: "https://images.unsplash.com/photo-1589758438368-0ad531db3366?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80", slug: "resolution-campaign", brand: "Peace Org" } },
+          { name: "Conflict Resolution", category: "building", caseStudy: { image: "https://images.unsplash.com/photo-1589758438368-0ad531db3366?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80", slug: "loyalty-program-redesign", brand: "BBVA" } },
           { name: "Professional Relationship Building", category: "building", caseStudy: { image: "/lovable-uploads/62c5b772-9c99-41b3-b48e-83926e910229.png", slug: "continuous-improvement", brand: "Grupo Bimbo" } }
         ];
       case "Cognitive Skills":
         return [
           { name: "Complex Systems Understanding", category: "excelling", caseStudy: { image: "/lovable-uploads/62c5b772-9c99-41b3-b48e-83926e910229.png", slug: "connection-center", brand: "Grupo Bimbo" } },
-          { name: "Abstract Thinking", category: "excelling", caseStudy: { image: "https://images.unsplash.com/photo-1511920170033-f8396924c348?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80", slug: "abstract-thinking", brand: "Thinkers Inc." } },
-          { name: "Innovative Solution Generation", category: "building", caseStudy: { image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80", slug: "innovation-lab", brand: "Innovators Ltd." } },
+          { name: "Abstract Thinking", category: "excelling", caseStudy: { image: "https://images.unsplash.com/photo-1511920170033-f8396924c348?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80", slug: "connection-center", brand: "Grupo Bimbo" } },
+          { name: "Innovative Solution Generation", category: "building", caseStudy: { image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80", slug: "bartista", brand: "Nestlé" } },
           { name: "Adaptability", category: "excelling", caseStudy: { image: "/lovable-uploads/62c5b772-9c99-41b3-b48e-83926e910229.png", slug: "crm-service-design", brand: "Grupo Bimbo" } }
         ];
       case "Hard Skills":
         return [
-          { name: "HCD", category: "excelling", caseStudy: { image: "/lovable-uploads/loyaltyprogram-visa.png", slug: "loyalty-program", brand: "BBVA" } },
+          { name: "HCD", category: "excelling", caseStudy: { image: "/lovable-uploads/loyaltyprogram-visa.png", slug: "loyalty-program-redesign", brand: "BBVA" } },
           { name: "System Thinking", category: "excelling", caseStudy: { image: "/lovable-uploads/62c5b772-9c99-41b3-b48e-83926e910229.png", slug: "connection-center", brand: "Grupo Bimbo" } },
           { name: "Agile", category: "excelling", caseStudy: { image: "/lovable-uploads/nespresso.png", slug: "bartista", brand: "Nestlé" } },
           { name: "Service Prototyping", category: "excelling", caseStudy: { image: "/lovable-uploads/62c5b772-9c99-41b3-b48e-83926e910229.png", slug: "crm-service-design", brand: "Grupo Bimbo" } },
-          { name: "Digital Tools Proficiency", category: "excelling", caseStudy: { image: "/lovable-uploads/lapositiva.png", slug: "digital-transformation", brand: "La Positiva" } },
+          { name: "Digital Tools Proficiency", category: "excelling", caseStudy: { image: "/lovable-uploads/lapositiva.png", slug: "digital-sales-transformation", brand: "La Positiva" } },
           { name: "Training & Change Management", category: "building", caseStudy: { image: "/lovable-uploads/62c5b772-9c99-41b3-b48e-83926e910229.png", slug: "continuous-improvement", brand: "Grupo Bimbo" } },
-          { name: "Data Analysis", category: "excelling", caseStudy: { image: "/lovable-uploads/loyaltyprogram-visa.png", slug: "loyalty-program", brand: "BBVA" } },
+          { name: "Data Analysis", category: "excelling", caseStudy: { image: "/lovable-uploads/loyaltyprogram-visa.png", slug: "loyalty-program-redesign", brand: "BBVA" } },
           { name: "Process Design", category: "excelling", caseStudy: { image: "/lovable-uploads/62c5b772-9c99-41b3-b48e-83926e910229.png", slug: "connection-center", brand: "Grupo Bimbo" } },
           { name: "Continuous Improvement Management", category: "excelling", caseStudy: { image: "/lovable-uploads/62c5b772-9c99-41b3-b48e-83926e910229.png", slug: "continuous-improvement", brand: "Grupo Bimbo" } }
         ];
@@ -76,7 +77,7 @@ const RadarSkillsSection = () => {
           { name: "Team Inspiration & Motivation", category: "building", caseStudy: { image: "/lovable-uploads/62c5b772-9c99-41b3-b48e-83926e910229.png", slug: "crm-service-design", brand: "Grupo Bimbo" } },
           { name: "Strategic Decision-Making", category: "excelling", caseStudy: { image: "/lovable-uploads/62c5b772-9c99-41b3-b48e-83926e910229.png", slug: "connection-center", brand: "Grupo Bimbo" } },
           { name: "Talent Development", category: "building", caseStudy: { image: "/lovable-uploads/62c5b772-9c99-41b3-b48e-83926e910229.png", slug: "continuous-improvement", brand: "Grupo Bimbo" } },
-          { name: "Innovation Promotion", category: "building", caseStudy: { image: "/lovable-uploads/nespresso.png", slug: "innovation-lab", brand: "Nestlé" } }
+          { name: "Innovation Promotion", category: "building", caseStudy: { image: "/lovable-uploads/nespresso.png", slug: "bartista", brand: "Nestlé" } }
         ];
       default:
         return [];
@@ -376,7 +377,7 @@ const RadarSkillsSection = () => {
               className="pt-4 text-center lg:text-left transition-all duration-300"
             >
               <Link
-                to="/self-assessment-method"
+                to="/portfolio/self-assessment-framework"
                 className="inline-flex items-center text-sm border-b border-black pb-1 hover:opacity-70 transition-opacity font-merriweather group"
               >
                 See the method 
