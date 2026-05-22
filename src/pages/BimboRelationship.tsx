@@ -1,7 +1,7 @@
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, ArrowRight, CheckCircle } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import BimboCaseStudies from '../components/BimboCaseStudies';
 import { useScrollToTop } from '../hooks/use-scroll-to-top';
 
@@ -62,23 +62,54 @@ const BimboRelationship = () => {
   return (
     <div className="min-h-screen bg-[hsl(var(--pastel-yellow))]">
       <Header />
-      <main className="pt-24 pb-16">
-        <section className="py-8">
+      <main>
+
+        <div className="pd-breadcrumb hero-wrap">
+          <span>Portfolio · Long-term engagement</span>
+          <span>Grupo Bimbo · 2017–present</span>
+          <Link to="/">← Home</Link>
+        </div>
+
+        <section className="pd-hero">
           <div className="hero-wrap">
-            <div className="max-w-3xl mx-auto">
-
-              {/* Back link */}
-              <div className="mb-8">
-                <Link to="/" className="inline-flex items-center text-xs hover:opacity-60 transition-opacity">
-                  <ArrowLeft size={14} className="mr-1" /> Back to Home
-                </Link>
+            <div className="pd-eyebrow">
+              <span>Grupo Bimbo</span>
+              <span className="sep">·</span>
+              <span>FMCG</span>
+              <span className="sep">·</span>
+              <span>7 years · 17 countries</span>
+            </div>
+            <div className="pd-hero-row" style={{ paddingTop: 'var(--s-6)' }}>
+              <div className="pd-num">
+                <span className="big">7</span>
+                <div className="small">
+                  <span className="slash">/</span>
+                  <span className="total" style={{ fontSize: 22 }}>yrs</span>
+                  <span className="num-label">engagement</span>
+                </div>
               </div>
-
-              {/* Title */}
-              <div className="mb-12">
-                <h1 className="text-3xl sm:text-4xl md:text-5xl font-westmount font-light leading-[0.92] tracking-[-0.02em] mb-3">GRUPO BIMBO AND I</h1>
-                <p className="font-westmount font-light text-[11px] tracking-[0.22em] uppercase text-gray-500">7 years · 17 countries · 4 projects</p>
+              <div className="pd-title-block">
+                <h1>Grupo Bimbo &amp; I.</h1>
+                <p className="pd-lede">
+                  The world's largest bread manufacturer. Four interconnected projects
+                  over seven years — from initial research through global CRM implementation,
+                  B2B platform design, and continuous improvement infrastructure.
+                </p>
               </div>
+            </div>
+          </div>
+        </section>
+
+        <dl className="pd-meta hero-wrap">
+          <div><dt>Client</dt><dd>Grupo Bimbo</dd></div>
+          <div><dt>Period</dt><dd>2017 — present</dd></div>
+          <div><dt>Countries</dt><dd>17 · 3 continents</dd></div>
+          <div><dt>Projects</dt><dd>4 interconnected</dd></div>
+          <div><dt>Employees</dt><dd>134,000+</dd></div>
+        </dl>
+
+        <section className="py-16 pb-24">
+          <div className="container-narrow">
 
               {/* Intro */}
               <div className="mb-12 space-y-4">
@@ -88,21 +119,6 @@ const BimboRelationship = () => {
                 <p className="font-merriweather text-[15px] leading-[1.65] text-gray-700">
                   Since 2017, I have led the design and implementation of the Connection Center: a new global operational model for customer and consumer engagement. The work spans the complete service design lifecycle, from initial research across 9 markets, through the design of 43 service blueprints, to implementation across 17 countries in Latin America, Europe, and Asia.
                 </p>
-              </div>
-
-              {/* Metrics row */}
-              <div className="mb-16 grid grid-cols-2 md:grid-cols-4 gap-6 border-t border-b border-gray-400 py-8">
-                {[
-                  { number: "7", label: "Years of collaboration" },
-                  { number: "17", label: "Countries implemented" },
-                  { number: "43", label: "Service blueprints designed" },
-                  { number: "134k+", label: "Employees impacted" }
-                ].map(({ number, label }) => (
-                  <div key={label} className="text-center">
-                    <p className="text-4xl font-westmount mb-1">{number}</p>
-                    <p className="text-xs font-merriweather text-gray-500">{label}</p>
-                  </div>
-                ))}
               </div>
 
               {/* Timeline */}
@@ -150,7 +166,6 @@ const BimboRelationship = () => {
                 </Link>
               </div>
 
-            </div>
           </div>
         </section>
       </main>

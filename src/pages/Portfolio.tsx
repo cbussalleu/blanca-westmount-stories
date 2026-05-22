@@ -1,20 +1,15 @@
 import { useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import Hero from '../components/Hero';
 import ProjectCard from '../components/ProjectCard';
 import { Link } from 'react-router-dom';
-import { ArrowLeft } from 'lucide-react';
 import { projects } from '../data/ProjectsData';
 import { useScrollToTop } from '../hooks/use-scroll-to-top';
 
 const Portfolio = () => {
   useScrollToTop();
-
   const [activeFilter, setActiveFilter] = useState<string>("All");
-
   const filters = ["All", "Service Design", "FMCG", "Financial Services", "B2B", "Public Sector", "Technology", "AI"];
-
   const filteredProjects = activeFilter === "All"
     ? projects
     : projects.filter(p => p.category?.includes(activeFilter));
@@ -22,20 +17,47 @@ const Portfolio = () => {
   return (
     <div className="min-h-screen bg-[hsl(var(--pastel-yellow))]">
       <Header />
-      <main className="pt-24">
-        <div className="hero-wrap">
-          <div className="mb-8">
-            <Link to="/" className="inline-flex items-center text-xs hover:opacity-60 transition-opacity">
-              <ArrowLeft size={14} className="mr-1" /> Back to Home
-            </Link>
-          </div>
+      <main>
+
+        <div className="pd-breadcrumb hero-wrap">
+          <span>Portfolio · All work</span>
+          <span>{projects.length} cases · Service Design</span>
+          <Link to="/">← Home</Link>
         </div>
 
-        <Hero
-          title="Portfolio"
-          subtitle=""
-          description="A collection of my most significant service design projects across various industries and global markets."
-        />
+        <section className="pd-hero">
+          <div className="hero-wrap">
+            <div className="pd-eyebrow">
+              <span>Christian Bussalleu</span>
+              <span className="sep">·</span>
+              <span>Service Design</span>
+              <span className="sep">·</span>
+              <span>{projects.length} cases</span>
+            </div>
+            <div style={{ paddingTop: 'var(--s-6)' }}>
+              <h1 style={{
+                fontFamily: 'var(--ff-display)',
+                fontWeight: 200,
+                fontSize: 'clamp(48px, 7vw, 96px)',
+                lineHeight: 0.92,
+                letterSpacing: '-0.02em',
+                textTransform: 'uppercase',
+                margin: '0 0 var(--s-5)'
+              }}>All Work.</h1>
+              <p style={{
+                fontFamily: 'var(--ff-editorial)',
+                fontSize: 'var(--t-lede)',
+                lineHeight: 1.55,
+                color: 'var(--ink-2)',
+                maxWidth: '54ch',
+                margin: 0
+              }}>
+                Thirteen cases across FMCG, financial services, technology, and public sector.
+                Service Design from research to implementation, at scale.
+              </p>
+            </div>
+          </div>
+        </section>
 
         <section className="py-16">
           <div className="container-narrow">
@@ -62,6 +84,7 @@ const Portfolio = () => {
             </div>
           </div>
         </section>
+
       </main>
       <Footer />
     </div>

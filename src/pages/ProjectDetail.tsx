@@ -41,7 +41,7 @@ const ProjectDetail = () => {
   const [activeStage, setActiveStage] = useState<'before' | 'after'>('after');
 
   return (
-    <div className="min-h-screen bg-[hsl(var(--pastel-yellow))]" style={{ paddingTop: '80px' }}>
+    <div className="min-h-screen bg-[hsl(var(--pastel-yellow))]">
       <Header />
 
       {/* Breadcrumb */}

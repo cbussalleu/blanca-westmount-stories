@@ -544,10 +544,17 @@
 }
 .pd-breadcrumb {
   padding: var(--s-5) 0;
+  padding-top: calc(var(--s-5) + 80px);
   border-bottom: 1px solid var(--rule);
-  display: flex; align-items: center; justify-content: space-between;
-  font-family: var(--ff-display); font-weight: 300; font-size: 11px;
-  letter-spacing: 0.20em; text-transform: uppercase; color: var(--ink-3);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--ff-display);
+  font-weight: 300;
+  font-size: 11px;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: var(--ink-3);
 }
 .pd-breadcrumb a {
   color: var(--ink); border-bottom: 1px solid var(--ink);
