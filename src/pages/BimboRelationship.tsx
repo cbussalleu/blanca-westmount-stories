@@ -24,7 +24,7 @@ const timeline = [
   {
     years: "2020–2022",
     title: "T-Conecta B2B Platform",
-    description: "Designed an integrated digital platform for small business owners — Bimbo's direct customers — combining ordering, financial services, and additional revenue streams. 27% adoption rate in second year. Monthly transaction volume of 250,000."
+    description: "Designed an integrated digital platform for small business owners (Bimbo's direct customers), combining ordering, financial services, and additional revenue streams. 27% adoption rate in second year. Monthly transaction volume of 250,000."
   },
   {
     years: "2022–Present",
@@ -83,10 +83,10 @@ const BimboRelationship = () => {
               {/* Intro */}
               <div className="mb-12 space-y-4">
                 <p className="text-sm font-merriweather leading-relaxed">
-                  As the world's largest bread manufacturer — present in over 33 countries, operating more than 100 brands, and employing over 134,000 people — Grupo Bimbo required a customer experience transformation at a scale that few organizations ever attempt.
+                  As the world's largest bread manufacturer, present in over 33 countries, operating more than 100 brands, and employing over 134,000 people, Grupo Bimbo required a customer experience transformation at a scale that few organizations ever attempt.
                 </p>
                 <p className="text-sm font-merriweather leading-relaxed">
-                  Since 2017, I have led the design and implementation of the Connection Center: a new global operational model for customer and consumer engagement. The work spans the complete service design lifecycle — from initial research across 9 markets, through the design of 43 service blueprints, to implementation across 17 countries in Latin America, Europe, and Asia.
+                  Since 2017, I have led the design and implementation of the Connection Center: a new global operational model for customer and consumer engagement. The work spans the complete service design lifecycle, from initial research across 9 markets, through the design of 43 service blueprints, to implementation across 17 countries in Latin America, Europe, and Asia.
                 </p>
               </div>
 

@@ -124,7 +124,7 @@ export const projects: Project[] = [
     ],
     insights: [
       "Small businesses needed integrated solutions, not multiple disconnected apps",
-      "Credit applications strongly preferred through personal interaction with sales reps — least digitalizable aspect",
+      "Credit applications strongly preferred through personal interaction with sales reps, the least digitalizable aspect",
       "Digital ordering adoption required gradual onboarding strategy",
       "Platform most successful when designed as innovation ecosystem, not just transaction system"
     ],
@@ -211,7 +211,7 @@ export const projects: Project[] = [
       "Technical assessment of existing infrastructure and limitations"
     ],
     insights: [
-      "Quotation process was the biggest friction point — too long and complex for digital self-service",
+      "Quotation process was the biggest friction point: too long and complex for digital self-service",
       "Brokers feared digitalization would eliminate their role rather than enhance it",
       "Customers wanted digital convenience but still needed human reassurance for final purchase",
       "Regulatory requirements created real constraints on what could be fully automated"
@@ -303,7 +303,7 @@ export const projects: Project[] = [
     insights: [
       "Existing frameworks were too complex and academic for practical public sector use",
       "Leadership turnover meant the tool needed to be self-explanatory without prior knowledge",
-      "Entities needed roadmaps, not just scores — knowing where they stood was not enough",
+      "Entities needed roadmaps, not just scores: knowing where they stood was not enough",
       "Peer benchmarking was a stronger motivator for improvement than top-down mandates"
     ],
     process: [
@@ -348,7 +348,7 @@ export const projects: Project[] = [
     insights: [
       "Agents had deep platform knowledge but lacked structured conversation frameworks",
       "Onboarding training was too product-focused and not enough on advertiser business needs",
-      "Conversion rates varied significantly by agent — top performers had learnable behaviors",
+      "Conversion rates varied significantly by agent; top performers had learnable behaviors",
       "Advertisers responded better to consultative approach than feature-led pitches"
     ],
     process: [
@@ -391,7 +391,7 @@ export const projects: Project[] = [
     ],
     insights: [
       "Most cardholders did not understand how to maximize their points accrual",
-      "Redemption process had too much friction — points expired before being used",
+      "Redemption process had too much friction: points expired before being used",
       "High-value customers wanted experiential rewards, not just cashback",
       "Program complexity was a bigger barrier to engagement than reward value"
     ],
@@ -414,15 +414,15 @@ export const projects: Project[] = [
   {
     number: 10,
     title: "Service Designer Capabilities Self-Assessment",
-    description: "A bibliographic analysis-based framework to evaluate professional capabilities with honesty — designed to avoid the twin risks of overconfidence and false modesty.",
+    description: "A bibliographic analysis-based framework to evaluate professional capabilities with honesty, designed to avoid the twin risks of overconfidence and false modesty.",
     client: "Internal",
     slug: "self-assessment-framework",
     imageSrc: "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
     icon: "🔬",
     category: ["Internal", "Research", "AI"],
-    challenge: "Design a rigorous, honest self-assessment of professional capabilities as a Service Designer — one that could be shared publicly without overstatement, and that would give recruiters and peers a trustworthy signal of actual competence and maturity.",
+    challenge: "Design a rigorous, honest self-assessment of professional capabilities as a Service Designer, one that could be shared publicly without overstatement and would give recruiters and peers a trustworthy signal of actual competence and maturity.",
     complexity: [
-      "Self-assessment is inherently prone to cognitive biases — Dunning-Kruger effect, social desirability bias, and attribution errors",
+      "Self-assessment is inherently prone to cognitive biases: Dunning-Kruger effect, social desirability bias, and attribution errors",
       "Professional capabilities in Service Design are poorly standardized across the industry",
       "The assessment needed to be honest enough to be credible, and structured enough to be useful",
       "Translating academic frameworks into a visual, accessible format without losing rigor"
@@ -430,28 +430,28 @@ export const projects: Project[] = [
     research: [
       "Systematic bibliographic review across Web of Science and Scopus databases",
       "Analysis of 4 seminal academic works on professional competencies in design disciplines",
-      "Karpen et al. (2017) — organizational capabilities and strategic alignment",
-      "Kleinsmann et al. (2012) — interpersonal and collaborative capabilities in design",
-      "Carr et al. (2002) — cognitive capabilities and professional performance",
-      "Zheng et al. (2011) — leadership capabilities in creative organizations"
+      "Karpen et al. (2017): organizational capabilities and strategic alignment",
+      "Kleinsmann et al. (2012): interpersonal and collaborative capabilities in design",
+      "Carr et al. (2002): cognitive capabilities and professional performance",
+      "Zheng et al. (2011): leadership capabilities in creative organizations"
     ],
     insights: [
       "Professional capabilities in Service Design cluster into 6 dimensions: Organizational, Interpersonal, Cognitive, Technical, Emotional, and Leadership",
       "Each dimension contains 3-5 measurable variables with documented impact on professional performance",
-      "Emotional capabilities, while real and important, are the hardest to self-assess reliably — and the easiest to overstate",
-      "The gap between 'excelling' and 'building' is not about ability — it is about deliberate practice and accumulated evidence"
+      "Emotional capabilities, while real and important, are the hardest to self-assess reliably and the easiest to overstate",
+      "The gap between 'excelling' and 'building' is not about ability: it is about deliberate practice and accumulated evidence"
     ],
     process: [
-      "Defined 6 capability dimensions based on bibliographic analysis — Organizational, Interpersonal, Cognitive, Technical, Emotional, Leadership",
+      "Defined 6 capability dimensions based on bibliographic analysis: Organizational, Interpersonal, Cognitive, Technical, Emotional, Leadership",
       "Mapped 24 specific variables across the 6 dimensions, each grounded in academic evidence",
       "Applied each variable to real project experience to calibrate level honestly",
       "Made a deliberate design decision: simplify the public-facing Radar to 5 dimensions, excluding Emotional capabilities",
-      "Reasoning for exclusion: Emotional capabilities are real but self-assessment of them is least reliable — showing them without external validation would undermine the credibility of the entire framework",
+      "Reasoning for exclusion: Emotional capabilities are real but self-assessment of them is least reliable; showing them without external validation would undermine the credibility of the entire framework",
       "Designed the Radar visualization to reflect calibrated levels, not aspirational ones"
     ],
     impact: [
       "A publicly available, bibliographically grounded capability map that any recruiter or peer can interrogate",
-      "The Radar on this site reflects actual calibrated assessment — not a marketing exercise",
+      "The Radar on this site reflects actual calibrated assessment, not a marketing exercise",
       "The framework distinguishes between capabilities where evidence is strong ('excelling') and those where practice is ongoing ('building')",
       "The full 6-dimension model is documented here, making the simplification transparent and the reasoning auditable"
     ],

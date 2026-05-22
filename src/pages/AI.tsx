@@ -33,7 +33,7 @@ const AI = () => {
                 <p className="text-xs tracking-widest uppercase text-gray-500 mb-4">How I work with AI</p>
                 <h1 className="text-3xl sm:text-4xl md:text-5xl font-westmount mb-8">AI IN SERVICE DESIGN</h1>
                 <p className="text-sm font-merriweather leading-relaxed">
-                  AI has not changed what is hard about designing services. It has changed what is possible around it. The judgment calls — what to research, how to interpret ambiguous findings, when a design is good enough — remain human. What AI changes is the infrastructure: how knowledge is stored, how it is surfaced, and how fast it can be applied. These three projects show what that looks like in practice.
+                  AI has not changed what is hard about designing services. It has changed what is possible around it. The judgment calls (what to research, how to interpret ambiguous findings, when a design is good enough) remain human. What AI changes is the infrastructure: how knowledge is stored, how it is surfaced, and how fast it can be applied. These three projects show what that looks like in practice.
                 </p>
               </motion.div>
 
@@ -52,7 +52,7 @@ const AI = () => {
 
                   <p className="text-xs tracking-widest uppercase text-gray-400 mb-2">Challenge</p>
                   <p className="text-sm font-merriweather leading-relaxed mb-4">
-                    Findasense's research practice generated high-quality methodological knowledge project by project — but that knowledge lived in individual documents, in people's heads, and in presentations that circulated briefly before disappearing. Every project started nearly from scratch. The question was not how to use AI for research, but how to structure knowledge so AI could actually amplify it.
+                    Findasense's research practice generated high-quality methodological knowledge project by project, but that knowledge lived in individual documents, in people's heads, and in presentations that circulated briefly before disappearing. Every project started nearly from scratch. The question was not how to use AI for research, but how to structure knowledge so AI could actually amplify it.
                   </p>
 
                   <p className="text-xs tracking-widest uppercase text-gray-400 mb-2">What I did</p>
@@ -60,13 +60,13 @@ const AI = () => {
                     <li className="flex gap-2"><span className="flex-shrink-0">—</span><span>Designed a two-layer knowledge architecture separating stable methodological knowledge (frameworks, sampling criteria, ethical principles) from contextual project knowledge (industry benchmarks, client-specific data)</span></li>
                     <li className="flex gap-2"><span className="flex-shrink-0">—</span><span>Defined naming conventions and versioning protocols for methodology notebooks (M-layer) and thematic notebooks (T-layer)</span></li>
                     <li className="flex gap-2"><span className="flex-shrink-0">—</span><span>Established a circular flow where each project contributes back to the knowledge base rather than just consuming it</span></li>
-                    <li className="flex gap-2"><span className="flex-shrink-0">—</span><span>Documented the principle of treating the expert as knowledge architect — not replacing judgment, but giving it infrastructure</span></li>
+                    <li className="flex gap-2"><span className="flex-shrink-0">—</span><span>Documented the principle of treating the expert as knowledge architect: not replacing judgment, but giving it infrastructure</span></li>
                     <li className="flex gap-2"><span className="flex-shrink-0">—</span><span>Identified and documented the specific risks of AI bias in Latin American CX contexts</span></li>
                   </ul>
 
                   <p className="text-xs tracking-widest uppercase text-gray-400 mb-2">Result</p>
                   <p className="text-sm font-merriweather leading-relaxed mb-4">
-                    A reusable knowledge infrastructure that makes each research project faster and more consistent — and that gets smarter with every project that uses it.
+                    A reusable knowledge infrastructure that makes each research project faster and more consistent, and gets smarter with every project that uses it.
                   </p>
 
                   <p className="text-xs tracking-widest uppercase text-gray-400 mb-2">Tools</p>
@@ -88,7 +88,7 @@ const AI = () => {
                 <span className="text-5xl font-westmount text-gray-200 leading-none select-none flex-shrink-0">02</span>
                 <div>
                   <p className="text-xs tracking-widest uppercase text-gray-500 mb-2">Process Automation</p>
-                  <h2 className="text-lg font-westmount mb-1">Case Manager — Automated Case Study Pipeline</h2>
+                  <h2 className="text-lg font-westmount mb-1">Case Manager: Automated Case Study Pipeline</h2>
                   <p className="text-xs text-gray-500 font-merriweather mb-4">Findasense · Internal · 2025–2026</p>
 
                   <p className="text-xs tracking-widest uppercase text-gray-400 mb-2">Challenge</p>
@@ -99,10 +99,10 @@ const AI = () => {
                   <p className="text-xs tracking-widest uppercase text-gray-400 mb-2">What I did</p>
                   <ul className="text-sm font-merriweather leading-relaxed mb-4 space-y-2">
                     <li className="flex gap-2"><span className="flex-shrink-0">—</span><span>Designed a 5-stage pipeline: structured registration → AI enrichment → automated one-slider generation → directorial scoring and voting → production prioritization</span></li>
-                    <li className="flex gap-2"><span className="flex-shrink-0">—</span><span>Integrated Gemini 1.5 Flash for semantic processing only — text compression, translation, style correction — keeping all data logic deterministic</span></li>
+                    <li className="flex gap-2"><span className="flex-shrink-0">—</span><span>Integrated Gemini 1.5 Flash for semantic processing only (text compression, translation, style correction), keeping all data logic deterministic</span></li>
                     <li className="flex gap-2"><span className="flex-shrink-0">—</span><span>Designed dual-version output: internal slides (client named, full methodology) and external slides (anonymized for pitches)</span></li>
                     <li className="flex gap-2"><span className="flex-shrink-0">—</span><span>Built scoring system across 4 strategic axes with automatic threshold triggering directorial vote</span></li>
-                    <li className="flex gap-2"><span className="flex-shrink-0">—</span><span>Implemented conflict-of-interest rules in the voting system — practice leads cannot vote their own cases</span></li>
+                    <li className="flex gap-2"><span className="flex-shrink-0">—</span><span>Implemented conflict-of-interest rules in the voting system: practice leads cannot vote their own cases</span></li>
                     <li className="flex gap-2"><span className="flex-shrink-0">—</span><span>Redesigned interface to a sidebar navigation shell in a second iteration without touching backend logic</span></li>
                   </ul>
 
@@ -130,20 +130,20 @@ const AI = () => {
                 <span className="text-5xl font-westmount text-gray-200 leading-none select-none flex-shrink-0">03</span>
                 <div>
                   <p className="text-xs tracking-widest uppercase text-gray-500 mb-2">Internal Tooling</p>
-                  <h2 className="text-lg font-westmount mb-1">Findasense Pulse — AI Adoption Measurement System</h2>
+                  <h2 className="text-lg font-westmount mb-1">Findasense Pulse: AI Adoption Measurement System</h2>
                   <p className="text-xs text-gray-500 font-merriweather mb-4">Findasense · Internal · 2025–2026</p>
 
                   <p className="text-xs tracking-widest uppercase text-gray-400 mb-2">Challenge</p>
                   <p className="text-sm font-merriweather leading-relaxed mb-4">
-                    After deploying Gemini Pro to 100% of the company through Google Workspace licenses, Findasense had no way to measure whether people were actually using it, what was blocking them, or whether they perceived real value. Usage data from Google Workspace said what — not why or how it felt.
+                    After deploying Gemini Pro to 100% of the company through Google Workspace licenses, Findasense had no way to measure whether people were actually using it, what was blocking them, or whether they perceived real value. Usage data from Google Workspace said what, not why or how it felt.
                   </p>
 
                   <p className="text-xs tracking-widest uppercase text-gray-400 mb-2">What I did</p>
                   <ul className="text-sm font-merriweather leading-relaxed mb-4 space-y-2">
-                    <li className="flex gap-2"><span className="flex-shrink-0">—</span><span>Designed a survey methodology using proportional quota sampling across practice and seniority — 40 people per monthly pulse covering the full organization over 5 rotation cycles</span></li>
-                    <li className="flex gap-2"><span className="flex-shrink-0">—</span><span>Built a Google Chat bot on Apps Script that delivers 3-question surveys directly in the chat interface — no new tools, under 2 minutes to complete</span></li>
+                    <li className="flex gap-2"><span className="flex-shrink-0">—</span><span>Designed a survey methodology using proportional quota sampling across practice and seniority: 40 people per monthly pulse covering the full organization over 5 rotation cycles</span></li>
+                    <li className="flex gap-2"><span className="flex-shrink-0">—</span><span>Built a Google Chat bot on Apps Script that delivers 3-question surveys directly in the chat interface, with no new tools required and under 2 minutes to complete</span></li>
                     <li className="flex gap-2"><span className="flex-shrink-0">—</span><span>Designed a rotating question bank: 1 fixed question (shared indicator) + 2 rotating from a bank of 4, giving each question a sample of ~20 respondents per month</span></li>
-                    <li className="flex gap-2"><span className="flex-shrink-0">—</span><span>Solved a critical authentication issue: discovered that Chat Add-on events execute as the triggering user, not the script owner — fixed by replacing getActiveSpreadsheet() with openById() throughout</span></li>
+                    <li className="flex gap-2"><span className="flex-shrink-0">—</span><span>Solved a critical authentication issue: discovered that Chat Add-on events execute as the triggering user, not the script owner; fixed by replacing getActiveSpreadsheet() with openById() throughout</span></li>
                     <li className="flex gap-2"><span className="flex-shrink-0">—</span><span>Implemented automatic employee directory sync from HR CSV via daily trigger with mutex logic to prevent double processing</span></li>
                     <li className="flex gap-2"><span className="flex-shrink-0">—</span><span>Designed multi-survey architecture so the same bot can handle future pulse types (engagement, climate) with a flag in Config.gs</span></li>
                   </ul>
@@ -171,7 +171,7 @@ const AI = () => {
               >
                 <p className="text-xs tracking-widest uppercase text-gray-500 mb-4">A note on approach</p>
                 <p className="text-sm font-merriweather leading-relaxed">
-                  In all three projects, AI handles what requires semantic reasoning — compressing text, surfacing relevant knowledge, processing language. Everything that requires judgment — what to measure, how to interpret results, what to build — remains human. This is not a philosophical position. It is a practical one: AI without a knowledge architecture behind it produces consistent mediocrity. With one, it amplifies the quality of what the expert already knows how to do.
+                  In all three projects, AI handles what requires semantic reasoning: compressing text, surfacing relevant knowledge, processing language. Everything that requires judgment (what to measure, how to interpret results, what to build) remains human. This is not a philosophical position. It is a practical one: AI without a knowledge architecture behind it produces consistent mediocrity. With one, it amplifies the quality of what the expert already knows how to do.
                 </p>
               </motion.div>
 
