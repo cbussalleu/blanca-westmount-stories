@@ -5,6 +5,7 @@ import ProjectCard from '../components/ProjectCard';
 import { Link } from 'react-router-dom';
 import { projects } from '../data/ProjectsData';
 import { useScrollToTop } from '../hooks/use-scroll-to-top';
+import { ArrowLeft } from 'lucide-react';
 
 const Portfolio = () => {
   useScrollToTop();
@@ -19,44 +20,48 @@ const Portfolio = () => {
       <Header />
       <main>
 
-        <div className="pd-breadcrumb hero-wrap">
+        {/* Breadcrumb */}
+        <div style={{ width: '100%', maxWidth: 1120, marginInline: 'auto', paddingInline: 'clamp(20px,4vw,48px)', paddingBlock: 'var(--s-5)', paddingTop: 'calc(var(--s-5) + 80px)', borderBottom: '1px solid var(--rule)', display: 'flex', justifyContent: 'space-between', fontFamily: 'var(--ff-display)', fontWeight: 300, fontSize: 11, letterSpacing: '0.20em', textTransform: 'uppercase', color: 'var(--ink-3)' }}>
           <span>Portfolio · All work</span>
-          <span>{projects.length} cases · Service Design</span>
-          <Link to="/">← Home</Link>
+          <Link to="/" style={{ color: 'var(--ink)', borderBottom: '1px solid var(--ink)', paddingBottom: 2 }}>← Home</Link>
         </div>
 
-        <section className="pd-hero">
-          <div className="hero-wrap">
-            <div className="pd-eyebrow">
-              <span>Christian Bussalleu</span>
-              <span className="sep">·</span>
-              <span>Service Design</span>
-              <span className="sep">·</span>
-              <span>{projects.length} cases</span>
-            </div>
-            <div style={{ paddingTop: 'var(--s-6)' }}>
-              <h1 style={{
-                fontFamily: 'var(--ff-display)',
-                fontWeight: 200,
-                fontSize: 'clamp(48px, 7vw, 96px)',
-                lineHeight: 0.92,
-                letterSpacing: '-0.02em',
-                textTransform: 'uppercase',
-                margin: '0 0 var(--s-5)'
-              }}>All Work.</h1>
-              <p className="prose-lede-constrained" style={{
-                fontFamily: 'var(--ff-editorial)',
-                fontSize: 'var(--t-lede)',
-                lineHeight: 1.55,
-                color: 'var(--ink-2)',
-                margin: 0
-              }}>
+        {/* Hero */}
+        <section style={{ borderBottom: '1px solid var(--rule)', paddingBlock: 'var(--s-9) var(--s-8)' }}>
+          <div className="portfolio-hero-grid" style={{ width: '100%', maxWidth: 1120, marginInline: 'auto', paddingInline: 'clamp(20px,4vw,48px)', display: 'grid', gridTemplateColumns: 'minmax(0,1fr) minmax(0,1fr)', gap: 'var(--s-9)', alignItems: 'end' }}>
+            <div>
+              <div style={{ fontFamily: 'var(--ff-display)', fontWeight: 300, fontSize: 12, letterSpacing: '0.24em', textTransform: 'uppercase', color: 'var(--ink-2)', marginBottom: 'var(--s-6)' }}>
+                Christian Bussalleu · Service Design
+              </div>
+              <h1 style={{ fontFamily: 'var(--ff-display)', fontWeight: 200, fontSize: 'clamp(48px,7vw,96px)', lineHeight: 0.92, letterSpacing: '-0.02em', textTransform: 'uppercase', margin: '0 0 var(--s-5)', maxWidth: '14ch' }}>
+                All Work.
+              </h1>
+              <p style={{ fontFamily: 'var(--ff-editorial)', fontSize: 'var(--t-lede)', lineHeight: 1.55, color: 'var(--ink-2)', maxWidth: '48ch', margin: 0 }}>
                 Thirteen cases across FMCG, financial services, technology, and public sector.
-                Service Design from research to implementation, at scale.
+                From research to implementation, at global scale.
               </p>
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 1, background: 'var(--rule)', border: '1px solid var(--rule)', alignSelf: 'end' }}>
+              {[
+                { num: '13', label: 'Cases' },
+                { num: '5', label: 'Sectors' },
+                { num: '17', label: 'Countries' },
+                { num: '15+', label: 'Years' },
+              ].map(({ num, label }) => (
+                <div key={label} style={{ background: 'hsl(var(--pastel-yellow))', padding: 'var(--s-5)' }}>
+                  <div style={{ fontFamily: 'var(--ff-display)', fontWeight: 200, fontSize: 48, lineHeight: 0.9, letterSpacing: '-0.04em', color: 'var(--ink)' }}>{num}</div>
+                  <div style={{ fontFamily: 'var(--ff-display)', fontWeight: 300, fontSize: 10, letterSpacing: '0.20em', textTransform: 'uppercase', color: 'var(--ink-3)', marginTop: 'var(--s-2)' }}>{label}</div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
+
+        <style>{`
+          @media (max-width: 640px) {
+            .portfolio-hero-grid { grid-template-columns: 1fr !important; }
+          }
+        `}</style>
 
         <section className="py-16">
           <div className="container-narrow">

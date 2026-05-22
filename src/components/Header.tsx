@@ -38,9 +38,9 @@ const Header = () => {
   };
 
   return (
-    <header className={`fixed w-full z-30 transition-all duration-300 bg-[hsl(var(--pastel-yellow))] ${
+    <header className={`fixed w-full z-30 transition-all duration-300 bg-[hsl(var(--pastel-yellow))] border-b border-[var(--rule)] ${
       visible ? 'top-0' : '-top-24'
-    } ${scrolled ? 'border-b border-[var(--rule)]' : ''}`}>
+    }`}>
       <div style={{
         width: '100%',
         maxWidth: '1120px',
