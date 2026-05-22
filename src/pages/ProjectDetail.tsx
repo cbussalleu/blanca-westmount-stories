@@ -253,34 +253,37 @@ const ProjectDetail = () => {
               </button>
             </div>
 
-            {/* Stage grid */}
-            <div className="pd-stage-grid">
-              <div className={`pd-stage-col before ${activeStage === 'after' ? 'opacity-40' : ''}`} style={{ transition: 'opacity 300ms' }}>
-                <div className="stage-col-label">Before · Baseline</div>
-                <h4>The situation before the project.</h4>
-                <ul>
-                  {project.complexity?.slice(0, 4).map((item, i) => (
-                    <li key={i}>
-                      <span className="mark">×</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                <div className="stage-footer">Source · research phase baseline</div>
-              </div>
-              <div className={`pd-stage-col after ${activeStage === 'before' ? 'opacity-40' : ''}`} style={{ transition: 'opacity 300ms' }}>
-                <div className="stage-col-label">After · Measured</div>
-                <h4>What the project delivered.</h4>
-                <ul>
-                  {project.impact?.slice(0, 4).map((item, i) => (
-                    <li key={i}>
-                      <span className="mark">+</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                <div className="stage-footer">Source · project reporting model</div>
-              </div>
+            {/* Stage panel */}
+            <div className="pd-stage-panel">
+              {activeStage === 'before' ? (
+                <div className="pd-stage-col before">
+                  <div className="stage-col-label">Before · Baseline</div>
+                  <h4>The situation before the project.</h4>
+                  <ul>
+                    {project.complexity?.slice(0, 5).map((item, i) => (
+                      <li key={i}>
+                        <span className="mark">×</span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="stage-footer">Source · research phase baseline</div>
+                </div>
+              ) : (
+                <div className="pd-stage-col after">
+                  <div className="stage-col-label">After · Measured</div>
+                  <h4>What the project delivered.</h4>
+                  <ul>
+                    {project.impact?.slice(0, 5).map((item, i) => (
+                      <li key={i}>
+                        <span className="mark">+</span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="stage-footer">Source · project reporting model</div>
+                </div>
+              )}
             </div>
 
             {/* Delta tiles — headline figures */}
