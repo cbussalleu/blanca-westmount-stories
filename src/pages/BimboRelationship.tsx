@@ -1,8 +1,6 @@
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
-import BimboCaseStudies from '../components/BimboCaseStudies';
 import { useScrollToTop } from '../hooks/use-scroll-to-top';
 
 const timeline = [
@@ -62,114 +60,127 @@ const BimboRelationship = () => {
   return (
     <div className="min-h-screen bg-[hsl(var(--pastel-yellow))]">
       <Header />
-      <main>
 
-        <div className="pd-breadcrumb hero-wrap">
-          <span>Portfolio · Long-term engagement</span>
-          <span>Grupo Bimbo · 2017–present</span>
-          <Link to="/">← Home</Link>
+      {/* Breadcrumb */}
+      <div style={{ width:'100%', maxWidth:1120, marginInline:'auto', paddingInline:'clamp(20px,4vw,48px)', paddingBlock:'var(--s-5)', paddingTop:'calc(var(--s-5) + 80px)', borderBottom:'1px solid var(--rule)', display:'flex', justifyContent:'space-between', fontFamily:'var(--ff-display)', fontWeight:300, fontSize:11, letterSpacing:'0.20em', textTransform:'uppercase', color:'var(--ink-3)' }}>
+        <span>Portfolio · Long-term engagement</span>
+        <Link to="/" style={{ color:'var(--ink)', borderBottom:'1px solid var(--ink)', paddingBottom:2 }}>← Home</Link>
+      </div>
+
+      {/* Hero */}
+      <section style={{ borderBottom:'1px solid var(--rule)', paddingBlock:'var(--s-9) var(--s-8)' }}>
+        <div style={{ width:'100%', maxWidth:1120, marginInline:'auto', paddingInline:'clamp(20px,4vw,48px)' }}>
+          <div style={{ fontFamily:'var(--ff-display)', fontWeight:300, fontSize:12, letterSpacing:'0.24em', textTransform:'uppercase', color:'var(--ink-2)', marginBottom:'var(--s-6)' }}>
+            Grupo Bimbo · FMCG · 2017–present
+          </div>
+          <div className="pd-hero-row">
+            <div className="pd-num">
+              <span className="big">7</span>
+              <div className="small">
+                <span className="slash">/</span>
+                <span className="total" style={{ fontSize:22 }}>yrs</span>
+                <span className="num-label">engagement</span>
+              </div>
+            </div>
+            <div className="pd-title-block">
+              <h1>Grupo Bimbo &amp; I.</h1>
+              <p className="pd-lede" style={{ maxWidth:'54ch' }}>
+                The world's largest bread manufacturer. Four interconnected projects over seven years — from initial research through global CRM implementation, B2B platform design, and continuous improvement infrastructure.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Meta strip */}
+      <dl className="pd-meta" style={{ width:'100%', maxWidth:1120, marginInline:'auto', paddingInline:'clamp(20px,4vw,48px)' }}>
+        <div><dt>Client</dt><dd>Grupo Bimbo</dd></div>
+        <div><dt>Period</dt><dd>2017 — present</dd></div>
+        <div><dt>Countries</dt><dd>17 · 3 continents</dd></div>
+        <div><dt>Projects</dt><dd>4 interconnected</dd></div>
+        <div><dt>Employees</dt><dd>134,000+</dd></div>
+      </dl>
+
+      {/* Impact tiles */}
+      <section style={{ borderBottom:'1px solid var(--rule)', paddingBlock:'var(--s-8)' }}>
+        <div style={{ width:'100%', maxWidth:1120, marginInline:'auto', paddingInline:'clamp(20px,4vw,48px)' }}>
+          <div className="impact-tiles">
+            {[
+              { stat:'7', unit:'', label:'Years', body:'Continuous collaboration from 2017 to present across four interconnected projects.' },
+              { stat:'17', unit:'', label:'Countries', body:'Standardized model deployed across Latin America, Europe, and Asia.' },
+              { stat:'43', unit:'', label:'Blueprints', body:'Service blueprints designed, versioned, and integrated into the global playbook.' },
+              { stat:'134', unit:'k+', label:'Employees', body:'Workforce operating within the Connection Center model across all markets.' },
+              { stat:'60', unit:'%', label:'Faster resolution', body:'Reduction in complaint handling time measured against the 2018 baseline.' },
+            ].map(({ stat, unit, label, body }) => (
+              <div className="impact-tile" key={label}>
+                <div className="stat"><span className="big">{stat}</span>{unit && <span className="unit">{unit}</span>}</div>
+                <div className="tile-label">{label}</div>
+                <div className="tile-body">{body}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Two-column: Timeline + Projects */}
+      <div className="bimbo-grid" style={{ width:'100%', maxWidth:1120, marginInline:'auto', paddingInline:'clamp(20px,4vw,48px)', paddingBlock:'var(--s-9) var(--s-8)', display:'grid', gridTemplateColumns:'minmax(0,1.2fr) minmax(0,1fr)', gap:'var(--s-9)', borderBottom:'1px solid var(--rule)', alignItems:'start' }}>
+
+        {/* Left — Timeline */}
+        <div>
+          <div style={{ fontFamily:'var(--ff-display)', fontWeight:300, fontSize:10, letterSpacing:'0.22em', textTransform:'uppercase', color:'var(--ink-3)', marginBottom:'var(--s-6)', paddingBottom:'var(--s-3)', borderBottom:'1px solid var(--rule)' }}>
+            How it unfolded
+          </div>
+          <div style={{ display:'flex', flexDirection:'column', gap:0 }}>
+            {timeline.map(({ years, title, description }) => (
+              <div key={years} style={{ display:'grid', gridTemplateColumns:'80px 1fr', gap:'var(--s-5)', paddingBlock:'var(--s-6)', borderBottom:'1px solid var(--rule-2)' }}>
+                <div style={{ fontFamily:'var(--ff-display)', fontWeight:200, fontSize:32, lineHeight:1, letterSpacing:'-0.03em', color:'var(--ink-4)', paddingTop:4 }}>{years.split('–')[0]}</div>
+                <div>
+                  <div style={{ fontFamily:'var(--ff-display)', fontWeight:300, fontSize:10, letterSpacing:'0.20em', textTransform:'uppercase', color:'var(--ink-3)', marginBottom:'var(--s-2)' }}>{years}</div>
+                  <h3 style={{ fontFamily:'var(--ff-editorial)', fontWeight:400, fontSize:17, lineHeight:1.3, letterSpacing:'-0.01em', margin:'0 0 var(--s-3)', maxWidth:'28ch' }}>{title}</h3>
+                  <p style={{ fontFamily:'var(--ff-editorial)', fontSize:13.5, lineHeight:1.65, color:'var(--ink-2)', margin:0, maxWidth:'52ch' }}>{description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
-        <section className="pd-hero">
-          <div className="hero-wrap">
-            <div className="pd-eyebrow">
-              <span>Grupo Bimbo</span>
-              <span className="sep">·</span>
-              <span>FMCG</span>
-              <span className="sep">·</span>
-              <span>7 years · 17 countries</span>
-            </div>
-            <div className="pd-hero-row" style={{ paddingTop: 'var(--s-6)' }}>
-              <div className="pd-num">
-                <span className="big">7</span>
-                <div className="small">
-                  <span className="slash">/</span>
-                  <span className="total" style={{ fontSize: 22 }}>yrs</span>
-                  <span className="num-label">engagement</span>
-                </div>
-              </div>
-              <div className="pd-title-block">
-                <h1>Grupo Bimbo &amp; I.</h1>
-                <p className="pd-lede">
-                  The world's largest bread manufacturer. Four interconnected projects
-                  over seven years — from initial research through global CRM implementation,
-                  B2B platform design, and continuous improvement infrastructure.
-                </p>
-              </div>
-            </div>
+        {/* Right — Project cards */}
+        <div style={{ position:'sticky', top:120 }}>
+          <div style={{ fontFamily:'var(--ff-display)', fontWeight:300, fontSize:10, letterSpacing:'0.22em', textTransform:'uppercase', color:'var(--ink-3)', marginBottom:'var(--s-6)', paddingBottom:'var(--s-3)', borderBottom:'1px solid var(--rule)' }}>
+            The work
           </div>
-        </section>
-
-        <dl className="pd-meta hero-wrap">
-          <div><dt>Client</dt><dd>Grupo Bimbo</dd></div>
-          <div><dt>Period</dt><dd>2017 — present</dd></div>
-          <div><dt>Countries</dt><dd>17 · 3 continents</dd></div>
-          <div><dt>Projects</dt><dd>4 interconnected</dd></div>
-          <div><dt>Employees</dt><dd>134,000+</dd></div>
-        </dl>
-
-        <section className="py-16 pb-24">
-          <div className="container-narrow">
-
-              {/* Intro */}
-              <div className="mb-12 space-y-4">
-                <p className="font-merriweather text-[15px] leading-[1.65] text-gray-700 prose-constrained">
-                  As the world's largest bread manufacturer, present in over 33 countries, operating more than 100 brands, and employing over 134,000 people, Grupo Bimbo required a customer experience transformation at a scale that few organizations ever attempt.
-                </p>
-                <p className="font-merriweather text-[15px] leading-[1.65] text-gray-700 prose-constrained">
-                  Since 2017, I have led the design and implementation of the Connection Center: a new global operational model for customer and consumer engagement. The work spans the complete service design lifecycle, from initial research across 9 markets, through the design of 43 service blueprints, to implementation across 17 countries in Latin America, Europe, and Asia.
-                </p>
-              </div>
-
-              {/* Timeline */}
-              <div className="mb-16">
-                <h2 className="text-xl font-westmount mb-8">How it unfolded</h2>
-                <div className="space-y-8">
-                  {timeline.map(({ years, title, description }) => (
-                    <div key={years} className="flex gap-6">
-                      <div className="flex-shrink-0 w-24 text-right">
-                        <span className="text-xs font-merriweather text-gray-500">{years}</span>
-                      </div>
-                      <div className="border-l border-gray-400 pl-6 pb-2">
-                        <h3 className="text-sm font-westmount mb-2">{title}</h3>
-                        <p className="font-merriweather text-[15px] leading-[1.65] text-gray-700 prose-constrained">{description}</p>
-                      </div>
-                    </div>
-                  ))}
+          <div style={{ display:'flex', flexDirection:'column', gap:0 }}>
+            {projects.map(({ slug, title, description }, i) => (
+              <Link key={slug} to={`/portfolio/${slug}`} style={{ display:'block', paddingBlock:'var(--s-5)', borderBottom:'1px solid var(--rule-2)', textDecoration:'none', transition:'background 200ms' }}
+                onMouseEnter={e => e.currentTarget.style.background = 'hsl(48 60% 92%)'}
+                onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
+              >
+                <div style={{ fontFamily:'var(--ff-display)', fontWeight:200, fontSize:32, lineHeight:1, letterSpacing:'-0.03em', color:'var(--ink-4)', marginBottom:'var(--s-3)' }}>
+                  {String(i+1).padStart(2,'0')}
                 </div>
-              </div>
-
-              {/* Project cards */}
-              <div className="mb-16">
-                <h2 className="text-xl font-westmount mb-8">The work</h2>
-                <div className="space-y-6">
-                  {projects.map(({ slug, title, description }) => (
-                    <div key={slug} className="border-l border-gray-400 pl-4">
-                      <h3 className="text-sm font-westmount mb-2">{title}</h3>
-                      <p className="font-merriweather text-[15px] leading-[1.65] text-gray-700 mb-3">{description}</p>
-                      <Link
-                        to={`/portfolio/${slug}`}
-                        className="inline-flex items-center text-xs hover:opacity-60 transition-opacity"
-                      >
-                        View project <ArrowRight size={12} className="ml-1" />
-                      </Link>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* CTA */}
-              <div className="text-center border-t border-gray-400 pt-12">
-                <p className="font-merriweather text-[15px] leading-[1.65] text-gray-700 mb-4">Want to see the full portfolio?</p>
-                <Link to="/portfolio" className="inline-flex items-center font-westmount font-light text-[11px] tracking-[0.2em] uppercase hover:opacity-60 transition-opacity">
-                  All 10 projects <ArrowRight size={12} className="ml-1" />
-                </Link>
-              </div>
-
+                <h3 style={{ fontFamily:'var(--ff-editorial)', fontWeight:400, fontSize:17, lineHeight:1.3, letterSpacing:'-0.01em', margin:'0 0 var(--s-2)', maxWidth:'28ch' }}>{title}</h3>
+                <p style={{ fontFamily:'var(--ff-editorial)', fontSize:13, lineHeight:1.6, color:'var(--ink-2)', margin:'0 0 var(--s-3)', maxWidth:'44ch' }}>{description}</p>
+                <div style={{ fontFamily:'var(--ff-display)', fontWeight:300, fontSize:10, letterSpacing:'0.20em', textTransform:'uppercase', color:'var(--ink-3)' }}>View case →</div>
+              </Link>
+            ))}
           </div>
-        </section>
-      </main>
+          <div style={{ paddingTop:'var(--s-6)', textAlign:'right' }}>
+            <Link to="/portfolio" style={{ fontFamily:'var(--ff-display)', fontWeight:300, fontSize:10, letterSpacing:'0.20em', textTransform:'uppercase', color:'var(--ink)', borderBottom:'1px solid var(--ink)', paddingBottom:2 }}>
+              All 13 cases →
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      {/* Closing */}
+      <div className="pd-closing" style={{ width:'100%', maxWidth:1120, marginInline:'auto', paddingInline:'clamp(20px,4vw,48px)' }}>
+        <span className="closing-label">End of Grupo Bimbo engagement</span>
+        <div className="closing-meta">Grupo Bimbo · 2017–present · 17 countries<br/><Link to="/portfolio" style={{ color:'var(--ink)', borderBottom:'1px solid var(--ink)', paddingBottom:2 }}>→ All 13 cases</Link></div>
+      </div>
+
       <Footer />
+
+      <style>{`@media (max-width: 768px) { .bimbo-grid { grid-template-columns: 1fr !important; } }`}</style>
     </div>
   );
 };
