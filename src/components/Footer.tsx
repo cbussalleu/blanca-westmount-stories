@@ -91,8 +91,10 @@ const Footer = () => {
             <a
               href="mailto:christian.bussalleu@gmail.com"
               style={{
-                fontFamily: 'var(--ff-editorial)',
-                fontSize: 13,
+                fontFamily: 'var(--ff-display)',
+                fontWeight: 300,
+                fontSize: 11,
+                letterSpacing: '0.12em',
                 color: 'var(--ink)',
                 borderBottom: '1px solid var(--rule)',
                 paddingBottom: 2,
