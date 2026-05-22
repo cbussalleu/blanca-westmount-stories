@@ -107,7 +107,7 @@ const Methodology = () => {
 
           {/* Cases reference */}
           <div style={{ border: '1px solid var(--rule)', padding: 'var(--s-5)' }}>
-            <div style={{ fontFamily: 'var(--ff-display)', fontWeight: 300, fontSize: 10, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--ink-3)', marginBottom: 'var(--s-4)', paddingBottom: 'var(--s-3)', borderBottom: '1px solid var(--rule)' }}>
+            <div style={{ fontFamily: 'var(--ff-display)', fontWeight: 300, fontSize: 10, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--accent)', marginBottom: 'var(--s-4)', paddingBottom: 'var(--s-3)', borderBottom: '1px solid var(--rule)' }}>
               This principle in action
             </div>
             {[

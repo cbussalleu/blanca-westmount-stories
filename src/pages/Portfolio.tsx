@@ -68,11 +68,8 @@ const Portfolio = () => {
                 <button
                   key={filter}
                   onClick={() => setActiveFilter(filter)}
-                  className={`text-xs font-westmount tracking-widest uppercase px-4 py-2 border border-black transition-colors ${
-                    activeFilter === filter
-                      ? "bg-black text-[hsl(var(--pastel-yellow))]"
-                      : "bg-transparent text-black hover:opacity-60"
-                  }`}
+                  className={`text-xs font-westmount tracking-widest uppercase px-4 py-2 border border-black transition-colors ${activeFilter === filter ? "text-black" : "bg-transparent text-black hover:opacity-60"}`}
+                  style={activeFilter === filter ? { background: 'var(--accent)', borderColor: 'var(--accent)' } : {}}
                 >
                   {filter}
                 </button>
@@ -84,7 +81,7 @@ const Portfolio = () => {
               gridTemplateColumns: 'repeat(2, 1fr)',
               gap: 1,
               background: 'var(--rule)',
-              borderTop: '1px solid var(--rule)',
+              borderTop: '2px solid var(--accent)',
               borderBottom: '1px solid var(--rule)',
               marginTop: 'var(--s-6)',
             }}>
