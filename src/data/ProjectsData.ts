@@ -148,6 +148,39 @@ export const projects: Project[] = [
     client: "Grupo Bimbo",
     slug: "continuous-improvement",
     imageSrc: "https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    challenge: "Design and implement a sustainable model for continuous improvement and innovation across the global Connection Center ecosystem, transforming customer feedback into systematic competitive advantage across 17 countries.",
+    complexity: [
+      "Coordinating improvement cycles across markets with different maturity levels",
+      "Building organizational capability for customer-driven innovation from scratch",
+      "Aligning improvement processes with existing R&D and product development cycles",
+      "Sustaining momentum across leadership transitions and organizational changes"
+    ],
+    research: [
+      "Audit of existing improvement methodologies across markets",
+      "Assessment of customer feedback loops and their connection to decision-making",
+      "Benchmarking of continuous improvement frameworks in FMCG sector",
+      "Stakeholder interviews on innovation barriers and enablers"
+    ],
+    insights: [
+      "Customer insights existed but were not systematically flowing into product or process decisions",
+      "Each market had independent improvement initiatives with no shared learning",
+      "Innovation cycles were product-driven rather than customer-insight driven",
+      "Local teams had capacity to identify improvements but lacked framework to escalate them"
+    ],
+    process: [
+      "Designed global continuous improvement governance model",
+      "Created standardized feedback-to-action pipeline connecting customer insights to product teams",
+      "Developed market-level improvement playbooks adaptable to local contexts",
+      "Implemented regular cross-market learning sessions to share improvement outcomes",
+      "Designed innovation scorecard to track improvement velocity and impact"
+    ],
+    impact: [
+      "47 product and process improvements implemented based on customer insights in first two years",
+      "Established shared improvement methodology adopted across 17 countries",
+      "Reduced average time from customer insight to implemented change",
+      "Created first cross-market innovation community within Grupo Bimbo's CX organization"
+    ],
+    tools: ["Miro", "Confluence", "JIRA", "Tableau"],
     icon: "🔄"
   },
   {
