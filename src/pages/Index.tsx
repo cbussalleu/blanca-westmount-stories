@@ -1,55 +1,161 @@
-import { useRef } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import BimboCaseStudies from '../components/BimboCaseStudies';
 import RadarSkillsSection from '../components/RadarSkillsSection';
-import NoSilverBulletsSection from '../components/sections/NoSilverBulletsSection';
-import AboutMeSection from '../components/sections/AboutMeSection';
-import FeaturedProjectsSection from '../components/sections/FeaturedProjectsSection';
-import MyApproachSection from '../components/sections/MyApproachSection';
 import { useScrollToTop } from '../hooks/use-scroll-to-top';
+import { Link } from 'react-router-dom';
+import { projects } from '../data/ProjectsData';
+
+const featuredSlugs = ["connection-center", "digital-sales-transformation", "bartista"];
+const bimboSlugs = ["connection-center", "crm-service-design", "continuous-improvement", "t-conecta"];
 
 const Index = () => {
   useScrollToTop();
-
-  const sectionRefs = {
-    about: useRef(null),
-    skills: useRef(null),
-    bimbo: useRef(null),
-    projects: useRef(null),
-    methodology: useRef(null)
-  };
+  const featuredProjects = projects.filter(p => featuredSlugs.includes(p.slug));
+  const bimboProjects = projects.filter(p => bimboSlugs.includes(p.slug));
 
   return (
     <div className="min-h-screen bg-[hsl(var(--pastel-yellow))]">
       <Header />
       <main className="pt-24">
-        {/* NO SILVER BULLETS Section */}
-        <NoSilverBulletsSection />
 
-        {/* About Me Section */}
-        <AboutMeSection ref={sectionRefs.about} />
-        
-        {/* Skills Radar Section */}
-        <section ref={sectionRefs.skills}>
-          <RadarSkillsSection />
-        </section>
-        
-        {/* Grupo Bimbo Section */}
-        <section className="sec" ref={sectionRefs.bimbo}>
+        {/* ── HERO ── */}
+        <section className="home-hero">
           <div className="container-narrow">
-            <h2 className="display-l text-center gap-heading">
-              GRUPO BIMBO AND I
-            </h2>
-            <BimboCaseStudies />
+            <div className="home-hero-top">
+              <div><span className="dot"></span>Service Design Portfolio</div>
+              <div>Christian Bussalleu · Barcelona</div>
+            </div>
+            <h1>No<br/>Silver<br/>Bullets<em>.</em></h1>
+            <p className="home-lede">
+              Service Designer with 15+ years of experience designing and implementing
+              complex service systems at global scale. I work at the intersection of
+              human-centered research, organizational change, and operational design.
+            </p>
           </div>
         </section>
-        
-        {/* Featured Projects Section */}
-        <FeaturedProjectsSection ref={sectionRefs.projects} />
-        
-        {/* Methodology Section */}
-        <MyApproachSection ref={sectionRefs.methodology} />
+
+        {/* ── META STRIP ── */}
+        <dl className="home-meta container-narrow">
+          <div><dt>Discipline</dt><dd>Service Design · CX Strategy</dd></div>
+          <div><dt>Experience</dt><dd>15+ years · Global scale</dd></div>
+          <div><dt>Sectors</dt><dd>FMCG · Finance · Tech · Public</dd></div>
+          <div><dt>Geography</dt><dd>Latin America · Europe · Asia</dd></div>
+        </dl>
+
+        {/* ── A: CAPABILITIES (Radar) ── */}
+        <section className="home-section">
+          <div className="container-narrow">
+            <div className="home-section-head">
+              <div className="section-letter">A</div>
+              <div>
+                <div className="section-verbose">Section A · Capabilities</div>
+                <h2>What I bring to a project.</h2>
+                <p>A bibliographically grounded self-assessment across five capability dimensions. Click any dimension to see it in action.</p>
+              </div>
+            </div>
+            <RadarSkillsSection />
+          </div>
+        </section>
+
+        {/* ── B: FEATURED WORK ── */}
+        <section className="home-section">
+          <div className="container-narrow">
+            <div className="home-section-head">
+              <div className="section-letter">B</div>
+              <div>
+                <div className="section-verbose">Section B · Selected work</div>
+                <h2>Three cases that define the practice.</h2>
+                <p>Chosen for range — sector, scale, and type of design challenge.</p>
+              </div>
+            </div>
+            <div className="home-featured-grid">
+              {featuredProjects.map((project, i) => (
+                <Link
+                  key={project.slug}
+                  to={`/portfolio/${project.slug}`}
+                  className="home-featured-card"
+                >
+                  <div className="card-num">{String(i + 1).padStart(2, '0')}</div>
+                  <div className="card-eyebrow">{project.client}</div>
+                  <h3>{project.title}</h3>
+                  <p>{project.description}</p>
+                  <div className="card-cta">View case →</div>
+                </Link>
+              ))}
+            </div>
+            <div style={{ paddingTop: 'var(--s-6)', textAlign: 'right' }}>
+              <Link to="/portfolio" className="cta-link cta-link-md">
+                All {projects.length} cases →
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* ── C: GRUPO BIMBO ── */}
+        <section className="home-section">
+          <div className="container-narrow">
+            <div className="home-section-head">
+              <div className="section-letter">C</div>
+              <div>
+                <div className="section-verbose">Section C · Long-term engagement</div>
+                <h2>Seven years designing for Grupo Bimbo.</h2>
+                <p>The world's largest bread manufacturer. 17 countries. Four interconnected projects that built on each other.</p>
+              </div>
+            </div>
+            <div className="home-bimbo-cases">
+              {bimboProjects.map((project, i) => (
+                <Link
+                  key={project.slug}
+                  to={`/portfolio/${project.slug}`}
+                  className="home-bimbo-case"
+                >
+                  <div className="case-num">{String(i + 1).padStart(2, '0')}</div>
+                  <h3>{project.title}</h3>
+                  <p>{project.description}</p>
+                  <div className="case-link">View case →</div>
+                </Link>
+              ))}
+            </div>
+            <div style={{ paddingTop: 'var(--s-6)', textAlign: 'right' }}>
+              <Link to="/bimbo-relationship" className="cta-link cta-link-md">
+                The full Bimbo story →
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* ── D: METHODOLOGY ── */}
+        <section className="home-section">
+          <div className="container-narrow">
+            <div className="home-section-head">
+              <div className="section-letter">D</div>
+              <div>
+                <div className="section-verbose">Section D · How I work</div>
+                <h2>No silver bullets.</h2>
+                <p>A mindset, not a method. Complex service problems don't have single solutions — they have navigation strategies.</p>
+              </div>
+            </div>
+            <p className="home-approach-statement">
+              "Experience cannot be designed — only enabled. Success emerges from
+              navigating complexity through continuous evolution and adaptation,
+              balancing control with emergence while maintaining a deep understanding
+              of system dynamics."
+            </p>
+            <Link to="/methodology" className="cta-link cta-link-md">
+              Read the methodology →
+            </Link>
+          </div>
+        </section>
+
+        {/* ── FOOTER STRIP ── */}
+        <div className="home-footer-strip container-narrow">
+          <span>
+            <span style={{ display: 'inline-block', width: 6, height: 6, background: 'var(--ink)', borderRadius: '50%', marginRight: 8, verticalAlign: 1 }}></span>
+            nosilverbullets.eu
+          </span>
+          <span>Service Design Portfolio · Christian Bussalleu · Barcelona</span>
+        </div>
+
       </main>
       <Footer />
     </div>
