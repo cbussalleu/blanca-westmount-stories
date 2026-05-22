@@ -58,9 +58,12 @@ export const projects: Project[] = [
       "Developed online playbook with version control"
     ],
     impact: [
-      "Established baseline measurements for complaint handling time and response time",
-      "Designed balanced scorecard approach for efficiency and effectiveness",
-      "Created continuous measurement system with feedback loops"
+      "60% reduction in complaint handling time across all 17 markets",
+      "30% reduction in average first-response time — from 24 hours to 9.6 hours",
+      "25% increase in marketing campaign effectiveness through unified multichannel data",
+      "85%+ adoption rates sustained across all markets after rollout — onboarding spikes eliminated by month nine",
+      "47 product and process improvements implemented based on customer insights in first two years",
+      "Model versioned 37 times post-launch — adapted without losing structural coherence"
     ],
     tools: ["Miro", "Optimal Workshop", "Figma", "JIRA", "Salesforce"],
     icon: "🌐"
@@ -80,8 +83,21 @@ export const projects: Project[] = [
       "Multiple user types requiring different interfaces and workflows",
       "Need to balance standardization with local requirements"
     ],
-    research: [],
-    insights: [],
+    research: [
+      "Process audit across 17 markets to understand existing workflows and pain points in each local implementation",
+      "Key stakeholder interviews in each country with leadership, operational teams, and technology partners",
+      "Current journey mapping for supervisors and sales teams across customer service, complaint management, and B2B interactions",
+      "Deep analysis of internal continuous improvement processes and how they connected to CRM data",
+      "Assessment of key information requirements across core processes: complaint management, customer inquiries, social media engagement, critical situations, and alert threshold management",
+      "Extensive interface and protocol testing prior to production rollout"
+    ],
+    insights: [
+      "Base model needed to be adaptable to market-specific organizational structures, local data architecture requirements, and regulatory compliance variations — a single rigid implementation would fail",
+      "Different user types (customer service teams, sales teams, quality teams, management) required fundamentally different interfaces and workflows — not just permission levels",
+      "Change resistance was the primary implementation risk, not technical complexity — a modular training framework and local champions network were more critical than the technology itself",
+      "Governance committee with representatives from each market was essential to prevent the implementation from being overridden by local IT preferences",
+      "The CRM was not the solution — it was the infrastructure for the solution. The service design work that preceded it determined whether the implementation would succeed"
+    ],
     process: [
       "Translated service blueprints into detailed process flows",
       "Designed modular system architecture for market customization",
