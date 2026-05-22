@@ -44,12 +44,11 @@ const Portfolio = () => {
                 textTransform: 'uppercase',
                 margin: '0 0 var(--s-5)'
               }}>All Work.</h1>
-              <p style={{
+              <p className="prose-lede-constrained" style={{
                 fontFamily: 'var(--ff-editorial)',
                 fontSize: 'var(--t-lede)',
                 lineHeight: 1.55,
                 color: 'var(--ink-2)',
-                maxWidth: '54ch',
                 margin: 0
               }}>
                 Thirteen cases across FMCG, financial services, technology, and public sector.

@@ -74,7 +74,7 @@ const ProjectDetail = () => {
             </div>
             <div className="pd-title-block">
               <h1>{project.title}</h1>
-              <p className="pd-lede">{project.description}</p>
+              <p className="pd-lede prose-lede-constrained">{project.description}</p>
             </div>
           </div>
         </div>
@@ -119,7 +119,7 @@ const ProjectDetail = () => {
               <div>
                 <div className="case-verbose">Section A · The brief</div>
                 <h2>The challenge.</h2>
-                <p className="case-lede">{project.challenge}</p>
+                <p className="case-lede prose-lede-constrained">{project.challenge}</p>
               </div>
             </header>
             {project.complexity?.map((item, i) => (
@@ -131,7 +131,7 @@ const ProjectDetail = () => {
                   </div>
                 </div>
                 <div className="item-body">
-                  <p>{item}</p>
+                  <p className="prose-constrained">{item}</p>
                 </div>
               </article>
             ))}
@@ -159,7 +159,7 @@ const ProjectDetail = () => {
                   </div>
                 </div>
                 <div className="item-body">
-                  <p>{item}</p>
+                  <p className="prose-constrained">{item}</p>
                 </div>
               </article>
             ))}
@@ -187,7 +187,7 @@ const ProjectDetail = () => {
                   </div>
                 </div>
                 <div className="item-body">
-                  <p>{item}</p>
+                  <p className="prose-constrained">{item}</p>
                 </div>
               </article>
             ))}
@@ -216,7 +216,7 @@ const ProjectDetail = () => {
                   </div>
                 </div>
                 <div className="item-body">
-                  <p>{item}</p>
+                  <p className="prose-constrained">{item}</p>
                 </div>
               </article>
             ))}

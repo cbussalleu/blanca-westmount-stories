@@ -349,11 +349,15 @@
   /* Container */
   .container-narrow {
     width: 100%;
-    max-width: var(--maxw-narrow);
+    max-width: 1120px;
     margin-inline: auto;
     padding-inline: var(--gutter);
   }
 }
+
+/* ─── Prose constraints ──────────────────────────────────── */
+.prose-constrained { max-width: 60ch; }
+.prose-lede-constrained { max-width: 54ch; }
 
 /* ─── Section rhythm ─────────────────────────────────────── */
 .sec-tight { padding-block: var(--sec-tight-m); }
@@ -838,6 +842,7 @@
   margin-inline: auto;
   padding-inline: var(--gutter);
 }
+/* alias — same grid, keep both names working */
 .home-hero-top {
   display: flex;
   align-items: center;
@@ -867,6 +872,7 @@
   text-transform: uppercase;
   margin: 0 0 var(--s-6);
   text-wrap: balance;
+  max-width: 18ch;
 }
 .home-hero h1 em {
   font-family: 'westmount-outline', serif;

@@ -30,7 +30,7 @@ const Index = () => {
               I am<br/>
               <em>Christian.</em>
             </h1>
-            <p className="home-lede">
+            <p className="home-lede prose-lede-constrained">
               Service Designer working at the intersection of human-centered research,
               organizational change, and operational design. I help complex organizations
               transform how they deliver value — at scale, across markets, without losing
@@ -140,7 +140,7 @@ const Index = () => {
                 <p>A mindset, not a method. Complex service problems don't have single solutions — they have navigation strategies.</p>
               </div>
             </div>
-            <p className="home-approach-statement">
+            <p className="home-approach-statement prose-constrained">
               "Experience cannot be designed — only enabled. Success emerges from
               navigating complexity through continuous evolution and adaptation,
               balancing control with emergence while maintaining a deep understanding

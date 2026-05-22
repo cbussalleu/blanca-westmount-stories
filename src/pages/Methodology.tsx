@@ -60,7 +60,7 @@ const Methodology = () => {
               transition={{ duration: 0.5 }}
               className="mb-16"
             >
-              <p className="font-merriweather text-[15px] leading-[1.65] text-gray-700">
+              <p className="font-merriweather text-[15px] leading-[1.65] text-gray-700 prose-constrained">
                 In 1986, Fred Brooks argued that there is no single development technique that will produce an order-of-magnitude improvement in software productivity. His argument was not about tools; it was about the nature of complexity itself. Some complexity is accidental: it comes from imperfect tools and can be reduced. But some complexity is essential: it lives in the problem itself and cannot be abstracted away. Thirty years later, this distinction matters more than ever in service and experience design.
               </p>
             </motion.div>
@@ -76,7 +76,7 @@ const Methodology = () => {
                 <span className="text-5xl font-westmount text-gray-200 leading-none select-none flex-shrink-0">01</span>
                 <div>
                   <h2 className="text-lg font-westmount mb-3">Complexity is the material, not the obstacle</h2>
-                  <p className="font-merriweather text-[15px] leading-[1.65] text-gray-700">
+                  <p className="font-merriweather text-[15px] leading-[1.65] text-gray-700 prose-constrained">
                     Designing services and experiences means working with human behavior, organizational dynamics, and operational constraints, all at once. This complexity is not a problem to eliminate. It is the material we work with. The role of the designer is not to simplify what is inherently complex, but to make it navigable.
                   </p>
                 </div>
@@ -86,7 +86,7 @@ const Methodology = () => {
                 <span className="text-5xl font-westmount text-gray-200 leading-none select-none flex-shrink-0">02</span>
                 <div>
                   <h2 className="text-lg font-westmount mb-3">Method follows problem, not the other way around</h2>
-                  <p className="font-merriweather text-[15px] leading-[1.65] text-gray-700">
+                  <p className="font-merriweather text-[15px] leading-[1.65] text-gray-700 prose-constrained">
                     There is no fixed process. Each project starts with a question: what does this situation actually require? Sometimes that means deep ethnographic research. Sometimes it means a two-hour stakeholder workshop. The toolkit is large (research, blueprinting, prototyping, facilitation, data analysis) but the choice of what to use, when, and in what combination requires judgment that no methodology can pre-program.
                   </p>
                 </div>
@@ -96,7 +96,7 @@ const Methodology = () => {
                 <span className="text-5xl font-westmount text-gray-200 leading-none select-none flex-shrink-0">03</span>
                 <div>
                   <h2 className="text-lg font-westmount mb-3">Knowledge compounds when it has structure</h2>
-                  <p className="font-merriweather text-[15px] leading-[1.65] text-gray-700">
+                  <p className="font-merriweather text-[15px] leading-[1.65] text-gray-700 prose-constrained">
                     Experience is only an asset if it is retrievable. The most valuable thing a designer builds over time is not a portfolio of solutions: it is a structured understanding of why things work and why they fail. This means investing in knowledge architecture: separating what is stable and reusable from what is contextual and ephemeral, and building systems where each project makes the next one better.
                   </p>
                 </div>
@@ -113,7 +113,7 @@ const Methodology = () => {
               <blockquote className="text-xl font-merriweather italic text-center leading-relaxed mb-8 px-4">
                 "AI does not reduce essential complexity. It amplifies the capacity of those who have already done the work of understanding it."
               </blockquote>
-              <p className="font-merriweather text-[15px] leading-[1.65] text-gray-700">
+              <p className="font-merriweather text-[15px] leading-[1.65] text-gray-700 prose-constrained">
                 The integration of AI into research and design practice has changed what is possible, but not what is hard. Structuring the right question, interpreting ambiguous findings, navigating organizational resistance, deciding when a prototype is good enough: these remain fundamentally human judgments. What AI changes is the infrastructure around those judgments. When knowledge is well-structured, AI can surface it faster, combine it more fluidly, and apply it more consistently. The designer becomes an architect of knowledge systems, not just a practitioner of methods.
               </p>
             </motion.div>
@@ -201,7 +201,7 @@ const Methodology = () => {
 
               <div className="border-t border-gray-200 pt-8">
                 <p className="font-westmount font-light text-[11px] tracking-[0.22em] uppercase text-gray-500 mb-3">A note on approach</p>
-                <p className="font-merriweather text-[15px] leading-[1.65] text-gray-700">
+                <p className="font-merriweather text-[15px] leading-[1.65] text-gray-700 prose-constrained">
                   In all three projects, AI handles what requires semantic reasoning — compressing text, surfacing relevant knowledge, processing language. Everything that requires judgment — what to measure, how to interpret results, what to build — remains human.
                 </p>
               </div>

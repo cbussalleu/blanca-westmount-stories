@@ -113,10 +113,10 @@ const BimboRelationship = () => {
 
               {/* Intro */}
               <div className="mb-12 space-y-4">
-                <p className="font-merriweather text-[15px] leading-[1.65] text-gray-700">
+                <p className="font-merriweather text-[15px] leading-[1.65] text-gray-700 prose-constrained">
                   As the world's largest bread manufacturer, present in over 33 countries, operating more than 100 brands, and employing over 134,000 people, Grupo Bimbo required a customer experience transformation at a scale that few organizations ever attempt.
                 </p>
-                <p className="font-merriweather text-[15px] leading-[1.65] text-gray-700">
+                <p className="font-merriweather text-[15px] leading-[1.65] text-gray-700 prose-constrained">
                   Since 2017, I have led the design and implementation of the Connection Center: a new global operational model for customer and consumer engagement. The work spans the complete service design lifecycle, from initial research across 9 markets, through the design of 43 service blueprints, to implementation across 17 countries in Latin America, Europe, and Asia.
                 </p>
               </div>
@@ -132,7 +132,7 @@ const BimboRelationship = () => {
                       </div>
                       <div className="border-l border-gray-400 pl-6 pb-2">
                         <h3 className="text-sm font-westmount mb-2">{title}</h3>
-                        <p className="font-merriweather text-[15px] leading-[1.65] text-gray-700">{description}</p>
+                        <p className="font-merriweather text-[15px] leading-[1.65] text-gray-700 prose-constrained">{description}</p>
                       </div>
                     </div>
                   ))}
