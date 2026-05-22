@@ -146,6 +146,59 @@ const Index = () => {
               balancing control with emergence while maintaining a deep understanding
               of system dynamics."
             </p>
+            <div style={{ margin: 'var(--s-7) 0', overflowX: 'auto' }}>
+              <svg viewBox="0 0 960 280" xmlns="http://www.w3.org/2000/svg" style={{ width: '100%', maxWidth: 960, height: 'auto', display: 'block' }}>
+                <line x1="0" y1="60" x2="960" y2="60" stroke="var(--rule)" strokeWidth="1"/>
+                <line x1="0" y1="220" x2="960" y2="220" stroke="var(--rule)" strokeWidth="1"/>
+
+                <rect x="20" y="80" width="160" height="120" fill="hsl(48 100% 95%)" stroke="var(--ink)" strokeWidth="1.5"/>
+                <text x="100" y="108" textAnchor="middle" fontFamily="var(--ff-display)" fontWeight="300" fontSize="9" letterSpacing="0.18em" fill="var(--ink-3)">01</text>
+                <text x="100" y="130" textAnchor="middle" fontFamily="var(--ff-editorial)" fontWeight="400" fontSize="13" fill="var(--ink)">Map the</text>
+                <text x="100" y="148" textAnchor="middle" fontFamily="var(--ff-editorial)" fontWeight="400" fontSize="13" fill="var(--ink)">problem</text>
+                <text x="100" y="170" textAnchor="middle" fontFamily="var(--ff-display)" fontWeight="300" fontSize="9" letterSpacing="0.12em" fill="var(--ink-3)">BASE + DOMAIN</text>
+
+                <line x1="180" y1="140" x2="220" y2="140" stroke="var(--ink)" strokeWidth="1.5"/>
+                <polygon points="220,135 232,140 220,145" fill="var(--ink)"/>
+
+                <rect x="232" y="80" width="160" height="120" fill="hsl(48 100% 95%)" stroke="var(--ink)" strokeWidth="1.5"/>
+                <text x="312" y="108" textAnchor="middle" fontFamily="var(--ff-display)" fontWeight="300" fontSize="9" letterSpacing="0.18em" fill="var(--ink-3)">02</text>
+                <text x="312" y="130" textAnchor="middle" fontFamily="var(--ff-editorial)" fontWeight="400" fontSize="13" fill="var(--ink)">Choose</text>
+                <text x="312" y="148" textAnchor="middle" fontFamily="var(--ff-editorial)" fontWeight="400" fontSize="13" fill="var(--ink)">your toolkit</text>
+                <text x="312" y="170" textAnchor="middle" fontFamily="var(--ff-display)" fontWeight="300" fontSize="9" letterSpacing="0.12em" fill="var(--ink-3)">EXPERIENCE FIRST</text>
+
+                <line x1="392" y1="140" x2="432" y2="140" stroke="var(--ink)" strokeWidth="1.5"/>
+                <polygon points="432,135 444,140 432,145" fill="var(--ink)"/>
+
+                <rect x="444" y="80" width="160" height="120" fill="hsl(48 100% 95%)" stroke="var(--ink)" strokeWidth="1.5"/>
+                <text x="524" y="108" textAnchor="middle" fontFamily="var(--ff-display)" fontWeight="300" fontSize="9" letterSpacing="0.18em" fill="var(--ink-3)">03</text>
+                <text x="524" y="130" textAnchor="middle" fontFamily="var(--ff-editorial)" fontWeight="400" fontSize="13" fill="var(--ink)">Experiment</text>
+                <text x="524" y="148" textAnchor="middle" fontFamily="var(--ff-editorial)" fontWeight="400" fontSize="13" fill="var(--ink)">deliberately</text>
+                <text x="524" y="170" textAnchor="middle" fontFamily="var(--ff-display)" fontWeight="300" fontSize="9" letterSpacing="0.12em" fill="var(--ink-3)">ONE NEW TOOL</text>
+
+                <line x1="604" y1="140" x2="644" y2="140" stroke="var(--ink)" strokeWidth="1.5"/>
+                <polygon points="644,135 656,140 644,145" fill="var(--ink)"/>
+
+                <rect x="656" y="80" width="160" height="120" fill="hsl(48 100% 95%)" stroke="var(--ink)" strokeWidth="1.5"/>
+                <text x="736" y="108" textAnchor="middle" fontFamily="var(--ff-display)" fontWeight="300" fontSize="9" letterSpacing="0.18em" fill="var(--ink-3)">04</text>
+                <text x="736" y="130" textAnchor="middle" fontFamily="var(--ff-editorial)" fontWeight="400" fontSize="13" fill="var(--ink)">Fill critical</text>
+                <text x="736" y="148" textAnchor="middle" fontFamily="var(--ff-editorial)" fontWeight="400" fontSize="13" fill="var(--ink)">gaps</text>
+                <text x="736" y="170" textAnchor="middle" fontFamily="var(--ff-display)" fontWeight="300" fontSize="9" letterSpacing="0.12em" fill="var(--ink-3)">EXTERNAL CAPACITY</text>
+
+                <line x1="816" y1="140" x2="856" y2="140" stroke="var(--ink)" strokeWidth="1.5"/>
+                <polygon points="856,135 868,140 856,145" fill="var(--ink)"/>
+
+                <rect x="868" y="80" width="72" height="120" fill="var(--ink)" stroke="var(--ink)" strokeWidth="1.5"/>
+                <text x="904" y="120" textAnchor="middle" fontFamily="var(--ff-display)" fontWeight="300" fontSize="9" letterSpacing="0.14em" fill="hsl(48 100% 95%)">FEED</text>
+                <text x="904" y="138" textAnchor="middle" fontFamily="var(--ff-display)" fontWeight="300" fontSize="9" letterSpacing="0.14em" fill="hsl(48 100% 95%)">BACK</text>
+                <text x="904" y="162" textAnchor="middle" fontFamily="var(--ff-display)" fontWeight="200" fontSize="20" fill="hsl(48 100% 95%)">↺</text>
+
+                <path d="M 904 200 Q 904 250 480 250 Q 56 250 56 200" fill="none" stroke="var(--ink)" strokeWidth="1" strokeDasharray="4 4"/>
+                <polygon points="52,200 56,212 60,200" fill="var(--ink)"/>
+
+                <text x="480" y="270" textAnchor="middle" fontFamily="var(--ff-display)" fontWeight="300" fontSize="9" letterSpacing="0.20em" fill="var(--ink-4)">EACH PROJECT FEEDS THE NEXT · EXPERIENCE COMPOUNDS</text>
+              </svg>
+            </div>
+
             <Link to="/methodology" className="cta-link cta-link-md">
               Read the methodology →
             </Link>

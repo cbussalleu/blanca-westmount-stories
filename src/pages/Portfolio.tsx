@@ -1,11 +1,9 @@
 import { useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import ProjectCard from '../components/ProjectCard';
 import { Link } from 'react-router-dom';
 import { projects } from '../data/ProjectsData';
 import { useScrollToTop } from '../hooks/use-scroll-to-top';
-import { ArrowLeft } from 'lucide-react';
 
 const Portfolio = () => {
   useScrollToTop();
@@ -81,9 +79,43 @@ const Portfolio = () => {
               ))}
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+            <div style={{ borderTop: '1px solid var(--rule)' }}>
               {filteredProjects.map((project) => (
-                <ProjectCard key={project.slug} {...project} />
+                <Link
+                  key={project.slug}
+                  to={`/portfolio/${project.slug}`}
+                  style={{
+                    display: 'block',
+                    padding: 'var(--s-6) var(--s-5)',
+                    borderBottom: '1px solid var(--rule)',
+                    textDecoration: 'none',
+                    color: 'var(--ink)',
+                    transition: 'background 200ms',
+                    background: 'transparent',
+                  }}
+                  onMouseEnter={e => e.currentTarget.style.background = 'hsl(48 60% 92%)'}
+                  onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
+                >
+                  <div style={{ display: 'grid', gridTemplateColumns: '80px 1fr auto', gap: 'var(--s-5)', alignItems: 'start' }}>
+                    <div style={{ fontFamily: 'var(--ff-display)', fontWeight: 200, fontSize: 48, lineHeight: 0.9, letterSpacing: '-0.04em', color: 'var(--ink-4)' }}>
+                      {String(project.number).padStart(2, '0')}
+                    </div>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--s-2)' }}>
+                      <div style={{ fontFamily: 'var(--ff-display)', fontWeight: 300, fontSize: 10, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--ink-3)' }}>
+                        {project.client} {project.category?.length ? `· ${project.category[0]}` : ''}
+                      </div>
+                      <h3 style={{ fontFamily: 'var(--ff-editorial)', fontWeight: 400, fontSize: 20, lineHeight: 1.25, letterSpacing: '-0.01em', margin: 0, maxWidth: '48ch' }}>
+                        {project.title}
+                      </h3>
+                      <p style={{ fontFamily: 'var(--ff-editorial)', fontSize: 13.5, lineHeight: 1.6, color: 'var(--ink-2)', margin: 0, maxWidth: '60ch' }}>
+                        {project.description}
+                      </p>
+                    </div>
+                    <div style={{ fontFamily: 'var(--ff-display)', fontWeight: 300, fontSize: 10, letterSpacing: '0.20em', textTransform: 'uppercase', color: 'var(--ink-3)', paddingTop: 6, whiteSpace: 'nowrap' }}>
+                      View case →
+                    </div>
+                  </div>
+                </Link>
               ))}
             </div>
           </div>

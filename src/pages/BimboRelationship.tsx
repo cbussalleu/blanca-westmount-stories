@@ -68,38 +68,34 @@ const BimboRelationship = () => {
       </div>
 
       {/* Hero */}
-      <section style={{ borderBottom:'1px solid var(--rule)', paddingBlock:'var(--s-9) var(--s-8)' }}>
-        <div style={{ width:'100%', maxWidth:1120, marginInline:'auto', paddingInline:'clamp(20px,4vw,48px)' }}>
-          <div style={{ fontFamily:'var(--ff-display)', fontWeight:300, fontSize:12, letterSpacing:'0.24em', textTransform:'uppercase', color:'var(--ink-2)', marginBottom:'var(--s-6)' }}>
-            Grupo Bimbo · FMCG · 2017–present
+      <section style={{ borderBottom: '1px solid var(--rule)', paddingBlock: 'var(--s-9) var(--s-8)' }}>
+        <div className="bimbo-hero-grid" style={{ width: '100%', maxWidth: 1120, marginInline: 'auto', paddingInline: 'clamp(20px,4vw,48px)', display: 'grid', gridTemplateColumns: 'minmax(0,1fr) minmax(0,1fr)', gap: 'var(--s-9)', alignItems: 'end' }}>
+          <div>
+            <div style={{ fontFamily: 'var(--ff-display)', fontWeight: 300, fontSize: 12, letterSpacing: '0.24em', textTransform: 'uppercase', color: 'var(--ink-2)', marginBottom: 'var(--s-6)' }}>
+              Grupo Bimbo · FMCG · 2017–present
+            </div>
+            <h1 style={{ fontFamily: 'var(--ff-display)', fontWeight: 200, fontSize: 'clamp(48px,7vw,96px)', lineHeight: 0.92, letterSpacing: '-0.02em', textTransform: 'uppercase', margin: '0 0 var(--s-5)', maxWidth: '14ch' }}>
+              Grupo Bimbo &amp; I.
+            </h1>
+            <p style={{ fontFamily: 'var(--ff-editorial)', fontSize: 'var(--t-lede)', lineHeight: 1.55, color: 'var(--ink-2)', maxWidth: '52ch', margin: 0 }}>
+              The world's largest bread manufacturer. Four interconnected projects over seven years — from initial research through global CRM implementation, B2B platform design, and continuous improvement infrastructure.
+            </p>
           </div>
-          <div className="pd-hero-row">
-            <div className="pd-num">
-              <span className="big">7</span>
-              <div className="small">
-                <span className="slash">/</span>
-                <span className="total" style={{ fontSize:22 }}>yrs</span>
-                <span className="num-label">engagement</span>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 1, background: 'var(--rule)', border: '1px solid var(--rule)', alignSelf: 'end' }}>
+            {[
+              { num: '7', label: 'Years' },
+              { num: '17', label: 'Countries' },
+              { num: '43', label: 'Blueprints' },
+              { num: '134k+', label: 'Employees' },
+            ].map(({ num, label }) => (
+              <div key={label} style={{ background: 'hsl(var(--pastel-yellow))', padding: 'var(--s-5)' }}>
+                <div style={{ fontFamily: 'var(--ff-display)', fontWeight: 200, fontSize: 48, lineHeight: 0.9, letterSpacing: '-0.04em', color: 'var(--ink)' }}>{num}</div>
+                <div style={{ fontFamily: 'var(--ff-display)', fontWeight: 300, fontSize: 10, letterSpacing: '0.20em', textTransform: 'uppercase', color: 'var(--ink-3)', marginTop: 'var(--s-2)' }}>{label}</div>
               </div>
-            </div>
-            <div className="pd-title-block">
-              <h1>Grupo Bimbo &amp; I.</h1>
-              <p className="pd-lede" style={{ maxWidth:'54ch' }}>
-                The world's largest bread manufacturer. Four interconnected projects over seven years — from initial research through global CRM implementation, B2B platform design, and continuous improvement infrastructure.
-              </p>
-            </div>
+            ))}
           </div>
         </div>
       </section>
-
-      {/* Meta strip */}
-      <dl className="pd-meta" style={{ width:'100%', maxWidth:1120, marginInline:'auto', paddingInline:'clamp(20px,4vw,48px)' }}>
-        <div><dt>Client</dt><dd>Grupo Bimbo</dd></div>
-        <div><dt>Period</dt><dd>2017 — present</dd></div>
-        <div><dt>Countries</dt><dd>17 · 3 continents</dd></div>
-        <div><dt>Projects</dt><dd>4 interconnected</dd></div>
-        <div><dt>Employees</dt><dd>134,000+</dd></div>
-      </dl>
 
       {/* Impact tiles */}
       <section style={{ borderBottom:'1px solid var(--rule)', paddingBlock:'var(--s-8)' }}>
@@ -180,7 +176,12 @@ const BimboRelationship = () => {
 
       <Footer />
 
-      <style>{`@media (max-width: 768px) { .bimbo-grid { grid-template-columns: 1fr !important; } }`}</style>
+      <style>{`
+        @media (max-width: 768px) {
+          .bimbo-grid { grid-template-columns: 1fr !important; }
+          .bimbo-hero-grid { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
     </div>
   );
 };
