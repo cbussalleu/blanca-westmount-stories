@@ -50,8 +50,7 @@ const Header = () => {
             <Link to="/portfolio"         className="eyebrow text-link">Work</Link>
             <Link to="/bimbo-relationship" className="eyebrow text-link">Bimbo</Link>
             <Link to="/methodology"        className="eyebrow text-link">Methodology</Link>
-            <Link to="/ai"                 className="eyebrow text-link">AI</Link>
-            <Link to="/contact"            className="eyebrow text-link">Contact</Link>
+<Link to="/contact"            className="eyebrow text-link">Contact</Link>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -71,8 +70,7 @@ const Header = () => {
             <Link to="/portfolio"         className="text-2xl font-westmount text-link" onClick={toggleMenu}>Work</Link>
             <Link to="/bimbo-relationship" className="text-2xl font-westmount text-link" onClick={toggleMenu}>Grupo Bimbo</Link>
             <Link to="/methodology"        className="text-2xl font-westmount text-link" onClick={toggleMenu}>Methodology</Link>
-            <Link to="/ai"                 className="text-2xl font-westmount text-link" onClick={toggleMenu}>AI</Link>
-            <Link to="/contact"            className="text-2xl font-westmount text-link" onClick={toggleMenu}>Contact</Link>
+<Link to="/contact"            className="text-2xl font-westmount text-link" onClick={toggleMenu}>Contact</Link>
           </nav>
         </div>
       )}

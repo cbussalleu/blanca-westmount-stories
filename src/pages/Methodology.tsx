@@ -120,11 +120,70 @@ const Methodology = () => {
                 </div>
               </motion.div>
 
-              {/* Section 5 — CTA */}
+              {/* Section 5 — AI as a Design Material */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
+                className="mb-16"
+              >
+                <p className="font-westmount font-light text-[11px] tracking-[0.22em] uppercase text-gray-500 mb-4">AI IN SERVICE DESIGN</p>
+                <h2 className="text-2xl font-westmount font-light leading-tight mb-6">AI as a Design Material</h2>
+                <p className="font-merriweather text-[15px] leading-[1.65] text-gray-700 mb-10">
+                  AI has not changed what is hard about designing services. It has changed what is possible around it. The judgment calls — what to research, how to interpret ambiguous findings, when a design is good enough — remain human. What AI changes is the infrastructure: how knowledge is stored, how it is surfaced, and how fast it can be applied. These three projects show what that looks like in practice.
+                </p>
+
+                <div className="grid md:grid-cols-3 gap-6 mb-10">
+                  <div className="p-6 border border-gray-400">
+                    <p className="font-westmount font-light text-[11px] tracking-[0.22em] uppercase text-gray-500 mb-1">11</p>
+                    <p className="font-westmount font-light text-[11px] tracking-[0.22em] uppercase text-gray-500 mb-3">Findasense · Internal</p>
+                    <h3 className="font-westmount text-base mb-3">Methodological Knowledge Architecture for AI-Augmented Research</h3>
+                    <p className="font-merriweather text-[15px] leading-[1.65] text-gray-700 mb-4">
+                      A two-layer knowledge system that gives AI tools the structured foundation needed to produce consistent, contextually appropriate research outputs.
+                    </p>
+                    <Link to="/portfolio/knowledge-architecture" className="inline-flex items-center text-xs hover:opacity-60 transition-opacity">
+                      See project <ArrowRight size={12} className="ml-1" />
+                    </Link>
+                  </div>
+
+                  <div className="p-6 border border-gray-400">
+                    <p className="font-westmount font-light text-[11px] tracking-[0.22em] uppercase text-gray-500 mb-1">12</p>
+                    <p className="font-westmount font-light text-[11px] tracking-[0.22em] uppercase text-gray-500 mb-3">Findasense · Internal</p>
+                    <h3 className="font-westmount text-base mb-3">Case Manager: Automated Case Study Pipeline</h3>
+                    <p className="font-merriweather text-[15px] leading-[1.65] text-gray-700 mb-4">
+                      A 5-stage pipeline that uses Gemini for semantic processing and automates slide generation, scoring, and prioritization of case studies for commercial use.
+                    </p>
+                    <Link to="/portfolio/case-manager" className="inline-flex items-center text-xs hover:opacity-60 transition-opacity">
+                      See project <ArrowRight size={12} className="ml-1" />
+                    </Link>
+                  </div>
+
+                  <div className="p-6 border border-gray-400">
+                    <p className="font-westmount font-light text-[11px] tracking-[0.22em] uppercase text-gray-500 mb-1">13</p>
+                    <p className="font-westmount font-light text-[11px] tracking-[0.22em] uppercase text-gray-500 mb-3">Findasense · Internal</p>
+                    <h3 className="font-westmount text-base mb-3">Findasense Pulse: AI Adoption Measurement System</h3>
+                    <p className="font-merriweather text-[15px] leading-[1.65] text-gray-700 mb-4">
+                      A Google Chat bot that delivers rotating 3-question surveys to employee samples, producing monthly AI adoption indicators entirely within Google Workspace.
+                    </p>
+                    <Link to="/portfolio/findasense-pulse" className="inline-flex items-center text-xs hover:opacity-60 transition-opacity">
+                      See project <ArrowRight size={12} className="ml-1" />
+                    </Link>
+                  </div>
+                </div>
+
+                <div className="border-t border-gray-200 pt-8">
+                  <p className="font-westmount font-light text-[11px] tracking-[0.22em] uppercase text-gray-500 mb-3">A note on approach</p>
+                  <p className="font-merriweather text-[15px] leading-[1.65] text-gray-700">
+                    In all three projects, AI handles what requires semantic reasoning — compressing text, surfacing relevant knowledge, processing language. Everything that requires judgment — what to measure, how to interpret results, what to build — remains human.
+                  </p>
+                </div>
+              </motion.div>
+
+              {/* Section 6 — CTA */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.5 }}
                 className="text-center"
               >
                 <p className="text-sm font-merriweather mb-4">Curious about the capabilities behind this approach?</p>

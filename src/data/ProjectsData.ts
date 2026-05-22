@@ -484,6 +484,140 @@ export const projects: Project[] = [
       "The process of building the framework was itself a demonstration of the capabilities it measures — research, synthesis, honest self-assessment, and design of a public artifact"
     ],
     tools: ["Web of Science", "Scopus", "Miro", "Figma"]
+  },
+  {
+    number: 11,
+    title: "Methodological Knowledge Architecture for AI-Augmented Research",
+    description: "Designed a two-layer knowledge architecture separating stable methodological knowledge from contextual project knowledge, enabling AI to amplify research quality consistently.",
+    client: "Findasense",
+    slug: "knowledge-architecture",
+    imageSrc: "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    category: ["AI", "Internal", "Research"],
+    icon: "🧠",
+    challenge: "Findasense's research practice generated high-quality methodological knowledge project by project, but that knowledge lived in individual documents, in people's heads, and in presentations that circulated briefly before disappearing. Every project started nearly from scratch. The question was not how to use AI for research, but how to structure knowledge so AI could actually amplify it.",
+    complexity: [
+      "Methodological knowledge was implicit and person-dependent, not documented or retrievable",
+      "No distinction existed between stable reusable knowledge and contextual project-specific knowledge",
+      "AI tools were being used without a knowledge infrastructure, producing inconsistent outputs",
+      "Latin American market contexts were systematically underrepresented in available AI training data"
+    ],
+    research: [
+      "Audit of existing knowledge management practices across Findasense research teams",
+      "Analysis of how methodological knowledge was created, stored, and lost across projects",
+      "Review of knowledge architecture frameworks and semantic retrieval systems",
+      "Assessment of AI bias risks specific to Latin American CX contexts"
+    ],
+    insights: [
+      "Stable methodological knowledge (sampling criteria, ethical frameworks, questionnaire design) and contextual knowledge (industry benchmarks, client data) require completely different storage and versioning strategies",
+      "AI without a knowledge architecture behind it produces consistent mediocrity",
+      "The expert role shifts from knowledge repository to knowledge architect and curator",
+      "Each project should contribute back to the knowledge base, not just consume it"
+    ],
+    process: [
+      "Designed a two-layer architecture: M-layer (methodology notebooks) for stable reusable knowledge and T-layer (thematic notebooks) for contextual project knowledge",
+      "Defined naming conventions and versioning protocols for each layer",
+      "Established circular flow where each project contributes aprendizajes back to the relevant notebook",
+      "Documented AI bias risks specific to Latin American markets and built mitigation criteria into M-layer notebooks",
+      "Piloted architecture on active research projects to validate retrieval and combination logic"
+    ],
+    impact: [
+      "Research projects started with validated methodological foundation instead of from scratch",
+      "Knowledge quality improves with each project that uses and contributes to the system",
+      "AI outputs became more consistent and contextually appropriate for Latin American markets",
+      "Expert time shifted from reconstructing methodology to interpreting results and making decisions"
+    ],
+    tools: ["NotebookLM", "Google Drive", "Miro"]
+  },
+  {
+    number: 12,
+    title: "Case Manager: Automated Case Study Pipeline",
+    description: "Designed and built a 5-stage pipeline that transforms project documentation into commercial assets, using AI for semantic processing and automating slide generation and directorial scoring.",
+    client: "Findasense",
+    slug: "case-manager",
+    imageSrc: "https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    category: ["AI", "Internal"],
+    icon: "⚙️",
+    challenge: "Findasense produced high-impact work for clients across Latin America and Spain, but had no systematic way to capture, evaluate, or prioritize it for commercial use. Cases were lost to poor documentation, production investment had no strategic criteria, and pitch decks relied on outdated or incomplete materials.",
+    complexity: [
+      "Case documentation was entirely manual, inconsistent, and dependent on individual initiative",
+      "No criteria existed for prioritizing which cases deserved investment in production",
+      "Multiple user types (practice leads, directors) needed different interfaces and permissions",
+      "System had to work entirely within Google Workspace with no new tools or infrastructure"
+    ],
+    research: [
+      "Audit of existing case documentation practices and failure points",
+      "Interviews with practice leads on documentation friction and commercial use of cases",
+      "Analysis of what made a case commercially valuable versus internally interesting",
+      "Review of pipeline and scoring frameworks used in similar consulting contexts"
+    ],
+    insights: [
+      "Cases were lost not because the work was poor but because documentation had no systematic home",
+      "Production investment decisions were intuitive and inconsistent, creating internal friction",
+      "AI should handle semantic processing only — text compression, translation, style correction — while all data logic remains deterministic",
+      "Conflict of interest rules in voting systems are critical for organizational trust"
+    ],
+    process: [
+      "Designed 5-stage pipeline: structured registration, AI enrichment, automated one-slider generation, directorial scoring and voting, production prioritization",
+      "Built registration wizard with dynamic completeness indicator across 4 steps",
+      "Integrated Gemini 1.5 Flash for semantic processing only — one API call per case for text compression, translation, and style correction within strict character limits",
+      "Automated Google Slides generation from master template with placeholder replacement",
+      "Designed dual output: internal version (client named) and external version (anonymized for pitches)",
+      "Built scoring system across 4 strategic axes with automatic threshold triggering directorial vote",
+      "Implemented conflict-of-interest rules: practice leads cannot vote their own cases",
+      "Redesigned interface to sidebar navigation shell in second iteration without touching backend logic"
+    ],
+    impact: [
+      "System deployed within Google Workspace with no new tools required",
+      "Pipeline from case registration to automated slide generation fully operational",
+      "Scoring and voting module active with conflict-of-interest controls",
+      "System architecture reused as base for subsequent internal tools"
+    ],
+    tools: ["Google Apps Script", "Gemini API", "Google Slides API", "Google Sheets", "Google Drive"]
+  },
+  {
+    number: 13,
+    title: "Findasense Pulse: AI Adoption Measurement System",
+    description: "Designed and built a Google Chat bot that delivers periodic 3-question surveys to rotating employee samples, producing monthly indicators of AI adoption without adding new tools to the stack.",
+    client: "Findasense",
+    slug: "findasense-pulse",
+    imageSrc: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    category: ["AI", "Internal"],
+    icon: "📡",
+    challenge: "After deploying Gemini Pro to 100% of the company through Google Workspace licenses, Findasense had no way to measure whether people were actually using it, what was blocking them, or whether they perceived real value. Usage data from Google Workspace answered what — not why or how it felt.",
+    complexity: [
+      "No new tools could be introduced outside the existing Google Workspace stack",
+      "Survey completion had to take under 2 minutes with zero friction for the employee",
+      "Authentication architecture of Google Chat Add-ons had a critical structural limitation requiring a non-obvious workaround",
+      "Employee directory needed automatic sync without manual intervention"
+    ],
+    research: [
+      "Analysis of existing employee feedback mechanisms and their limitations for AI adoption measurement",
+      "Review of organizational measurement frameworks for technology adoption",
+      "Assessment of Google Workspace technical constraints and Chat API capabilities",
+      "Design of sampling methodology balancing representativeness with operational feasibility"
+    ],
+    insights: [
+      "Google Chat Add-on events execute as the triggering user, not the script owner — getActiveSpreadsheet() returns null in scheduled triggers, requiring openById() throughout",
+      "A single registration entry point dependent on a specific API event is fragile — onMessage fallback is essential",
+      "Quota sampling by practice and seniority produces representativeness without requiring probabilistic statistical significance",
+      "Being transparent about methodological limits is sufficient for internal validity — not every measurement needs academic rigor"
+    ],
+    process: [
+      "Designed quota sampling methodology: 40 people per monthly pulse, stratified by practice and seniority, covering full organization over 5 rotation cycles",
+      "Designed question bank: 1 fixed indicator question per pulse plus 2 rotating from a bank of 4, giving each rotating question a sample of approximately 20 respondents per month",
+      "Built Google Chat bot on Apps Script delivering surveys directly in chat interface",
+      "Solved critical authentication issue by replacing getActiveSpreadsheet() with openById() throughout and configuring service account permissions",
+      "Implemented onMessage fallback for employee registration, eliminating dependency on unreliable onAddedToSpace event",
+      "Built daily trigger with mutex logic to detect and process new HR directory CSV without double-processing",
+      "Designed multi-survey architecture with activation flags in Config.gs enabling future pulse types without new infrastructure"
+    ],
+    impact: [
+      "Bot deployed and operational in Findasense Google Workspace",
+      "First AI adoption pulse configured and running with validated authentication fix",
+      "Architecture reused as base for a second internal project (Biblioteca Creativa de Prompts)",
+      "System scalable to additional pulse types (engagement, climate) without new tools or infrastructure"
+    ],
+    tools: ["Google Apps Script", "Google Chat API", "Google Sheets", "Apps Script Triggers"]
   }
 ];
 

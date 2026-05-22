@@ -30,6 +30,9 @@ const ProjectDetail = () => {
     'meta-sales-optimization',
     'loyalty-program-redesign',
     'self-assessment-framework',
+    'knowledge-architecture',
+    'case-manager',
+    'findasense-pulse',
   ];
 
   const currentIndex = projectSlugs.indexOf(slug || '');
