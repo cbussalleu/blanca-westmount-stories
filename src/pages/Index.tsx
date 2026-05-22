@@ -50,13 +50,16 @@ const Index = () => {
         {/* ── A: CAPABILITIES (Radar) ── */}
         <section className="home-section">
           <div className="container-narrow">
-            <div className="home-section-head">
-              <div className="section-letter">A</div>
-              <div>
-                <div className="section-verbose">Section A · Capabilities</div>
-                <h2>What I bring to a project.</h2>
-                <p>A bibliographically grounded self-assessment across five capability dimensions. Click any dimension to see it in action.</p>
+            <div style={{ marginBottom: 'var(--s-8)' }}>
+              <div style={{ fontFamily: 'var(--ff-display)', fontWeight: 300, fontSize: 10, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--ink-3)', marginBottom: 'var(--s-4)' }}>
+                Capabilities
               </div>
+              <h2 style={{ fontFamily: 'var(--ff-editorial)', fontWeight: 400, fontSize: 'clamp(28px, 3.5vw, 48px)', lineHeight: 1.1, letterSpacing: '-0.02em', margin: '0 0 var(--s-3)', maxWidth: '24ch', textWrap: 'balance' }}>
+                What I bring to a project.
+              </h2>
+              <p style={{ fontFamily: 'var(--ff-editorial)', fontSize: 'var(--t-lede)', color: 'var(--ink-2)', lineHeight: 1.55, maxWidth: '54ch', margin: 0 }}>
+                A bibliographically grounded self-assessment across five capability dimensions. Click any dimension to see it in action.
+              </p>
             </div>
             <RadarSkillsSection />
           </div>
@@ -65,13 +68,16 @@ const Index = () => {
         {/* ── B: FEATURED WORK ── */}
         <section className="home-section">
           <div className="container-narrow">
-            <div className="home-section-head">
-              <div className="section-letter">B</div>
-              <div>
-                <div className="section-verbose">Section B · Selected work</div>
-                <h2>Three cases that define the practice.</h2>
-                <p>Chosen for range: sector, scale, and type of design challenge.</p>
+            <div style={{ marginBottom: 'var(--s-8)' }}>
+              <div style={{ fontFamily: 'var(--ff-display)', fontWeight: 300, fontSize: 10, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--ink-3)', marginBottom: 'var(--s-4)' }}>
+                Selected work
               </div>
+              <h2 style={{ fontFamily: 'var(--ff-editorial)', fontWeight: 400, fontSize: 'clamp(28px, 3.5vw, 48px)', lineHeight: 1.1, letterSpacing: '-0.02em', margin: '0 0 var(--s-3)', maxWidth: '24ch', textWrap: 'balance' }}>
+                Three cases that define the practice.
+              </h2>
+              <p style={{ fontFamily: 'var(--ff-editorial)', fontSize: 'var(--t-lede)', color: 'var(--ink-2)', lineHeight: 1.55, maxWidth: '54ch', margin: 0 }}>
+                Chosen for range: sector, scale, and type of design challenge.
+              </p>
             </div>
             <div className="home-featured-grid">
               {featuredProjects.map((project, i) => (
@@ -99,13 +105,16 @@ const Index = () => {
         {/* ── C: GRUPO BIMBO ── */}
         <section className="home-section">
           <div className="container-narrow">
-            <div className="home-section-head">
-              <div className="section-letter">C</div>
-              <div>
-                <div className="section-verbose">Section C · Long-term engagement</div>
-                <h2>Seven years designing for Grupo Bimbo.</h2>
-                <p>The world's largest bread manufacturer. 17 countries. Four interconnected projects that built on each other.</p>
+            <div style={{ marginBottom: 'var(--s-8)' }}>
+              <div style={{ fontFamily: 'var(--ff-display)', fontWeight: 300, fontSize: 10, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--ink-3)', marginBottom: 'var(--s-4)' }}>
+                Long-term engagement
               </div>
+              <h2 style={{ fontFamily: 'var(--ff-editorial)', fontWeight: 400, fontSize: 'clamp(28px, 3.5vw, 48px)', lineHeight: 1.1, letterSpacing: '-0.02em', margin: '0 0 var(--s-3)', maxWidth: '24ch', textWrap: 'balance' }}>
+                Seven years designing for Grupo Bimbo.
+              </h2>
+              <p style={{ fontFamily: 'var(--ff-editorial)', fontSize: 'var(--t-lede)', color: 'var(--ink-2)', lineHeight: 1.55, maxWidth: '54ch', margin: 0 }}>
+                The world's largest bread manufacturer. 17 countries. Four interconnected projects that built on each other.
+              </p>
             </div>
             <div className="home-bimbo-cases">
               {bimboProjects.map((project, i) => (
@@ -132,13 +141,16 @@ const Index = () => {
         {/* ── D: METHODOLOGY ── */}
         <section className="home-section">
           <div className="container-narrow">
-            <div className="home-section-head">
-              <div className="section-letter">D</div>
-              <div>
-                <div className="section-verbose">Section D · How I work</div>
-                <h2>No silver bullets.</h2>
-                <p>A mindset, not a method. Complex service problems don't have single solutions: they have navigation strategies.</p>
+            <div style={{ marginBottom: 'var(--s-8)' }}>
+              <div style={{ fontFamily: 'var(--ff-display)', fontWeight: 300, fontSize: 10, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--ink-3)', marginBottom: 'var(--s-4)' }}>
+                How I work
               </div>
+              <h2 style={{ fontFamily: 'var(--ff-editorial)', fontWeight: 400, fontSize: 'clamp(28px, 3.5vw, 48px)', lineHeight: 1.1, letterSpacing: '-0.02em', margin: '0 0 var(--s-3)', maxWidth: '24ch', textWrap: 'balance' }}>
+                No silver bullets.
+              </h2>
+              <p style={{ fontFamily: 'var(--ff-editorial)', fontSize: 'var(--t-lede)', color: 'var(--ink-2)', lineHeight: 1.55, maxWidth: '54ch', margin: 0 }}>
+                A mindset, not a method. Complex service problems don't have single solutions: they have navigation strategies.
+              </p>
             </div>
             <p className="home-approach-statement prose-constrained">
               "Experience cannot be designed: only enabled. Success emerges from
