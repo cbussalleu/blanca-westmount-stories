@@ -1,9 +1,9 @@
 
 const NoSilverBulletsSection = () => {
   return (
-    <section className="py-4 sm:py-8">
+    <section className="sec-tight">
       <div className="container-narrow text-center">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-['westmount-outline'] tracking-widest">
+        <h1 className="display-xl text-center" style={{ letterSpacing: '0.14em' }}>
           NO SILVER BULLETS
         </h1>
       </div>

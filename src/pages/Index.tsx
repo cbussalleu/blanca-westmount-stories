@@ -36,9 +36,9 @@ const Index = () => {
         </section>
         
         {/* Grupo Bimbo Section */}
-        <section className="py-8 sm:py-16" ref={sectionRefs.bimbo}>
+        <section className="sec" ref={sectionRefs.bimbo}>
           <div className="container-narrow">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-westmount mb-8 sm:mb-16 text-center">
+            <h2 className="display-l text-center gap-heading">
               GRUPO BIMBO AND I
             </h2>
             <BimboCaseStudies />

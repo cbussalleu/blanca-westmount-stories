@@ -34,7 +34,7 @@ const FeaturedProjectsSection = forwardRef<HTMLElement, FeaturedProjectsSectionP
     const featuredProjects = projects.filter(project => featuredSlugs.includes(project.slug));
 
     return (
-      <section className={`py-8 sm:py-16 ${className || ''}`} ref={ref}>
+      <section className={`sec ${className || ''}`} ref={ref}>
         <div className="container-narrow">
           <motion.div 
             className="text-center mb-8 sm:mb-16"
@@ -43,7 +43,7 @@ const FeaturedProjectsSection = forwardRef<HTMLElement, FeaturedProjectsSectionP
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-westmount">FEATURED PROJECTS</h2>
+            <h2 className="display-l text-center gap-heading">FEATURED PROJECTS</h2>
           </motion.div>
           
           <motion.div 
@@ -67,15 +67,8 @@ const FeaturedProjectsSection = forwardRef<HTMLElement, FeaturedProjectsSectionP
             viewport={{ once: true, amount: 0.8 }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <Link 
-              to="/portfolio" 
-              className="inline-flex items-center text-sm border-b border-black pb-1 hover:opacity-60 transition-opacity font-merriweather group"
-            >
-              View All Projects 
-              <ArrowRight 
-                size={14} 
-                className="ml-1 group-hover:translate-x-1 transition-transform duration-200" 
-              />
+            <Link to="/portfolio" className="cta-link cta-link-md">
+              View All Projects <ArrowRight size={14} />
             </Link>
           </motion.div>
         </div>

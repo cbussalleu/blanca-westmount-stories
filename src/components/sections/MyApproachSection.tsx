@@ -41,7 +41,7 @@ const MyApproachSection = forwardRef<HTMLElement, MyApproachSectionProps>(
     const rightListX = rightCircle.cx - 30;
 
     return (
-      <section className={`py-8 sm:py-16 ${className || ''}`} ref={ref}>
+      <section className={`sec ${className || ''}`} ref={ref}>
         <div className="container-narrow">
           <motion.div
             className="text-center mb-8 sm:mb-12"
@@ -50,10 +50,10 @@ const MyApproachSection = forwardRef<HTMLElement, MyApproachSectionProps>(
             variants={fadeInUp}
             custom={0}
           >
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-westmount tracking-tight">
+            <h2 className="display-l text-center gap-heading-tight">
               MY APPROACH
             </h2>
-            <p className="text-lg md:text-xl max-w-3xl mx-auto mt-4 sm:mt-8 font-merriweather text-gray-700 leading-[1.65]">
+            <p className="prose-lede mx-auto">
               If you're serious about being human-centered, you better be{' '}
               <span className="text-[#8ab1a2] font-semibold">systems-centered</span>{' '}
               too. Break it down. Rebuild it better.
@@ -220,15 +220,8 @@ const MyApproachSection = forwardRef<HTMLElement, MyApproachSectionProps>(
             variants={fadeInUp}
             custom={20}
           >
-            <Link
-              to="/methodology"
-              className="inline-flex items-center text-sm border-b border-black pb-1 hover:opacity-60 transition-opacity font-merriweather group"
-            >
-              The thinking behind
-              <ArrowRight
-                size={14}
-                className="ml-1 group-hover:translate-x-1 transition-transform duration-200"
-              />
+            <Link to="/methodology" className="cta-link cta-link-md">
+              The thinking behind <ArrowRight size={14} />
             </Link>
           </motion.div>
         </div>

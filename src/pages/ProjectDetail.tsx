@@ -2,6 +2,7 @@ import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, CheckCircle } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { OptimizedImage } from '../components/OptimizedImage';
 import { getProjectBySlug } from '../data/ProjectsData';
 import { useScrollToTop } from '../hooks/use-scroll-to-top';
 
@@ -40,63 +41,76 @@ const ProjectDetail = () => {
     <div className="min-h-screen bg-[hsl(var(--pastel-yellow))]">
       <Header />
       <main className="pt-20">
+
         {/* Hero Section */}
-        <div className="bg-[hsl(var(--pastel-yellow))] py-16">
+        <div className="bg-[hsl(var(--pastel-yellow))] sec">
           <div className="container-narrow">
-            <div className="flex items-end gap-6 mb-8">
-              <span className="font-westmount font-extralight text-[clamp(80px,10vw,128px)] leading-none tracking-[-0.04em] text-gray-300 select-none">
-                {String(project.number).padStart(2,'0')}
-              </span>
-              <div className="flex flex-wrap gap-2 pb-2">
-                {project.category?.map(cat => (
-                  <span key={cat} className="text-[10px] font-westmount font-light tracking-[0.2em] uppercase border border-black px-2 py-1">
-                    {cat}
-                  </span>
-                ))}
+            <div className="grid md:grid-cols-[120px_1fr] gap-6 md:gap-10 items-end">
+              {/* Project number — typographic anchor */}
+              <div className="display-xl text-ink leading-none flex items-baseline">
+                <span>{String(currentIndex + 1).padStart(2, '0')}</span>
+                <span className="text-ink-4 text-3xl md:text-4xl px-1 font-light">/</span>
+                <span className="text-ink-3 text-3xl md:text-4xl font-light">{String(projectSlugs.length).padStart(2, '0')}</span>
               </div>
-            </div>
-            <div className="text-center max-w-4xl mx-auto">
-              <div className="mb-4 font-westmount font-light text-[11px] tracking-[0.22em] uppercase text-gray-500">{project.client}</div>
-              <h1 className="font-westmount font-light text-4xl md:text-5xl leading-[0.92] tracking-[-0.02em] mb-4">{project.title}</h1>
-              <p className="font-merriweather text-[15px] leading-[1.65] text-gray-700 max-w-2xl mx-auto">
-                {project.description}
-              </p>
+
+              {/* Title block */}
+              <div>
+                <div className="eyebrow mb-3">{project.client}</div>
+                <h1 className="display-l mb-3">{project.title}</h1>
+                <p className="prose-lede">{project.description}</p>
+
+                {project.category && project.category.length > 0 && (
+                  <div className="flex flex-wrap gap-2 mt-5">
+                    {project.category.map((c: string) => (
+                      <span key={c} className="tag-chip">{c}</span>
+                    ))}
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </div>
 
+        {/* Full-bleed project image */}
+        {project.imageSrc && (
+          <div className="image-with-overlay">
+            <div className="container-narrow">
+              <div className="w-full" style={{ aspectRatio: '16/7' }}>
+                <OptimizedImage src={project.imageSrc} alt={project.title} className="w-full h-full" />
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* Back Link */}
         <div className="container-narrow py-8">
-          <Link to="/portfolio" className="inline-flex items-center font-merriweather text-xs hover:opacity-60 transition-opacity">
-            <ArrowLeft size={16} className="mr-1" /> Back to Portfolio
+          <Link to="/portfolio" className="cta-link cta-link-sm">
+            <ArrowLeft size={14} /> Back to Portfolio
           </Link>
         </div>
 
         {/* Project Content */}
         <div className="container-narrow py-8">
           <div className="max-w-3xl mx-auto">
+
             <div className="mb-12">
-              <h2 className="font-westmount text-2xl mb-4">Project Overview</h2>
-              <p className="font-merriweather text-[15px] leading-[1.65] text-gray-700">
-                {project.description}
-              </p>
+              <h2 className="display-m gap-heading-tight">Project Overview</h2>
+              <p className="prose">{project.description}</p>
             </div>
 
             {project.challenge && (
               <div className="mb-12">
-                <h2 className="font-westmount text-2xl mb-4">Challenge & Context</h2>
-                <p className="font-merriweather text-[15px] leading-[1.65] text-gray-700 mb-6">
-                  {project.challenge}
-                </p>
+                <h2 className="display-m gap-heading-tight">Challenge &amp; Context</h2>
+                <p className="prose mb-6">{project.challenge}</p>
 
                 {project.complexity && project.complexity.length > 0 && (
                   <div>
-                    <h3 className="font-westmount text-lg mb-3">Complexity Factors</h3>
+                    <h3 className="heading-m mb-3">Complexity Factors</h3>
                     <ul className="space-y-2">
                       {project.complexity.map((item: string, index: number) => (
                         <li key={index} className="flex items-start">
-                          <CheckCircle size={18} className="mr-2 flex-shrink-0 mt-1 text-gray-700" />
-                          <span className="font-merriweather text-[15px] leading-[1.65] text-gray-700">{item}</span>
+                          <CheckCircle size={18} className="mr-2 flex-shrink-0 mt-1" style={{ color: 'var(--ink-3)' }} />
+                          <span className="prose">{item}</span>
                         </li>
                       ))}
                     </ul>
@@ -107,12 +121,12 @@ const ProjectDetail = () => {
 
             {project.research && project.research.length > 0 && (
               <div className="mb-12">
-                <h2 className="font-westmount text-2xl mb-4">Research Approach</h2>
+                <h2 className="display-m gap-heading-tight">Research Approach</h2>
                 <ul className="space-y-2">
                   {project.research.map((item: string, index: number) => (
                     <li key={index} className="flex items-start">
-                      <CheckCircle size={18} className="mr-2 flex-shrink-0 mt-1 text-gray-700" />
-                      <span className="font-merriweather text-[15px] leading-[1.65] text-gray-700">{item}</span>
+                      <CheckCircle size={18} className="mr-2 flex-shrink-0 mt-1" style={{ color: 'var(--ink-3)' }} />
+                      <span className="prose">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -121,12 +135,12 @@ const ProjectDetail = () => {
 
             {project.insights && project.insights.length > 0 && (
               <div className="mb-12">
-                <h2 className="font-westmount text-2xl mb-4">Key Insights</h2>
+                <h2 className="display-m gap-heading-tight">Key Insights</h2>
                 <ul className="space-y-2">
                   {project.insights.map((item: string, index: number) => (
                     <li key={index} className="flex items-start">
-                      <CheckCircle size={18} className="mr-2 flex-shrink-0 mt-1 text-gray-700" />
-                      <span className="font-merriweather text-[15px] leading-[1.65] text-gray-700">{item}</span>
+                      <CheckCircle size={18} className="mr-2 flex-shrink-0 mt-1" style={{ color: 'var(--ink-3)' }} />
+                      <span className="prose">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -135,12 +149,12 @@ const ProjectDetail = () => {
 
             {project.process && project.process.length > 0 && (
               <div className="mb-12">
-                <h2 className="font-westmount text-2xl mb-4">Service Design Process</h2>
+                <h2 className="display-m gap-heading-tight">Service Design Process</h2>
                 <ul className="space-y-2">
                   {project.process.map((item: string, index: number) => (
                     <li key={index} className="flex items-start">
-                      <CheckCircle size={18} className="mr-2 flex-shrink-0 mt-1 text-gray-700" />
-                      <span className="font-merriweather text-[15px] leading-[1.65] text-gray-700">{item}</span>
+                      <CheckCircle size={18} className="mr-2 flex-shrink-0 mt-1" style={{ color: 'var(--ink-3)' }} />
+                      <span className="prose">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -149,12 +163,12 @@ const ProjectDetail = () => {
 
             {project.impact && project.impact.length > 0 && (
               <div className="mb-12">
-                <h2 className="font-westmount text-2xl mb-4">Impact & Results</h2>
+                <h2 className="display-m gap-heading-tight">Impact &amp; Results</h2>
                 <ul className="space-y-2">
                   {project.impact.map((item: string, index: number) => (
                     <li key={index} className="flex items-start">
-                      <CheckCircle size={18} className="mr-2 flex-shrink-0 mt-1 text-gray-700" />
-                      <span className="font-merriweather text-[15px] leading-[1.65] text-gray-700">{item}</span>
+                      <CheckCircle size={18} className="mr-2 flex-shrink-0 mt-1" style={{ color: 'var(--ink-3)' }} />
+                      <span className="prose">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -163,12 +177,10 @@ const ProjectDetail = () => {
 
             {project.tools && project.tools.length > 0 && (
               <div className="mb-12">
-                <h2 className="font-westmount text-2xl mb-4">Tools Used</h2>
+                <h2 className="display-m gap-heading-tight">Tools Used</h2>
                 <div className="flex flex-wrap gap-2">
                   {project.tools.map((tool: string, index: number) => (
-                    <span key={index} className="border border-gray-400 px-3 py-1 text-[11px] font-merriweather">
-                      {tool}
-                    </span>
+                    <span key={index} className="tag-chip">{tool}</span>
                   ))}
                 </div>
               </div>
@@ -176,13 +188,10 @@ const ProjectDetail = () => {
 
             {/* Contact CTA */}
             <div className="mt-16 py-12 border-t border-black text-center">
-              <p className="font-merriweather text-[15px] leading-[1.65] text-gray-700 mb-6 max-w-md mx-auto">
+              <p className="prose mb-6 mx-auto">
                 Interested in working together or want to know more about this project?
               </p>
-              <Link
-                to="/contact"
-                className="inline-block border border-black px-8 py-3 text-[11px] font-westmount font-light tracking-[0.2em] uppercase hover:bg-black hover:text-[hsl(var(--pastel-yellow))] transition-colors"
-              >
+              <Link to="/contact" className="tag-chip px-8 py-3">
                 Get in Touch
               </Link>
             </div>
@@ -193,23 +202,20 @@ const ProjectDetail = () => {
                 {prevSlug && (
                   <Link
                     to={`/portfolio/${prevSlug}`}
-                    className="inline-flex items-center gap-2 font-westmount font-light text-[11px] tracking-[0.2em] uppercase hover:opacity-60 transition-opacity"
+                    className="eyebrow text-link inline-flex items-center gap-2"
                   >
                     <ArrowLeft size={14} /> Previous Project
                   </Link>
                 )}
               </div>
-              <Link
-                to="/portfolio"
-                className="font-westmount font-light text-[11px] tracking-[0.2em] uppercase hover:opacity-60 transition-opacity"
-              >
+              <Link to="/portfolio" className="eyebrow text-link">
                 All Work
               </Link>
               <div>
                 {nextSlug && (
                   <Link
                     to={`/portfolio/${nextSlug}`}
-                    className="inline-flex items-center gap-2 font-westmount font-light text-[11px] tracking-[0.2em] uppercase hover:opacity-60 transition-opacity"
+                    className="eyebrow text-link inline-flex items-center gap-2"
                   >
                     Next Project <ArrowRight size={14} />
                   </Link>

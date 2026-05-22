@@ -133,20 +133,20 @@ const RadarSkillsSection = () => {
   };
 
   return (
-    <section className="py-8 sm:py-16">
+    <section className="sec">
       <div className="container-narrow">
-        <motion.div 
+        <motion.div
           className="text-center mb-8 sm:mb-16"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-westmount">WHAT I BRING</h2>
+          <h2 className="display-l gap-heading">WHAT I BRING</h2>
         </motion.div>
-        
+
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
-          <motion.div 
+          <motion.div
             className="flex flex-col items-center"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -162,7 +162,7 @@ const RadarSkillsSection = () => {
                     cy="200"
                     r={(percent / 100) * 140}
                     fill="none"
-                    stroke="#e5e7eb"
+                    stroke="var(--rule)"
                     strokeWidth="1"
                   />
                 ))}
@@ -175,7 +175,7 @@ const RadarSkillsSection = () => {
                       y1="200"
                       x2={coords.x}
                       y2={coords.y}
-                      stroke="#e5e7eb"
+                      stroke="var(--rule)"
                       strokeWidth="1"
                     />
                   );
@@ -209,7 +209,7 @@ const RadarSkillsSection = () => {
                       fill="#8ab1a2"
                       stroke="#fff"
                       strokeWidth="2"
-                      className="cursor-pointer transition-all duration-300 hover:r-8"
+                      className="cursor-pointer transition-all duration-300"
                       onClick={() => handleSkillChange(point.label)}
                     />
                   );
@@ -225,9 +225,7 @@ const RadarSkillsSection = () => {
                       y={coords.y}
                       textAnchor="middle"
                       dy="0.3em"
-                      className={`text-sm font-merriweather fill-current transition-all duration-300 ${
-                        isSelected ? 'font-bold' : ''
-                      }`}
+                      className={`text-sm font-merriweather fill-current transition-all duration-300 ${isSelected ? 'font-bold' : ''}`}
                       style={{ fontSize: '12px' }}
                     >
                       {point.label}
@@ -244,8 +242,8 @@ const RadarSkillsSection = () => {
                       y={coords.y}
                       textAnchor="middle"
                       dy="0.3em"
-                      className="text-xs font-merriweather fill-black font-semibold"
-                      style={{ fontSize: '11px' }}
+                      className="font-westmount font-light"
+                      style={{ fontSize: '11px', fill: 'var(--ink)', letterSpacing: '0.04em' }}
                     >
                       {point.value}%
                     </text>
@@ -254,16 +252,16 @@ const RadarSkillsSection = () => {
               </svg>
             </div>
           </motion.div>
-          
+
           <div className="space-y-6 relative">
-            <motion.div 
+            <motion.div
               className="space-y-3"
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              <h3 className="text-lg font-merriweather font-semibold">Core capabilities</h3>
+              <h3 className="heading-m">Core capabilities</h3>
               <div className="transition-all duration-300 ease-in-out min-h-[120px] relative">
                 <div ref={skillsContainerRef}>
                   <AnimatePresence mode="wait">
@@ -275,16 +273,15 @@ const RadarSkillsSection = () => {
                       exit={{ opacity: 0 }}
                       transition={{ duration: 0.2 }}
                     >
-                      {skillContent.map((skill, index) => {
+                      {skillContent.map((skill) => {
                         const isGreen = skill.category === 'excelling';
                         return (
                           <span
                             key={skill.name}
                             className={[
-                              "px-3 py-1 text-sm font-merriweather transition-all duration-200",
-                              isGreen
-                                ? "bg-[#8ab1a2] text-white cursor-pointer hover:bg-[#7ca196]"
-                                : "bg-slate-400 text-white"
+                              "tag-chip",
+                              isGreen ? "cursor-pointer" : "is-muted",
+                              isGreen && tooltipSkill === skill.name ? "is-selected" : ""
                             ].join(" ")}
                             onClick={e => {
                               if (isGreen) {
@@ -315,8 +312,8 @@ const RadarSkillsSection = () => {
                     </motion.div>
                   </AnimatePresence>
                 </div>
-                
-                {/* Tooltip normal */}
+
+                {/* Tooltip */}
                 {tooltipSkill && tooltipSkillData && tooltipPosition && !isFullscreenTooltip && (
                   <motion.div
                     className="absolute z-50 pointer-events-auto"
@@ -330,26 +327,22 @@ const RadarSkillsSection = () => {
                     exit={{ opacity: 0, scale: 0.9 }}
                     transition={{ duration: 0.15 }}
                   >
-                    <div className="bg-[hsl(var(--pastel-yellow))] border border-black p-4 max-w-xs">
+                    <div className="bg-[hsl(var(--pastel-yellow))] border border-ink p-4 max-w-xs">
                       <div className="flex items-start gap-3">
-                        <img 
-                          src={tooltipSkillData.caseStudy.image} 
+                        <img
+                          src={tooltipSkillData.caseStudy.image}
                           alt={tooltipSkillData.caseStudy.brand}
-                          className="w-16 h-12 object-cover rounded"
+                          className="w-16 h-12 object-cover"
                         />
                         <div className="flex-1 min-w-0">
-                          <h4 className="font-merriweather font-semibold text-sm leading-tight">
-                            {tooltipSkill}
-                          </h4>
-                          <p className="text-xs text-gray-600 mt-1 font-merriweather">
-                            {tooltipSkillData.caseStudy.brand}
-                          </p>
+                          <h4 className="heading-m">{tooltipSkill}</h4>
+                          <p className="eyebrow mt-2">{tooltipSkillData.caseStudy.brand}</p>
                           <Link
                             to={`/portfolio/${tooltipSkillData.caseStudy.slug}`}
-                            className="inline-flex items-center text-xs hover:opacity-60 transition-opacity mt-2 font-merriweather"
+                            className="cta-link cta-link-sm mt-2"
                           >
                             See skill in action
-                            <ArrowRight size={10} className="ml-1" />
+                            <ArrowRight size={10} />
                           </Link>
                         </div>
                       </div>
@@ -358,33 +351,22 @@ const RadarSkillsSection = () => {
                 )}
               </div>
             </motion.div>
-            
-            <div 
-              className="flex items-center justify-start gap-6 text-xs font-merriweather py-2 transition-all duration-300"
-            >
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-[#8ab1a2] rounded-full"></div>
-                <span className="text-gray-600">Excelling at</span>
+
+            {/* Legend */}
+            <div className="flex items-center justify-start gap-6 py-2 transition-all duration-300">
+              <div className="inline-flex items-center gap-2 eyebrow">
+                <span className="inline-block w-3 h-2" style={{ background: 'var(--accent)' }}></span>
+                Excelling at
               </div>
-              <div className="w-px h-3 bg-gray-300"></div>
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-slate-400 rounded-full"></div>
-                <span className="text-gray-600">Building up</span>
+              <div className="inline-flex items-center gap-2 eyebrow">
+                <span className="inline-block w-3 h-2 border border-dashed" style={{ borderColor: 'var(--ink-4)' }}></span>
+                Building up
               </div>
             </div>
-            
-            <div 
-              className="pt-4 text-center lg:text-left transition-all duration-300"
-            >
-              <Link
-                to="/portfolio/self-assessment-framework"
-                className="inline-flex items-center text-sm border-b border-black pb-1 hover:opacity-60 transition-opacity font-merriweather group"
-              >
-                See the method 
-                <ArrowRight 
-                  size={14} 
-                  className="ml-1 group-hover:translate-x-1 transition-transform duration-200" 
-                />
+
+            <div className="pt-4 text-center lg:text-left transition-all duration-300">
+              <Link to="/portfolio/self-assessment-framework" className="cta-link cta-link-md">
+                See the method <ArrowRight size={14} />
               </Link>
             </div>
           </div>
