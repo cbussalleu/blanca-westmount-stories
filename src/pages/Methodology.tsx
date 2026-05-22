@@ -105,38 +105,23 @@ const Methodology = () => {
         {/* Right column: supporting elements */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--s-6)', position: 'sticky', top: 120 }}>
 
-          {/* Summary box */}
-          <div style={{ border: '1px solid var(--rule)', padding: 'var(--s-5)' }}>
-            <div style={{ fontFamily: 'var(--ff-display)', fontWeight: 300, fontSize: 10, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--ink-3)', marginBottom: 'var(--s-4)', paddingBottom: 'var(--s-3)', borderBottom: '1px solid var(--rule)' }}>
-              The navigation process
-            </div>
-            {[
-              { num: '01', text: 'Map the problem across both layers: base methodology and domain-specific context' },
-              { num: '02', text: 'Choose the toolkit where your experience is deepest' },
-              { num: '03', text: 'Experiment deliberately with one new tool where needed' },
-              { num: '04', text: 'Bring in external capability for critical gaps' },
-              { num: '05', text: 'Feed what you learn back into the knowledge system' },
-            ].map(({ num, text }) => (
-              <div key={num} style={{ display: 'grid', gridTemplateColumns: '32px 1fr', gap: 'var(--s-3)', padding: 'var(--s-3) 0', borderBottom: '1px solid var(--rule-2)' }}>
-                <span style={{ fontFamily: 'var(--ff-display)', fontWeight: 200, fontSize: 22, lineHeight: 1, letterSpacing: '-0.03em', color: 'var(--ink-4)' }}>{num}</span>
-                <span style={{ fontFamily: 'var(--ff-editorial)', fontSize: 13, lineHeight: 1.55, color: 'var(--ink-2)' }}>{text}</span>
-              </div>
-            ))}
-          </div>
-
           {/* Cases reference */}
           <div style={{ border: '1px solid var(--rule)', padding: 'var(--s-5)' }}>
             <div style={{ fontFamily: 'var(--ff-display)', fontWeight: 300, fontSize: 10, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--ink-3)', marginBottom: 'var(--s-4)', paddingBottom: 'var(--s-3)', borderBottom: '1px solid var(--rule)' }}>
               This principle in action
             </div>
             {[
-              { slug: 'connection-center', label: 'Complexity navigation', title: 'Connection Center: Grupo Bimbo' },
-              { slug: 'continuous-improvement', label: 'Knowledge as infrastructure', title: 'Continuous Improvement: Grupo Bimbo' },
-              { slug: 'knowledge-architecture', label: 'AI amplification', title: 'Knowledge Architecture: Findasense' },
-            ].map(({ slug, label, title }) => (
-              <Link key={slug} to={`/portfolio/${slug}`} style={{ display: 'block', padding: 'var(--s-3) 0', borderBottom: '1px solid var(--rule-2)', textDecoration: 'none' }}>
-                <div style={{ fontFamily: 'var(--ff-display)', fontWeight: 300, fontSize: 9, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--ink-3)', marginBottom: 4 }}>{label}</div>
-                <div style={{ fontFamily: 'var(--ff-editorial)', fontSize: 13, color: 'var(--ink)', lineHeight: 1.4 }}>{title} →</div>
+              { slug: 'connection-center', label: 'Complexity navigation', title: 'Connection Center', client: 'Grupo Bimbo', desc: '5 complexity dimensions navigated simultaneously across 17 countries.' },
+              { slug: 'continuous-improvement', label: 'Knowledge as infrastructure', title: 'Continuous Improvement', client: 'Grupo Bimbo', desc: 'Designing the system that makes each improvement cycle better than the last.' },
+              { slug: 'knowledge-architecture', label: 'AI amplification', title: 'Knowledge Architecture', client: 'Findasense', desc: 'Structuring knowledge so AI can amplify it rather than replace it.' },
+              { slug: 'digital-sales-transformation', label: 'Domain expertise', title: 'Digital Sales Transformation', client: 'La Positiva', desc: 'Financial services context required specialized regulatory and sector knowledge.' },
+              { slug: 'innovation-maturity-index', label: 'External capability', title: 'Innovation Maturity Index', client: 'Gobierno Peruano', desc: 'Bibliographic research integrated as external knowledge to build the framework.' },
+              { slug: 'self-assessment-framework', label: 'Honest self-assessment', title: 'Self-Assessment Framework', client: 'Internal', desc: "The same methodology applied to mapping one's own capabilities with rigor." },
+            ].map(({ slug, label, title, client, desc }) => (
+              <Link key={slug} to={`/portfolio/${slug}`} style={{ display: 'block', padding: 'var(--s-4) 0', borderBottom: '1px solid var(--rule-2)', textDecoration: 'none' }}>
+                <div style={{ fontFamily: 'var(--ff-display)', fontWeight: 300, fontSize: 9, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--ink-3)', marginBottom: 3 }}>{label}</div>
+                <div style={{ fontFamily: 'var(--ff-editorial)', fontSize: 13, color: 'var(--ink)', lineHeight: 1.3, marginBottom: 4 }}>{title} · {client} →</div>
+                <div style={{ fontFamily: 'var(--ff-editorial)', fontSize: 12, color: 'var(--ink-2)', lineHeight: 1.5 }}>{desc}</div>
               </Link>
             ))}
           </div>
