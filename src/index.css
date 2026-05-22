@@ -504,8 +504,8 @@
 .pd-hero .pd-eyebrow span.sep { color: var(--ink-4); }
 .pd-hero-row {
   display: grid;
-  grid-template-columns: auto 1fr;
-  gap: var(--s-7);
+  grid-template-columns: 240px 1fr;
+  gap: var(--s-8);
   align-items: start;
 }
 .pd-num {
@@ -514,11 +514,9 @@
   line-height: 0.82;
   letter-spacing: -0.05em;
   color: var(--ink);
-  width: 200px;
-  flex-shrink: 0;
 }
 .pd-num .big {
-  font-size: clamp(80px, 12vw, 180px);
+  font-size: clamp(100px, 14vw, 200px);
   display: block;
 }
 .pd-num .small {
@@ -663,6 +661,7 @@
 }
 @media (max-width: 880px) {
   .pd-hero-row { grid-template-columns: 1fr; gap: var(--s-5); }
+  .pd-num .big { font-size: clamp(80px, 20vw, 140px); }
   .pd-meta { grid-template-columns: repeat(2, 1fr); }
   .pd-meta > div { border-left: 0; border-top: 1px solid var(--rule); padding: var(--s-4); }
   .pd-meta > div:first-child, .pd-meta > div:nth-child(2) { border-top: 0; }

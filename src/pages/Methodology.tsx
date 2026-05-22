@@ -13,7 +13,7 @@ const Methodology = () => {
       <Header />
       <main className="pt-24 pb-16">
         <section className="py-8">
-          <div className="container-narrow">
+          <div className="hero-wrap">
             <div className="max-w-3xl mx-auto">
 
               {/* Back link */}

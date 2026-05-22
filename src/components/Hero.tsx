@@ -14,7 +14,7 @@ interface HeroProps {
 const Hero = ({ title, subtitle, description, ctaText, ctaLink, fullHeight = false }: HeroProps) => {
   return (
     <section className={`flex items-center ${fullHeight ? 'min-h-[70vh]' : 'py-20'}`}>
-      <div className="container-narrow">
+      <div className="hero-wrap">
         <div className="max-w-2xl mx-auto text-center space-y-6">
           {subtitle && (
             <span className="uppercase text-xs tracking-widest">{subtitle}</span>

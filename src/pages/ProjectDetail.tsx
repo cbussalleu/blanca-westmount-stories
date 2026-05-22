@@ -45,7 +45,7 @@ const ProjectDetail = () => {
       <Header />
 
       {/* Breadcrumb */}
-      <div className="pd-breadcrumb container-narrow">
+      <div className="pd-breadcrumb hero-wrap">
         <span>Portfolio · Case study</span>
         <span>Case {String(currentIndex + 1).padStart(2, '0')} of {String(projectSlugs.length).padStart(2, '0')} · {project.client}</span>
         <Link to="/portfolio">← All work</Link>
@@ -53,7 +53,7 @@ const ProjectDetail = () => {
 
       {/* Hero */}
       <section className="pd-hero">
-        <div className="container-narrow">
+        <div className="hero-wrap">
           <div className="pd-eyebrow">
             <span>{project.client}</span>
             {project.category?.map((cat, i) => (
@@ -81,7 +81,7 @@ const ProjectDetail = () => {
       </section>
 
       {/* Meta strip */}
-      <dl className="pd-meta container-narrow">
+      <dl className="pd-meta hero-wrap">
         <div><dt>Client</dt><dd>{project.client}</dd></div>
         <div><dt>Sector</dt><dd>{project.category?.join(' · ')}</dd></div>
         <div><dt>Role</dt><dd>Lead Service Designer</dd></div>

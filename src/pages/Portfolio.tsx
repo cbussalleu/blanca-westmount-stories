@@ -23,7 +23,7 @@ const Portfolio = () => {
     <div className="min-h-screen bg-[hsl(var(--pastel-yellow))]">
       <Header />
       <main className="pt-24">
-        <div className="container-narrow">
+        <div className="hero-wrap">
           <div className="mb-8">
             <Link to="/" className="inline-flex items-center text-xs hover:opacity-60 transition-opacity">
               <ArrowLeft size={14} className="mr-1" /> Back to Home
