@@ -66,6 +66,12 @@ const Header = () => {
               Methodology
             </Link>
             <Link
+              to="/ai"
+              className="text-xs font-westmount tracking-widest uppercase hover:opacity-60 transition-opacity"
+            >
+              AI
+            </Link>
+            <Link
               to="/contact"
               className="text-xs font-westmount tracking-widest uppercase hover:opacity-60 transition-opacity"
             >
@@ -90,6 +96,7 @@ const Header = () => {
             <Link to="/portfolio" className="text-2xl font-westmount hover:opacity-70 transition-opacity" onClick={toggleMenu}>Work</Link>
             <Link to="/bimbo-relationship" className="text-2xl font-westmount hover:opacity-70 transition-opacity" onClick={toggleMenu}>Grupo Bimbo</Link>
             <Link to="/methodology" className="text-2xl font-westmount hover:opacity-70 transition-opacity" onClick={toggleMenu}>Methodology</Link>
+            <Link to="/ai" className="text-2xl font-westmount hover:opacity-70 transition-opacity" onClick={toggleMenu}>AI</Link>
             <Link to="/contact" className="text-2xl font-westmount hover:opacity-70 transition-opacity" onClick={toggleMenu}>Contact</Link>
           </nav>
         </div>

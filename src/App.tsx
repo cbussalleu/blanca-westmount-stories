@@ -14,6 +14,7 @@ const Methodology = lazy(() => import("./pages/Methodology"));
 const Contact = lazy(() => import("./pages/Contact"));
 const ProjectDetail = lazy(() => import("./pages/ProjectDetail"));
 const BimboRelationship = lazy(() => import("./pages/BimboRelationship"));
+const AI = lazy(() => import("./pages/AI"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 // Loading fallback component
@@ -42,6 +43,7 @@ const App = () => (
                 <Route path="/portfolio" element={<Portfolio />} />
                 <Route path="/portfolio/:slug" element={<ProjectDetail />} />
                 <Route path="/methodology" element={<Methodology />} />
+                <Route path="/ai" element={<AI />} />
                 <Route path="/bimbo-relationship" element={<BimboRelationship />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="*" element={<NotFound />} />
