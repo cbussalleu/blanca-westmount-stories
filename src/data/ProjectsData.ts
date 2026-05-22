@@ -400,6 +400,51 @@ export const projects: Project[] = [
     ],
     tools: ["Figma", "Miro", "Tableau", "Optimal Workshop"],
     icon: "💳"
+  },
+  {
+    number: 10,
+    title: "Service Designer Capabilities Self-Assessment",
+    description: "A bibliographic analysis-based framework to evaluate professional capabilities with honesty — designed to avoid the twin risks of overconfidence and false modesty.",
+    client: "Internal",
+    slug: "self-assessment-framework",
+    imageSrc: "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    icon: "🔬",
+    challenge: "Design a rigorous, honest self-assessment of professional capabilities as a Service Designer — one that could be shared publicly without overstatement, and that would give recruiters and peers a trustworthy signal of actual competence and maturity.",
+    complexity: [
+      "Self-assessment is inherently prone to cognitive biases — Dunning-Kruger effect, social desirability bias, and attribution errors",
+      "Professional capabilities in Service Design are poorly standardized across the industry",
+      "The assessment needed to be honest enough to be credible, and structured enough to be useful",
+      "Translating academic frameworks into a visual, accessible format without losing rigor"
+    ],
+    research: [
+      "Systematic bibliographic review across Web of Science and Scopus databases",
+      "Analysis of 4 seminal academic works on professional competencies in design disciplines",
+      "Karpen et al. (2017) — organizational capabilities and strategic alignment",
+      "Kleinsmann et al. (2012) — interpersonal and collaborative capabilities in design",
+      "Carr et al. (2002) — cognitive capabilities and professional performance",
+      "Zheng et al. (2011) — leadership capabilities in creative organizations"
+    ],
+    insights: [
+      "Professional capabilities in Service Design cluster into 6 dimensions: Organizational, Interpersonal, Cognitive, Technical, Emotional, and Leadership",
+      "Each dimension contains 3-5 measurable variables with documented impact on professional performance",
+      "Emotional capabilities, while real and important, are the hardest to self-assess reliably — and the easiest to overstate",
+      "The gap between 'excelling' and 'building' is not about ability — it is about deliberate practice and accumulated evidence"
+    ],
+    process: [
+      "Defined 6 capability dimensions based on bibliographic analysis — Organizational, Interpersonal, Cognitive, Technical, Emotional, Leadership",
+      "Mapped 24 specific variables across the 6 dimensions, each grounded in academic evidence",
+      "Applied each variable to real project experience to calibrate level honestly",
+      "Made a deliberate design decision: simplify the public-facing Radar to 5 dimensions, excluding Emotional capabilities",
+      "Reasoning for exclusion: Emotional capabilities are real but self-assessment of them is least reliable — showing them without external validation would undermine the credibility of the entire framework",
+      "Designed the Radar visualization to reflect calibrated levels, not aspirational ones"
+    ],
+    impact: [
+      "A publicly available, bibliographically grounded capability map that any recruiter or peer can interrogate",
+      "The Radar on this site reflects actual calibrated assessment — not a marketing exercise",
+      "The framework distinguishes between capabilities where evidence is strong ('excelling') and those where practice is ongoing ('building')",
+      "The full 6-dimension model is documented here, making the simplification transparent and the reasoning auditable"
+    ],
+    tools: ["Web of Science", "Scopus", "Miro", "Figma"]
   }
 ];
 

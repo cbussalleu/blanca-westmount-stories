@@ -28,7 +28,8 @@ const ProjectDetail = () => {
     "bartista",
     "innovation-maturity-index",
     "meta-sales-optimization",
-    "loyalty-program-redesign"
+    "loyalty-program-redesign",
+    "self-assessment-framework"
   ];
 
   const currentIndex = projectSlugs.indexOf(slug || '');
