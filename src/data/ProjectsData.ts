@@ -104,6 +104,41 @@ export const projects: Project[] = [
     client: "Grupo Bimbo",
     slug: "t-conecta",
     imageSrc: "https://images.unsplash.com/photo-1554224155-1696413565d3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    challenge: "Design an integrated B2B digital platform for small businesses in Mexico, combining ordering systems, financial services, and additional revenue streams into a single ecosystem.",
+    complexity: [
+      "Diverse user needs across small business owners with varying digital literacy levels",
+      "Integration with multiple service providers and payment gateways",
+      "Balancing digital transformation with cultural preferences for personal interaction",
+      "Complex financial services regulation and credit assessment requirements"
+    ],
+    research: [
+      "Small business owner interviews and field observations",
+      "Pain point analysis across daily business operations",
+      "Financial services needs assessment",
+      "Technical capabilities evaluation across user segments",
+      "Competitive analysis of existing B2B platforms"
+    ],
+    insights: [
+      "Small businesses needed integrated solutions, not multiple disconnected apps",
+      "Credit applications strongly preferred through personal interaction with sales reps — least digitalizable aspect",
+      "Digital ordering adoption required gradual onboarding strategy",
+      "Platform most successful when designed as innovation ecosystem, not just transaction system"
+    ],
+    process: [
+      "Developed service blueprints for ordering, payment, and credit journeys",
+      "Designed user journeys for app and POS terminal interfaces",
+      "Created payment flow and integration architecture planning",
+      "Designed credit assessment and financial reporting modules",
+      "Coordinated alignment with Bimbo's financial unit and service provider partnerships"
+    ],
+    impact: [
+      "15% of clients using app for orders in first year, 27% adoption in second year",
+      "Average monthly transaction volume of 250,000",
+      "App-generated sales volume equivalent to an entire sales center",
+      "New revenue streams through utility bill payments and mobile top-up services",
+      "Improved financial access for underserved small businesses"
+    ],
+    tools: ["Marvel", "Illustrator", "Miro", "JIRA"],
     icon: "🏪"
   },
   {
