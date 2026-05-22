@@ -59,11 +59,11 @@ export const projects: Project[] = [
     ],
     impact: [
       "60% reduction in complaint handling time across all 17 markets",
-      "30% reduction in average first-response time — from 24 hours to 9.6 hours",
+      "30% reduction in average first-response time: from 24 hours to 9.6 hours",
       "25% increase in marketing campaign effectiveness through unified multichannel data",
-      "85%+ adoption rates sustained across all markets after rollout — onboarding spikes eliminated by month nine",
+      "85%+ adoption rates sustained across all markets after rollout: onboarding spikes eliminated by month nine",
       "47 product and process improvements implemented based on customer insights in first two years",
-      "Model versioned 37 times post-launch — adapted without losing structural coherence"
+      "Model versioned 37 times post-launch: adapted without losing structural coherence"
     ],
     tools: ["Miro", "Optimal Workshop", "Figma", "JIRA", "Salesforce"],
     icon: "🌐"
@@ -92,11 +92,11 @@ export const projects: Project[] = [
       "Extensive interface and protocol testing prior to production rollout"
     ],
     insights: [
-      "Base model needed to be adaptable to market-specific organizational structures, local data architecture requirements, and regulatory compliance variations — a single rigid implementation would fail",
-      "Different user types (customer service teams, sales teams, quality teams, management) required fundamentally different interfaces and workflows — not just permission levels",
-      "Change resistance was the primary implementation risk, not technical complexity — a modular training framework and local champions network were more critical than the technology itself",
+      "Base model needed to be adaptable to market-specific organizational structures, local data architecture requirements, and regulatory compliance variations: a single rigid implementation would fail",
+      "Different user types (customer service teams, sales teams, quality teams, management) required fundamentally different interfaces and workflows: not just permission levels",
+      "Change resistance was the primary implementation risk, not technical complexity: a modular training framework and local champions network were more critical than the technology itself",
       "Governance committee with representatives from each market was essential to prevent the implementation from being overridden by local IT preferences",
-      "The CRM was not the solution — it was the infrastructure for the solution. The service design work that preceded it determined whether the implementation would succeed"
+      "The CRM was not the solution: it was the infrastructure for the solution. The service design work that preceded it determined whether the implementation would succeed"
     ],
     process: [
       "Translated service blueprints into detailed process flows",
@@ -241,11 +241,11 @@ export const projects: Project[] = [
       "Facilitated alignment workshops with business and IT areas"
     ],
     impact: [
-      "First digital sales channel successfully launched — becoming the foundational infrastructure for La Positiva's full digital transformation roadmap",
-      "Quotation time reduced by approximately 65% through automated flow — from an average of 18 minutes to under 7 minutes for standard products",
+      "First digital sales channel successfully launched: becoming the foundational infrastructure for La Positiva's full digital transformation roadmap",
+      "Quotation time reduced by approximately 65% through automated flow: from an average of 18 minutes to under 7 minutes for standard products",
       "Digital channel accounted for 12% of new policy sales within the first six months of launch",
       "Design principles framework adopted as standard for four subsequent digital initiatives across the organization",
-      "Broker network integrated into the digital channel — resolving the initial resistance by giving brokers a co-ownership role in the digital journey",
+      "Broker network integrated into the digital channel: resolving the initial resistance by giving brokers a co-ownership role in the digital journey",
       "Customer satisfaction scores for the digital purchase flow averaged 4.2/5 in post-launch measurement"
     ],
     tools: ["Figma", "Miro", "InVision", "Optimal Workshop"],
@@ -287,11 +287,11 @@ export const projects: Project[] = [
       "Piloted model with Content Hub and iterated based on feedback"
     ],
     impact: [
-      "Content production costs reduced by 40% through modular three-tier architecture — global pillars reused across markets instead of producing from scratch",
-      "Time-to-market for campaign content reduced by 60% — approval bottlenecks eliminated through governance redesign",
-      "Content reuse across markets increased by 25% — local teams adapted global assets rather than commissioning new production",
+      "Content production costs reduced by 40% through modular three-tier architecture: global pillars reused across markets instead of producing from scratch",
+      "Time-to-market for campaign content reduced by 60%: approval bottlenecks eliminated through governance redesign",
+      "Content reuse across markets increased by 25%: local teams adapted global assets rather than commissioning new production",
       "Brand consistency scores improved across all measured markets in post-launch brand tracking",
-      "Content Hub pilot validated the model before full rollout — iteration cycle reduced risk of global implementation failure",
+      "Content Hub pilot validated the model before full rollout: iteration cycle reduced risk of global implementation failure",
       "Local market teams reported 45% reduction in briefing and alignment time per campaign cycle"
     ],
     tools: ["Figma", "Asana", "Miro", "Adobe Creative Suite"],
@@ -335,12 +335,12 @@ export const projects: Project[] = [
       "Developed training program and change management planning"
     ],
     impact: [
-      "Tool successfully deployed across 2,500 public entities — first standardized digital innovation measurement framework in Peruvian government history",
+      "Tool successfully deployed across 2,500 public entities: first standardized digital innovation measurement framework in Peruvian government history",
       "First pilot round with 25 entities completed; second round expanded to 55 entities with significant methodology improvements based on feedback",
-      "Participating institutions received actionable roadmaps — not just scores — enabling evidence-based capability building plans",
-      "Tool designed to survive leadership turnover — self-explanatory enough for a new institutional leader to use without prior context",
+      "Participating institutions received actionable roadmaps, not just scores, enabling evidence-based capability building plans",
+      "Tool designed to survive leadership turnover: self-explanatory enough for a new institutional leader to use without prior context",
       "Model referenced as a regional best practice for public sector digital transformation by peers in Chile and Uruguay",
-      "Peer benchmarking mechanism proved more effective at motivating improvement than top-down mandates — a key finding that influenced subsequent public sector programs"
+      "Peer benchmarking mechanism proved more effective at motivating improvement than top-down mandates: a key finding that influenced subsequent public sector programs"
     ],
     tools: ["Figma", "Miro", "Google Forms", "Looker Studio"],
     icon: "📊"
@@ -381,12 +381,12 @@ export const projects: Project[] = [
       "Piloted redesigned process with selected team and iterated before full rollout"
     ],
     impact: [
-      "Conversion rate improved by approximately 18% in the six months following process redesign — measured against the pre-intervention baseline",
+      "Conversion rate improved by approximately 18% in the six months following process redesign: measured against the pre-intervention baseline",
       "Average onboarding time for new agents reduced from 6 weeks to 3.5 weeks through the structured competency framework",
-      "Top-performer behaviors successfully transferred to the wider team — the gap between top and median performer conversion closed by 40%",
+      "Top-performer behaviors successfully transferred to the wider team: the gap between top and median performer conversion closed by 40%",
       "Consultative conversation framework adopted as standard across all advertiser segments in the region",
       "Training program scaled to three additional markets within the first year following the pilot",
-      "Agent satisfaction scores improved alongside performance — reduced friction in the sales process benefited both sides"
+      "Agent satisfaction scores improved alongside performance: reduced friction in the sales process benefited both sides"
     ],
     tools: ["Miro", "Google Slides", "Looker Studio", "Confluence"],
     icon: "📞"
@@ -428,11 +428,11 @@ export const projects: Project[] = [
     ],
     impact: [
       "Card usage frequency among enrolled cardholders increased by 22% in the 12 months post-redesign",
-      "Points redemption rate improved from 34% to 61% — reducing the financial liability of accumulated unused points",
-      "Program dropout rate decreased by 31% — cardholders who understood the program stayed in it",
-      "Onboarding activation rate for new cardholders reached 78% within 30 days — up from 41% under the previous model",
+      "Points redemption rate improved from 34% to 61%: reducing the financial liability of accumulated unused points",
+      "Program dropout rate decreased by 31%: cardholders who understood the program stayed in it",
+      "Onboarding activation rate for new cardholders reached 78% within 30 days: up from 41% under the previous model",
       "Net Promoter Score for the loyalty program improved by 14 points among active participants",
-      "Tiered benefits structure created a clear upgrade path — 19% of standard cardholders moved to premium tier within the first year"
+      "Tiered benefits structure created a clear upgrade path: 19% of standard cardholders moved to premium tier within the first year"
     ],
     tools: ["Figma", "Miro", "Tableau", "Optimal Workshop"],
     icon: "💳"
@@ -476,12 +476,12 @@ export const projects: Project[] = [
       "Designed the Radar visualization to reflect calibrated levels, not aspirational ones"
     ],
     impact: [
-      "A publicly available, bibliographically grounded capability map — any recruiter or peer can interrogate the evidence behind every dimension and level",
-      "The Radar on this site reflects calibrated assessment, not aspirational positioning — the honesty is the differentiator",
+      "A publicly available, bibliographically grounded capability map: any recruiter or peer can interrogate the evidence behind every dimension and level",
+      "The Radar on this site reflects calibrated assessment, not aspirational positioning: the honesty is the differentiator",
       "Full 6-dimension model documented here, making the 5-dimension public simplification transparent and the reasoning auditable",
       "Emotional capabilities excluded from the public Radar not because they are unimportant, but because self-assessment of them without external validation would undermine the credibility of the entire framework",
-      "Framework distinguishes between capabilities where evidence is strong and those where practice is ongoing — a more useful signal than a flat competency list",
-      "The process of building the framework was itself a demonstration of the capabilities it measures — research, synthesis, honest self-assessment, and design of a public artifact"
+      "Framework distinguishes between capabilities where evidence is strong and those where practice is ongoing: a more useful signal than a flat competency list",
+      "The process of building the framework was itself a demonstration of the capabilities it measures: research, synthesis, honest self-assessment, and design of a public artifact"
     ],
     tools: ["Web of Science", "Scopus", "Miro", "Figma"]
   },
@@ -553,13 +553,13 @@ export const projects: Project[] = [
     insights: [
       "Cases were lost not because the work was poor but because documentation had no systematic home",
       "Production investment decisions were intuitive and inconsistent, creating internal friction",
-      "AI should handle semantic processing only — text compression, translation, style correction — while all data logic remains deterministic",
+      "AI should handle semantic processing only (text compression, translation, style correction) while all data logic remains deterministic",
       "Conflict of interest rules in voting systems are critical for organizational trust"
     ],
     process: [
       "Designed 5-stage pipeline: structured registration, AI enrichment, automated one-slider generation, directorial scoring and voting, production prioritization",
       "Built registration wizard with dynamic completeness indicator across 4 steps",
-      "Integrated Gemini 1.5 Flash for semantic processing only — one API call per case for text compression, translation, and style correction within strict character limits",
+      "Integrated Gemini 1.5 Flash for semantic processing only: one API call per case for text compression, translation, and style correction within strict character limits",
       "Automated Google Slides generation from master template with placeholder replacement",
       "Designed dual output: internal version (client named) and external version (anonymized for pitches)",
       "Built scoring system across 4 strategic axes with automatic threshold triggering directorial vote",
@@ -583,7 +583,7 @@ export const projects: Project[] = [
     imageSrc: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
     category: ["AI", "Internal"],
     icon: "📡",
-    challenge: "After deploying Gemini Pro to 100% of the company through Google Workspace licenses, Findasense had no way to measure whether people were actually using it, what was blocking them, or whether they perceived real value. Usage data from Google Workspace answered what — not why or how it felt.",
+    challenge: "After deploying Gemini Pro to 100% of the company through Google Workspace licenses, Findasense had no way to measure whether people were actually using it, what was blocking them, or whether they perceived real value. Usage data from Google Workspace answered what: not why or how it felt.",
     complexity: [
       "No new tools could be introduced outside the existing Google Workspace stack",
       "Survey completion had to take under 2 minutes with zero friction for the employee",
@@ -597,10 +597,10 @@ export const projects: Project[] = [
       "Design of sampling methodology balancing representativeness with operational feasibility"
     ],
     insights: [
-      "Google Chat Add-on events execute as the triggering user, not the script owner — getActiveSpreadsheet() returns null in scheduled triggers, requiring openById() throughout",
-      "A single registration entry point dependent on a specific API event is fragile — onMessage fallback is essential",
+      "Google Chat Add-on events execute as the triggering user, not the script owner: getActiveSpreadsheet() returns null in scheduled triggers, requiring openById() throughout",
+      "A single registration entry point dependent on a specific API event is fragile: onMessage fallback is essential",
       "Quota sampling by practice and seniority produces representativeness without requiring probabilistic statistical significance",
-      "Being transparent about methodological limits is sufficient for internal validity — not every measurement needs academic rigor"
+      "Being transparent about methodological limits is sufficient for internal validity: not every measurement needs academic rigor"
     ],
     process: [
       "Designed quota sampling methodology: 40 people per monthly pulse, stratified by practice and seniority, covering full organization over 5 rotation cycles",

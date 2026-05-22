@@ -13,7 +13,7 @@ const Footer = () => {
         paddingInline: 'clamp(20px, 4vw, 48px)',
       }}>
 
-        {/* Top row — name + nav */}
+        {/* Top row: name + nav */}
         <div style={{
           display: 'grid',
           gridTemplateColumns: '1fr auto',
@@ -79,7 +79,7 @@ const Footer = () => {
           </nav>
         </div>
 
-        {/* Bottom row — email + CV + copyright */}
+        {/* Bottom row: email + CV + copyright */}
         <div style={{
           display: 'flex',
           alignItems: 'center',

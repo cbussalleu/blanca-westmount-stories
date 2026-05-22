@@ -110,7 +110,7 @@ const ProjectDetail = () => {
         </section>
       )}
 
-      {/* Section A — Challenge */}
+      {/* Section A: Challenge */}
       {project.challenge && (
         <section className="pd-case" id="challenge">
           <div className="container-narrow">
@@ -139,7 +139,7 @@ const ProjectDetail = () => {
         </section>
       )}
 
-      {/* Section B — Research */}
+      {/* Section B: Research */}
       {project.research && project.research.length > 0 && (
         <section className="pd-case" id="research">
           <div className="container-narrow">
@@ -167,7 +167,7 @@ const ProjectDetail = () => {
         </section>
       )}
 
-      {/* Section C — Insights */}
+      {/* Section C: Insights */}
       {project.insights && project.insights.length > 0 && (
         <section className="pd-case" id="insights">
           <div className="container-narrow">
@@ -195,7 +195,7 @@ const ProjectDetail = () => {
         </section>
       )}
 
-      {/* Section D — Process */}
+      {/* Section D: Process */}
       {project.process && project.process.length > 0 && (
         <section className="pd-case" id="process">
           <div className="container-narrow">
@@ -224,7 +224,7 @@ const ProjectDetail = () => {
         </section>
       )}
 
-      {/* Section E — Before / After */}
+      {/* Section E: Before / After */}
       {project.impact && project.impact.length > 0 && (
         <section className="pd-stage-section" id="outcome">
           <div className="container-narrow">
@@ -286,7 +286,7 @@ const ProjectDetail = () => {
               )}
             </div>
 
-            {/* Delta tiles — headline figures */}
+            {/* Delta tiles: headline figures */}
             <div className="pd-deltas">
               {project.impact?.slice(0, 5).map((item, i) => {
                 const match = item.match(/^([−\-+]?\d+[\.,]?\d*\s*[%+]?)/);

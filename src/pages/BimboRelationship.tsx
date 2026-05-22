@@ -78,7 +78,7 @@ const BimboRelationship = () => {
               Grupo Bimbo &amp; I.
             </h1>
             <p style={{ fontFamily: 'var(--ff-editorial)', fontSize: 'var(--t-lede)', lineHeight: 1.55, color: 'var(--ink-2)', maxWidth: '52ch', margin: 0 }}>
-              The world's largest bread manufacturer. Four interconnected projects over seven years — from initial research through global CRM implementation, B2B platform design, and continuous improvement infrastructure.
+              The world's largest bread manufacturer. Four interconnected projects over seven years: from initial research through global CRM implementation, B2B platform design, and continuous improvement infrastructure.
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 1, background: 'var(--rule)', border: '1px solid var(--rule)', alignSelf: 'end' }}>
@@ -121,7 +121,7 @@ const BimboRelationship = () => {
       {/* Two-column: Timeline + Projects */}
       <div className="bimbo-grid" style={{ width:'100%', maxWidth:1120, marginInline:'auto', paddingInline:'clamp(20px,4vw,48px)', paddingBlock:'var(--s-9) var(--s-8)', display:'grid', gridTemplateColumns:'minmax(0,1.2fr) minmax(0,1fr)', gap:'var(--s-9)', borderBottom:'1px solid var(--rule)', alignItems:'start' }}>
 
-        {/* Left — Timeline */}
+        {/* Left: Timeline */}
         <div>
           <div style={{ fontFamily:'var(--ff-display)', fontWeight:300, fontSize:10, letterSpacing:'0.22em', textTransform:'uppercase', color:'var(--ink-3)', marginBottom:'var(--s-6)', paddingBottom:'var(--s-3)', borderBottom:'1px solid var(--rule)' }}>
             How it unfolded
@@ -140,7 +140,7 @@ const BimboRelationship = () => {
           </div>
         </div>
 
-        {/* Right — Project cards */}
+        {/* Right: Project cards */}
         <div style={{ position:'sticky', top:120 }}>
           <div style={{ fontFamily:'var(--ff-display)', fontWeight:300, fontSize:10, letterSpacing:'0.22em', textTransform:'uppercase', color:'var(--ink-3)', marginBottom:'var(--s-6)', paddingBottom:'var(--s-3)', borderBottom:'1px solid var(--rule)' }}>
             The work

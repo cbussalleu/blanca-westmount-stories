@@ -34,7 +34,7 @@ const Contact = () => {
       {/* Two-column: Form + Info */}
       <div className="contact-grid" style={{ width:'100%', maxWidth:1120, marginInline:'auto', paddingInline:'clamp(20px,4vw,48px)', paddingBlock:'var(--s-9) var(--s-8)', display:'grid', gridTemplateColumns:'minmax(0,1.3fr) minmax(0,1fr)', gap:'var(--s-9)', alignItems:'start', borderBottom:'1px solid var(--rule)' }}>
 
-        {/* Left — Form */}
+        {/* Left: Form */}
         <div>
           <div style={{ fontFamily:'var(--ff-display)', fontWeight:300, fontSize:10, letterSpacing:'0.22em', textTransform:'uppercase', color:'var(--ink-3)', marginBottom:'var(--s-6)', paddingBottom:'var(--s-3)', borderBottom:'1px solid var(--rule)' }}>
             Send a message
@@ -42,7 +42,7 @@ const Contact = () => {
           <ContactForm />
         </div>
 
-        {/* Right — Info */}
+        {/* Right: Info */}
         <div style={{ position:'sticky', top:120, display:'flex', flexDirection:'column', gap:'var(--s-5)' }}>
 
           {/* Direct contact */}
@@ -76,7 +76,7 @@ const Contact = () => {
               CV
             </div>
             <p style={{ fontFamily:'var(--ff-editorial)', fontSize:13, lineHeight:1.55, color:'var(--ink-2)', margin:'0 0 var(--s-4)' }}>
-              Full work history, project list, and education — available as PDF.
+              Full work history, project list, and education: available as PDF.
             </p>
             <a
               href="/CV_SD_Christian_Bussalleu_2024_ENG.pdf"
