@@ -46,7 +46,7 @@ const MethodologySection = () => {
           <div className="text-center">
             <Link 
               to="/methodology" 
-              className="inline-flex items-center text-sm border-b border-black pb-1 hover:opacity-70 transition-opacity font-merriweather"
+              className="inline-flex items-center text-sm border-b border-black pb-1 hover:opacity-60 transition-opacity duration-200 font-merriweather"
             >
               Learn More <ArrowRight size={14} className="ml-1" />
             </Link>

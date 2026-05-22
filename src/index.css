@@ -162,6 +162,11 @@
 }
 
 @layer base {
+  :focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 4px;
+  }
+
   * {
     @apply border-border;
   }
@@ -182,7 +187,7 @@
 }
 
 .container-narrow {
-  @apply container max-w-4xl mx-auto px-4;
+  @apply container max-w-4xl mx-auto px-5 sm:px-8 lg:px-12;
 }
 
 /* Estilo de image-with-overlay usando la configuración de imagen elegida */

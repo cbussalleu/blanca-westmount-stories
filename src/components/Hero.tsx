@@ -34,7 +34,7 @@ const Hero = ({ title, subtitle, description, ctaText, ctaLink, fullHeight = fal
             <div className="pt-4">
               <Link 
                 to={ctaLink} 
-                className="inline-flex items-center text-sm border-b border-black pb-1 hover:opacity-70 transition-opacity"
+                className="inline-flex items-center text-sm border-b border-black pb-1 hover:opacity-60 transition-opacity duration-200"
               >
                 {ctaText} <ArrowRight size={14} className="ml-1" />
               </Link>

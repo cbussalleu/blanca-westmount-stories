@@ -145,7 +145,7 @@ const RadarSkillsSection = () => {
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-westmount">WHAT I BRING</h2>
         </motion.div>
         
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           <motion.div 
             className="flex flex-col items-center"
             initial={{ opacity: 0, scale: 0.8 }}
@@ -244,7 +244,7 @@ const RadarSkillsSection = () => {
                       y={coords.y}
                       textAnchor="middle"
                       dy="0.3em"
-                      className="text-xs font-merriweather fill-blue-600 font-semibold"
+                      className="text-xs font-merriweather fill-black font-semibold"
                       style={{ fontSize: '11px' }}
                     >
                       {point.value}%
@@ -281,9 +281,9 @@ const RadarSkillsSection = () => {
                           <span
                             key={skill.name}
                             className={[
-                              "px-3 py-1 rounded-full text-sm font-merriweather transition-all duration-200",
+                              "px-3 py-1 text-sm font-merriweather transition-all duration-200",
                               isGreen
-                                ? "bg-[#8ab1a2] text-white cursor-pointer hover:bg-[#7ca196] hover:scale-105 active:scale-95"
+                                ? "bg-[#8ab1a2] text-white cursor-pointer hover:bg-[#7ca196]"
                                 : "bg-slate-400 text-white"
                             ].join(" ")}
                             onClick={e => {
@@ -319,7 +319,7 @@ const RadarSkillsSection = () => {
                 {/* Tooltip normal */}
                 {tooltipSkill && tooltipSkillData && tooltipPosition && !isFullscreenTooltip && (
                   <motion.div
-                    className="absolute z-50 pointer-events-auto shadow-2xl"
+                    className="absolute z-50 pointer-events-auto"
                     style={{
                       left: tooltipPosition.x - 120,
                       top: tooltipPosition.y - 70,
@@ -330,7 +330,7 @@ const RadarSkillsSection = () => {
                     exit={{ opacity: 0, scale: 0.9 }}
                     transition={{ duration: 0.15 }}
                   >
-                    <div className="bg-white border border-gray-400 rounded-lg p-4 max-w-xs">
+                    <div className="bg-[hsl(var(--pastel-yellow))] border border-black p-4 max-w-xs">
                       <div className="flex items-start gap-3">
                         <img 
                           src={tooltipSkillData.caseStudy.image} 

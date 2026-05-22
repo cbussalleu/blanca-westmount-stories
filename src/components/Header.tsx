@@ -30,7 +30,7 @@ const Header = () => {
   }, [prevScrollPos]);
 
   return (
-    <header className={`fixed w-full z-30 transition-all duration-300 bg-[hsl(var(--pastel-yellow))] ${visible ? 'top-0' : '-top-24'}`}>
+    <header className={`fixed w-full z-30 transition-all duration-300 bg-[hsl(var(--pastel-yellow))] ${visible ? 'top-0' : '-top-24'} ${scrolled ? 'border-b border-[hsl(48,30%,80%)]' : ''}`}>
       <div className="container-narrow py-6">
         <div className="flex justify-between items-center">
           {/* Logo */}
@@ -49,31 +49,31 @@ const Header = () => {
           <nav className="hidden md:flex items-center gap-8">
             <Link
               to="/portfolio"
-              className="text-xs font-westmount tracking-widest uppercase hover:opacity-60 transition-opacity"
+              className="font-westmount font-light text-[11px] tracking-[0.20em] uppercase hover:opacity-60 transition-opacity duration-200"
             >
               Work
             </Link>
             <Link
               to="/bimbo-relationship"
-              className="text-xs font-westmount tracking-widest uppercase hover:opacity-60 transition-opacity"
+              className="font-westmount font-light text-[11px] tracking-[0.20em] uppercase hover:opacity-60 transition-opacity duration-200"
             >
               Bimbo
             </Link>
             <Link
               to="/methodology"
-              className="text-xs font-westmount tracking-widest uppercase hover:opacity-60 transition-opacity"
+              className="font-westmount font-light text-[11px] tracking-[0.20em] uppercase hover:opacity-60 transition-opacity duration-200"
             >
               Methodology
             </Link>
             <Link
               to="/ai"
-              className="text-xs font-westmount tracking-widest uppercase hover:opacity-60 transition-opacity"
+              className="font-westmount font-light text-[11px] tracking-[0.20em] uppercase hover:opacity-60 transition-opacity duration-200"
             >
               AI
             </Link>
             <Link
               to="/contact"
-              className="text-xs font-westmount tracking-widest uppercase hover:opacity-60 transition-opacity"
+              className="font-westmount font-light text-[11px] tracking-[0.20em] uppercase hover:opacity-60 transition-opacity duration-200"
             >
               Contact
             </Link>
@@ -92,12 +92,12 @@ const Header = () => {
       {isMenuOpen && (
         <div className="fixed inset-0 bg-[hsl(var(--pastel-yellow))] z-40 animate-fade-in py-24">
           <nav className="container-narrow flex flex-col space-y-8 text-center items-center">
-            <Link to="/" className="text-2xl font-westmount hover:opacity-70 transition-opacity" onClick={toggleMenu}>Home</Link>
-            <Link to="/portfolio" className="text-2xl font-westmount hover:opacity-70 transition-opacity" onClick={toggleMenu}>Work</Link>
-            <Link to="/bimbo-relationship" className="text-2xl font-westmount hover:opacity-70 transition-opacity" onClick={toggleMenu}>Grupo Bimbo</Link>
-            <Link to="/methodology" className="text-2xl font-westmount hover:opacity-70 transition-opacity" onClick={toggleMenu}>Methodology</Link>
-            <Link to="/ai" className="text-2xl font-westmount hover:opacity-70 transition-opacity" onClick={toggleMenu}>AI</Link>
-            <Link to="/contact" className="text-2xl font-westmount hover:opacity-70 transition-opacity" onClick={toggleMenu}>Contact</Link>
+            <Link to="/" className="text-2xl font-westmount hover:opacity-60 transition-opacity duration-200" onClick={toggleMenu}>Home</Link>
+            <Link to="/portfolio" className="text-2xl font-westmount hover:opacity-60 transition-opacity duration-200" onClick={toggleMenu}>Work</Link>
+            <Link to="/bimbo-relationship" className="text-2xl font-westmount hover:opacity-60 transition-opacity duration-200" onClick={toggleMenu}>Grupo Bimbo</Link>
+            <Link to="/methodology" className="text-2xl font-westmount hover:opacity-60 transition-opacity duration-200" onClick={toggleMenu}>Methodology</Link>
+            <Link to="/ai" className="text-2xl font-westmount hover:opacity-60 transition-opacity duration-200" onClick={toggleMenu}>AI</Link>
+            <Link to="/contact" className="text-2xl font-westmount hover:opacity-60 transition-opacity duration-200" onClick={toggleMenu}>Contact</Link>
           </nav>
         </div>
       )}

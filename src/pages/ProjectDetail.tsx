@@ -43,8 +43,17 @@ const ProjectDetail = () => {
         {/* Hero Section */}
         <div className="bg-[hsl(var(--pastel-yellow))] py-16">
           <div className="container-narrow">
-            <div className="flex items-center justify-center mb-8">
-              <div className="text-8xl">{project.icon}</div>
+            <div className="flex items-end gap-6 mb-8">
+              <span className="font-westmount font-extralight text-[clamp(80px,10vw,128px)] leading-none tracking-[-0.04em] text-gray-300 select-none">
+                {String(project.number).padStart(2,'0')}
+              </span>
+              <div className="flex flex-wrap gap-2 pb-2">
+                {project.category?.map(cat => (
+                  <span key={cat} className="text-[10px] font-westmount font-light tracking-[0.2em] uppercase border border-black px-2 py-1">
+                    {cat}
+                  </span>
+                ))}
+              </div>
             </div>
             <div className="text-center max-w-4xl mx-auto">
               <div className="mb-4 font-westmount font-light text-[11px] tracking-[0.22em] uppercase text-gray-500">{project.client}</div>

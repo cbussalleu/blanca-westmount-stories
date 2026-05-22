@@ -19,7 +19,7 @@ const Footer = () => {
                 christian.bussalleu@gmail.com
               </a>
               <div className="flex items-center gap-6">
-                <Link to="/contact" className="text-xs font-westmount tracking-widest uppercase hover:opacity-60 transition-opacity">
+                <Link to="/contact" className="font-westmount font-light text-[11px] tracking-[0.20em] uppercase hover:opacity-60 transition-opacity duration-200">
                   Contact
                 </Link>
                 <a 

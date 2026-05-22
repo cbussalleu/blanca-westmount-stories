@@ -21,7 +21,7 @@ const bimboCases = [
 
 const BimboCaseStudies = () => {
   return (
-    <div className="grid md:grid-cols-2 gap-10">
+    <div className="grid md:grid-cols-2 gap-8">
       {/* Sección de imagen hero - COMPLETAMENTE REPLANTEADA */}
       <div className="relative group cursor-pointer">
         {/* Contenedor principal con bordes redondeados */}
@@ -33,7 +33,7 @@ const BimboCaseStudies = () => {
               <img
                 src="/lovable-uploads/bimbo-bakery-mobile.png"
                 alt="Bimbo small business owner - mobile"
-                className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105 block md:hidden"
+                className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-[1.03] block md:hidden"
                 style={{
                   filter: 'grayscale(1) contrast(1.1) brightness(0.9)'
                 }}
@@ -42,7 +42,7 @@ const BimboCaseStudies = () => {
               <img
                 src="/lovable-uploads/bimbo-bakery-desktop.PNG"
                 alt="Bimbo small business owner - desktop"
-                className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105 hidden md:block"
+                className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-[1.03] hidden md:block"
                 style={{
                   filter: 'grayscale(1) contrast(1.1) brightness(0.9)'
                 }}
@@ -53,11 +53,11 @@ const BimboCaseStudies = () => {
             <div className="absolute inset-0 bg-[hsl(var(--image-overlay))] opacity-0 mix-blend-multiply"></div>
             
             {/* Overlay hover (solo en hover) */}
-           <div className="absolute inset-0 bg-[hsl(var(--pastel-yellow))] opacity-0 group-hover:opacity-80 transition-opacity duration-500"></div>
+           <div className="absolute inset-0 bg-[hsl(var(--pastel-yellow))] opacity-0 group-hover:opacity-40 transition-opacity duration-500"></div>
             
             {/* Texto superpuesto */}
             <div className="absolute inset-0 flex items-center justify-center p-4 sm:p-6">
-              <h3 className="text-white group-hover:text-black text-lg sm:text-xl md:text-2xl font-westmount text-center transition-all duration-300 group-hover:scale-110 drop-shadow-lg leading-tight">
+              <h3 className="text-white text-lg sm:text-xl md:text-2xl font-westmount text-center transition-all duration-300 group-hover:tracking-[0.02em] drop-shadow-lg leading-tight">
                 Over 7 years designing for a bold brand in an ever-evolving industry
               </h3>
             </div>
@@ -73,9 +73,9 @@ const BimboCaseStudies = () => {
               <p className="font-merriweather text-[15px] leading-[1.65] text-gray-700 mb-2">{caseStudy.description}</p>
               <Link
                 to={`/portfolio/${caseStudy.slug}`}
-                className="inline-flex items-center text-xs border-b border-black pb-0.5 hover:opacity-60 transition-opacity font-merriweather"
+                className="inline-flex items-center text-xs border-b border-black pb-0.5 hover:opacity-60 transition-opacity duration-200 font-merriweather group"
               >
-                View Project <ArrowRight size={12} className="ml-1" />
+                View Project <ArrowRight size={12} className="ml-1 group-hover:translate-x-1 transition-transform duration-200" />
               </Link>
             </div>
           ))}

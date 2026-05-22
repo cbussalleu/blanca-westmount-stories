@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
-import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { OptimizedImage } from '@/components/OptimizedImage';
 
 interface ProjectCardProps {
@@ -15,8 +14,8 @@ interface ProjectCardProps {
 const ProjectCard = ({ title, description, client, slug, imageSrc }: ProjectCardProps) => {
   return (
     <div className="group space-y-4">
-      <div className="image-with-overlay rounded-lg overflow-hidden shadow-md hidden sm:block">
-        <AspectRatio ratio={1} className="w-full">
+      <div className="image-with-overlay rounded-lg overflow-hidden shadow-md">
+        <div className="w-full aspect-[16/9] sm:aspect-square">
           {imageSrc ? (
             <OptimizedImage
               src={imageSrc}
@@ -28,25 +27,25 @@ const ProjectCard = ({ title, description, client, slug, imageSrc }: ProjectCard
               {title.charAt(0)}
             </div>
           )}
-        </AspectRatio>
+        </div>
       </div>
-      
+
       <div className="space-y-2">
-        <div className="uppercase text-xs tracking-widest font-westmount font-extralight">{client}</div>
+        <div className="font-westmount font-light text-[11px] tracking-[0.20em] uppercase">{client}</div>
         <h3 className="text-lg font-merriweather">{title}</h3>
         <p className="text-sm text-gray-600 font-merriweather line-clamp-3 leading-[1.5] mb-4">
           {description}
         </p>
-        
+
         <div className="pt-2">
-          <Link 
-            to={`/portfolio/${slug}`} 
-            className="inline-flex items-center text-xs border-b border-black pb-0.5 hover:opacity-70 transition-opacity font-merriweather group"
+          <Link
+            to={`/portfolio/${slug}`}
+            className="inline-flex items-center text-xs border-b border-black pb-0.5 hover:opacity-60 transition-opacity duration-200 font-merriweather group"
           >
-            View Project 
-            <ArrowRight 
-              size={12} 
-              className="ml-1 group-hover:translate-x-1 transition-transform duration-200" 
+            View Project
+            <ArrowRight
+              size={12}
+              className="ml-1 group-hover:translate-x-1 transition-transform duration-200"
             />
           </Link>
         </div>
