@@ -31,28 +31,12 @@ const timeline = [
   }
 ];
 
-const projects = [
-  {
-    slug: "connection-center",
-    title: "Connection Center Research & Design",
-    description: "Designed a global omnichannel CX model standardizing consumer and customer engagement across 17 countries."
-  },
-  {
-    slug: "crm-service-design",
-    title: "CRM Service Design & Implementation",
-    description: "Translated 43 service blueprints into a functional, scalable Salesforce implementation across 17 markets."
-  },
-  {
-    slug: "continuous-improvement",
-    title: "Continuous Improvement & Innovation Framework",
-    description: "Designed the organizational capability for customer-driven innovation across the global Connection Center ecosystem."
-  },
-  {
-    slug: "t-conecta",
-    title: "T-Conecta: B2B Omnichannel Service Ecosystem",
-    description: "Designed an integrated digital platform for small businesses combining ordering, financial services, and revenue streams."
-  }
-];
+const timelineLinks: Record<string, string> = {
+  "2017": "/portfolio/connection-center",
+  "2018": "/portfolio/crm-service-design",
+  "2020": "/portfolio/t-conecta",
+  "2022": "/portfolio/continuous-improvement",
+};
 
 const BimboRelationship = () => {
   useScrollToTop();
@@ -78,7 +62,7 @@ const BimboRelationship = () => {
               Grupo Bimbo &amp; I.
             </h1>
             <p style={{ fontFamily: 'var(--ff-editorial)', fontSize: 'var(--t-lede)', lineHeight: 1.55, color: 'var(--ink-2)', maxWidth: '52ch', margin: 0 }}>
-              The world's largest bread manufacturer. Four interconnected projects over seven years: from initial research through global CRM implementation, B2B platform design, and continuous improvement infrastructure.
+              The world's largest bread manufacturer. Four interconnected projects over seven years, from initial research through global CRM implementation, B2B platform design, and continuous improvement infrastructure.
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 1, background: 'var(--rule)', border: '1px solid var(--rule)', alignSelf: 'end' }}>
@@ -97,74 +81,60 @@ const BimboRelationship = () => {
         </div>
       </section>
 
-      {/* Impact tiles */}
-      <section style={{ borderBottom:'1px solid var(--rule)', paddingBlock:'var(--s-8)' }}>
-        <div style={{ width:'100%', maxWidth:1120, marginInline:'auto', paddingInline:'clamp(20px,4vw,48px)' }}>
-          <div className="impact-tiles">
-            {[
-              { stat:'7', unit:'', label:'Years', body:'Continuous collaboration from 2017 to present across four interconnected projects.' },
-              { stat:'17', unit:'', label:'Countries', body:'Standardized model deployed across Latin America, Europe, and Asia.' },
-              { stat:'43', unit:'', label:'Blueprints', body:'Service blueprints designed, versioned, and integrated into the global playbook.' },
-              { stat:'134', unit:'k+', label:'Employees', body:'Workforce operating within the Connection Center model across all markets.' },
-              { stat:'60', unit:'%', label:'Faster resolution', body:'Reduction in complaint handling time measured against the 2018 baseline.' },
-            ].map(({ stat, unit, label, body }) => (
-              <div className="impact-tile" key={label}>
-                <div className="stat"><span className="big">{stat}</span>{unit && <span className="unit">{unit}</span>}</div>
-                <div className="tile-label">{label}</div>
-                <div className="tile-body">{body}</div>
-              </div>
-            ))}
-          </div>
+      {/* Timeline — full width */}
+      <div style={{ width:'100%', maxWidth:1120, marginInline:'auto', paddingInline:'clamp(20px,4vw,48px)', paddingBlock:'var(--s-9) var(--s-8)', borderBottom:'1px solid var(--rule)' }}>
+        <div style={{ fontFamily:'var(--ff-display)', fontWeight:300, fontSize:10, letterSpacing:'0.22em', textTransform:'uppercase', color:'var(--ink-3)', marginBottom:'var(--s-6)', paddingBottom:'var(--s-3)', borderBottom:'1px solid var(--rule)' }}>
+          How it unfolded
         </div>
-      </section>
-
-      {/* Two-column: Timeline + Projects */}
-      <div className="bimbo-grid" style={{ width:'100%', maxWidth:1120, marginInline:'auto', paddingInline:'clamp(20px,4vw,48px)', paddingBlock:'var(--s-9) var(--s-8)', display:'grid', gridTemplateColumns:'minmax(0,1.2fr) minmax(0,1fr)', gap:'var(--s-9)', borderBottom:'1px solid var(--rule)', alignItems:'start' }}>
-
-        {/* Left: Timeline */}
-        <div>
-          <div style={{ fontFamily:'var(--ff-display)', fontWeight:300, fontSize:10, letterSpacing:'0.22em', textTransform:'uppercase', color:'var(--ink-3)', marginBottom:'var(--s-6)', paddingBottom:'var(--s-3)', borderBottom:'1px solid var(--rule)' }}>
-            How it unfolded
-          </div>
-          <div style={{ display:'flex', flexDirection:'column', gap:0 }}>
-            {timeline.map(({ years, title, description }) => (
-              <div key={years} style={{ display:'grid', gridTemplateColumns:'80px 1fr', gap:'var(--s-5)', paddingBlock:'var(--s-6)', borderBottom:'1px solid var(--rule-2)' }}>
-                <div style={{ fontFamily:'var(--ff-display)', fontWeight:200, fontSize:32, lineHeight:1, letterSpacing:'-0.03em', color:'var(--ink-4)', paddingTop:4 }}>{years.split('–')[0]}</div>
-                <div>
-                  <div style={{ fontFamily:'var(--ff-display)', fontWeight:300, fontSize:10, letterSpacing:'0.20em', textTransform:'uppercase', color:'var(--ink-3)', marginBottom:'var(--s-2)' }}>{years}</div>
-                  <h3 style={{ fontFamily:'var(--ff-editorial)', fontWeight:400, fontSize:17, lineHeight:1.3, letterSpacing:'-0.01em', margin:'0 0 var(--s-3)', maxWidth:'28ch' }}>{title}</h3>
-                  <p style={{ fontFamily:'var(--ff-editorial)', fontSize:13.5, lineHeight:1.65, color:'var(--ink-2)', margin:0, maxWidth:'52ch' }}>{description}</p>
-                </div>
+        <div style={{ display:'flex', flexDirection:'column', gap:0 }}>
+          {timeline.map(({ years, title, description }) => (
+            <div key={years} style={{ display:'grid', gridTemplateColumns:'80px 1fr', gap:'var(--s-5)', paddingBlock:'var(--s-6)', borderBottom:'1px solid var(--rule-2)' }}>
+              <div style={{ fontFamily:'var(--ff-display)', fontWeight:200, fontSize:32, lineHeight:1, letterSpacing:'-0.03em', color:'var(--ink-4)', paddingTop:4 }}>{years.split('–')[0]}</div>
+              <div>
+                <div style={{ fontFamily:'var(--ff-display)', fontWeight:300, fontSize:10, letterSpacing:'0.20em', textTransform:'uppercase', color:'var(--ink-3)', marginBottom:'var(--s-2)' }}>{years}</div>
+                <h3 style={{ fontFamily:'var(--ff-editorial)', fontWeight:400, fontSize:17, lineHeight:1.3, letterSpacing:'-0.01em', margin:'0 0 var(--s-3)', maxWidth:'52ch' }}>{title}</h3>
+                <p style={{ fontFamily:'var(--ff-editorial)', fontSize:13.5, lineHeight:1.65, color:'var(--ink-2)', margin:0, maxWidth:'64ch' }}>{description}</p>
+                {timelineLinks[years.split('–')[0]] && (
+                  <Link
+                    to={timelineLinks[years.split('–')[0]]}
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: 6,
+                      marginTop: 'var(--s-4)',
+                      fontFamily: 'var(--ff-display)',
+                      fontWeight: 300,
+                      fontSize: 10,
+                      letterSpacing: '0.20em',
+                      textTransform: 'uppercase',
+                      color: 'var(--ink)',
+                      borderBottom: '1px solid var(--ink)',
+                      paddingBottom: 2,
+                      transition: 'opacity 200ms',
+                    }}
+                    onMouseEnter={e => e.currentTarget.style.opacity = '0.6'}
+                    onMouseLeave={e => e.currentTarget.style.opacity = '1'}
+                  >
+                    View project →
+                  </Link>
+                )}
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
 
-        {/* Right: Project cards */}
-        <div style={{ position:'sticky', top:120 }}>
-          <div style={{ fontFamily:'var(--ff-display)', fontWeight:300, fontSize:10, letterSpacing:'0.22em', textTransform:'uppercase', color:'var(--ink-3)', marginBottom:'var(--s-6)', paddingBottom:'var(--s-3)', borderBottom:'1px solid var(--rule)' }}>
-            The work
-          </div>
-          <div style={{ display:'flex', flexDirection:'column', gap:0 }}>
-            {projects.map(({ slug, title, description }, i) => (
-              <Link key={slug} to={`/portfolio/${slug}`} style={{ display:'block', paddingBlock:'var(--s-5)', borderBottom:'1px solid var(--rule-2)', textDecoration:'none', transition:'background 200ms' }}
-                onMouseEnter={e => e.currentTarget.style.background = 'hsl(48 60% 92%)'}
-                onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
-              >
-                <div style={{ fontFamily:'var(--ff-display)', fontWeight:200, fontSize:32, lineHeight:1, letterSpacing:'-0.03em', color:'var(--ink-4)', marginBottom:'var(--s-3)' }}>
-                  {String(i+1).padStart(2,'0')}
-                </div>
-                <h3 style={{ fontFamily:'var(--ff-editorial)', fontWeight:400, fontSize:17, lineHeight:1.3, letterSpacing:'-0.01em', margin:'0 0 var(--s-2)', maxWidth:'28ch' }}>{title}</h3>
-                <p style={{ fontFamily:'var(--ff-editorial)', fontSize:13, lineHeight:1.6, color:'var(--ink-2)', margin:'0 0 var(--s-3)', maxWidth:'44ch' }}>{description}</p>
-                <div style={{ fontFamily:'var(--ff-display)', fontWeight:300, fontSize:10, letterSpacing:'0.20em', textTransform:'uppercase', color:'var(--ink-3)' }}>View case →</div>
-              </Link>
-            ))}
-          </div>
-          <div style={{ paddingTop:'var(--s-6)', textAlign:'right' }}>
-            <Link to="/portfolio" style={{ fontFamily:'var(--ff-display)', fontWeight:300, fontSize:10, letterSpacing:'0.20em', textTransform:'uppercase', color:'var(--ink)', borderBottom:'1px solid var(--ink)', paddingBottom:2 }}>
-              All 13 cases →
-            </Link>
-          </div>
+        {/* CTA */}
+        <div style={{ paddingTop: 'var(--s-8)', textAlign: 'center', borderTop: '1px solid var(--rule)' }}>
+          <Link to="/portfolio" style={{
+            fontFamily: 'var(--ff-display)', fontWeight: 300, fontSize: 11,
+            letterSpacing: '0.20em', textTransform: 'uppercase', color: 'var(--ink)',
+            borderBottom: '1px solid var(--ink)', paddingBottom: 2,
+            transition: 'opacity 200ms'
+          }}
+          onMouseEnter={e => e.currentTarget.style.opacity = '0.6'}
+          onMouseLeave={e => e.currentTarget.style.opacity = '1'}>
+            All 13 cases →
+          </Link>
         </div>
       </div>
 
@@ -178,7 +148,6 @@ const BimboRelationship = () => {
 
       <style>{`
         @media (max-width: 768px) {
-          .bimbo-grid { grid-template-columns: 1fr !important; }
           .bimbo-hero-grid { grid-template-columns: 1fr !important; }
         }
       `}</style>
