@@ -152,71 +152,208 @@ const Index = () => {
                 A mindset, not a method. Complex service problems don't have single solutions: they have navigation strategies.
               </p>
             </div>
-            <p className="home-approach-statement prose-constrained">
-              "Experience cannot be designed: only enabled. Success emerges from
-              navigating complexity through continuous evolution and adaptation,
-              balancing control with emergence while maintaining a deep understanding
-              of system dynamics."
+            <p style={{ fontFamily: 'var(--ff-editorial)', fontWeight: 400, fontSize: 'clamp(18px, 2.5vw, 28px)', lineHeight: 1.3, letterSpacing: '-0.01em', maxWidth: '52ch', margin: '0 0 var(--s-7)', color: 'var(--ink)' }}>
+              Navigating complex service problems requires two things: a broad methodology toolkit and the accumulated experience to know when to use each part of it.
             </p>
-            <div style={{ margin: 'var(--s-7) 0', overflowX: 'auto' }}>
-              <svg viewBox="0 0 560 560" xmlns="http://www.w3.org/2000/svg"
-                style={{ width: '100%', maxWidth: 560, height: 'auto', display: 'block', margin: '0 auto' }}>
 
-                <circle cx="280" cy="280" r="240" fill="none" stroke="var(--rule)" strokeWidth="1"/>
-                <circle cx="280" cy="280" r="120" fill="none" stroke="var(--rule)" strokeWidth="1"/>
+            <style>{`
+              .nav-diagram { width: 100%; overflow: hidden; }
 
-                <circle cx="280" cy="280" r="80" fill="var(--ink)" />
-                <text x="280" y="270" textAnchor="middle" fontFamily="var(--ff-display)" fontWeight="300" fontSize="10" letterSpacing="0.18em" fill="hsl(48 100% 95%)" opacity="0.6">KNOWLEDGE</text>
-                <text x="280" y="288" textAnchor="middle" fontFamily="var(--ff-display)" fontWeight="300" fontSize="10" letterSpacing="0.18em" fill="hsl(48 100% 95%)" opacity="0.6">SYSTEM</text>
-                <text x="280" y="312" textAnchor="middle" fontFamily="var(--ff-display)" fontWeight="200" fontSize="28" fill="hsl(48 100% 95%)">↺</text>
+              .nav-diagram-inner {
+                display: grid;
+                grid-template-columns: 1fr auto 1fr auto 1fr;
+                gap: 0;
+                align-items: stretch;
+              }
 
-                <circle cx="280" cy="40" r="36" fill="hsl(var(--pastel-yellow))" stroke="var(--ink)" strokeWidth="1.5"/>
-                <text x="280" y="35" textAnchor="middle" fontFamily="var(--ff-display)" fontWeight="300" fontSize="9" letterSpacing="0.14em" fill="var(--ink-3)">01</text>
-                <text x="280" y="50" textAnchor="middle" fontFamily="var(--ff-editorial)" fontWeight="400" fontSize="11" fill="var(--ink)">Map</text>
+              @media (max-width: 640px) {
+                .nav-diagram-inner {
+                  grid-template-columns: auto 1fr;
+                  grid-template-rows: auto auto auto auto auto auto auto auto auto;
+                }
+              }
 
-                <path d="M 314 58 A 240 240 0 0 1 494 193" fill="none" stroke="var(--ink)" strokeWidth="1" strokeDasharray="3 3"/>
-                <polygon points="490,190 498,200 500,188" fill="var(--ink)"/>
+              .nav-node {
+                border: 1px solid var(--rule);
+                padding: var(--s-5);
+                display: flex;
+                flex-direction: column;
+                gap: var(--s-3);
+                background: hsl(var(--pastel-yellow));
+              }
+              .nav-node.accent {
+                border-color: var(--accent);
+                background: hsl(160 25% 95%);
+              }
+              .nav-node-num {
+                font-family: var(--ff-display);
+                font-weight: 200;
+                font-size: 40px;
+                line-height: 0.9;
+                letter-spacing: -0.04em;
+                color: var(--ink-4);
+              }
+              .nav-node-label {
+                font-family: var(--ff-display);
+                font-weight: 300;
+                font-size: 9px;
+                letter-spacing: 0.20em;
+                text-transform: uppercase;
+                color: var(--ink-3);
+              }
+              .nav-node.accent .nav-node-label { color: var(--accent); }
+              .nav-node-title {
+                font-family: var(--ff-editorial);
+                font-weight: 400;
+                font-size: 15px;
+                line-height: 1.25;
+                color: var(--ink);
+                margin: 0;
+              }
+              .nav-node-body {
+                font-family: var(--ff-editorial);
+                font-size: 12px;
+                line-height: 1.55;
+                color: var(--ink-2);
+                margin: 0;
+              }
 
-                <circle cx="508" cy="207" r="36" fill="hsl(var(--pastel-yellow))" stroke="var(--ink)" strokeWidth="1.5"/>
-                <text x="508" y="202" textAnchor="middle" fontFamily="var(--ff-display)" fontWeight="300" fontSize="9" letterSpacing="0.14em" fill="var(--ink-3)">02</text>
-                <text x="508" y="217" textAnchor="middle" fontFamily="var(--ff-editorial)" fontWeight="400" fontSize="11" fill="var(--ink)">Choose</text>
+              .nav-arrow {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 0 var(--s-3);
+                color: var(--ink-4);
+                font-size: 18px;
+                flex-shrink: 0;
+                border-top: 1px solid var(--rule);
+                border-bottom: 1px solid var(--rule);
+                background: hsl(var(--pastel-yellow));
+              }
+              .nav-arrow.accent-arrow {
+                color: var(--accent);
+                border-color: var(--accent);
+              }
 
-                <path d="M 508 243 A 240 240 0 0 1 394 498" fill="none" stroke="var(--ink)" strokeWidth="1" strokeDasharray="3 3"/>
-                <polygon points="390,494 396,506 402,494" fill="var(--ink)"/>
+              @media (max-width: 640px) {
+                .nav-arrow {
+                  writing-mode: vertical-lr;
+                  padding: var(--s-3) 0;
+                  border: none;
+                  border-left: 1px solid var(--rule);
+                  border-right: 1px solid var(--rule);
+                  justify-content: center;
+                  font-size: 16px;
+                  transform: rotate(90deg);
+                  height: 40px;
+                  width: 100%;
+                  border-top: none;
+                  border-bottom: none;
+                }
+                .nav-arrow.accent-arrow {
+                  border-color: var(--accent);
+                }
+              }
 
-                <circle cx="394" cy="516" r="36" fill="hsl(var(--pastel-yellow))" stroke="var(--ink)" strokeWidth="1.5"/>
-                <text x="394" y="510" textAnchor="middle" fontFamily="var(--ff-display)" fontWeight="300" fontSize="9" letterSpacing="0.14em" fill="var(--ink-3)">03</text>
-                <text x="394" y="525" textAnchor="middle" fontFamily="var(--ff-editorial)" fontWeight="400" fontSize="11" fill="var(--ink)">Experiment</text>
+              .nav-knowledge-bar {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 1px;
+                background: var(--rule);
+                border: 1px solid var(--rule);
+                border-top: 2px solid var(--accent);
+                margin-top: var(--s-5);
+              }
+              .nav-knowledge-cell {
+                background: hsl(var(--pastel-yellow));
+                padding: var(--s-5);
+                display: flex;
+                flex-direction: column;
+                gap: var(--s-2);
+              }
+              .nav-knowledge-cell-label {
+                font-family: var(--ff-display);
+                font-weight: 300;
+                font-size: 9px;
+                letter-spacing: 0.20em;
+                text-transform: uppercase;
+                color: var(--accent);
+              }
+              .nav-knowledge-cell-title {
+                font-family: var(--ff-editorial);
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 1.25;
+                color: var(--ink);
+                margin: 0;
+              }
+              .nav-knowledge-cell-body {
+                font-family: var(--ff-editorial);
+                font-size: 12px;
+                line-height: 1.55;
+                color: var(--ink-2);
+                margin: 0;
+              }
+              .nav-footer-label {
+                font-family: var(--ff-display);
+                font-weight: 300;
+                font-size: 9px;
+                letter-spacing: 0.20em;
+                text-transform: uppercase;
+                color: var(--ink-4);
+                margin-top: var(--s-4);
+                text-align: center;
+              }
+            `}</style>
 
-                <path d="M 358 516 A 240 240 0 0 1 166 516" fill="none" stroke="var(--ink)" strokeWidth="1" strokeDasharray="3 3"/>
-                <polygon points="170,522 162,512 158,524" fill="var(--ink)"/>
+            <div className="nav-diagram">
 
-                <circle cx="166" cy="516" r="36" fill="hsl(var(--pastel-yellow))" stroke="var(--ink)" strokeWidth="1.5"/>
-                <text x="166" y="510" textAnchor="middle" fontFamily="var(--ff-display)" fontWeight="300" fontSize="9" letterSpacing="0.14em" fill="var(--ink-3)">04</text>
-                <text x="166" y="525" textAnchor="middle" fontFamily="var(--ff-editorial)" fontWeight="400" fontSize="11" fill="var(--ink)">Fill gaps</text>
+              <div className="nav-diagram-inner">
 
-                <path d="M 132 498 A 240 240 0 0 1 52 207" fill="none" stroke="var(--ink)" strokeWidth="1" strokeDasharray="3 3"/>
-                <polygon points="48,212 50,200 60,210" fill="var(--ink)"/>
+                <div className="nav-node">
+                  <div className="nav-node-num">01</div>
+                  <div className="nav-node-label">Kick-off</div>
+                  <div className="nav-node-title">Map the problem</div>
+                  <div className="nav-node-body">Identify base methodology needs and domain-specific context before choosing any tool.</div>
+                </div>
 
-                <circle cx="52" cy="193" r="36" fill="var(--accent)" stroke="var(--accent)" strokeWidth="1.5"/>
-                <text x="52" y="188" textAnchor="middle" fontFamily="var(--ff-display)" fontWeight="300" fontSize="9" letterSpacing="0.14em" fill="white" opacity="0.8">05</text>
-                <text x="52" y="203" textAnchor="middle" fontFamily="var(--ff-editorial)" fontWeight="400" fontSize="11" fill="white">Deliver</text>
+                <div className="nav-arrow">→</div>
 
-                <path d="M 66 158 A 240 240 0 0 1 248 42" fill="none" stroke="var(--accent)" strokeWidth="1.5"/>
-                <polygon points="244,36 252,46 260,36" fill="var(--accent)"/>
+                <div className="nav-node">
+                  <div className="nav-node-num">02</div>
+                  <div className="nav-node-label">Navigate</div>
+                  <div className="nav-node-title">Choose where you are strongest</div>
+                  <div className="nav-node-body">Deploy the toolkit where experience is deepest. Confidence reduces cognitive load under uncertainty.</div>
+                </div>
 
-                <line x1="280" y1="76" x2="280" y2="200" stroke="var(--rule)" strokeWidth="1"/>
-                <line x1="472" y1="207" x2="400" y2="260" stroke="var(--rule)" strokeWidth="1"/>
-                <line x1="366" y1="480" x2="320" y2="360" stroke="var(--rule)" strokeWidth="1"/>
-                <line x1="194" y1="480" x2="240" y2="360" stroke="var(--rule)" strokeWidth="1"/>
-                <line x1="88" y1="207" x2="160" y2="260" stroke="var(--rule)" strokeWidth="1"/>
+                <div className="nav-arrow">→</div>
 
-                <text x="100" y="72" textAnchor="middle" fontFamily="var(--ff-display)" fontWeight="300" fontSize="8" letterSpacing="0.16em" fill="var(--accent)">FEEDS BACK</text>
-                <text x="100" y="84" textAnchor="middle" fontFamily="var(--ff-display)" fontWeight="300" fontSize="8" letterSpacing="0.16em" fill="var(--accent)">INTO SYSTEM</text>
+                <div className="nav-node">
+                  <div className="nav-node-num">03</div>
+                  <div className="nav-node-label">Continuous improvement</div>
+                  <div className="nav-node-title">Navigate ongoing uncertainty</div>
+                  <div className="nav-node-body">Iterate through ambiguity. Document what works and what doesn't. Each cycle refines the system.</div>
+                </div>
 
-                <text x="280" y="556" textAnchor="middle" fontFamily="var(--ff-display)" fontWeight="300" fontSize="8" letterSpacing="0.20em" fill="var(--ink-4)">EXPERIENCE COMPOUNDS · EACH PROJECT ENRICHES THE NEXT</text>
+              </div>
 
-              </svg>
+              <div className="nav-knowledge-bar">
+                <div className="nav-knowledge-cell">
+                  <div className="nav-knowledge-cell-label">Core knowledge · Replicable</div>
+                  <div className="nav-knowledge-cell-title">Context-agnostic methodology</div>
+                  <div className="nav-knowledge-cell-body">Research · Analysis · Facilitation · Communication · Delivery. Transfers across every domain and sector.</div>
+                </div>
+                <div className="nav-knowledge-cell">
+                  <div className="nav-knowledge-cell-label">Specific knowledge · Contextual</div>
+                  <div className="nav-knowledge-cell-title">Domain and audience expertise</div>
+                  <div className="nav-knowledge-cell-body">When gaps appear: experiment with a new tool, or integrate external capability. Intellectual honesty over false confidence.</div>
+                </div>
+              </div>
+
+              <div className="nav-footer-label">
+                EXPERIENCE COMPOUNDS · LEARNING DOCUMENTED · KNOWLEDGE SYSTEM GROWS WITH EACH PROJECT
+              </div>
+
             </div>
 
             <Link to="/methodology" className="cta-link cta-link-md">
@@ -225,14 +362,6 @@ const Index = () => {
           </div>
         </section>
 
-        {/* ── FOOTER STRIP ── */}
-        <div className="home-footer-strip container-narrow">
-          <span>
-            <span style={{ display: 'inline-block', width: 6, height: 6, background: 'var(--ink)', borderRadius: '50%', marginRight: 8, verticalAlign: 1 }}></span>
-            nosilverbullets.eu
-          </span>
-          <span>Service Design Portfolio · Christian Bussalleu · Barcelona</span>
-        </div>
 
       </main>
       <Footer />

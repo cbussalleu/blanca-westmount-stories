@@ -126,10 +126,6 @@ const BimboRelationship = () => {
       </div>
 
       {/* Closing */}
-      <div className="pd-closing" style={{ width:'100%', maxWidth:1120, marginInline:'auto', paddingInline:'clamp(20px,4vw,48px)' }}>
-        <span className="closing-label">End of Grupo Bimbo engagement</span>
-        <div className="closing-meta">Grupo Bimbo · 2017–present · 17 countries<br/><Link to="/portfolio" style={{ color:'var(--ink)', borderBottom:'1px solid var(--ink)', paddingBottom:2 }}>→ All 13 cases</Link></div>
-      </div>
 
       <Footer />
 
