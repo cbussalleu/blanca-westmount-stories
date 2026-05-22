@@ -20,22 +20,27 @@ const Index = () => {
 
         {/* ── HERO ── */}
         <section className="home-hero">
-          <div className="container-narrow">
+          <div className="hero-wrap">
             <div className="home-hero-top">
               <div><span className="dot"></span>Service Design Portfolio</div>
-              <div>Christian Bussalleu · Barcelona</div>
+              <div>Barcelona · 15+ years · Global scale</div>
             </div>
-            <h1>No<br/>Silver<br/>Bullets<em>.</em></h1>
+            <h1>
+              Hello,<br/>
+              I am<br/>
+              <em>Christian.</em>
+            </h1>
             <p className="home-lede">
-              Service Designer with 15+ years of experience designing and implementing
-              complex service systems at global scale. I work at the intersection of
-              human-centered research, organizational change, and operational design.
+              Service Designer working at the intersection of human-centered research,
+              organizational change, and operational design. I help complex organizations
+              transform how they deliver value — at scale, across markets, without losing
+              the human detail.
             </p>
           </div>
         </section>
 
         {/* ── META STRIP ── */}
-        <dl className="home-meta container-narrow">
+        <dl className="home-meta hero-wrap">
           <div><dt>Discipline</dt><dd>Service Design · CX Strategy</dd></div>
           <div><dt>Experience</dt><dd>15+ years · Global scale</dd></div>
           <div><dt>Sectors</dt><dd>FMCG · Finance · Tech · Public</dd></div>

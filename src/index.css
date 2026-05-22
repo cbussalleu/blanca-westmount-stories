@@ -826,6 +826,12 @@
   padding: var(--s-9) 0 var(--s-8);
   border-bottom: 1px solid var(--rule);
 }
+.hero-wrap {
+  width: 100%;
+  max-width: 1120px;
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
 .home-hero-top {
   display: flex;
   align-items: center;
@@ -849,7 +855,7 @@
 .home-hero h1 {
   font-family: var(--ff-display);
   font-weight: 200;
-  font-size: clamp(56px, 8vw, 112px);
+  font-size: clamp(56px, 10vw, 140px);
   line-height: 0.92;
   letter-spacing: -0.02em;
   text-transform: uppercase;
@@ -857,18 +863,17 @@
   text-wrap: balance;
 }
 .home-hero h1 em {
-  font-family: var(--ff-display);
+  font-family: 'westmount-outline', serif;
   font-style: normal;
-  font-weight: 200;
+  font-weight: normal;
   letter-spacing: 0.04em;
-  opacity: 0.4;
 }
 .home-hero .home-lede {
   font-family: var(--ff-editorial);
-  font-size: clamp(17px, 2vw, 22px);
-  line-height: 1.55;
+  font-size: clamp(15px, 1.8vw, 20px);
+  line-height: 1.6;
   color: var(--ink-2);
-  max-width: 58ch;
+  max-width: 54ch;
   margin: 0;
 }
 
