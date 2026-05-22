@@ -159,61 +159,62 @@ const Index = () => {
               of system dynamics."
             </p>
             <div style={{ margin: 'var(--s-7) 0', overflowX: 'auto' }}>
-              <svg viewBox="0 0 960 360" xmlns="http://www.w3.org/2000/svg" style={{ width: '100%', maxWidth: 960, height: 'auto', display: 'block', fontFamily: 'var(--ff-display)' }}>
+              <svg viewBox="0 0 560 560" xmlns="http://www.w3.org/2000/svg"
+                style={{ width: '100%', maxWidth: 560, height: 'auto', display: 'block', margin: '0 auto' }}>
 
-                <text x="20" y="20" fontSize="9" fontWeight="300" letterSpacing="0.20em" fill="var(--ink-4)">KNOWLEDGE INPUT</text>
-                <text x="560" y="20" fontSize="9" fontWeight="300" letterSpacing="0.20em" fill="var(--ink-4)">NAVIGATION PROCESS</text>
+                <circle cx="280" cy="280" r="240" fill="none" stroke="var(--rule)" strokeWidth="1"/>
+                <circle cx="280" cy="280" r="120" fill="none" stroke="var(--rule)" strokeWidth="1"/>
 
-                <rect x="20" y="36" width="220" height="80" fill="none" stroke="var(--ink)" strokeWidth="1.5"/>
-                <text x="30" y="56" fontSize="9" fontWeight="300" letterSpacing="0.18em" fill="var(--ink-3)">01 · BASE</text>
-                <text x="30" y="76" fontSize="13" fontWeight="400" fontFamily="var(--ff-editorial)" fill="var(--ink)">Context-agnostic</text>
-                <text x="30" y="94" fontSize="11" fontWeight="300" fill="var(--ink-3)">Research · Analysis · Facilitation</text>
-                <text x="30" y="108" fontSize="11" fontWeight="300" fill="var(--ink-3)">Communication · Delivery</text>
+                <circle cx="280" cy="280" r="80" fill="var(--ink)" />
+                <text x="280" y="270" textAnchor="middle" fontFamily="var(--ff-display)" fontWeight="300" fontSize="10" letterSpacing="0.18em" fill="hsl(48 100% 95%)" opacity="0.6">KNOWLEDGE</text>
+                <text x="280" y="288" textAnchor="middle" fontFamily="var(--ff-display)" fontWeight="300" fontSize="10" letterSpacing="0.18em" fill="hsl(48 100% 95%)" opacity="0.6">SYSTEM</text>
+                <text x="280" y="312" textAnchor="middle" fontFamily="var(--ff-display)" fontWeight="200" fontSize="28" fill="hsl(48 100% 95%)">↺</text>
 
-                <rect x="20" y="136" width="220" height="80" fill="var(--ink)" stroke="var(--ink)" strokeWidth="1.5"/>
-                <text x="30" y="156" fontSize="9" fontWeight="300" letterSpacing="0.18em" fill="hsl(48 100% 95%)" opacity="0.6">02 · SPECIALIZED</text>
-                <text x="30" y="176" fontSize="13" fontWeight="400" fontFamily="var(--ff-editorial)" fill="hsl(48 100% 95%)">Context-specific</text>
-                <text x="30" y="194" fontSize="11" fontWeight="300" fill="hsl(48 100% 95%)" opacity="0.7">Sector · Audience · Regulation</text>
-                <text x="30" y="208" fontSize="11" fontWeight="300" fill="hsl(48 100% 95%)" opacity="0.7">Culture · Domain expertise</text>
+                <circle cx="280" cy="40" r="36" fill="hsl(var(--pastel-yellow))" stroke="var(--ink)" strokeWidth="1.5"/>
+                <text x="280" y="35" textAnchor="middle" fontFamily="var(--ff-display)" fontWeight="300" fontSize="9" letterSpacing="0.14em" fill="var(--ink-3)">01</text>
+                <text x="280" y="50" textAnchor="middle" fontFamily="var(--ff-editorial)" fontWeight="400" fontSize="11" fill="var(--ink)">Map</text>
 
-                <line x1="240" y1="76" x2="280" y2="140" stroke="var(--ink)" strokeWidth="1.5"/>
-                <line x1="240" y1="176" x2="280" y2="160" stroke="var(--ink)" strokeWidth="1.5"/>
-                <line x1="280" y1="140" x2="280" y2="160" stroke="var(--ink)" strokeWidth="1.5"/>
-                <line x1="280" y1="150" x2="310" y2="150" stroke="var(--ink)" strokeWidth="1.5"/>
-                <polygon points="310,145 322,150 310,155" fill="var(--ink)"/>
+                <path d="M 314 58 A 240 240 0 0 1 494 193" fill="none" stroke="var(--ink)" strokeWidth="1" strokeDasharray="3 3"/>
+                <polygon points="490,190 498,200 500,188" fill="var(--ink)"/>
 
-                <rect x="322" y="110" width="130" height="80" fill="hsl(var(--pastel-yellow))" stroke="var(--ink)" strokeWidth="1.5"/>
-                <text x="387" y="133" textAnchor="middle" fontSize="9" fontWeight="300" letterSpacing="0.16em" fill="var(--ink-3)">STEP 1</text>
-                <text x="387" y="153" textAnchor="middle" fontSize="13" fontWeight="400" fontFamily="var(--ff-editorial)" fill="var(--ink)">Map both</text>
-                <text x="387" y="170" textAnchor="middle" fontSize="13" fontWeight="400" fontFamily="var(--ff-editorial)" fill="var(--ink)">layers</text>
-                <line x1="452" y1="150" x2="482" y2="150" stroke="var(--ink)" strokeWidth="1.5"/>
-                <polygon points="482,145 494,150 482,155" fill="var(--ink)"/>
+                <circle cx="508" cy="207" r="36" fill="hsl(var(--pastel-yellow))" stroke="var(--ink)" strokeWidth="1.5"/>
+                <text x="508" y="202" textAnchor="middle" fontFamily="var(--ff-display)" fontWeight="300" fontSize="9" letterSpacing="0.14em" fill="var(--ink-3)">02</text>
+                <text x="508" y="217" textAnchor="middle" fontFamily="var(--ff-editorial)" fontWeight="400" fontSize="11" fill="var(--ink)">Choose</text>
 
-                <rect x="494" y="110" width="130" height="80" fill="hsl(var(--pastel-yellow))" stroke="var(--ink)" strokeWidth="1.5"/>
-                <text x="559" y="133" textAnchor="middle" fontSize="9" fontWeight="300" letterSpacing="0.16em" fill="var(--ink-3)">STEP 2</text>
-                <text x="559" y="153" textAnchor="middle" fontSize="13" fontWeight="400" fontFamily="var(--ff-editorial)" fill="var(--ink)">Choose</text>
-                <text x="559" y="170" textAnchor="middle" fontSize="13" fontWeight="400" fontFamily="var(--ff-editorial)" fill="var(--ink)">your toolkit</text>
-                <line x1="624" y1="150" x2="654" y2="150" stroke="var(--ink)" strokeWidth="1.5"/>
-                <polygon points="654,145 666,150 654,155" fill="var(--ink)"/>
+                <path d="M 508 243 A 240 240 0 0 1 394 498" fill="none" stroke="var(--ink)" strokeWidth="1" strokeDasharray="3 3"/>
+                <polygon points="390,494 396,506 402,494" fill="var(--ink)"/>
 
-                <rect x="666" y="110" width="130" height="80" fill="hsl(var(--pastel-yellow))" stroke="var(--ink)" strokeWidth="1.5"/>
-                <text x="731" y="133" textAnchor="middle" fontSize="9" fontWeight="300" letterSpacing="0.16em" fill="var(--ink-3)">STEP 3</text>
-                <text x="731" y="153" textAnchor="middle" fontSize="13" fontWeight="400" fontFamily="var(--ff-editorial)" fill="var(--ink)">Experiment</text>
-                <text x="731" y="170" textAnchor="middle" fontSize="13" fontWeight="400" fontFamily="var(--ff-editorial)" fill="var(--ink)">+ fill gaps</text>
-                <line x1="796" y1="150" x2="826" y2="150" stroke="var(--ink)" strokeWidth="1.5"/>
-                <polygon points="826,145 838,150 826,155" fill="var(--ink)"/>
+                <circle cx="394" cy="516" r="36" fill="hsl(var(--pastel-yellow))" stroke="var(--ink)" strokeWidth="1.5"/>
+                <text x="394" y="510" textAnchor="middle" fontFamily="var(--ff-display)" fontWeight="300" fontSize="9" letterSpacing="0.14em" fill="var(--ink-3)">03</text>
+                <text x="394" y="525" textAnchor="middle" fontFamily="var(--ff-editorial)" fontWeight="400" fontSize="11" fill="var(--ink)">Experiment</text>
 
-                <rect x="838" y="110" width="102" height="80" fill="var(--ink)" stroke="var(--ink)" strokeWidth="1.5"/>
-                <text x="889" y="140" textAnchor="middle" fontSize="9" fontWeight="300" letterSpacing="0.16em" fill="hsl(48 100% 95%)" opacity="0.6">OUTPUT</text>
-                <text x="889" y="160" textAnchor="middle" fontSize="13" fontWeight="400" fontFamily="var(--ff-editorial)" fill="hsl(48 100% 95%)">Deliver</text>
-                <text x="889" y="177" textAnchor="middle" fontSize="11" fontWeight="300" fill="hsl(48 100% 95%)" opacity="0.7">and learn</text>
+                <path d="M 358 516 A 240 240 0 0 1 166 516" fill="none" stroke="var(--ink)" strokeWidth="1" strokeDasharray="3 3"/>
+                <polygon points="170,522 162,512 158,524" fill="var(--ink)"/>
 
-                <path d="M 889 190 Q 889 280 460 280 Q 30 280 30 216" fill="none" stroke="var(--ink)" strokeWidth="1" strokeDasharray="4 4"/>
-                <polygon points="26,216 30,228 34,216" fill="var(--ink)"/>
-                <text x="460" y="300" textAnchor="middle" fontSize="9" fontWeight="300" letterSpacing="0.20em" fill="var(--ink-4)">EACH PROJECT ENRICHES THE KNOWLEDGE BASE</text>
+                <circle cx="166" cy="516" r="36" fill="hsl(var(--pastel-yellow))" stroke="var(--ink)" strokeWidth="1.5"/>
+                <text x="166" y="510" textAnchor="middle" fontFamily="var(--ff-display)" fontWeight="300" fontSize="9" letterSpacing="0.14em" fill="var(--ink-3)">04</text>
+                <text x="166" y="525" textAnchor="middle" fontFamily="var(--ff-editorial)" fontWeight="400" fontSize="11" fill="var(--ink)">Fill gaps</text>
 
-                <rect x="322" y="230" width="518" height="28" fill="none" stroke="var(--rule)" strokeWidth="1" strokeDasharray="2 2"/>
-                <text x="581" y="249" textAnchor="middle" fontSize="9" fontWeight="300" letterSpacing="0.18em" fill="var(--ink-4)">ACCUMULATED EXPERIENCE · NO SILVER BULLETS · COMPLEXITY AS MATERIAL</text>
+                <path d="M 132 498 A 240 240 0 0 1 52 207" fill="none" stroke="var(--ink)" strokeWidth="1" strokeDasharray="3 3"/>
+                <polygon points="48,212 50,200 60,210" fill="var(--ink)"/>
+
+                <circle cx="52" cy="193" r="36" fill="var(--accent)" stroke="var(--accent)" strokeWidth="1.5"/>
+                <text x="52" y="188" textAnchor="middle" fontFamily="var(--ff-display)" fontWeight="300" fontSize="9" letterSpacing="0.14em" fill="white" opacity="0.8">05</text>
+                <text x="52" y="203" textAnchor="middle" fontFamily="var(--ff-editorial)" fontWeight="400" fontSize="11" fill="white">Deliver</text>
+
+                <path d="M 66 158 A 240 240 0 0 1 248 42" fill="none" stroke="var(--accent)" strokeWidth="1.5"/>
+                <polygon points="244,36 252,46 260,36" fill="var(--accent)"/>
+
+                <line x1="280" y1="76" x2="280" y2="200" stroke="var(--rule)" strokeWidth="1"/>
+                <line x1="472" y1="207" x2="400" y2="260" stroke="var(--rule)" strokeWidth="1"/>
+                <line x1="366" y1="480" x2="320" y2="360" stroke="var(--rule)" strokeWidth="1"/>
+                <line x1="194" y1="480" x2="240" y2="360" stroke="var(--rule)" strokeWidth="1"/>
+                <line x1="88" y1="207" x2="160" y2="260" stroke="var(--rule)" strokeWidth="1"/>
+
+                <text x="100" y="72" textAnchor="middle" fontFamily="var(--ff-display)" fontWeight="300" fontSize="8" letterSpacing="0.16em" fill="var(--accent)">FEEDS BACK</text>
+                <text x="100" y="84" textAnchor="middle" fontFamily="var(--ff-display)" fontWeight="300" fontSize="8" letterSpacing="0.16em" fill="var(--accent)">INTO SYSTEM</text>
+
+                <text x="280" y="556" textAnchor="middle" fontFamily="var(--ff-display)" fontWeight="300" fontSize="8" letterSpacing="0.20em" fill="var(--ink-4)">EXPERIENCE COMPOUNDS · EACH PROJECT ENRICHES THE NEXT</text>
 
               </svg>
             </div>

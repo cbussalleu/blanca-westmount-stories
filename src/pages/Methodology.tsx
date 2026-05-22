@@ -39,7 +39,7 @@ const Methodology = () => {
         <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--s-8)' }}>
 
           {/* Principle 1 */}
-          <div style={{ borderTop: '1px solid var(--rule)', paddingTop: 'var(--s-6)' }}>
+          <div style={{ borderTop: '2px solid var(--accent)', paddingTop: 'var(--s-6)' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--s-3)', marginBottom: 'var(--s-4)' }}>
               <span style={{ fontFamily: 'var(--ff-display)', fontWeight: 400, fontSize: 12, letterSpacing: '0.18em', textTransform: 'uppercase', background: 'var(--ink)', color: 'hsl(var(--pastel-yellow))', padding: '4px 8px' }}>01</span>
               <span style={{ fontFamily: 'var(--ff-display)', fontWeight: 300, fontSize: 10, letterSpacing: '0.22em', textTransform: 'uppercase', padding: '4px 8px', border: '1px solid var(--ink)', color: 'var(--ink)' }}>Mindset</span>
@@ -162,6 +162,51 @@ const Methodology = () => {
           .methodology-grid { grid-template-columns: 1fr !important; }
         }
       `}</style>
+
+      <section style={{ borderTop: '2px solid var(--accent)', borderBottom: '1px solid var(--rule)', padding: 'var(--s-9) 0' }}>
+        <div style={{ width: '100%', maxWidth: 1120, marginInline: 'auto', paddingInline: 'clamp(20px,4vw,48px)' }}>
+          <div style={{ fontFamily: 'var(--ff-display)', fontWeight: 300, fontSize: 10, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--ink-3)', marginBottom: 'var(--s-7)' }}>
+            The navigation process
+          </div>
+
+          <style>{`
+            .method-steps { display: flex; flex-direction: row; gap: 0; }
+            .method-step { flex: 1; padding: var(--s-5); border-left: 1px solid var(--rule); display: flex; flex-direction: column; gap: var(--s-3); }
+            .method-step:first-child { border-left: 2px solid var(--accent); }
+            .method-step-arrow { display: flex; align-items: center; justify-content: center; padding: 0 var(--s-3); color: var(--ink-4); font-size: 18px; flex-shrink: 0; }
+            @media (max-width: 768px) {
+              .method-steps { flex-direction: column; }
+              .method-step { border-left: 2px solid var(--rule); border-top: none; padding: var(--s-5) var(--s-5) var(--s-5) var(--s-6); }
+              .method-step:first-child { border-left: 2px solid var(--accent); }
+              .method-step-arrow { transform: rotate(90deg); justify-content: flex-start; padding: var(--s-2) 0 var(--s-2) var(--s-4); }
+            }
+          `}</style>
+
+          <div className="method-steps">
+            {[
+              { num: '01', label: 'Map', title: 'Map both layers', body: 'Identify what the problem requires at the base level (research, analysis, facilitation) and at the domain-specific level (sector, audience, regulation).' },
+              { num: '02', label: 'Choose', title: 'Choose your toolkit', body: 'Select the methods and frameworks where your experience is deepest. Confidence in the toolkit reduces cognitive load during execution.' },
+              { num: '03', label: 'Experiment', title: 'Experiment deliberately', body: 'Introduce one new tool or method where the problem requires it. Deliberate experimentation, not improvisation.' },
+              { num: '04', label: 'Fill gaps', title: 'Fill critical gaps', body: "Bring in external capability where there are hard gaps. Knowing what you don't know is a capability in itself." },
+              { num: '05', label: 'Deliver', title: 'Deliver and feed back', body: 'Execute, measure, and contribute what you learned back into the knowledge system. The next project starts better.' },
+            ].map(({ num, label, title, body }, i, arr) => (
+              <>
+                <div className="method-step" key={num}
+                  style={{ borderLeftColor: num === '05' ? 'var(--accent)' : undefined, background: num === '05' ? 'hsl(161 28% 60% / 0.06)' : 'transparent' }}
+                >
+                  <div style={{ fontFamily: 'var(--ff-display)', fontWeight: 200, fontSize: 32, lineHeight: 0.9, letterSpacing: '-0.03em', color: 'var(--ink-4)' }}>{num}</div>
+                  <div style={{ fontFamily: 'var(--ff-display)', fontWeight: 300, fontSize: 9, letterSpacing: '0.20em', textTransform: 'uppercase', color: num === '05' ? 'var(--accent)' : 'var(--ink-3)' }}>{label}</div>
+                  <div style={{ fontFamily: 'var(--ff-editorial)', fontWeight: 400, fontSize: 15, lineHeight: 1.3, margin: 0 }}>{title}</div>
+                  <div style={{ fontFamily: 'var(--ff-editorial)', fontSize: 13, lineHeight: 1.6, color: 'var(--ink-2)', margin: 0 }}>{body}</div>
+                </div>
+                {i < arr.length - 1 && (
+                  <div className="method-step-arrow" key={`arrow-${num}`}>→</div>
+                )}
+              </>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <Footer />
     </div>
