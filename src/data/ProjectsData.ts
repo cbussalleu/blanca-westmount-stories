@@ -8,6 +8,7 @@ export interface Project {
   slug: string;
   imageSrc: string;
   // Extended fields for detail pages
+  category?: string[];
   challenge?: string;
   complexity?: string[];
   research?: string[];
@@ -26,6 +27,7 @@ export const projects: Project[] = [
     client: "Grupo Bimbo",
     slug: "connection-center",
     imageSrc: "https://images.unsplash.com/photo-1565767292670-bbc01d6ce4a7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    category: ["FMCG", "Bimbo", "Service Design"],
     challenge: "Design a global omnichannel customer experience model capable of standardizing consumer and customer engagement while adapting to diverse market needs across 17 countries in Latin America, Europe, and Asia.",
     complexity: [
       "Highly variable digital maturity levels between developed markets (Spain) and emerging markets (India)",
@@ -70,6 +72,7 @@ export const projects: Project[] = [
     client: "Grupo Bimbo",
     slug: "crm-service-design",
     imageSrc: "https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    category: ["FMCG", "Bimbo", "Service Design"],
     challenge: "Transform research insights and service blueprints into a functional, scalable CRM implementation that would unify customer experience processes while enabling local adaptation.",
     complexity: [
       "Integration with diverse legacy systems across markets",
@@ -104,6 +107,7 @@ export const projects: Project[] = [
     client: "Grupo Bimbo",
     slug: "t-conecta",
     imageSrc: "https://images.unsplash.com/photo-1554224155-1696413565d3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    category: ["FMCG", "Bimbo", "B2B"],
     challenge: "Design an integrated B2B digital platform for small businesses in Mexico, combining ordering systems, financial services, and additional revenue streams into a single ecosystem.",
     complexity: [
       "Diverse user needs across small business owners with varying digital literacy levels",
@@ -148,6 +152,7 @@ export const projects: Project[] = [
     client: "Grupo Bimbo",
     slug: "continuous-improvement",
     imageSrc: "https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    category: ["FMCG", "Bimbo", "Service Design"],
     challenge: "Design and implement a sustainable model for continuous improvement and innovation across the global Connection Center ecosystem, transforming customer feedback into systematic competitive advantage across 17 countries.",
     complexity: [
       "Coordinating improvement cycles across markets with different maturity levels",
@@ -190,6 +195,7 @@ export const projects: Project[] = [
     client: "La Positiva Insurance",
     slug: "digital-sales-transformation",
     imageSrc: "https://images.unsplash.com/photo-1556742111-a301076d9d18?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    category: ["Financial Services", "Service Design"],
     challenge: "Transform traditional insurance sales into a digital channel, designing the end-to-end digital purchase experience as the first key project in La Positiva's digital transformation roadmap.",
     complexity: [
       "High dependency on traditional channels and significant change resistance from sales force",
@@ -234,6 +240,7 @@ export const projects: Project[] = [
     client: "Nestlé",
     slug: "bartista",
     imageSrc: "https://images.unsplash.com/photo-1511920170033-f8396924c348?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    category: ["FMCG", "Service Design"],
     challenge: "Design an operational model for producing coffee content at global scale for Nestlé's premium coffee brands, balancing global consistency with local cultural relevance across multiple markets.",
     complexity: [
       "Maintaining premium brand standards across markets with very different cultural contexts",
@@ -277,6 +284,7 @@ export const projects: Project[] = [
     client: "Peruvian Government",
     slug: "innovation-maturity-index",
     imageSrc: "https://images.unsplash.com/photo-1584941705321-d883d8b6a3c9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    category: ["Public Sector", "Service Design"],
     challenge: "Develop a self-assessment tool and roadmap planning service to measure digital innovation maturity and guide capability-building journeys across 2,500 diverse public entities in Peru.",
     complexity: [
       "Highly variable digital maturity levels across public entities of different sizes and purposes",
@@ -322,6 +330,7 @@ export const projects: Project[] = [
     client: "Facebook",
     slug: "meta-sales-optimization",
     imageSrc: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    category: ["Technology", "Service Design"],
     challenge: "Redesign the telephone sales process and training program for Meta advertisers, improving conversion rates and agent performance across a high-volume sales operation.",
     complexity: [
       "High volume operation requiring scalable process design",
@@ -365,6 +374,7 @@ export const projects: Project[] = [
     client: "BBVA",
     slug: "loyalty-program-redesign",
     imageSrc: "https://images.unsplash.com/photo-1589758438368-0ad531db3366?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    category: ["Financial Services", "Service Design"],
     challenge: "Redesign the loyalty program for BBVA credit card holders to drive card usage and retention through an optimized points accrual and redemption system.",
     complexity: [
       "Highly regulated financial services environment with strict compliance requirements",
@@ -409,6 +419,7 @@ export const projects: Project[] = [
     slug: "self-assessment-framework",
     imageSrc: "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
     icon: "🔬",
+    category: ["Internal", "Research", "AI"],
     challenge: "Design a rigorous, honest self-assessment of professional capabilities as a Service Designer — one that could be shared publicly without overstatement, and that would give recruiters and peers a trustworthy signal of actual competence and maturity.",
     complexity: [
       "Self-assessment is inherently prone to cognitive biases — Dunning-Kruger effect, social desirability bias, and attribution errors",
