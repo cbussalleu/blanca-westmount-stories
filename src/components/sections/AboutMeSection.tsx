@@ -21,13 +21,13 @@ const AboutMeSection = forwardRef<HTMLElement, AboutMeSectionProps>(
           <div className="grid md:grid-cols-2 gap-6 md:gap-16">
             <div className="space-y-4 md:space-y-6">
               {/* Primer párrafo - SIEMPRE VISIBLE */}
-              <p className="text-sm leading-relaxed font-merriweather">
+              <p className="font-merriweather text-[15px] leading-[1.65] text-gray-700">
                 Service Designer with 15+ years of experience designing and implementing complex service systems at a global scale. I work at the intersection of human-centered research, organizational change, and operational design, helping companies transform how they deliver value to customers and users.
               </p>
             </div>
             <div className="space-y-4 md:space-y-6">
               {/* Segundo párrafo - SOLO DESKTOP */}
-              <p className="text-sm leading-relaxed font-merriweather hidden md:block">
+              <p className="font-merriweather text-[15px] leading-[1.65] text-gray-700 hidden md:block">
                 My work spans sectors including FMCG, financial services, technology, and public sector, with deep experience in multi-country deployments across Latin America, Europe, and Asia.
               </p>
             </div>

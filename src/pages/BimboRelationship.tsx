@@ -69,29 +69,29 @@ const BimboRelationship = () => {
 
               {/* Back link */}
               <div className="mb-8">
-                <Link to="/" className="inline-flex items-center text-xs hover:opacity-70 transition-opacity">
+                <Link to="/" className="inline-flex items-center text-xs hover:opacity-60 transition-opacity">
                   <ArrowLeft size={14} className="mr-1" /> Back to Home
                 </Link>
               </div>
 
               {/* Title */}
               <div className="mb-12">
-                <h1 className="text-3xl sm:text-4xl md:text-5xl font-westmount mb-3">GRUPO BIMBO AND I</h1>
-                <p className="text-xs tracking-widest uppercase text-gray-500">7 years · 17 countries · 4 projects</p>
+                <h1 className="text-3xl sm:text-4xl md:text-5xl font-westmount font-light leading-[0.92] tracking-[-0.02em] mb-3">GRUPO BIMBO AND I</h1>
+                <p className="font-westmount font-light text-[11px] tracking-[0.22em] uppercase text-gray-500">7 years · 17 countries · 4 projects</p>
               </div>
 
               {/* Intro */}
               <div className="mb-12 space-y-4">
-                <p className="text-sm font-merriweather leading-relaxed">
+                <p className="font-merriweather text-[15px] leading-[1.65] text-gray-700">
                   As the world's largest bread manufacturer, present in over 33 countries, operating more than 100 brands, and employing over 134,000 people, Grupo Bimbo required a customer experience transformation at a scale that few organizations ever attempt.
                 </p>
-                <p className="text-sm font-merriweather leading-relaxed">
+                <p className="font-merriweather text-[15px] leading-[1.65] text-gray-700">
                   Since 2017, I have led the design and implementation of the Connection Center: a new global operational model for customer and consumer engagement. The work spans the complete service design lifecycle, from initial research across 9 markets, through the design of 43 service blueprints, to implementation across 17 countries in Latin America, Europe, and Asia.
                 </p>
               </div>
 
               {/* Metrics row */}
-              <div className="mb-16 grid grid-cols-2 md:grid-cols-4 gap-6 border-t border-b border-gray-300 py-8">
+              <div className="mb-16 grid grid-cols-2 md:grid-cols-4 gap-6 border-t border-b border-gray-400 py-8">
                 {[
                   { number: "7", label: "Years of collaboration" },
                   { number: "17", label: "Countries implemented" },
@@ -114,9 +114,9 @@ const BimboRelationship = () => {
                       <div className="flex-shrink-0 w-24 text-right">
                         <span className="text-xs font-merriweather text-gray-500">{years}</span>
                       </div>
-                      <div className="border-l border-gray-300 pl-6 pb-2">
+                      <div className="border-l border-gray-400 pl-6 pb-2">
                         <h3 className="text-sm font-westmount mb-2">{title}</h3>
-                        <p className="text-sm font-merriweather leading-relaxed text-gray-600">{description}</p>
+                        <p className="font-merriweather text-[15px] leading-[1.65] text-gray-700">{description}</p>
                       </div>
                     </div>
                   ))}
@@ -128,12 +128,12 @@ const BimboRelationship = () => {
                 <h2 className="text-xl font-westmount mb-8">The work</h2>
                 <div className="space-y-6">
                   {projects.map(({ slug, title, description }) => (
-                    <div key={slug} className="border-l border-gray-300 pl-4">
+                    <div key={slug} className="border-l border-gray-400 pl-4">
                       <h3 className="text-sm font-westmount mb-2">{title}</h3>
-                      <p className="text-sm font-merriweather text-gray-600 mb-3">{description}</p>
+                      <p className="font-merriweather text-[15px] leading-[1.65] text-gray-700 mb-3">{description}</p>
                       <Link
                         to={`/portfolio/${slug}`}
-                        className="inline-flex items-center text-xs hover:opacity-70 transition-opacity"
+                        className="inline-flex items-center text-xs hover:opacity-60 transition-opacity"
                       >
                         View project <ArrowRight size={12} className="ml-1" />
                       </Link>
@@ -143,9 +143,9 @@ const BimboRelationship = () => {
               </div>
 
               {/* CTA */}
-              <div className="text-center border-t border-gray-300 pt-12">
-                <p className="text-sm font-merriweather mb-4">Want to see the full portfolio?</p>
-                <Link to="/portfolio" className="inline-flex items-center text-xs tracking-widest uppercase hover:opacity-70 transition-opacity">
+              <div className="text-center border-t border-gray-400 pt-12">
+                <p className="font-merriweather text-[15px] leading-[1.65] text-gray-700 mb-4">Want to see the full portfolio?</p>
+                <Link to="/portfolio" className="inline-flex items-center font-westmount font-light text-[11px] tracking-[0.2em] uppercase hover:opacity-60 transition-opacity">
                   All 10 projects <ArrowRight size={12} className="ml-1" />
                 </Link>
               </div>

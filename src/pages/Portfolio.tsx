@@ -25,7 +25,7 @@ const Portfolio = () => {
       <main className="pt-24">
         <div className="container-narrow">
           <div className="mb-8">
-            <Link to="/" className="inline-flex items-center text-xs hover:opacity-70 transition-opacity">
+            <Link to="/" className="inline-flex items-center text-xs hover:opacity-60 transition-opacity">
               <ArrowLeft size={14} className="mr-1" /> Back to Home
             </Link>
           </div>
