@@ -77,7 +77,7 @@ const Header = () => {
           <Link to="/methodology" style={navLinkStyle}
             onMouseEnter={e => e.currentTarget.style.color = 'var(--ink)'}
             onMouseLeave={e => e.currentTarget.style.color = 'var(--ink-3)'}>
-            Methodology
+            How I work
           </Link>
           <Link to="/contact" style={{
             fontFamily: 'var(--ff-display)',
@@ -129,7 +129,7 @@ const Header = () => {
             { to: '/', label: 'Home' },
             { to: '/portfolio', label: 'Work' },
             { to: '/bimbo-relationship', label: 'Grupo Bimbo' },
-            { to: '/methodology', label: 'Methodology' },
+            { to: '/methodology', label: 'How I work' },
             { to: '/contact', label: 'Contact' },
           ].map(({ to, label }) => (
             <Link

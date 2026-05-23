@@ -355,8 +355,23 @@ const RadarSkillsSection = () => {
             </div>
 
             <div className="pt-4 text-center lg:text-left transition-all duration-300">
-              <Link to="/portfolio/self-assessment-framework" className="cta-link cta-link-md">
-                See the method <ArrowRight size={14} />
+              <Link
+                to="/methodology"
+                style={{
+                  fontFamily: 'var(--ff-editorial)',
+                  fontSize: 14,
+                  color: 'var(--ink)',
+                  borderBottom: '1px solid var(--ink)',
+                  paddingBottom: 2,
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: 6,
+                  transition: 'opacity 200ms'
+                }}
+                onMouseEnter={e => e.currentTarget.style.opacity = '0.6'}
+                onMouseLeave={e => e.currentTarget.style.opacity = '1'}
+              >
+                Read the methodology
               </Link>
             </div>
           </div>

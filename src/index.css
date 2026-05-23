@@ -1027,6 +1027,22 @@
   letter-spacing: 0.20em; text-transform: uppercase; color: var(--ink-3);
 }
 
+/* ─── Form element typography ────────────────────────────── */
+input, textarea, select {
+  font-family: var(--ff-display);
+  font-weight: 300;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  color: var(--ink);
+}
+
+input::placeholder, textarea::placeholder {
+  color: var(--ink-4);
+  font-family: var(--ff-display);
+  font-weight: 300;
+  letter-spacing: 0.08em;
+}
+
 @media (max-width: 880px) {
   .home-meta { grid-template-columns: repeat(2, 1fr); }
   .home-meta > div:nth-child(2) { border-left: 0; border-top: 0; }

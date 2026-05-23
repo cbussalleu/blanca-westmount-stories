@@ -13,7 +13,7 @@ const Methodology = () => {
 
       {/* Breadcrumb */}
       <div style={{ width: '100%', maxWidth: 1120, marginInline: 'auto', paddingInline: 'clamp(20px,4vw,48px)', paddingBlock: 'var(--s-5)', paddingTop: 'calc(var(--s-5) + 80px)', borderBottom: '1px solid var(--rule)', display: 'flex', justifyContent: 'space-between', fontFamily: 'var(--ff-display)', fontWeight: 300, fontSize: 11, letterSpacing: '0.20em', textTransform: 'uppercase', color: 'var(--ink-3)' }}>
-        <span>Portfolio · Methodology</span>
+        <span>Portfolio · How I work</span>
         <Link to="/" style={{ color: 'var(--ink)', borderBottom: '1px solid var(--ink)', paddingBottom: 2 }}>← Home</Link>
       </div>
 
@@ -27,7 +27,7 @@ const Methodology = () => {
             No Silver<br/>Bullets.
           </h1>
           <p style={{ fontFamily: 'var(--ff-editorial)', fontSize: 'var(--t-lede)', lineHeight: 1.55, color: 'var(--ink-2)', maxWidth: '54ch', margin: 0 }}>
-            In 1986 Fred Brooks argued that no single technique would produce an order-of-magnitude improvement in software: because some complexity is essential, living in the problem itself. The same is true of service design. This is not a methodology. It is a navigation system.
+            Fred Brooks wrote No Silver Bullets in 1986. The argument was about software, but it translates exactly: some complexity is essential. It lives in the problem itself and cannot be designed away. No solution eliminates it. No methodology does either. What matters is building the judgment to navigate both.
           </p>
         </div>
       </section>
