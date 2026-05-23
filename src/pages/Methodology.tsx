@@ -129,7 +129,7 @@ const Methodology = () => {
           {/* Capabilities CTA */}
           <div style={{ padding: 'var(--s-5)', background: 'var(--ink)', color: 'hsl(var(--pastel-yellow))' }}>
             <div style={{ fontFamily: 'var(--ff-display)', fontWeight: 300, fontSize: 10, letterSpacing: '0.22em', textTransform: 'uppercase', marginBottom: 'var(--s-3)', opacity: 0.6 }}>
-              Behind this methodology
+              Behind this approach
             </div>
             <p style={{ fontFamily: 'var(--ff-editorial)', fontSize: 13, lineHeight: 1.55, margin: '0 0 var(--s-4)', opacity: 0.8 }}>
               The Radar shows the capability dimensions that make this navigation possible: grounded in bibliographic analysis, not self-promotion.

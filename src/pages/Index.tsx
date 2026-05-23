@@ -245,7 +245,7 @@ const Index = () => {
             </div>
 
             <Link to="/methodology" className="cta-link cta-link-md">
-              Read the methodology →
+              How I work →
             </Link>
           </div>
         </section>
