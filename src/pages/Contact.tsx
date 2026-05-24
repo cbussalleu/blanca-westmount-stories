@@ -79,7 +79,7 @@ const Contact = () => {
               Full work history, project list, and education: available as PDF.
             </p>
             <a
-              href="/CV_SD_Christian_Bussalleu_2024_ENG.pdf"
+              href="/CV_CX_Christian_Bussalleu_2026_ENG.pdf"
               download
               style={{ fontFamily:'var(--ff-display)', fontWeight:300, fontSize:10, letterSpacing:'0.20em', textTransform:'uppercase', color:'var(--ink)', border:'1px solid var(--rule)', padding:'7px 14px', display:'inline-block', transition:'background 200ms, color 200ms' }}
               onMouseEnter={e => { e.currentTarget.style.background = 'var(--ink)'; e.currentTarget.style.color = 'hsl(var(--pastel-yellow))'; }}

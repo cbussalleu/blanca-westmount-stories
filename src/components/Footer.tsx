@@ -106,7 +106,7 @@ const Footer = () => {
               christian.bussalleu@gmail.com
             </a>
             <a
-              href="/CV_SD_Christian_Bussalleu_2024_ENG.pdf"
+              href="/CV_CX_Christian_Bussalleu_2026_ENG.pdf"
               download
               style={{
                 fontFamily: 'var(--ff-display)',
