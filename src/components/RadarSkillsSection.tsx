@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const RadarSkillsSection = () => {
@@ -331,8 +330,7 @@ const RadarSkillsSection = () => {
                             to={`/portfolio/${tooltipSkillData.caseStudy.slug}`}
                             className="cta-link cta-link-sm mt-2"
                           >
-                            See skill in action
-                            <ArrowRight size={10} />
+                            In practice →
                           </Link>
                         </div>
                       </div>

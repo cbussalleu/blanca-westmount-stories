@@ -48,7 +48,7 @@ const ProjectDetail = () => {
       <div className="pd-breadcrumb hero-wrap">
         <span>Portfolio · Case study</span>
         <span>Case {String(currentIndex + 1).padStart(2, '0')} of {String(projectSlugs.length).padStart(2, '0')} · {project.client}</span>
-        <Link to="/portfolio">← All work</Link>
+        <Link to="/portfolio">← The Work</Link>
       </div>
 
       {/* Hero */}
@@ -85,7 +85,7 @@ const ProjectDetail = () => {
         <div><dt>Client</dt><dd>{project.client}</dd></div>
         <div><dt>Sector</dt><dd>{project.category?.join(' · ')}</dd></div>
         <div><dt>Role</dt><dd>Lead Service Designer</dd></div>
-        <div><dt>Projects</dt><dd>Case {String(currentIndex + 1).padStart(2, '0')} of {String(projectSlugs.length).padStart(2, '0')}</dd></div>
+
         <div><dt>Tools</dt><dd>{project.tools?.slice(0, 2).join(' · ')}</dd></div>
       </dl>
 

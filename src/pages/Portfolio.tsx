@@ -20,7 +20,7 @@ const Portfolio = () => {
 
         {/* Breadcrumb */}
         <div style={{ width: '100%', maxWidth: 1120, marginInline: 'auto', paddingInline: 'clamp(20px,4vw,48px)', paddingBlock: 'var(--s-5)', paddingTop: 'calc(var(--s-5) + 80px)', borderBottom: '1px solid var(--rule)', display: 'flex', justifyContent: 'space-between', fontFamily: 'var(--ff-display)', fontWeight: 300, fontSize: 11, letterSpacing: '0.20em', textTransform: 'uppercase', color: 'var(--ink-3)' }}>
-          <span>Portfolio · All work</span>
+          <span>Portfolio · The Work</span>
           <Link to="/" style={{ color: 'var(--ink)', borderBottom: '1px solid var(--ink)', paddingBottom: 2 }}>← Home</Link>
         </div>
 
@@ -32,7 +32,7 @@ const Portfolio = () => {
                 Christian Bussalleu · Service Design
               </div>
               <h1 style={{ fontFamily: 'var(--ff-display)', fontWeight: 200, fontSize: 'clamp(48px,7vw,96px)', lineHeight: 0.92, letterSpacing: '-0.02em', textTransform: 'uppercase', margin: '0 0 var(--s-5)', maxWidth: '14ch' }}>
-                All Work.
+                The Work.
               </h1>
               <p style={{ fontFamily: 'var(--ff-editorial)', fontSize: 'var(--t-lede)', lineHeight: 1.55, color: 'var(--ink-2)', maxWidth: '48ch', margin: 0 }}>
                 Thirteen cases across FMCG, financial services, technology, and public sector.

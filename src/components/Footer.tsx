@@ -55,7 +55,7 @@ const Footer = () => {
             {[
               { to: '/portfolio', label: 'Work' },
               { to: '/bimbo-relationship', label: 'Grupo Bimbo' },
-              { to: '/methodology', label: 'Methodology' },
+              { to: '/methodology', label: 'How I work' },
               { to: '/contact', label: 'Contact' },
             ].map(({ to, label }) => (
               <Link

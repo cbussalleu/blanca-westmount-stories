@@ -230,7 +230,7 @@ const Index = () => {
           <div className="container-narrow">
             <div style={{ marginBottom: 'var(--s-8)' }}>
               <div style={{ fontFamily: 'var(--ff-display)', fontWeight: 300, fontSize: 10, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--ink-3)', marginBottom: 'var(--s-4)' }}>
-                Long-term engagement
+                A working relationship
               </div>
               <h2 style={{ fontFamily: 'var(--ff-editorial)', fontWeight: 400, fontSize: 'clamp(28px, 3.5vw, 48px)', lineHeight: 1.1, letterSpacing: '-0.02em', margin: '0 0 var(--s-3)', maxWidth: '24ch', textWrap: 'balance' }}>
                 Seven years designing for Grupo Bimbo.
@@ -272,7 +272,7 @@ const Index = () => {
                 No silver bullets.
               </h2>
               <p style={{ fontFamily: 'var(--ff-editorial)', fontSize: 'var(--t-lede)', color: 'var(--ink-2)', lineHeight: 1.55, maxWidth: '54ch', margin: 0 }}>
-                A mindset, not a method. Complex service problems don't have single solutions: they have navigation strategies.
+                No framework eliminates essential complexity. What matters is building the judgment to navigate it — through practice, honest failure, and the accumulated experience of knowing when to follow a method and when to depart from it.
               </p>
             </div>
             <div style={{ margin: 'var(--s-6) 0' }}>
@@ -367,7 +367,7 @@ const Index = () => {
             </div>
 
             <Link to="/methodology" className="cta-link cta-link-md">
-              How I work →
+              Read the full approach →
             </Link>
           </div>
         </section>
