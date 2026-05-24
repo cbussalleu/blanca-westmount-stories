@@ -109,19 +109,23 @@ const Index = () => {
             <h1>
               Hello,<br/>
               I am<br/>
-              <em>Christian<span className="logo-dot-wrapper">
-                {/* Mobile: regular period */}
-                <span className="logo-dot-mobile">.</span>
-                {/* Desktop: animated logo */}
-                <span className="logo-dot-desktop" onClick={handleDownload} title="Download CV Metadata">
-                  <img
-                    src="/lovable-uploads/69552967-182b-43cb-9a77-04a4d046299a.png"
-                    alt="Download CV Metadata"
-                    className="logo-dot-img"
-                  />
-                  <span className="logo-dot-tooltip">
-                    <span className="logo-dot-tooltip-title">Download CV Metadata (JSON)</span>
-                    <span className="logo-dot-tooltip-sub">For AI screening tools, automated ATS pipelines, or programmatic HR analysis.</span>
+              <em><span className="logo-dot-trigger" onClick={handleDownload} style={{ cursor: 'default' }}>
+                Christian
+                <span className="logo-dot-wrapper">
+                  <span className="logo-dot-mobile">.</span>
+                  <span className="logo-dot-desktop">
+                    <img
+                      src="/lovable-uploads/69552967-182b-43cb-9a77-04a4d046299a.png"
+                      alt="Download CV Metadata"
+                      className="logo-dot-img"
+                    />
+                    <span className="logo-dot-tooltip">
+                      <span className="logo-dot-tooltip-header">CV Metadata · JSON</span>
+                      <span className="logo-dot-tooltip-body">
+                        <span className="logo-dot-tooltip-title">Download CV Metadata (JSON)</span>
+                        <span className="logo-dot-tooltip-sub">For AI screening tools, automated ATS pipelines, or programmatic HR analysis.</span>
+                      </span>
+                    </span>
                   </span>
                 </span>
               </span></em>
