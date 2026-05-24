@@ -328,7 +328,20 @@ const RadarSkillsSection = () => {
                           <p className="eyebrow mt-2">{tooltipSkillData.caseStudy.brand}</p>
                           <Link
                             to={`/portfolio/${tooltipSkillData.caseStudy.slug}`}
-                            className="cta-link cta-link-sm mt-2"
+                            style={{
+                              fontFamily: 'var(--ff-editorial)',
+                              fontSize: 14,
+                              color: 'var(--ink)',
+                              borderBottom: '1px solid var(--ink)',
+                              paddingBottom: 2,
+                              display: 'inline-flex',
+                              alignItems: 'center',
+                              gap: 6,
+                              marginTop: 'var(--s-4)',
+                              transition: 'opacity 200ms'
+                            }}
+                            onMouseEnter={e => e.currentTarget.style.opacity = '0.6'}
+                            onMouseLeave={e => e.currentTarget.style.opacity = '1'}
                           >
                             In practice →
                           </Link>

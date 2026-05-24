@@ -148,7 +148,7 @@ const Methodology = () => {
         }
       `}</style>
 
-      <section style={{ borderTop: '2px solid var(--accent)', borderBottom: '1px solid var(--rule)', padding: 'var(--s-9) 0' }}>
+      <section style={{ borderTop: '1px solid var(--rule)', borderBottom: '1px solid var(--rule)', padding: 'var(--s-9) 0' }}>
         <div style={{ width: '100%', maxWidth: 1120, marginInline: 'auto', paddingInline: 'clamp(20px,4vw,48px)' }}>
           <div style={{ fontFamily: 'var(--ff-display)', fontWeight: 300, fontSize: 10, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--ink-3)', marginBottom: 'var(--s-7)' }}>
             The navigation process

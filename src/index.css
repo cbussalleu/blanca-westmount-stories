@@ -550,8 +550,6 @@
   padding: var(--s-5) 0;
   padding-top: calc(var(--s-5) + 80px);
   border-bottom: 1px solid var(--rule);
-  border-left: 3px solid var(--accent);
-  padding-left: var(--s-5);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1028,7 +1026,7 @@
 }
 
 /* ─── Form element typography ────────────────────────────── */
-input, textarea, select {
+input, textarea, select, button {
   font-family: var(--ff-display);
   font-weight: 300;
   font-size: 13px;
