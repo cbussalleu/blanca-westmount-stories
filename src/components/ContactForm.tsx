@@ -1,30 +1,4 @@
-
 import { useState } from 'react';
-import { useToast } from '../hooks/use-toast';
-
-const labelStyle: React.CSSProperties = {
-  fontFamily: 'var(--ff-display)',
-  fontWeight: 300,
-  fontSize: 10,
-  letterSpacing: '0.22em',
-  textTransform: 'uppercase',
-  color: 'var(--ink-3)',
-  display: 'block',
-  marginBottom: 6,
-};
-
-const inputStyle: React.CSSProperties = {
-  fontFamily: 'var(--ff-display)',
-  fontWeight: 300,
-  fontSize: 13,
-  letterSpacing: '0.08em',
-  color: 'var(--ink)',
-  width: '100%',
-  padding: '8px 12px',
-  border: '1px solid var(--rule)',
-  background: 'transparent',
-  outline: 'none',
-};
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -33,110 +7,166 @@ const ContactForm = () => {
     subject: '',
     message: ''
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const { toast } = useToast();
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    setTimeout(() => {
-      toast({
-        title: "Message sent",
-        description: "Thank you for your message. I'll get back to you soon.",
+    setStatus('loading');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
       });
-      setFormData({ name: '', email: '', subject: '', message: '' });
-      setIsSubmitting(false);
-    }, 1000);
+
+      if (response.ok) {
+        setStatus('success');
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } else {
+        setStatus('error');
+      }
+    } catch {
+      setStatus('error');
+    }
   };
+
+  const inputStyle: React.CSSProperties = {
+    width: '100%',
+    padding: '10px 0',
+    fontFamily: 'var(--ff-display)',
+    fontWeight: 300,
+    fontSize: 13,
+    letterSpacing: '0.08em',
+    color: 'var(--ink)',
+    background: 'transparent',
+    border: 'none',
+    borderBottom: '1px solid var(--rule)',
+    outline: 'none',
+    display: 'block',
+  };
+
+  const labelStyle: React.CSSProperties = {
+    fontFamily: 'var(--ff-display)',
+    fontWeight: 300,
+    fontSize: 10,
+    letterSpacing: '0.22em',
+    textTransform: 'uppercase',
+    color: 'var(--ink-3)',
+    display: 'block',
+    marginBottom: 6,
+    marginTop: 'var(--s-5)',
+  };
+
+  if (status === 'success') {
+    return (
+      <div style={{ padding: 'var(--s-6)', border: '1px solid var(--rule)' }}>
+        <div style={{ fontFamily: 'var(--ff-display)', fontWeight: 300, fontSize: 10, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--ink-3)', marginBottom: 'var(--s-3)' }}>
+          Message sent
+        </div>
+        <p style={{ fontFamily: 'var(--ff-editorial)', fontSize: 14, lineHeight: 1.55, color: 'var(--ink)', margin: 0 }}>
+          Thank you. I will get back to you as soon as possible.
+        </p>
+      </div>
+    );
+  }
 
   return (
-    <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 'var(--s-5)', maxWidth: 560 }}>
+    <form onSubmit={handleSubmit}>
       <div>
-        <label htmlFor="name" style={labelStyle}>Name</label>
+        <label style={labelStyle} htmlFor="name">Name</label>
         <input
-          type="text"
           id="name"
           name="name"
+          type="text"
+          required
           value={formData.name}
           onChange={handleChange}
-          required
           style={inputStyle}
-          onFocus={e => e.currentTarget.style.borderColor = 'var(--ink)'}
-          onBlur={e => e.currentTarget.style.borderColor = 'var(--rule)'}
+          placeholder="Your name"
         />
       </div>
 
       <div>
-        <label htmlFor="email" style={labelStyle}>Email</label>
+        <label style={labelStyle} htmlFor="email">Email</label>
         <input
-          type="email"
           id="email"
           name="email"
+          type="email"
+          required
           value={formData.email}
           onChange={handleChange}
-          required
           style={inputStyle}
-          onFocus={e => e.currentTarget.style.borderColor = 'var(--ink)'}
-          onBlur={e => e.currentTarget.style.borderColor = 'var(--rule)'}
+          placeholder="your@email.com"
         />
       </div>
 
       <div>
-        <label htmlFor="subject" style={labelStyle}>Subject</label>
+        <label style={labelStyle} htmlFor="subject">Subject</label>
         <input
-          type="text"
           id="subject"
           name="subject"
+          type="text"
           value={formData.subject}
           onChange={handleChange}
-          required
           style={inputStyle}
-          onFocus={e => e.currentTarget.style.borderColor = 'var(--ink)'}
-          onBlur={e => e.currentTarget.style.borderColor = 'var(--rule)'}
+          placeholder="What is this about?"
         />
       </div>
 
       <div>
-        <label htmlFor="message" style={labelStyle}>Message</label>
+        <label style={labelStyle} htmlFor="message">Message</label>
         <textarea
           id="message"
           name="message"
-          value={formData.message}
-          onChange={handleChange}
           required
           rows={5}
-          style={{ ...inputStyle, resize: 'vertical' }}
-          onFocus={e => e.currentTarget.style.borderColor = 'var(--ink)'}
-          onBlur={e => e.currentTarget.style.borderColor = 'var(--rule)'}
+          value={formData.message}
+          onChange={handleChange}
+          style={{ ...inputStyle, resize: 'none', lineHeight: 1.6 }}
+          placeholder="Your message"
         />
       </div>
 
-      <div style={{ paddingTop: 'var(--s-3)' }}>
+      {status === 'error' && (
+        <p style={{ fontFamily: 'var(--ff-display)', fontSize: 11, letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--crit)', marginTop: 'var(--s-3)' }}>
+          Something went wrong. Please try again or email me directly.
+        </p>
+      )}
+
+      <div style={{ marginTop: 'var(--s-6)' }}>
         <button
           type="submit"
-          disabled={isSubmitting}
+          disabled={status === 'loading'}
           style={{
             fontFamily: 'var(--ff-display)',
             fontWeight: 300,
             fontSize: 11,
             letterSpacing: '0.20em',
             textTransform: 'uppercase',
-            color: 'hsl(var(--pastel-yellow))',
-            background: 'var(--ink)',
-            border: 'none',
-            padding: '12px 24px',
-            cursor: isSubmitting ? 'not-allowed' : 'pointer',
-            opacity: isSubmitting ? 0.7 : 1,
-            transition: 'opacity 200ms',
-            width: '100%',
+            color: status === 'loading' ? 'var(--ink-3)' : 'var(--ink)',
+            background: 'transparent',
+            border: '1px solid var(--ink)',
+            padding: '10px 24px',
+            cursor: status === 'loading' ? 'not-allowed' : 'pointer',
+            transition: 'background 200ms, color 200ms',
+          }}
+          onMouseEnter={e => {
+            if (status !== 'loading') {
+              e.currentTarget.style.background = 'var(--ink)';
+              e.currentTarget.style.color = 'hsl(var(--pastel-yellow))';
+            }
+          }}
+          onMouseLeave={e => {
+            e.currentTarget.style.background = 'transparent';
+            e.currentTarget.style.color = status === 'loading' ? 'var(--ink-3)' : 'var(--ink)';
           }}
         >
-          {isSubmitting ? 'Sending…' : 'Send Message'}
+          {status === 'loading' ? 'Sending...' : 'Send message'}
         </button>
       </div>
     </form>
