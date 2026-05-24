@@ -395,7 +395,7 @@ const RadarSkillsSection = () => {
   };
 
   return (
-    <section className="sec">
+    <section className="sec" style={{ paddingBottom: 'var(--s-4)' }}>
       <div className="container-narrow">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           <motion.div
@@ -615,7 +615,7 @@ const RadarSkillsSection = () => {
             {/* Legend */}
             <div className="flex items-center justify-start gap-6 py-2 transition-all duration-300">
               <div className="inline-flex items-center gap-2 eyebrow">
-                <span className="inline-block w-3 h-2" style={{ background: 'var(--accent)' }}></span>
+                <span className="inline-block w-3 h-2" style={{ border: '1px solid var(--ink)', background: 'transparent' }}></span>
                 Excelling at
               </div>
               <div className="inline-flex items-center gap-2 eyebrow">
