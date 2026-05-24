@@ -16,7 +16,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   try {
     await resend.emails.send({
-      from: 'Portfolio Contact <onboarding@resend.dev>',
+      from: 'Portfolio Contact <hello@nosilvervullets.eu>',
       to: 'christian.bussalleu@gmail.com',
       replyTo: email,
       subject: subject || `New message from ${name}`,
