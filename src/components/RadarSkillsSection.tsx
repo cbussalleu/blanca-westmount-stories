@@ -319,41 +319,58 @@ const RadarSkillsSection = () => {
                     <div className="bg-[hsl(var(--pastel-yellow))] border border-ink p-4 max-w-xs">
                       <div className="flex items-start gap-3">
                         {selectedSkill === 'Hard Skills' && (
-                          <svg viewBox="0 0 48 48" width="48" height="48" fill="none" stroke="var(--ink)" strokeWidth="1.5" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="8" y="8" width="32" height="32"/>
-                            <line x1="8" y1="24" x2="40" y2="24"/>
-                            <line x1="24" y1="8" x2="24" y2="40"/>
+                          <svg viewBox="0 0 120 80" width="120" height="80" fill="none" stroke="var(--ink)" strokeWidth="1" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="4" y="4" width="112" height="72"/>
+                            <line x1="4" y1="28" x2="116" y2="28"/>
+                            <rect x="16" y="36" width="20" height="32"/>
+                            <rect x="44" y="42" width="20" height="26"/>
+                            <rect x="72" y="48" width="20" height="20"/>
+                            <text x="26" y="22" textAnchor="middle" fontFamily="var(--ff-display)" fontWeight="300" fontSize="7" letterSpacing="0.12em" fill="var(--ink-3)">TOOLS</text>
+                            <text x="100" y="68" textAnchor="middle" fontFamily="var(--ff-display)" fontWeight="300" fontSize="7" letterSpacing="0.12em" fill="var(--ink-3)">METHODS</text>
                           </svg>
                         )}
                         {selectedSkill === 'Cognitive Skills' && (
-                          <svg viewBox="0 0 48 48" width="48" height="48" fill="none" stroke="var(--ink)" strokeWidth="1.5" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="24" cy="24" r="16"/>
-                            <circle cx="24" cy="24" r="8"/>
-                            <circle cx="24" cy="24" r="2"/>
+                          <svg viewBox="0 0 120 80" width="120" height="80" fill="none" stroke="var(--ink)" strokeWidth="1" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="40" cy="40" r="32"/>
+                            <circle cx="80" cy="40" r="32"/>
+                            <text x="40" y="72" textAnchor="middle" fontFamily="var(--ff-display)" fontWeight="300" fontSize="7" letterSpacing="0.12em" fill="var(--ink-3)">ANALYSE</text>
+                            <text x="80" y="72" textAnchor="middle" fontFamily="var(--ff-display)" fontWeight="300" fontSize="7" letterSpacing="0.12em" fill="var(--ink-3)">SYNTHESISE</text>
                           </svg>
                         )}
                         {selectedSkill === 'Organization Understanding' && (
-                          <svg viewBox="0 0 48 48" width="48" height="48" fill="none" stroke="var(--ink)" strokeWidth="1.5" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="18" y="6" width="12" height="8"/>
-                            <rect x="6" y="34" width="12" height="8"/>
-                            <rect x="30" y="34" width="12" height="8"/>
-                            <line x1="24" y1="14" x2="24" y2="26"/>
-                            <line x1="24" y1="26" x2="12" y2="34"/>
-                            <line x1="24" y1="26" x2="36" y2="34"/>
+                          <svg viewBox="0 0 120 80" width="120" height="80" fill="none" stroke="var(--ink)" strokeWidth="1" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="44" y="4" width="32" height="18"/>
+                            <rect x="4" y="58" width="32" height="18"/>
+                            <rect x="84" y="58" width="32" height="18"/>
+                            <line x1="60" y1="22" x2="60" y2="46"/>
+                            <line x1="60" y1="46" x2="20" y2="58"/>
+                            <line x1="60" y1="46" x2="100" y2="58"/>
+                            <text x="60" y="14" textAnchor="middle" fontFamily="var(--ff-display)" fontWeight="300" fontSize="7" letterSpacing="0.10em" fill="var(--ink)">STRATEGY</text>
+                            <text x="20" y="72" textAnchor="middle" fontFamily="var(--ff-display)" fontWeight="300" fontSize="7" letterSpacing="0.08em" fill="var(--ink-3)">OPS</text>
+                            <text x="100" y="72" textAnchor="middle" fontFamily="var(--ff-display)" fontWeight="300" fontSize="7" letterSpacing="0.08em" fill="var(--ink-3)">CULTURE</text>
                           </svg>
                         )}
                         {selectedSkill === 'Soft Skills' && (
-                          <svg viewBox="0 0 48 48" width="48" height="48" fill="none" stroke="var(--ink)" strokeWidth="1.5" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="16" cy="20" r="6"/>
-                            <circle cx="32" cy="20" r="6"/>
-                            <path d="M4 40 Q16 28 24 32 Q32 28 44 40"/>
+                          <svg viewBox="0 0 120 80" width="120" height="80" fill="none" stroke="var(--ink)" strokeWidth="1" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="4" y="4" width="52" height="32"/>
+                            <rect x="4" y="44" width="52" height="32"/>
+                            <line x1="56" y1="20" x2="116" y2="20"/>
+                            <line x1="56" y1="60" x2="116" y2="60"/>
+                            <line x1="116" y1="20" x2="116" y2="60"/>
+                            <text x="30" y="24" textAnchor="middle" fontFamily="var(--ff-display)" fontWeight="300" fontSize="7" letterSpacing="0.10em" fill="var(--ink)">LISTEN</text>
+                            <text x="30" y="64" textAnchor="middle" fontFamily="var(--ff-display)" fontWeight="300" fontSize="7" letterSpacing="0.10em" fill="var(--ink)">FACILITATE</text>
+                            <text x="100" y="43" textAnchor="middle" fontFamily="var(--ff-display)" fontWeight="300" fontSize="7" letterSpacing="0.10em" fill="var(--ink-3)">ALIGN</text>
                           </svg>
                         )}
                         {selectedSkill === 'Leadership' && (
-                          <svg viewBox="0 0 48 48" width="48" height="48" fill="none" stroke="var(--ink)" strokeWidth="1.5" xmlns="http://www.w3.org/2000/svg">
-                            <polygon points="24,6 44,42 4,42"/>
-                            <line x1="24" y1="16" x2="24" y2="32"/>
-                            <circle cx="24" cy="37" r="2" fill="var(--ink)"/>
+                          <svg viewBox="0 0 120 80" width="120" height="80" fill="none" stroke="var(--ink)" strokeWidth="1" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="4" y1="76" x2="116" y2="76"/>
+                            <line x1="4" y1="76" x2="60" y2="4"/>
+                            <line x1="116" y1="76" x2="60" y2="4"/>
+                            <line x1="30" y1="50" x2="90" y2="50"/>
+                            <line x1="17" y1="63" x2="103" y2="63"/>
+                            <text x="60" y="72" textAnchor="middle" fontFamily="var(--ff-display)" fontWeight="300" fontSize="7" letterSpacing="0.10em" fill="var(--ink-3)">SCALE</text>
+                            <text x="60" y="24" textAnchor="middle" fontFamily="var(--ff-display)" fontWeight="300" fontSize="7" letterSpacing="0.10em" fill="var(--ink)">VISION</text>
                           </svg>
                         )}
                         <div className="flex-1 min-w-0">
