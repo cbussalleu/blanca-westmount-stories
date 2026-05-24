@@ -1042,6 +1042,89 @@ input::placeholder, textarea::placeholder {
   letter-spacing: 0.08em;
 }
 
+/* ─── Logo-dot proof of concept ──────────────────────────── */
+
+.logo-dot-wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+.logo-dot-mobile {
+  display: inline;
+}
+
+.logo-dot-desktop {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .logo-dot-mobile {
+    display: none;
+  }
+  .logo-dot-desktop {
+    display: inline-flex;
+    align-items: flex-end;
+    position: relative;
+    cursor: pointer;
+    vertical-align: bottom;
+    margin-left: 4px;
+  }
+}
+
+.logo-dot-img {
+  width: 14px;
+  height: 14px;
+  object-fit: contain;
+  opacity: 0.85;
+  transition: width 300ms cubic-bezier(0.34, 1.56, 0.64, 1),
+              height 300ms cubic-bezier(0.34, 1.56, 0.64, 1),
+              opacity 300ms ease;
+  filter: brightness(0);
+}
+
+.logo-dot-desktop:hover .logo-dot-img {
+  width: 80px;
+  height: 80px;
+  opacity: 1;
+}
+
+.logo-dot-tooltip {
+  position: absolute;
+  left: 90px;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-8px);
+  transition: opacity 250ms ease 150ms, transform 250ms ease 150ms;
+  white-space: nowrap;
+}
+
+.logo-dot-desktop:hover .logo-dot-tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.logo-dot-tooltip-title {
+  font-family: var(--ff-display);
+  font-weight: 300;
+  font-size: 11px;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.logo-dot-tooltip-sub {
+  font-family: var(--ff-editorial);
+  font-size: 12px;
+  color: var(--ink-3);
+  max-width: 280px;
+  white-space: normal;
+  line-height: 1.4;
+}
+
 @media (max-width: 880px) {
   .home-meta { grid-template-columns: repeat(2, 1fr); }
   .home-meta > div:nth-child(2) { border-left: 0; border-top: 0; }

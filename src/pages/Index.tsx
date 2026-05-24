@@ -13,6 +13,87 @@ const Index = () => {
   const featuredProjects = projects.filter(p => featuredSlugs.includes(p.slug));
   const bimboProjects = projects.filter(p => bimboSlugs.includes(p.slug));
 
+  const handleDownload = () => {
+    const cvMetadata = {
+      format_version: "1.0.0",
+      last_updated: "2026-05",
+      profile: {
+        name: "Christian Bussalleu",
+        role: "Senior Service Designer & CX Management Services Lead",
+        email: "christian.bussalleu@gmail.com",
+        linkedin: "https://linkedin.com/in/christianbussalleu",
+        portfolio: "https://nosilverbullets.eu",
+        location: "Barcelona, Spain",
+        languages: ["Spanish", "English", "French"]
+      },
+      summary: "Service Designer with 12+ years of experience implementing CX programs and leading cross-functional teams. Background in data analytics and communications strategy. Focused on designing complex service systems at global scale.",
+      skills: {
+        service_design: ["Service Design", "Customer Journey Mapping", "Service Blueprint", "Process Design", "Workshop Facilitation", "CX Assessment"],
+        cx_management: ["CRM Implementation", "Customer Service Orchestration", "VoC Implementation", "Loyalty Programs", "CX Training"],
+        tools: ["Figma", "Miro", "Salesforce", "Tableau", "Looker Studio", "MySQL", "Illustrator", "Visio", "Excel", "Colab", "Jira", "GitHub"]
+      },
+      experience: [
+        {
+          role: "CX Management Services Lead",
+          company: "Findasense - TP Infinity, part of Teleperformance Group",
+          period: "2018 - Present",
+          summary: "Led implementation of consultancy service practice, increasing overall customer satisfaction by 20%. Managed end-to-end projects including customer journey mapping, CX operations, CX training for large operations, loyalty programs, and VoC implementation."
+        },
+        {
+          role: "CX Service Design Consultant",
+          company: "Government & Digital Transformation Lab of Peruvian Government",
+          period: "2022 - 2024",
+          summary: "Led design and implementation of key digital transformation projects for Peru: Citizen Integrated Channels (omnichannel platform for 15M citizens), Digital Innovation Index (measuring innovation maturity of 2,500 public entities), and Community of Peruvian Innovators."
+        }
+      ],
+      international_experience: {
+        brands: 20,
+        industries: ["Food & Beverage", "Finance", "Luxury"],
+        countries: 15,
+        regions: ["Americas", "EMEA", "Asia"]
+      },
+      education: [
+        {
+          degree: "Executive Master in Strategic Business Analytics",
+          institution: "Universitat de Barcelona",
+          location: "Barcelona, Spain",
+          period: "2024 - 2026"
+        },
+        {
+          degree: "Business Analytics Specialization",
+          institution: "The Wharton School",
+          location: "Philadelphia, US",
+          period: "2015 - 2016"
+        },
+        {
+          degree: "Bachelor of Marketing Communications",
+          institution: "University of Piura",
+          location: "Piura, Peru",
+          period: "2007 - 2011"
+        }
+      ],
+      portfolio_cases: [
+        "Connection Center Research & Design (Grupo Bimbo)",
+        "CRM Service Design & Implementation (Grupo Bimbo)",
+        "T-Conecta B2B Platform (Grupo Bimbo)",
+        "Continuous Improvement Framework (Grupo Bimbo)",
+        "Digital Sales Transformation (La Positiva)",
+        "Bartista Content Model (Nestlé)",
+        "Digital Innovation Maturity Index (Gobierno Peruano)",
+        "META Sales Optimization (Facebook/Meta)",
+        "Cardholder Loyalty Program (BBVA)"
+      ]
+    };
+
+    const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(cvMetadata, null, 2));
+    const anchor = document.createElement('a');
+    anchor.setAttribute("href", dataStr);
+    anchor.setAttribute("download", "christian-bussalleu-cv-metadata.json");
+    document.body.appendChild(anchor);
+    anchor.click();
+    anchor.remove();
+  };
+
   return (
     <div className="min-h-screen bg-[hsl(var(--pastel-yellow))]">
       <Header />
@@ -28,7 +109,22 @@ const Index = () => {
             <h1>
               Hello,<br/>
               I am<br/>
-              <em>Christian.</em>
+              <em>Christian<span className="logo-dot-wrapper">
+                {/* Mobile: regular period */}
+                <span className="logo-dot-mobile">.</span>
+                {/* Desktop: animated logo */}
+                <span className="logo-dot-desktop" onClick={handleDownload} title="Download CV Metadata">
+                  <img
+                    src="/lovable-uploads/69552967-182b-43cb-9a77-04a4d046299a.png"
+                    alt="Download CV Metadata"
+                    className="logo-dot-img"
+                  />
+                  <span className="logo-dot-tooltip">
+                    <span className="logo-dot-tooltip-title">Download CV Metadata (JSON)</span>
+                    <span className="logo-dot-tooltip-sub">For AI screening tools, automated ATS pipelines, or programmatic HR analysis.</span>
+                  </span>
+                </span>
+              </span></em>
             </h1>
             <p className="home-lede prose-lede-constrained">
               Service Designer working at the intersection of human-centered research,
