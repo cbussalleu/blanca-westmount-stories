@@ -131,6 +131,269 @@ const RadarSkillsSection = () => {
     }
   };
 
+  const getCapabilitySVG = (skillName: string) => {
+    const svgs: Record<string, React.ReactNode> = {
+      "HCD": (
+        <svg viewBox="0 0 64 64" width="48" height="48" fill="none" stroke="var(--ink)" strokeWidth="1" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="32" cy="24" r="10"/>
+          <path d="M14 56 Q14 40 32 40 Q50 40 50 56"/>
+          <circle cx="32" cy="24" r="2.5" fill="var(--ink)" stroke="none"/>
+        </svg>
+      ),
+      "System Thinking": (
+        <svg viewBox="0 0 64 64" width="48" height="48" fill="none" stroke="var(--ink)" strokeWidth="1" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="32" cy="32" r="24"/>
+          <circle cx="32" cy="32" r="12"/>
+          <circle cx="32" cy="32" r="3" fill="var(--ink)" stroke="none"/>
+          <line x1="32" y1="8" x2="32" y2="20"/>
+          <line x1="32" y1="44" x2="32" y2="56"/>
+          <line x1="8" y1="32" x2="20" y2="32"/>
+          <line x1="44" y1="32" x2="56" y2="32"/>
+        </svg>
+      ),
+      "Agile": (
+        <svg viewBox="0 0 64 64" width="48" height="48" fill="none" stroke="var(--ink)" strokeWidth="1" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 52 L12 28 L32 8 L52 28 L52 52"/>
+          <line x1="12" y1="52" x2="52" y2="52"/>
+          <path d="M22 52 L22 36 L32 26 L42 36 L42 52"/>
+          <circle cx="32" cy="36" r="2.5" fill="var(--ink)" stroke="none"/>
+        </svg>
+      ),
+      "Service Prototyping": (
+        <svg viewBox="0 0 64 64" width="48" height="48" fill="none" stroke="var(--ink)" strokeWidth="1" xmlns="http://www.w3.org/2000/svg">
+          <rect x="8" y="8" width="22" height="22"/>
+          <rect x="34" y="8" width="22" height="22"/>
+          <rect x="8" y="34" width="22" height="22"/>
+          <rect x="34" y="34" width="22" height="22" strokeDasharray="3 3"/>
+          <circle cx="45" cy="45" r="3" fill="var(--ink)" stroke="none"/>
+        </svg>
+      ),
+      "Digital Tools Proficiency": (
+        <svg viewBox="0 0 64 64" width="48" height="48" fill="none" stroke="var(--ink)" strokeWidth="1" xmlns="http://www.w3.org/2000/svg">
+          <rect x="8" y="14" width="48" height="32"/>
+          <line x1="8" y1="46" x2="56" y2="46"/>
+          <line x1="24" y1="50" x2="40" y2="50"/>
+          <line x1="20" y1="26" x2="28" y2="34"/>
+          <line x1="28" y1="26" x2="20" y2="34"/>
+          <line x1="34" y1="30" x2="44" y2="30"/>
+          <circle cx="44" cy="30" r="2.5" fill="var(--ink)" stroke="none"/>
+        </svg>
+      ),
+      "Training & Change Management": (
+        <svg viewBox="0 0 64 64" width="48" height="48" fill="none" stroke="var(--ink)" strokeWidth="1" xmlns="http://www.w3.org/2000/svg">
+          <rect x="8" y="8" width="48" height="32"/>
+          <line x1="8" y1="40" x2="56" y2="40"/>
+          <line x1="20" y1="50" x2="44" y2="50"/>
+          <line x1="32" y1="40" x2="32" y2="50"/>
+          <line x1="16" y1="20" x2="48" y2="20"/>
+          <line x1="16" y1="28" x2="36" y2="28"/>
+          <circle cx="32" cy="14" r="2.5" fill="var(--ink)" stroke="none"/>
+        </svg>
+      ),
+      "Data Analysis": (
+        <svg viewBox="0 0 64 64" width="48" height="48" fill="none" stroke="var(--ink)" strokeWidth="1" xmlns="http://www.w3.org/2000/svg">
+          <line x1="8" y1="56" x2="8" y2="8"/>
+          <line x1="8" y1="56" x2="56" y2="56"/>
+          <rect x="14" y="36" width="10" height="20"/>
+          <rect x="30" y="24" width="10" height="32"/>
+          <rect x="46" y="14" width="10" height="42"/>
+          <circle cx="19" cy="36" r="2" fill="var(--ink)" stroke="none"/>
+          <circle cx="35" cy="24" r="2" fill="var(--ink)" stroke="none"/>
+          <circle cx="51" cy="14" r="2" fill="var(--ink)" stroke="none"/>
+          <path d="M19 36 L35 24 L51 14" strokeDasharray="2 2"/>
+        </svg>
+      ),
+      "Process Design": (
+        <svg viewBox="0 0 64 64" width="48" height="48" fill="none" stroke="var(--ink)" strokeWidth="1" xmlns="http://www.w3.org/2000/svg">
+          <rect x="4" y="26" width="14" height="12"/>
+          <rect x="26" y="14" width="14" height="12"/>
+          <rect x="26" y="38" width="14" height="12"/>
+          <rect x="46" y="26" width="14" height="12"/>
+          <line x1="18" y1="32" x2="26" y2="20"/>
+          <line x1="18" y1="32" x2="26" y2="44"/>
+          <line x1="40" y1="20" x2="46" y2="32"/>
+          <line x1="40" y1="44" x2="46" y2="32"/>
+          <circle cx="32" cy="32" r="2.5" fill="var(--ink)" stroke="none"/>
+        </svg>
+      ),
+      "Continuous Improvement Management": (
+        <svg viewBox="0 0 64 64" width="48" height="48" fill="none" stroke="var(--ink)" strokeWidth="1" xmlns="http://www.w3.org/2000/svg">
+          <path d="M32 8 A24 24 0 1 1 10 42"/>
+          <polyline points="6,36 10,42 16,38"/>
+          <circle cx="32" cy="32" r="8"/>
+          <circle cx="32" cy="32" r="2.5" fill="var(--ink)" stroke="none"/>
+        </svg>
+      ),
+      "Strategic Alignment": (
+        <svg viewBox="0 0 64 64" width="48" height="48" fill="none" stroke="var(--ink)" strokeWidth="1" xmlns="http://www.w3.org/2000/svg">
+          <line x1="8" y1="16" x2="56" y2="16"/>
+          <line x1="8" y1="32" x2="56" y2="32"/>
+          <line x1="8" y1="48" x2="56" y2="48"/>
+          <circle cx="20" cy="16" r="3" fill="var(--ink)" stroke="none"/>
+          <circle cx="36" cy="32" r="3" fill="var(--ink)" stroke="none"/>
+          <circle cx="48" cy="48" r="3" fill="var(--ink)" stroke="none"/>
+          <path d="M20 16 L36 32 L48 48" strokeDasharray="3 3"/>
+        </svg>
+      ),
+      "Organizational Dynamics Comprehension": (
+        <svg viewBox="0 0 64 64" width="48" height="48" fill="none" stroke="var(--ink)" strokeWidth="1" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="32" cy="16" r="8"/>
+          <circle cx="14" cy="46" r="8"/>
+          <circle cx="50" cy="46" r="8"/>
+          <line x1="26" y1="22" x2="18" y2="38"/>
+          <line x1="38" y1="22" x2="46" y2="38"/>
+          <line x1="22" y1="46" x2="42" y2="46"/>
+          <circle cx="32" cy="32" r="2.5" fill="var(--ink)" stroke="none"/>
+        </svg>
+      ),
+      "Cross-Departmental Integration": (
+        <svg viewBox="0 0 64 64" width="48" height="48" fill="none" stroke="var(--ink)" strokeWidth="1" xmlns="http://www.w3.org/2000/svg">
+          <rect x="4" y="4" width="24" height="24"/>
+          <rect x="36" y="4" width="24" height="24"/>
+          <rect x="4" y="36" width="24" height="24"/>
+          <rect x="36" y="36" width="24" height="24"/>
+          <line x1="28" y1="16" x2="36" y2="16"/>
+          <line x1="28" y1="48" x2="36" y2="48"/>
+          <line x1="16" y1="28" x2="16" y2="36"/>
+          <line x1="48" y1="28" x2="48" y2="36"/>
+          <circle cx="32" cy="32" r="2.5" fill="var(--ink)" stroke="none"/>
+        </svg>
+      ),
+      "Design Resource Management": (
+        <svg viewBox="0 0 64 64" width="48" height="48" fill="none" stroke="var(--ink)" strokeWidth="1" xmlns="http://www.w3.org/2000/svg">
+          <rect x="8" y="8" width="48" height="10"/>
+          <rect x="8" y="24" width="30" height="10"/>
+          <rect x="8" y="40" width="18" height="10"/>
+          <circle cx="56" cy="44" r="6"/>
+          <line x1="56" y1="38" x2="56" y2="30"/>
+          <circle cx="56" cy="28" r="2.5" fill="var(--ink)" stroke="none"/>
+        </svg>
+      ),
+      "Interdisciplinary Communication": (
+        <svg viewBox="0 0 64 64" width="48" height="48" fill="none" stroke="var(--ink)" strokeWidth="1" xmlns="http://www.w3.org/2000/svg">
+          <rect x="4" y="8" width="26" height="20"/>
+          <rect x="34" y="36" width="26" height="20"/>
+          <path d="M4 28 L12 36 L30 28"/>
+          <path d="M60 36 L52 28 L34 36"/>
+          <line x1="17" y1="36" x2="47" y2="28"/>
+          <circle cx="32" cy="32" r="2.5" fill="var(--ink)" stroke="none"/>
+        </svg>
+      ),
+      "Workshop Facilitation": (
+        <svg viewBox="0 0 64 64" width="48" height="48" fill="none" stroke="var(--ink)" strokeWidth="1" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="32" cy="14" r="6"/>
+          <circle cx="12" cy="48" r="6"/>
+          <circle cx="52" cy="48" r="6"/>
+          <line x1="32" y1="20" x2="32" y2="36"/>
+          <line x1="32" y1="36" x2="12" y2="42"/>
+          <line x1="32" y1="36" x2="52" y2="42"/>
+          <line x1="12" y1="42" x2="52" y2="42"/>
+          <circle cx="32" cy="36" r="2.5" fill="var(--ink)" stroke="none"/>
+        </svg>
+      ),
+      "Conflict Resolution": (
+        <svg viewBox="0 0 64 64" width="48" height="48" fill="none" stroke="var(--ink)" strokeWidth="1" xmlns="http://www.w3.org/2000/svg">
+          <line x1="8" y1="8" x2="28" y2="28"/>
+          <line x1="56" y1="8" x2="36" y2="28"/>
+          <line x1="28" y1="28" x2="36" y2="28"/>
+          <line x1="32" y1="28" x2="32" y2="48"/>
+          <circle cx="32" cy="48" r="6"/>
+          <circle cx="32" cy="36" r="2.5" fill="var(--ink)" stroke="none"/>
+        </svg>
+      ),
+      "Professional Relationship Building": (
+        <svg viewBox="0 0 64 64" width="48" height="48" fill="none" stroke="var(--ink)" strokeWidth="1" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="20" cy="24" r="10"/>
+          <circle cx="44" cy="24" r="10"/>
+          <line x1="30" y1="24" x2="34" y2="24"/>
+          <path d="M8 52 Q8 38 20 38 Q32 38 32 52"/>
+          <path d="M32 52 Q32 38 44 38 Q56 38 56 52"/>
+          <circle cx="32" cy="24" r="2.5" fill="var(--ink)" stroke="none"/>
+        </svg>
+      ),
+      "Complex Systems Understanding": (
+        <svg viewBox="0 0 64 64" width="48" height="48" fill="none" stroke="var(--ink)" strokeWidth="1" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="32" cy="32" r="24"/>
+          <circle cx="32" cy="32" r="14"/>
+          <circle cx="32" cy="32" r="6"/>
+          <line x1="32" y1="8" x2="32" y2="18"/>
+          <line x1="50" y1="18" x2="43" y2="24"/>
+          <line x1="50" y1="46" x2="43" y2="40"/>
+          <line x1="32" y1="56" x2="32" y2="46"/>
+          <line x1="14" y1="46" x2="21" y2="40"/>
+          <line x1="14" y1="18" x2="21" y2="24"/>
+          <circle cx="32" cy="32" r="2.5" fill="var(--ink)" stroke="none"/>
+        </svg>
+      ),
+      "Abstract Thinking": (
+        <svg viewBox="0 0 64 64" width="48" height="48" fill="none" stroke="var(--ink)" strokeWidth="1" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="32,8 56,52 8,52"/>
+          <polygon points="32,20 46,44 18,44"/>
+          <circle cx="32" cy="36" r="2.5" fill="var(--ink)" stroke="none"/>
+        </svg>
+      ),
+      "Innovative Solution Generation": (
+        <svg viewBox="0 0 64 64" width="48" height="48" fill="none" stroke="var(--ink)" strokeWidth="1" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="32" cy="26" r="14"/>
+          <line x1="32" y1="40" x2="32" y2="52"/>
+          <line x1="26" y1="48" x2="38" y2="48"/>
+          <line x1="26" y1="52" x2="38" y2="52"/>
+          <circle cx="32" cy="26" r="2.5" fill="var(--ink)" stroke="none"/>
+        </svg>
+      ),
+      "Adaptability": (
+        <svg viewBox="0 0 64 64" width="48" height="48" fill="none" stroke="var(--ink)" strokeWidth="1" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16 32 Q16 12 32 12 Q48 12 48 32"/>
+          <path d="M48 32 Q48 52 32 52 Q16 52 16 32"/>
+          <polyline points="44,24 48,32 52,24"/>
+          <polyline points="20,40 16,32 12,40"/>
+          <circle cx="32" cy="32" r="2.5" fill="var(--ink)" stroke="none"/>
+        </svg>
+      ),
+      "Team Inspiration & Motivation": (
+        <svg viewBox="0 0 64 64" width="48" height="48" fill="none" stroke="var(--ink)" strokeWidth="1" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="32" cy="16" r="8"/>
+          <circle cx="14" cy="44" r="6"/>
+          <circle cx="50" cy="44" r="6"/>
+          <circle cx="32" cy="44" r="6"/>
+          <line x1="32" y1="24" x2="32" y2="38"/>
+          <line x1="32" y1="38" x2="14" y2="38"/>
+          <line x1="32" y1="38" x2="50" y2="38"/>
+          <circle cx="32" cy="38" r="2.5" fill="var(--ink)" stroke="none"/>
+        </svg>
+      ),
+      "Strategic Decision-Making": (
+        <svg viewBox="0 0 64 64" width="48" height="48" fill="none" stroke="var(--ink)" strokeWidth="1" xmlns="http://www.w3.org/2000/svg">
+          <line x1="8" y1="32" x2="56" y2="32"/>
+          <circle cx="32" cy="32" r="4" fill="var(--ink)" stroke="none"/>
+          <path d="M32 8 L32 28"/>
+          <path d="M32 36 L32 56"/>
+          <path d="M20 20 L28 28"/>
+          <path d="M36 36 L44 44"/>
+          <path d="M44 20 L36 28"/>
+          <path d="M28 36 L20 44"/>
+        </svg>
+      ),
+      "Talent Development": (
+        <svg viewBox="0 0 64 64" width="48" height="48" fill="none" stroke="var(--ink)" strokeWidth="1" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="32" cy="20" r="10"/>
+          <path d="M16 52 Q16 38 32 38 Q48 38 48 52"/>
+          <line x1="44" y1="12" x2="56" y2="4"/>
+          <line x1="48" y1="18" x2="60" y2="16"/>
+          <line x1="44" y1="24" x2="56" y2="28"/>
+          <circle cx="32" cy="20" r="2.5" fill="var(--ink)" stroke="none"/>
+        </svg>
+      ),
+      "Innovation Promotion": (
+        <svg viewBox="0 0 64 64" width="48" height="48" fill="none" stroke="var(--ink)" strokeWidth="1" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="32,8 38,26 58,26 42,38 48,56 32,44 16,56 22,38 6,26 26,26"/>
+          <circle cx="32" cy="32" r="2.5" fill="var(--ink)" stroke="none"/>
+        </svg>
+      ),
+    };
+    return svgs[skillName] || null;
+  };
+
   return (
     <section className="sec">
       <div className="container-narrow">
@@ -318,48 +581,7 @@ const RadarSkillsSection = () => {
                   >
                     <div className="bg-[hsl(var(--pastel-yellow))] border border-ink p-4 max-w-xs">
                       <div className="flex items-start gap-3">
-                        {selectedSkill === 'Hard Skills' && (
-                          <svg viewBox="0 0 64 64" width="56" height="56" fill="none" stroke="var(--ink)" strokeWidth="1" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="8" y="8" width="28" height="28"/>
-                            <rect x="28" y="28" width="28" height="28"/>
-                            <circle cx="28" cy="28" r="2.5" fill="var(--ink)" stroke="none"/>
-                          </svg>
-                        )}
-                        {selectedSkill === 'Cognitive Skills' && (
-                          <svg viewBox="0 0 64 64" width="56" height="56" fill="none" stroke="var(--ink)" strokeWidth="1" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="22" cy="32" r="18"/>
-                            <circle cx="42" cy="32" r="18"/>
-                            <circle cx="32" cy="32" r="2.5" fill="var(--ink)" stroke="none"/>
-                          </svg>
-                        )}
-                        {selectedSkill === 'Organization Understanding' && (
-                          <svg viewBox="0 0 64 64" width="56" height="56" fill="none" stroke="var(--ink)" strokeWidth="1" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="32" cy="12" r="6"/>
-                            <circle cx="14" cy="50" r="6"/>
-                            <circle cx="50" cy="50" r="6"/>
-                            <line x1="32" y1="18" x2="32" y2="34"/>
-                            <line x1="32" y1="34" x2="14" y2="44"/>
-                            <line x1="32" y1="34" x2="50" y2="44"/>
-                            <circle cx="32" cy="34" r="2.5" fill="var(--ink)" stroke="none"/>
-                          </svg>
-                        )}
-                        {selectedSkill === 'Soft Skills' && (
-                          <svg viewBox="0 0 64 64" width="56" height="56" fill="none" stroke="var(--ink)" strokeWidth="1" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8 20 L8 48 L28 48 L28 56 L40 48 L56 48 L56 20 Z"/>
-                            <circle cx="24" cy="34" r="2.5" fill="var(--ink)" stroke="none"/>
-                            <line x1="30" y1="34" x2="42" y2="34"/>
-                            <line x1="30" y1="28" x2="48" y2="28"/>
-                            <line x1="30" y1="40" x2="40" y2="40"/>
-                          </svg>
-                        )}
-                        {selectedSkill === 'Leadership' && (
-                          <svg viewBox="0 0 64 64" width="56" height="56" fill="none" stroke="var(--ink)" strokeWidth="1" xmlns="http://www.w3.org/2000/svg">
-                            <polygon points="32,6 58,58 6,58"/>
-                            <line x1="20" y1="40" x2="44" y2="40"/>
-                            <circle cx="32" cy="40" r="2.5" fill="var(--ink)" stroke="none"/>
-                            <line x1="32" y1="6" x2="32" y2="40"/>
-                          </svg>
-                        )}
+                        {getCapabilitySVG(tooltipSkill || '')}
                         <div className="flex-1 min-w-0">
                           <h4 className="heading-m">{tooltipSkill}</h4>
                           <p className="eyebrow mt-2">{tooltipSkillData.caseStudy.brand}</p>
