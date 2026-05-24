@@ -432,7 +432,7 @@ const RadarSkillsSection = () => {
                 onMouseEnter={e => e.currentTarget.style.opacity = '0.6'}
                 onMouseLeave={e => e.currentTarget.style.opacity = '1'}
               >
-                In practice →
+                Behind the radar →
               </Link>
             </div>
           </div>
