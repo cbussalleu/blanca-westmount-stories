@@ -1074,9 +1074,8 @@ input::placeholder, textarea::placeholder {
 }
 
 .logo-dot-img {
-  width: 0.65em;
   height: 0.65em;
-  object-fit: contain;
+  width: auto;
   opacity: 0.65;
   filter: brightness(0);
   display: block;
@@ -1098,7 +1097,7 @@ input::placeholder, textarea::placeholder {
 .logo-dot-panel {
   position: absolute;
   right: clamp(20px, 4vw, 48px);
-  bottom: var(--s-8);
+  top: calc(136px + 18.4vw);
   width: 260px;
   animation: panel-in 200ms ease forwards;
   z-index: 50;
