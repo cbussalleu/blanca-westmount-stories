@@ -415,26 +415,6 @@ const RadarSkillsSection = () => {
               </div>
             </div>
 
-            <div style={{ paddingTop: 'var(--s-5)', textAlign: 'left' }}>
-              <Link
-                to="/methodology"
-                style={{
-                  fontFamily: 'var(--ff-editorial)',
-                  fontSize: 14,
-                  color: 'var(--ink)',
-                  borderBottom: '1px solid var(--ink)',
-                  paddingBottom: 2,
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: 6,
-                  transition: 'opacity 200ms'
-                }}
-                onMouseEnter={e => e.currentTarget.style.opacity = '0.6'}
-                onMouseLeave={e => e.currentTarget.style.opacity = '1'}
-              >
-                Behind the radar →
-              </Link>
-            </div>
           </div>
         </div>
       </div>
