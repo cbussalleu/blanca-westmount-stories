@@ -1169,3 +1169,40 @@ input::placeholder, textarea::placeholder {
   .home-bimbo-cases { grid-template-columns: 1fr; }
   .home-footer-strip { flex-direction: column; align-items: flex-start; gap: var(--s-4); }
 }
+
+/* ─── SVG Diagram System ─────────────────────────────────────
+   Minimal geometric icons used in radar capability tooltips.
+
+   RULES:
+   - viewBox: "0 0 64 64" always
+   - width/height: 48px rendered size
+   - stroke: var(--ink) always
+   - strokeWidth: 1 always
+   - fill: none always (except accent dot)
+   - Accent dot: <circle r="2.5" fill="var(--ink)" stroke="none"/>
+   - No rounded corners (rx="0")
+   - No text labels inside capability SVGs
+   - strokeDasharray="3 3" for secondary/building elements
+
+   SHAPES USED PER CONCEPT:
+   - Human / Person: circle head + path body
+   - Systems: concentric circles + radial lines
+   - Hierarchy: circles connected by lines (org chart)
+   - Process / Flow: rectangles connected by lines
+   - Data: bar chart with trend line
+   - Communication: speech bubble rectangles
+   - Iteration / Loop: open arc with arrow
+   - Decision: radial lines from center point
+   - Alignment: parallel lines with dot progression
+   - Adaptation: opposing arcs with arrows
+   - Complexity: concentric circles with spokes
+   - Abstraction: nested triangles (polygons)
+   - Prototyping: 2x2 grid with dashed quadrant
+   - Tools / Digital: screen rectangle with UI elements
+   - Facilitation: triangle with base line (group dynamic)
+
+   USAGE:
+   Import getCapabilitySVG() from RadarSkillsSection.tsx
+   Pass the capability name as string key.
+   Returns React.ReactNode or null if not found.
+   ─────────────────────────────────────────────────────────── */
