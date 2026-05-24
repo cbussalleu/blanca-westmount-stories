@@ -119,7 +119,6 @@ const Index = () => {
                 >
                   Christian
                   <span className="logo-dot-wrapper" onClick={handleDownload}>
-                    <span className="logo-dot-mobile">.</span>
                     <span className="logo-dot-desktop">
                       <img
                         src="/lovable-uploads/69552967-182b-43cb-9a77-04a4d046299a.png"
@@ -272,7 +271,7 @@ const Index = () => {
                 No silver bullets.
               </h2>
               <p style={{ fontFamily: 'var(--ff-editorial)', fontSize: 'var(--t-lede)', color: 'var(--ink-2)', lineHeight: 1.55, maxWidth: '54ch', margin: 0 }}>
-                No framework eliminates essential complexity. What matters is building the judgment to navigate it — through practice, honest failure, and the accumulated experience of knowing when to follow a method and when to depart from it.
+                No framework eliminates essential complexity. What matters is building the judgment to navigate it.
               </p>
             </div>
             <div style={{ margin: 'var(--s-6) 0' }}>

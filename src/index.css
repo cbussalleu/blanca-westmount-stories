@@ -1062,6 +1062,11 @@ input::placeholder, textarea::placeholder {
   display: none;
 }
 
+@media (max-width: 767px) {
+  .logo-dot-desktop { display: none; }
+  .logo-dot-mobile { display: none; }
+}
+
 @media (min-width: 768px) {
   .logo-dot-mobile { display: none; }
   .logo-dot-desktop {
