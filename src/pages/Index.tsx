@@ -132,15 +132,26 @@ const Index = () => {
               </em>
             </h1>
             {showTooltip && (
-              <div className="logo-dot-panel">
-                <div className="logo-dot-panel-header">
-                  CV Metadata · JSON
+              <>
+                <div
+                  className="logo-dot-bridge"
+                  onMouseEnter={() => setShowTooltip(true)}
+                  onMouseLeave={() => setShowTooltip(false)}
+                />
+                <div
+                  className="logo-dot-panel"
+                  onMouseEnter={() => setShowTooltip(true)}
+                  onMouseLeave={() => setShowTooltip(false)}
+                >
+                  <div className="logo-dot-panel-header">
+                    CV Metadata · JSON
+                  </div>
+                  <div className="logo-dot-panel-body">
+                    <span className="logo-dot-panel-title">Download CV Metadata (JSON)</span>
+                    <span className="logo-dot-panel-sub">For AI screening tools, automated ATS pipelines, or programmatic HR analysis.</span>
+                  </div>
                 </div>
-                <div className="logo-dot-panel-body">
-                  <span className="logo-dot-panel-title">Download CV Metadata (JSON)</span>
-                  <span className="logo-dot-panel-sub">For AI screening tools, automated ATS pipelines, or programmatic HR analysis.</span>
-                </div>
-              </div>
+              </>
             )}
             <p className="home-lede prose-lede-constrained">
               Service Designer working at the intersection of human-centered research,
