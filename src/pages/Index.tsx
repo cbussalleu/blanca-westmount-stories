@@ -184,7 +184,7 @@ const Index = () => {
               </p>
             </div>
             <RadarSkillsSection />
-            <div style={{ paddingTop: 'var(--s-6)', textAlign: 'right' }}>
+            <div style={{ paddingTop: 'var(--s-3)', textAlign: 'right' }}>
               <Link
                 to="/portfolio/self-assessment-framework"
                 style={{
