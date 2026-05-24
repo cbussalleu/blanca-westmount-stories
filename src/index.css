@@ -1049,7 +1049,7 @@ input::placeholder, textarea::placeholder {
   display: inline-block;
   position: relative;
   cursor: pointer;
-  width: 0.12em;
+  width: 0.65em;
   height: 0.65em;
   vertical-align: baseline;
   margin-left: 2px;
@@ -1074,8 +1074,8 @@ input::placeholder, textarea::placeholder {
 }
 
 .logo-dot-img {
-  height: 0.65em;
-  width: 0.57em; /* 0.65em × (216/246) — explicit aspect ratio, width: auto resolves to container in Safari */
+  height: 0.65em !important;
+  width: 0.57em !important; /* 0.65em × (216/246) — explicit aspect ratio, width: auto resolves to container in Safari */
   opacity: 0.65;
   filter: brightness(0);
   display: block;
