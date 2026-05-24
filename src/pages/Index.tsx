@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import RadarSkillsSection from '../components/RadarSkillsSection';
@@ -10,6 +11,7 @@ const bimboSlugs = ["connection-center", "crm-service-design", "continuous-impro
 
 const Index = () => {
   useScrollToTop();
+  const [showTooltip, setShowTooltip] = useState(false);
   const featuredProjects = projects.filter(p => featuredSlugs.includes(p.slug));
   const bimboProjects = projects.filter(p => bimboSlugs.includes(p.slug));
 
@@ -110,37 +112,35 @@ const Index = () => {
               Hello,<br/>
               I am<br/>
               <em>
+                Christian
                 <span
-                  className="logo-dot-trigger"
+                  className="logo-dot-wrapper"
+                  onMouseEnter={() => setShowTooltip(true)}
+                  onMouseLeave={() => setShowTooltip(false)}
                   onClick={handleDownload}
                 >
-                  Christian
-                  <span className="logo-dot-wrapper">
-                    <span className="logo-dot-mobile">.</span>
-                    <span className="logo-dot-desktop">
-                      <img
-                        src="/lovable-uploads/69552967-182b-43cb-9a77-04a4d046299a.png"
-                        alt="Download CV Metadata"
-                        className="logo-dot-img"
-                      />
-                      <span className="logo-dot-tooltip">
-                        <span className="logo-dot-tooltip-header">
-                          CV Metadata · JSON
-                        </span>
-                        <span className="logo-dot-tooltip-body">
-                          <span className="logo-dot-tooltip-title">
-                            Download CV Metadata (JSON)
-                          </span>
-                          <span className="logo-dot-tooltip-sub">
-                            For AI screening tools, automated ATS pipelines, or programmatic HR analysis.
-                          </span>
-                        </span>
-                      </span>
-                    </span>
+                  <span className="logo-dot-mobile">.</span>
+                  <span className="logo-dot-desktop">
+                    <img
+                      src="/lovable-uploads/69552967-182b-43cb-9a77-04a4d046299a.png"
+                      alt="Download CV Metadata"
+                      className={`logo-dot-img ${showTooltip ? 'logo-dot-img--active' : ''}`}
+                    />
                   </span>
                 </span>
               </em>
             </h1>
+            {showTooltip && (
+              <div className="logo-dot-panel">
+                <div className="logo-dot-panel-header">
+                  CV Metadata · JSON
+                </div>
+                <div className="logo-dot-panel-body">
+                  <span className="logo-dot-panel-title">Download CV Metadata (JSON)</span>
+                  <span className="logo-dot-panel-sub">For AI screening tools, automated ATS pipelines, or programmatic HR analysis.</span>
+                </div>
+              </div>
+            )}
             <p className="home-lede prose-lede-constrained">
               Service Designer working at the intersection of human-centered research,
               organizational change, and operational design. I help complex organizations
