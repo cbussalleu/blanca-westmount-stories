@@ -40,7 +40,7 @@ const Footer = () => {
               fontSize: 11,
               letterSpacing: '0.20em',
               textTransform: 'uppercase',
-              color: 'var(--accent)',
+              color: 'var(--ink-3)',
             }}>
               Service Designer · Barcelona
             </div>

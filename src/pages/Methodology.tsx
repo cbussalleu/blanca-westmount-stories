@@ -107,7 +107,7 @@ const Methodology = () => {
 
           {/* Cases reference */}
           <div style={{ border: '1px solid var(--rule)', padding: 'var(--s-5)' }}>
-            <div style={{ fontFamily: 'var(--ff-display)', fontWeight: 300, fontSize: 10, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--accent)', marginBottom: 'var(--s-4)', paddingBottom: 'var(--s-3)', borderBottom: '1px solid var(--rule)' }}>
+            <div style={{ fontFamily: 'var(--ff-display)', fontWeight: 300, fontSize: 10, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--ink-3)', marginBottom: 'var(--s-4)', paddingBottom: 'var(--s-3)', borderBottom: '1px solid var(--rule)' }}>
               This principle in action
             </div>
             {[
@@ -180,7 +180,7 @@ const Methodology = () => {
                   style={{ borderLeftColor: num === '05' ? 'var(--accent)' : undefined, background: num === '05' ? 'hsl(161 28% 60% / 0.06)' : 'transparent' }}
                 >
                   <div style={{ fontFamily: 'var(--ff-display)', fontWeight: 200, fontSize: 32, lineHeight: 0.9, letterSpacing: '-0.03em', color: 'var(--ink-4)' }}>{num}</div>
-                  <div style={{ fontFamily: 'var(--ff-display)', fontWeight: 300, fontSize: 9, letterSpacing: '0.20em', textTransform: 'uppercase', color: num === '05' ? 'var(--accent)' : 'var(--ink-3)' }}>{label}</div>
+                  <div style={{ fontFamily: 'var(--ff-display)', fontWeight: 300, fontSize: 9, letterSpacing: '0.20em', textTransform: 'uppercase', color: 'var(--ink-3)' }}>{label}</div>
                   <div style={{ fontFamily: 'var(--ff-editorial)', fontWeight: 400, fontSize: 15, lineHeight: 1.3, margin: 0 }}>{title}</div>
                   <div style={{ fontFamily: 'var(--ff-editorial)', fontSize: 13, lineHeight: 1.6, color: 'var(--ink-2)', margin: 0 }}>{body}</div>
                 </div>

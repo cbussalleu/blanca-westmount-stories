@@ -82,7 +82,7 @@ const BimboRelationship = () => {
       </section>
 
       {/* Timeline — full width */}
-      <div style={{ width:'100%', maxWidth:1120, marginInline:'auto', paddingInline:'clamp(20px,4vw,48px)', paddingBlock:'var(--s-9) var(--s-8)', borderBottom:'1px solid var(--rule)', borderTop:'2px solid var(--accent)' }}>
+      <div style={{ width:'100%', maxWidth:1120, marginInline:'auto', paddingInline:'clamp(20px,4vw,48px)', paddingBlock:'var(--s-9) var(--s-8)', borderBottom:'1px solid var(--rule)', borderTop:'1px solid var(--rule)' }}>
         <div style={{ fontFamily:'var(--ff-display)', fontWeight:300, fontSize:10, letterSpacing:'0.22em', textTransform:'uppercase', color:'var(--ink-3)', marginBottom:'var(--s-6)', paddingBottom:'var(--s-3)', borderBottom:'1px solid var(--rule)' }}>
           How it unfolded
         </div>

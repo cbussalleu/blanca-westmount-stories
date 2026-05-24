@@ -144,7 +144,7 @@ const ProjectDetail = () => {
         <section className="pd-case" id="research">
           <div className="container-narrow">
             <header className="pd-case-head">
-              <div className="case-letter" style={{ color: 'var(--accent)' }}>B</div>
+              <div className="case-letter">B</div>
               <div>
                 <div className="case-verbose">Section B · How I approached it</div>
                 <h2>Research approach.</h2>
@@ -172,7 +172,7 @@ const ProjectDetail = () => {
         <section className="pd-case" id="insights">
           <div className="container-narrow">
             <header className="pd-case-head">
-              <div className="case-letter" style={{ color: 'var(--accent)' }}>C</div>
+              <div className="case-letter">C</div>
               <div>
                 <div className="case-verbose">Section C · What I learned</div>
                 <h2>Key insights.</h2>

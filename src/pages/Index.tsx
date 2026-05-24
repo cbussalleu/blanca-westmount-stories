@@ -160,7 +160,6 @@ const Index = () => {
                   gap: 1px;
                   background: var(--rule);
                   border: 1px solid var(--rule);
-                  border-top: 2px solid var(--accent);
                 }
                 .nav-cell {
                   background: hsl(var(--pastel-yellow));
@@ -204,7 +203,7 @@ const Index = () => {
                   background: hsl(160 25% 96%);
                 }
                 .nav-cell.accent-cell .nav-cell-eyebrow {
-                  color: var(--accent);
+                  color: var(--ink-3);
                 }
                 @media (max-width: 640px) {
                   .nav-cell-top { grid-template-columns: 1fr; }
