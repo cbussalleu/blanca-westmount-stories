@@ -398,7 +398,7 @@ const RadarSkillsSection = () => {
               </div>
             </div>
 
-            <div className="pt-4 text-center lg:text-left transition-all duration-300">
+            <div style={{ paddingTop: 'var(--s-5)', textAlign: 'left' }}>
               <Link
                 to="/methodology"
                 style={{
@@ -415,7 +415,7 @@ const RadarSkillsSection = () => {
                 onMouseEnter={e => e.currentTarget.style.opacity = '0.6'}
                 onMouseLeave={e => e.currentTarget.style.opacity = '1'}
               >
-                Read the methodology
+                In practice →
               </Link>
             </div>
           </div>
