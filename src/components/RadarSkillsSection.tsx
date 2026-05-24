@@ -318,11 +318,44 @@ const RadarSkillsSection = () => {
                   >
                     <div className="bg-[hsl(var(--pastel-yellow))] border border-ink p-4 max-w-xs">
                       <div className="flex items-start gap-3">
-                        <img
-                          src={tooltipSkillData.caseStudy.image}
-                          alt={tooltipSkillData.caseStudy.brand}
-                          className="w-16 h-12 object-cover"
-                        />
+                        {selectedSkill === 'Hard Skills' && (
+                          <svg viewBox="0 0 48 48" width="48" height="48" fill="none" stroke="var(--ink)" strokeWidth="1.5" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="8" y="8" width="32" height="32"/>
+                            <line x1="8" y1="24" x2="40" y2="24"/>
+                            <line x1="24" y1="8" x2="24" y2="40"/>
+                          </svg>
+                        )}
+                        {selectedSkill === 'Cognitive Skills' && (
+                          <svg viewBox="0 0 48 48" width="48" height="48" fill="none" stroke="var(--ink)" strokeWidth="1.5" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="24" cy="24" r="16"/>
+                            <circle cx="24" cy="24" r="8"/>
+                            <circle cx="24" cy="24" r="2"/>
+                          </svg>
+                        )}
+                        {selectedSkill === 'Organization Understanding' && (
+                          <svg viewBox="0 0 48 48" width="48" height="48" fill="none" stroke="var(--ink)" strokeWidth="1.5" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="18" y="6" width="12" height="8"/>
+                            <rect x="6" y="34" width="12" height="8"/>
+                            <rect x="30" y="34" width="12" height="8"/>
+                            <line x1="24" y1="14" x2="24" y2="26"/>
+                            <line x1="24" y1="26" x2="12" y2="34"/>
+                            <line x1="24" y1="26" x2="36" y2="34"/>
+                          </svg>
+                        )}
+                        {selectedSkill === 'Soft Skills' && (
+                          <svg viewBox="0 0 48 48" width="48" height="48" fill="none" stroke="var(--ink)" strokeWidth="1.5" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="16" cy="20" r="6"/>
+                            <circle cx="32" cy="20" r="6"/>
+                            <path d="M4 40 Q16 28 24 32 Q32 28 44 40"/>
+                          </svg>
+                        )}
+                        {selectedSkill === 'Leadership' && (
+                          <svg viewBox="0 0 48 48" width="48" height="48" fill="none" stroke="var(--ink)" strokeWidth="1.5" xmlns="http://www.w3.org/2000/svg">
+                            <polygon points="24,6 44,42 4,42"/>
+                            <line x1="24" y1="16" x2="24" y2="32"/>
+                            <circle cx="24" cy="37" r="2" fill="var(--ink)"/>
+                          </svg>
+                        )}
                         <div className="flex-1 min-w-0">
                           <h4 className="heading-m">{tooltipSkill}</h4>
                           <p className="eyebrow mt-2">{tooltipSkillData.caseStudy.brand}</p>
