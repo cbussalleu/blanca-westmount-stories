@@ -112,20 +112,21 @@ const Index = () => {
               Hello,<br/>
               I am<br/>
               <em>
-                Christian
                 <span
-                  className="logo-dot-wrapper"
+                  style={{ display: 'inline', cursor: 'pointer' }}
                   onMouseEnter={() => setShowTooltip(true)}
                   onMouseLeave={() => setShowTooltip(false)}
-                  onClick={handleDownload}
                 >
-                  <span className="logo-dot-mobile">.</span>
-                  <span className="logo-dot-desktop">
-                    <img
-                      src="/lovable-uploads/69552967-182b-43cb-9a77-04a4d046299a.png"
-                      alt="Download CV Metadata"
-                      className={`logo-dot-img ${showTooltip ? 'logo-dot-img--active' : ''}`}
-                    />
+                  Christian
+                  <span className="logo-dot-wrapper" onClick={handleDownload}>
+                    <span className="logo-dot-mobile">.</span>
+                    <span className="logo-dot-desktop">
+                      <img
+                        src="/lovable-uploads/69552967-182b-43cb-9a77-04a4d046299a.png"
+                        alt="Download CV Metadata"
+                        className={`logo-dot-img ${showTooltip ? 'logo-dot-img--active' : ''}`}
+                      />
+                    </span>
                   </span>
                 </span>
               </em>
