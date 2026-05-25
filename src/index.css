@@ -1051,6 +1051,7 @@ input::placeholder, textarea::placeholder {
   display: inline-block;
   position: relative;
   cursor: pointer;
+  font-size: inherit; /* prevent button reset from breaking em-based sizing */
   width: 0.65em;
   height: 0.65em;
   vertical-align: baseline;
@@ -1068,7 +1069,6 @@ input::placeholder, textarea::placeholder {
 
 @media (max-width: 767px) {
   .logo-dot-desktop { display: none; }
-  .logo-dot-mobile { display: none; }
 }
 
 @media (min-width: 768px) {
