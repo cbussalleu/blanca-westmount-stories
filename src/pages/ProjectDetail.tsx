@@ -40,24 +40,6 @@ const ProjectDetail = () => {
   const nextSlug = currentIndex < projectSlugs.length - 1 ? projectSlugs[currentIndex + 1] : null;
   const [activeStage, setActiveStage] = useState<'before' | 'after'>('after');
 
-  const parseImpactStat = (text: string) => {
-    const match = text.match(/^([−\-+]?\d+[\.,]?\d*\s*[%+kK]?)/);
-    if (match) {
-      const stat = match[1];
-      const rest = text.replace(match[0], '').trim();
-      const words = rest.split(' ');
-      const label = words.slice(0, 3).join(' ');
-      const body = words.slice(3).join(' ');
-      return { stat, label, body };
-    }
-    const words = text.split(' ');
-    return {
-      stat: '→',
-      label: words.slice(0, 3).join(' '),
-      body: words.slice(3).join(' ')
-    };
-  };
-
   return (
     <div className="min-h-screen bg-[hsl(var(--pastel-yellow))]">
       <Header />
@@ -107,29 +89,26 @@ const ProjectDetail = () => {
         <div><dt>Tools</dt><dd>{project.tools?.slice(0, 2).join(' · ')}</dd></div>
       </dl>
 
-      {/* Impact tiles */}
-      {project.impact && project.impact.length > 0 && (
+      {/* Scope tiles */}
+      {project.scopeNumbers && project.scopeNumbers.length > 0 && (
         <section className="impact-section">
           <div className="container-narrow">
             <div className="impact-head">
-              <h2>What changed.</h2>
-              <div className="impact-eyebrow">Outcome · headline figures</div>
+              <h2>Inputs and artefacts.</h2>
+              <div className="impact-eyebrow">Scope · what the work produced</div>
             </div>
             <div className="impact-tiles">
-              {project.impact?.slice(0, 5).map((item, i) => {
-                const { stat, label, body } = parseImpactStat(item);
-                return (
-                  <div className="impact-tile" key={i}>
-                    <div className="stat">
-                      <span className="big" style={{ fontSize: stat.length > 4 ? '48px' : undefined }}>
-                        {stat}
-                      </span>
-                    </div>
-                    <div className="tile-label">{label}</div>
-                    <div className="tile-body">{body}</div>
+              {project.scopeNumbers.map(({ stat, label, body }, i) => (
+                <div className="impact-tile" key={i}>
+                  <div className="stat">
+                    <span className="big" style={{ fontSize: stat.length > 4 ? '48px' : undefined }}>
+                      {stat}
+                    </span>
                   </div>
-                );
-              })}
+                  <div className="tile-label">{label}</div>
+                  <div className="tile-body">{body}</div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
