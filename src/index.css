@@ -1069,6 +1069,7 @@ input::placeholder, textarea::placeholder {
 
 @media (max-width: 767px) {
   .logo-dot-desktop { display: none; }
+  .logo-dot-mobile { display: none; } /* iPhone 12 layout — no period on mobile */
 }
 
 @media (min-width: 768px) {
