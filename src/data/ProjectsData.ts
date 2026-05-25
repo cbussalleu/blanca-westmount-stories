@@ -15,6 +15,7 @@ export interface Project {
   insights?: string[];
   process?: string[];
   impact?: string[];
+  scopeNumbers?: { stat: string; label: string; body: string }[];
   tools?: string[];
   icon?: string;
 }
@@ -65,6 +66,13 @@ export const projects: Project[] = [
       "47 product and process improvements implemented based on customer insights in first two years",
       "Model versioned 37 times post-launch: adapted without losing structural coherence"
     ],
+    scopeNumbers: [
+      { stat: "65+", label: "stakeholder interviews", body: "In-depth interviews across leadership, operational teams, and market representatives in the 9 initial audit markets." },
+      { stat: "24", label: "customer journeys mapped", body: "Journey mapping workshops documented consumer and B2B interactions across all key service touchpoints." },
+      { stat: "43", label: "process blueprints", body: "Documented in Blueprint format covering complaint management, inquiries, social media, and B2B flows." },
+      { stat: "54", label: "reporting views designed", body: "Personalized reports built for different stakeholder types, replacing the existing low-usability legacy dashboards." },
+      { stat: "9", label: "markets audited", body: "Process audit conducted in nine markets before the CX model was designed and extended to all 17." },
+    ],
     tools: ["Miro", "Optimal Workshop", "Figma", "JIRA", "Salesforce"],
     icon: "🌐"
   },
@@ -113,6 +121,13 @@ export const projects: Project[] = [
       "Enhanced sales performance visibility",
       "Improved cross-team coordination"
     ],
+    scopeNumbers: [
+      { stat: "17", label: "markets in scope", body: "Process audit and stakeholder interviews conducted across all 17 countries before CRM configuration began." },
+      { stat: "5", label: "core processes assessed", body: "Complaint management, inquiries, social media, critical situations, and alert threshold management each mapped independently." },
+      { stat: "4", label: "user types designed for", body: "Customer service, sales, quality, and management teams each required different interfaces, not just permission levels." },
+      { stat: "3", label: "B2B journey types mapped", body: "Customer service, complaint management, and B2B interactions mapped for both supervisors and sales teams." },
+      { stat: "→", label: "modular architecture", body: "System designed for market-level customisation without overriding the unified data architecture or governance model." },
+    ],
     tools: ["Salesforce", "Figma", "InVision", "JIRA", "Confluence"],
     icon: "💼"
   },
@@ -158,6 +173,13 @@ export const projects: Project[] = [
       "New revenue streams through utility bill payments and mobile top-up services",
       "Improved financial access for underserved small businesses"
     ],
+    scopeNumbers: [
+      { stat: "3", label: "service blueprints", body: "Ordering, payment, and credit journeys each designed as separate blueprints with distinct flows and ownership." },
+      { stat: "2", label: "interfaces designed", body: "Mobile app and POS terminal received dedicated user journey designs for different interaction contexts." },
+      { stat: "5", label: "research methods applied", body: "Owner interviews, pain point analysis, financial needs assessment, technical capabilities evaluation, and competitive benchmarking." },
+      { stat: "→", label: "financial module", body: "Credit assessment and financial reporting modules designed in coordination with Bimbo's financial unit and service partners." },
+      { stat: "→", label: "onboarding strategy", body: "Gradual digital adoption sequence designed after research showed immediate full migration was not feasible for small business owners." },
+    ],
     tools: ["Marvel", "Illustrator", "Miro", "JIRA"],
     icon: "🏪"
   },
@@ -200,6 +222,13 @@ export const projects: Project[] = [
       "Established shared improvement methodology adopted across 17 countries",
       "Reduced average time from customer insight to implemented change",
       "Created first cross-market innovation community within Grupo Bimbo's CX organization"
+    ],
+    scopeNumbers: [
+      { stat: "17", label: "countries in scope", body: "Improvement framework designed to unify cycles across all 17 Connection Center markets simultaneously." },
+      { stat: "4", label: "research methods", body: "Methodology audit, feedback loop assessment, FMCG benchmarking, and stakeholder interviews on innovation barriers." },
+      { stat: "5", label: "process deliverables", body: "Governance model, feedback-to-action pipeline, market playbooks, cross-market learning sessions, and innovation scorecard." },
+      { stat: "→", label: "feedback-to-action pipeline", body: "Standardised mechanism routing customer insights from all 17 markets directly to product and process decision-makers." },
+      { stat: "→", label: "innovation scorecard", body: "Designed to track improvement velocity and impact across markets, enabling evidence-based prioritisation for the first time." },
     ],
     tools: ["Miro", "Confluence", "JIRA", "Tableau"],
     icon: "🔄"
@@ -248,6 +277,13 @@ export const projects: Project[] = [
       "Broker network integrated into the digital channel: resolving the initial resistance by giving brokers a co-ownership role in the digital journey",
       "Customer satisfaction scores for the digital purchase flow averaged 4.2/5 in post-launch measurement"
     ],
+    scopeNumbers: [
+      { stat: "5", label: "stakeholder types researched", body: "Internal teams, insurance brokers, healthcare providers, auto repair shops, and end customers each mapped across the purchase journey." },
+      { stat: "6", label: "process deliverables", body: "Information architecture, touchpoint strategy, quote flows, design principles, prototypes, and alignment workshops." },
+      { stat: "→", label: "digital purchase flow", body: "End-to-end quotation, comparison, selection, and payment designed as a self-service channel for the first time." },
+      { stat: "→", label: "broker integration model", body: "Dedicated service flow designed for brokers after research revealed digital exclusion was the core driver of sales force resistance." },
+      { stat: "→", label: "design principles framework", body: "Reusable design principles produced as a deliverable for La Positiva's subsequent digital initiatives, not just this project." },
+    ],
     tools: ["Figma", "Miro", "InVision", "Optimal Workshop"],
     icon: "📱"
   },
@@ -293,6 +329,13 @@ export const projects: Project[] = [
       "Brand consistency scores improved across all measured markets in post-launch brand tracking",
       "Content Hub pilot validated the model before full rollout: iteration cycle reduced risk of global implementation failure",
       "Local market teams reported 45% reduction in briefing and alignment time per campaign cycle"
+    ],
+    scopeNumbers: [
+      { stat: "3", label: "content architecture tiers", body: "Global pillars, regional adaptations, and local content each with distinct production rules, approval flows, and ownership." },
+      { stat: "3", label: "stakeholder types interviewed", body: "Global brand teams, local market managers, and content creators each contributed to the research phase." },
+      { stat: "5", label: "research methods applied", body: "Process audit, stakeholder interviews, content performance analysis, global benchmarking, and customer research on brand perception." },
+      { stat: "→", label: "governance model", body: "Designed to replace bottleneck approvals with a clear ruleset balancing central brand control and local autonomy." },
+      { stat: "→", label: "Content Hub pilot", body: "Three-tier model piloted before full rollout, using a controlled iteration cycle to validate before global implementation." },
     ],
     tools: ["Figma", "Asana", "Miro", "Adobe Creative Suite"],
     icon: "☕"
@@ -342,6 +385,13 @@ export const projects: Project[] = [
       "Model referenced as a regional best practice for public sector digital transformation by peers in Chile and Uruguay",
       "Peer benchmarking mechanism proved more effective at motivating improvement than top-down mandates: a key finding that influenced subsequent public sector programs"
     ],
+    scopeNumbers: [
+      { stat: "2,500", label: "public entities in scope", body: "Assessment tool designed from the ground up to work at the full scale of Peru's entire public sector." },
+      { stat: "3", label: "benchmark frameworks reviewed", body: "MIT, Harvard, and OECD innovation measurement frameworks analysed before building a Peru-specific maturity model." },
+      { stat: "55", label: "entities in second pilot round", body: "Methodology tested with 25 entities in the first round, then expanded to 55 after iterating on feedback." },
+      { stat: "→", label: "self-service platform", body: "Dashboard and recommendation engine built so any entity leader could run the full assessment without prior context." },
+      { stat: "→", label: "training and support toolkit", body: "Launch materials, training programme, and change management plan designed alongside the assessment tool itself." },
+    ],
     tools: ["Figma", "Miro", "Google Forms", "Looker Studio"],
     icon: "📊"
   },
@@ -388,6 +438,13 @@ export const projects: Project[] = [
       "Training program scaled to three additional markets within the first year following the pilot",
       "Agent satisfaction scores improved alongside performance: reduced friction in the sales process benefited both sides"
     ],
+    scopeNumbers: [
+      { stat: "5", label: "research methods", body: "Process audit, agent observation sessions, advertiser interviews, call recording analysis, and sales training benchmarking." },
+      { stat: "5", label: "design deliverables", body: "Conversation framework, competency model, modular training programme, performance measurement system, and validated pilot." },
+      { stat: "→", label: "top-performer analysis", body: "Competency model derived by identifying learnable behaviours separating top performers from median agents in the existing team." },
+      { stat: "→", label: "consultative framework", body: "Structured conversation guide replacing ad hoc approaches, designed around advertiser business needs rather than platform features." },
+      { stat: "→", label: "pilot before rollout", body: "Redesigned process tested with a selected team and iterated before being deployed across the full operation." },
+    ],
     tools: ["Miro", "Google Slides", "Looker Studio", "Confluence"],
     icon: "📞"
   },
@@ -433,6 +490,13 @@ export const projects: Project[] = [
       "Onboarding activation rate for new cardholders reached 78% within 30 days: up from 41% under the previous model",
       "Net Promoter Score for the loyalty program improved by 14 points among active participants",
       "Tiered benefits structure created a clear upgrade path: 19% of standard cardholders moved to premium tier within the first year"
+    ],
+    scopeNumbers: [
+      { stat: "5", label: "research methods", body: "Cardholder interviews, competitive benchmarking, performance data analysis, partner ecosystem mapping, and regulatory review." },
+      { stat: "5", label: "design deliverables", body: "Accrual model, redemption experience, tiered benefits structure, cardholder onboarding journey, and engagement measurement framework." },
+      { stat: "→", label: "segmentation analysis", body: "Cardholder segments defined by usage profile to align reward design with the behaviours that drive card value for the business." },
+      { stat: "→", label: "tiered benefits structure", body: "Reward tiers designed around experiential value for high-spend segments, going beyond cashback equivalence." },
+      { stat: "→", label: "activation journey", body: "Onboarding sequence built to convert enrolled cardholders into active programme participants within the first 30 days." },
     ],
     tools: ["Figma", "Miro", "Tableau", "Optimal Workshop"],
     icon: "💳"
@@ -483,6 +547,13 @@ export const projects: Project[] = [
       "Framework distinguishes between capabilities where evidence is strong and those where practice is ongoing: a more useful signal than a flat competency list",
       "The process of building the framework was itself a demonstration of the capabilities it measures: research, synthesis, honest self-assessment, and design of a public artifact"
     ],
+    scopeNumbers: [
+      { stat: "4", label: "academic papers reviewed", body: "Karpen (2017), Kleinsmann (2012), Carr (2002), and Zheng (2011) provided the bibliographic foundation for the capability model." },
+      { stat: "6", label: "capability dimensions mapped", body: "Organisational, Interpersonal, Cognitive, Technical, Emotional, and Leadership — each grounded in peer-reviewed academic evidence." },
+      { stat: "24", label: "measurable variables defined", body: "Specific capabilities mapped across the six dimensions, each with documented impact on professional performance." },
+      { stat: "2", label: "databases searched", body: "Web of Science and Scopus used to ensure systematic bibliographic coverage, not a convenience sample of known papers." },
+      { stat: "5", label: "dimensions in public Radar", body: "Emotional capabilities excluded from the public Radar because self-assessment without external validation would undermine framework credibility." },
+    ],
     tools: ["Web of Science", "Scopus", "Miro", "Figma"]
   },
   {
@@ -525,6 +596,13 @@ export const projects: Project[] = [
       "Knowledge quality improves with each project that uses and contributes to the system",
       "AI outputs became more consistent and contextually appropriate for Latin American markets",
       "Expert time shifted from reconstructing methodology to interpreting results and making decisions"
+    ],
+    scopeNumbers: [
+      { stat: "2", label: "architecture layers", body: "M-layer for stable methodological knowledge and T-layer for contextual project knowledge, each with separate versioning rules." },
+      { stat: "4", label: "research methods", body: "Knowledge management audit, creation-storage-loss analysis, architecture framework review, and AI bias risk assessment." },
+      { stat: "→", label: "naming and versioning protocol", body: "Conventions defined for both layers so knowledge could be retrieved and combined reliably across projects." },
+      { stat: "→", label: "circular contribution model", body: "Each project designed to contribute aprendizajes back to the relevant notebook, compounding knowledge quality over time." },
+      { stat: "→", label: "Latin American bias documentation", body: "AI bias risks specific to Latin American CX contexts documented and built into M-layer notebooks as mitigation criteria." },
     ],
     tools: ["NotebookLM", "Google Drive", "Miro"]
   },
@@ -572,6 +650,13 @@ export const projects: Project[] = [
       "Scoring and voting module active with conflict-of-interest controls",
       "System architecture reused as base for subsequent internal tools"
     ],
+    scopeNumbers: [
+      { stat: "5", label: "pipeline stages", body: "Structured registration, AI enrichment, automated slide generation, directorial scoring, and production prioritisation." },
+      { stat: "4", label: "strategic scoring axes", body: "Scoring model built across four axes with automatic thresholds triggering the directorial voting process." },
+      { stat: "4", label: "registration steps", body: "Wizard built with a dynamic completeness indicator across four steps to reduce incomplete case submissions." },
+      { stat: "2", label: "output versions designed", body: "Internal version with client names and external anonymised version for pitches, both generated from a single registration." },
+      { stat: "→", label: "conflict-of-interest controls", body: "Practice leads excluded from voting their own cases, preserving trust in the scoring and prioritisation process." },
+    ],
     tools: ["Google Apps Script", "Gemini API", "Google Slides API", "Google Sheets", "Google Drive"]
   },
   {
@@ -616,6 +701,13 @@ export const projects: Project[] = [
       "First AI adoption pulse configured and running with validated authentication fix",
       "Architecture reused as base for a second internal project (Biblioteca Creativa de Prompts)",
       "System scalable to additional pulse types (engagement, climate) without new tools or infrastructure"
+    ],
+    scopeNumbers: [
+      { stat: "40", label: "people per monthly pulse", body: "Quota sample stratified by practice and seniority, covering the full organisation across five rotation cycles." },
+      { stat: "3", label: "questions per pulse", body: "One fixed indicator question plus two rotating from a bank of four, keeping each survey under two minutes." },
+      { stat: "5", label: "rotation cycles designed", body: "Sample rotates across five cycles to reach every segment of the organisation without repetition." },
+      { stat: "4", label: "research inputs", body: "Feedback mechanism analysis, technology adoption frameworks, Workspace technical assessment, and sampling methodology design." },
+      { stat: "→", label: "multi-survey architecture", body: "Activation flags in Config.gs allow future pulse types — engagement, climate — without new tools or infrastructure." },
     ],
     tools: ["Google Apps Script", "Google Chat API", "Google Sheets", "Apps Script Triggers"]
   }
