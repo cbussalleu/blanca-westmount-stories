@@ -32,7 +32,7 @@ const Portfolio = () => {
                 Christian Bussalleu · Service Design
               </div>
               <h1 style={{ fontFamily: 'var(--ff-display)', fontWeight: 200, fontSize: 'clamp(48px,7vw,96px)', lineHeight: 0.92, letterSpacing: '-0.02em', textTransform: 'uppercase', margin: '0 0 var(--s-5)', maxWidth: '14ch' }}>
-                The Work.
+                The <em style={{ fontFamily: "'westmount-outline', serif", fontStyle: 'normal', fontWeight: 'normal', letterSpacing: '0.04em' }}>Work.</em>
               </h1>
               <p style={{ fontFamily: 'var(--ff-editorial)', fontSize: 'var(--t-lede)', lineHeight: 1.55, color: 'var(--ink-2)', maxWidth: '48ch', margin: 0 }}>
                 Thirteen cases across FMCG, financial services, technology, and public sector.

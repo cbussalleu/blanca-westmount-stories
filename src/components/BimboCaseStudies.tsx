@@ -24,7 +24,7 @@ const BimboCaseStudies = () => {
     <div className="grid md:grid-cols-2 gap-8">
       {/* Hero image card */}
       <div className="relative group cursor-pointer">
-        <div className="image-with-overlay rounded-lg overflow-hidden shadow-md bg-[hsl(var(--pastel-yellow))]">
+        <div className="image-with-overlay overflow-hidden bg-[hsl(var(--pastel-yellow))]">
           <div className="relative">
             <div className="w-full h-[260px] md:h-[580px]">
               <img

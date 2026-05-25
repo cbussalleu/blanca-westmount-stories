@@ -196,6 +196,10 @@
     /* Semantic accent colors */
     --crit: #c0392b;
     --warn: #d35400;
+
+    /* Radar fill tokens */
+    --accent-fill: hsl(165 18% 62% / 0.30);
+    --accent-fill-soft: hsl(165 18% 62% / 0.20);
   }
 
   .dark {
@@ -1168,6 +1172,63 @@ input::placeholder, textarea::placeholder {
   .home-featured-grid { grid-template-columns: 1fr; }
   .home-bimbo-cases { grid-template-columns: 1fr; }
   .home-footer-strip { flex-direction: column; align-items: flex-start; gap: var(--s-4); }
+}
+
+/* ─── Home — navigation diagram ─────────────────────────── */
+.nav-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+}
+.nav-cell {
+  background: hsl(var(--pastel-yellow));
+  padding: var(--s-5) var(--s-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+}
+.nav-cell-top {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--rule);
+}
+.nav-cell-eyebrow {
+  font-family: var(--ff-display);
+  font-weight: 300;
+  font-size: 9px;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: var(--ink-4);
+}
+.nav-cell-num {
+  font-family: var(--ff-display);
+  font-weight: 200;
+  font-size: 28px;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--ink-4);
+}
+.nav-cell-title {
+  font-family: var(--ff-editorial);
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 1.3;
+  color: var(--ink);
+  margin: 0;
+}
+.nav-cell.accent-cell {
+  background: hsl(160 25% 96%);
+}
+.nav-cell.accent-cell .nav-cell-eyebrow {
+  color: var(--ink-3);
+}
+@media (max-width: 640px) {
+  .nav-cell-top { grid-template-columns: 1fr; }
+  .nav-grid { grid-template-columns: 1fr; }
 }
 
 /* ─── SVG Diagram System ─────────────────────────────────────

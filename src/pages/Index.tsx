@@ -109,8 +109,8 @@ const Index = () => {
               <div>Barcelona · 15+ years · Global scale</div>
             </div>
             <h1>
-              Hello,<br/>
-              I am<br/>
+              <span style={{ display: 'block' }}>Hello,</span>
+              <span style={{ display: 'block' }}>I am</span>
               <em>
                 <span
                   style={{ display: 'inline', cursor: 'pointer' }}
@@ -118,7 +118,14 @@ const Index = () => {
                   onMouseLeave={() => setShowTooltip(false)}
                 >
                   Christian
-                  <span className="logo-dot-wrapper" onClick={handleDownload}>
+                  <button
+                    type="button"
+                    className="logo-dot-wrapper"
+                    onClick={handleDownload}
+                    aria-label="Download CV metadata as JSON"
+                    style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', display: 'inline-block', verticalAlign: 'baseline' }}
+                  >
+                    <span className="logo-dot-mobile">.</span>
                     <span className="logo-dot-desktop">
                       <img
                         src="/lovable-uploads/69552967-182b-43cb-9a77-04a4d046299a.png"
@@ -126,7 +133,7 @@ const Index = () => {
                         className={`logo-dot-img ${showTooltip ? 'logo-dot-img--active' : ''}`}
                       />
                     </span>
-                  </span>
+                  </button>
                 </span>
               </em>
             </h1>
@@ -295,64 +302,6 @@ const Index = () => {
               </p>
             </div>
             <div style={{ margin: 'var(--s-6) 0' }}>
-              <style>{`
-                .nav-grid {
-                  display: grid;
-                  grid-template-columns: 1fr 1fr;
-                  gap: 1px;
-                  background: var(--rule);
-                  border: 1px solid var(--rule);
-                }
-                .nav-cell {
-                  background: hsl(var(--pastel-yellow));
-                  padding: var(--s-5) var(--s-5);
-                  display: flex;
-                  flex-direction: column;
-                  gap: var(--s-2);
-                }
-                .nav-cell-top {
-                  grid-column: 1 / -1;
-                  display: grid;
-                  grid-template-columns: repeat(3, 1fr);
-                  gap: 1px;
-                  background: var(--rule);
-                }
-                .nav-cell-eyebrow {
-                  font-family: var(--ff-display);
-                  font-weight: 300;
-                  font-size: 9px;
-                  letter-spacing: 0.20em;
-                  text-transform: uppercase;
-                  color: var(--ink-4);
-                }
-                .nav-cell-num {
-                  font-family: var(--ff-display);
-                  font-weight: 200;
-                  font-size: 28px;
-                  line-height: 1;
-                  letter-spacing: -0.03em;
-                  color: var(--ink-4);
-                }
-                .nav-cell-title {
-                  font-family: var(--ff-editorial);
-                  font-weight: 400;
-                  font-size: 13px;
-                  line-height: 1.3;
-                  color: var(--ink);
-                  margin: 0;
-                }
-                .nav-cell.accent-cell {
-                  background: hsl(160 25% 96%);
-                }
-                .nav-cell.accent-cell .nav-cell-eyebrow {
-                  color: var(--ink-3);
-                }
-                @media (max-width: 640px) {
-                  .nav-cell-top { grid-template-columns: 1fr; }
-                  .nav-grid { grid-template-columns: 1fr; }
-                }
-              `}</style>
-
               <div className="nav-grid">
 
                 <div className="nav-cell-top">

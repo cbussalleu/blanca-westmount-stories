@@ -16,7 +16,7 @@ const ProjectCard = ({ title, description, client, slug, imageSrc }: ProjectCard
   return (
     <div className="group space-y-4">
       {/* Desktop: full-width 1:1 image above text */}
-      <div className="image-with-overlay rounded-lg overflow-hidden shadow-md hidden sm:block">
+      <div className="image-with-overlay overflow-hidden hidden sm:block">
         <AspectRatio ratio={1} className="w-full">
           {imageSrc ? (
             <OptimizedImage src={imageSrc} alt={title} className="w-full h-full" />

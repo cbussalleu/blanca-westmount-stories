@@ -436,15 +436,15 @@ const RadarSkillsSection = () => {
                   <path
                     key={`section-${index}`}
                     d={createSectionPath(index)}
-                    fill={selectedSkill === point.label ? "rgba(138, 177, 162, 0.2)" : "transparent"}
+                    fill={selectedSkill === point.label ? "var(--accent-fill-soft)" : "transparent"}
                     className="cursor-pointer transition-all duration-500 hover:fill-[rgba(138,177,162,0.1)]"
                     onClick={() => handleSkillChange(point.label)}
                   />
                 ))}
                 <path
                   d={createRadarPath()}
-                  fill="rgba(138, 177, 162, 0.3)"
-                  stroke="rgba(138, 177, 162, 0.8)"
+                  fill="var(--accent-fill)"
+                  stroke="var(--accent)"
                   strokeWidth="2"
                   className="transition-all duration-500"
                 />
@@ -458,8 +458,8 @@ const RadarSkillsSection = () => {
                       cx={coords.x}
                       cy={coords.y}
                       r={isSelected ? "8" : "6"}
-                      fill="#8ab1a2"
-                      stroke="#fff"
+                      fill="var(--accent)"
+                      stroke="hsl(var(--pastel-yellow))"
                       strokeWidth="2"
                       className="cursor-pointer transition-all duration-300"
                       onClick={() => handleSkillChange(point.label)}

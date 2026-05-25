@@ -24,7 +24,7 @@ const Methodology = () => {
             Christian Bussalleu · How I work
           </div>
           <h1 style={{ fontFamily: 'var(--ff-display)', fontWeight: 200, fontSize: 'clamp(48px,7vw,96px)', lineHeight: 0.92, letterSpacing: '-0.02em', textTransform: 'uppercase', margin: '0 0 var(--s-5)', maxWidth: '18ch' }}>
-            No Silver<br/>Bullets.
+            No Silver<br/><em style={{ fontFamily: "'westmount-outline', serif", fontStyle: 'normal', fontWeight: 'normal', letterSpacing: '0.04em' }}>Bullets.</em>
           </h1>
           <p style={{ fontFamily: 'var(--ff-editorial)', fontSize: 'var(--t-lede)', lineHeight: 1.55, color: 'var(--ink-2)', maxWidth: '54ch', margin: 0 }}>
             Fred Brooks wrote No Silver Bullets in 1986. The argument was about software, but it translates exactly: some complexity is essential. It lives in the problem itself and cannot be designed away. No solution eliminates it. No methodology does either. What matters is building the judgment to navigate both.
